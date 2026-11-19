@@ -36,7 +36,8 @@
     "today": "Aujourd'hui",
     "dosha": "Ton dosha",
     "knowledge": "Savoir ayurvéda",
-    "review": "Bilan"
+    "review": "Bilan",
+    "content": "Contenus"
   },
   "shell": {
     "openNavigation": "Ouvrir la navigation",
@@ -678,7 +679,11 @@
     "sahamaCheckinTooOften": "Tu as fait beaucoup de check-ins à la suite. Fais une petite pause et réessaie dans une heure.",
     "sahamaNeedsPlan": "Cela fait partie de l'abonnement Sahama.",
     "sahamaReviewTooEarly": "Un bilan de la semaine demande au moins deux check-ins cette semaine.",
-    "sahamaReviewFailed": "Ton bilan n'a pas pu être rédigé pour le moment. Réessaie plus tard."
+    "sahamaReviewFailed": "Ton bilan n'a pas pu être rédigé pour le moment. Réessaie plus tard.",
+    "sahamaTitleMissing": "Saisis un titre (120 caractères au maximum).",
+    "sahamaBodyMissing": "Écris un texte : au moins quelques phrases.",
+    "sahamaNoArticle": "Cet article n'existe pas (ou plus).",
+    "sahamaDeleteOnlyOwn": "Tu ne peux pas supprimer cette entrée, seulement la masquer : elle vient du contenu de départ."
   },
   "confirmEmail": {
     "title": "Confirmer ton adresse e-mail",
@@ -1234,5 +1239,70 @@
   },
   "sahamaReview": {
     "disclaimer": "Le bilan de la semaine de Sahama est rédigé par une IA, à partir de tes check-ins. Il ne remplace pas un avis médical."
+  },
+  "sahamaAdmin": {
+    "title": "Rituels et articles",
+    "description": "Crée et modifie des rituels et des articles, rends-les gratuits ou réservés à l'abonnement, et masque-les.",
+    "adminCard": "Créer et modifier rituels et articles, gratuits ou avec abonnement.",
+    "adminCardCta": "Gérer les contenus",
+    "newRitual": "Nouveau rituel",
+    "newArticle": "Nouvel article",
+    "editRitual": "Modifier le rituel",
+    "editArticle": "Modifier l'article",
+    "ritualsTab": "Rituels ({count})",
+    "articlesTab": "Articles ({count})",
+    "edit": "Modifier",
+    "back": "Retour à tous les contenus",
+    "hidden": "Masqué",
+    "originOperator": "À toi",
+    "originContent": "Contenu de départ",
+    "originHint": "Le « contenu de départ », ce sont les brouillons de ton assistant. Dès que tu en modifies un ici, il t'appartient : les mises à jour de l'app ne l'écrasent plus.",
+    "adoptHint": "Cette entrée vient du contenu de départ. Quand tu l'enregistres, elle t'appartient : les mises à jour de l'app ne la modifieront plus.",
+    "tier": {
+      "free": "Gratuit",
+      "plus": "Abonnement Sahama"
+    },
+    "save": "Enregistrer",
+    "saving": "Enregistrement …",
+    "saved": "Enregistré.",
+    "deleted": "Supprimé.",
+    "delete": "Supprimer",
+    "deleteTitle": "Supprimer « {title} » ?",
+    "deleteText": "L'entrée disparaît pour toutes les clientes. Impossible de revenir en arrière. Si tu veux seulement la masquer un temps, décoche plutôt « Visible ».",
+    "deleteConfirm": "Supprimer définitivement",
+    "cancel": "Annuler",
+    "ritual": {
+      "textTitle": "Texte",
+      "whenTitle": "Quand et pour qui",
+      "tipsTitle": "Conseils par dosha",
+      "tipsHint": "Affiché sous le rituel pour les clientes dont le résultat est dominé par ce dosha. Laisse vide s'il n'a pas besoin d'un conseil propre.",
+      "imageTitle": "Image"
+    },
+    "fields": {
+      "title": "Titre",
+      "summary": "Une phrase sous le titre",
+      "body": "Instructions",
+      "bodyHint": "Sépare les paragraphes par une ligne vide. Écris concrètement, l'ayurvéda comme tradition, sans promesse de guérison.",
+      "articleBodyHint": "Sépare les paragraphes par une ligne vide. Une ligne qui commence par « ## » devient un intertitre.",
+      "minutes": "Durée",
+      "timeOfDay": "Moment de la journée",
+      "doshas": "Convient surtout à",
+      "doshasHint": "Aucun coché = convient à toutes.",
+      "concerns": "Convient à ces préoccupations",
+      "image": "Télécharger une image",
+      "replaceImage": "Télécharger une nouvelle image",
+      "removeImage": "Retirer l'image",
+      "imageHint": "JPG, PNG ou WebP, {max} au maximum. Le format paysage rend le mieux.",
+      "imageTooLarge": "L'image est trop grande : {max} au maximum.",
+      "imageAlt": "Description de l'image",
+      "imageAltPlaceholder": "Par exemple : Une tasse de thé sur un rebord de fenêtre dans la lumière du matin",
+      "visibilityTitle": "Visibilité",
+      "tier": "Pour qui",
+      "published": "Visible pour les clientes",
+      "article": "« Plus » mène à",
+      "noArticle": "Aucun article",
+      "position": "Ordre",
+      "positionHint": "Plus petit nombre = plus haut. À adéquation égale, le rituel le plus haut l'emporte."
+    }
   }
 }

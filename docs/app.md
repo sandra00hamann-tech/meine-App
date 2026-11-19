@@ -168,6 +168,29 @@ moment the feature works. Written down by your assistant, from the conversation
 - Kit fix on the way: a `Button` inside a `Callout` is no longer underlined
   (components/ui/callout.tsx).
 
+### Content editor — `/dashboard/admin/sahama` (operator)
+
+- **Does:** every ritual and article (published or hidden, hers or starter
+  set) in two tabs; create, edit, hide; delete her own (asks first). Rituals:
+  text, minutes, time of day, Doshas, concerns, a hint per Dosha, picture
+  upload with description, free/plus, visible, "Mehr dazu" article, order.
+  Articles: title, summary, body (`## ` subheadings), free/plus, visible, order.
+- **Done when:** sie legt Rituale und Artikel selbst an und ändert sie, auch
+  vom Handy — checked 2026-11-19 in the browser: edited a starter ritual,
+  refused form kept its input, created a ritual with an uploaded picture and
+  an article, both live, both deleted again; the editor at 380 px.
+- **Access:** `requireOwner()` first in every page and action.
+- **Two origins (decided 2026-11-19):** saving a starter-set row makes it
+  `origin = 'operator'`; the applier then SKIPS it and names it in its output
+  (scripts/content/appliers/sahama.mjs → `operatorSlugs`) instead of refusing —
+  her edits are never overwritten by a deploy. Starter rows can only be hidden,
+  not deleted (a deploy would bring them back).
+- **Pictures she uploads** go through `uploadRitualImage()` — `guardUploadEntry()`
+  then `acceptUpload()`, `public`, images only — and are stored on the ritual as
+  `media:<id>` (one environment; `ritualImageUrl()` resolves both forms).
+  Registered as an upload door in `lib/media/manage.test.ts`.
+- **Code:** lib/sahama/content-admin.ts, app/dashboard/admin/sahama/
+
 ## Decisions worth remembering
 
 - **The template's support assistant ("Lia", /dashboard/chat) is still the

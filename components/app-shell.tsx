@@ -54,7 +54,7 @@ import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
-import { LayoutDashboard, Sun, Leaf, BookOpen, CalendarHeart, CircleUser, CreditCard, FileText, MessageCircle, ShieldCheck, Users, Receipt, Coins, LogIn, LogOut, Menu } from "lucide-react";
+import { LayoutDashboard, Sun, Leaf, BookOpen, CalendarHeart, NotebookPen, CircleUser, CreditCard, FileText, MessageCircle, ShieldCheck, Users, Receipt, Coins, LogIn, LogOut, Menu } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { initialsFrom } from "@/lib/initials";
@@ -146,6 +146,13 @@ export const NAVIGATION: NavItem[] = [
     icon: ShieldCheck,
     ownerOnly: true,
     groupKey: "groupOperator",
+  },
+  // Sahama: the operator's rituals and articles.
+  {
+    href: "/dashboard/admin/sahama",
+    labelKey: "content",
+    icon: NotebookPen,
+    ownerOnly: true,
   },
   {
     href: "/dashboard/admin/users",

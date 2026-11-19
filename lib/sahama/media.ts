@@ -21,6 +21,16 @@ export async function ritualImageUrl(
   viewer: Viewer,
 ): Promise<string | null> {
   if (!path) return null;
+  // A picture the operator uploaded in the editor is a media row of THIS
+  // environment, referenced by id (lib/sahama/content-admin.ts).
+  if (path.startsWith("media:")) {
+    const [own] = await db
+      .select()
+      .from(media)
+      .where(eq(media.id, path.slice(6)));
+    if (!own || !(await mayAccess(own, viewer))) return null;
+    return mediaUrlFor(own);
+  }
   const [row] = await db
     .select()
     .from(media)

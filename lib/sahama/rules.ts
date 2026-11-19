@@ -38,6 +38,14 @@ export const SAHAMA_ERROR_CODES = [
   "sahamaReviewTooEarly",
   /** The review could not be written just now. */
   "sahamaReviewFailed",
+  /** A title is missing or too long (editor). */
+  "sahamaTitleMissing",
+  /** The text is missing, too short or too long (editor). */
+  "sahamaBodyMissing",
+  /** No such article (editor). */
+  "sahamaNoArticle",
+  /** Only the operator's own entries can be deleted; repo entries are hidden. */
+  "sahamaDeleteOnlyOwn",
 ] as const;
 export type SahamaErrorCode = (typeof SAHAMA_ERROR_CODES)[number];
 

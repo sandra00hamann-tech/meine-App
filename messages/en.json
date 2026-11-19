@@ -36,7 +36,8 @@
     "today": "Today",
     "dosha": "Your Dosha",
     "knowledge": "Ayurveda knowledge",
-    "review": "Review"
+    "review": "Review",
+    "content": "Content"
   },
   "shell": {
     "openNavigation": "Open navigation",
@@ -678,7 +679,11 @@
     "sahamaCheckinTooOften": "You have checked in very often just now. Take a short break and try again in an hour.",
     "sahamaNeedsPlan": "This comes with the Sahama subscription.",
     "sahamaReviewTooEarly": "A weekly review needs at least two check-ins this week.",
-    "sahamaReviewFailed": "Your review could not be written just now. Please try again later."
+    "sahamaReviewFailed": "Your review could not be written just now. Please try again later.",
+    "sahamaTitleMissing": "Please enter a title (at most 120 characters).",
+    "sahamaBodyMissing": "Please write a text — at least a few sentences.",
+    "sahamaNoArticle": "This article does not exist (any more).",
+    "sahamaDeleteOnlyOwn": "You cannot delete this entry, only hide it — it comes from the starter set."
   },
   "confirmEmail": {
     "title": "Confirm your email address",
@@ -1234,5 +1239,70 @@
   },
   "sahamaReview": {
     "disclaimer": "Sahama's weekly review is written by an AI, based on your check-ins. It does not replace medical advice."
+  },
+  "sahamaAdmin": {
+    "title": "Rituals & articles",
+    "description": "Create and change rituals and articles, set them to free or subscription, and hide them.",
+    "adminCard": "Create and change rituals and articles, set free or subscription.",
+    "adminCardCta": "Manage content",
+    "newRitual": "New ritual",
+    "newArticle": "New article",
+    "editRitual": "Edit ritual",
+    "editArticle": "Edit article",
+    "ritualsTab": "Rituals ({count})",
+    "articlesTab": "Articles ({count})",
+    "edit": "Edit",
+    "back": "Back to all content",
+    "hidden": "Hidden",
+    "originOperator": "Yours",
+    "originContent": "Starter set",
+    "originHint": "The “starter set” are your assistant's drafts. As soon as you change one here it is yours: later updates of the app no longer overwrite it.",
+    "adoptHint": "This entry comes from the starter set. When you save it, it becomes yours — later updates of the app will not change it any more.",
+    "tier": {
+      "free": "Free",
+      "plus": "Sahama subscription"
+    },
+    "save": "Save",
+    "saving": "Saving …",
+    "saved": "Saved.",
+    "deleted": "Deleted.",
+    "delete": "Delete",
+    "deleteTitle": "Delete “{title}”?",
+    "deleteText": "The entry disappears for every customer. This cannot be undone. If you only want to hide it for a while, untick “Visible” instead.",
+    "deleteConfirm": "Delete for good",
+    "cancel": "Cancel",
+    "ritual": {
+      "textTitle": "Text",
+      "whenTitle": "When and for whom",
+      "tipsTitle": "Hints per Dosha",
+      "tipsHint": "Shown under the ritual to customers whose result leads with this Dosha. Leave empty if it needs no hint of its own.",
+      "imageTitle": "Picture"
+    },
+    "fields": {
+      "title": "Title",
+      "summary": "One sentence under the title",
+      "body": "Instructions",
+      "bodyHint": "Separate paragraphs with an empty line. Write concretely, Ayurveda as tradition, no healing promises.",
+      "articleBodyHint": "Separate paragraphs with an empty line. A line starting with “## ” becomes a subheading.",
+      "minutes": "Duration",
+      "timeOfDay": "Time of day",
+      "doshas": "Suits especially",
+      "doshasHint": "None ticked = suits everyone.",
+      "concerns": "Suits these concerns",
+      "image": "Upload a picture",
+      "replaceImage": "Upload a new picture",
+      "removeImage": "Remove picture",
+      "imageHint": "JPG, PNG or WebP, at most {max}. Landscape looks best.",
+      "imageTooLarge": "The picture is too large — at most {max}.",
+      "imageAlt": "Picture description",
+      "imageAltPlaceholder": "For example: A cup of tea on a windowsill in morning light",
+      "visibilityTitle": "Visibility",
+      "tier": "For whom",
+      "published": "Visible to customers",
+      "article": "“More” leads to",
+      "noArticle": "No article",
+      "position": "Order",
+      "positionHint": "Smaller number = further up. With an equally good fit, the ritual further up wins."
+    }
   }
 }

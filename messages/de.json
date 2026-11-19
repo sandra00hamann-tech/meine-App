@@ -36,7 +36,8 @@
     "today": "Heute",
     "dosha": "Dein Dosha",
     "knowledge": "Ayurveda-Wissen",
-    "review": "Rückblick"
+    "review": "Rückblick",
+    "content": "Inhalte"
   },
   "shell": {
     "openNavigation": "Navigation öffnen",
@@ -678,7 +679,11 @@
     "sahamaCheckinTooOften": "Du hast gerade sehr oft eingecheckt. Gönn dir eine kleine Pause und versuch es in einer Stunde wieder.",
     "sahamaNeedsPlan": "Das gehört zum Sahama-Abo.",
     "sahamaReviewTooEarly": "Für einen Wochenrückblick braucht es mindestens zwei Check-ins in dieser Woche.",
-    "sahamaReviewFailed": "Dein Rückblick konnte gerade nicht geschrieben werden. Versuch es später noch einmal."
+    "sahamaReviewFailed": "Dein Rückblick konnte gerade nicht geschrieben werden. Versuch es später noch einmal.",
+    "sahamaTitleMissing": "Bitte gib einen Titel ein (höchstens 120 Zeichen).",
+    "sahamaBodyMissing": "Bitte schreib einen Text – mindestens ein paar Sätze.",
+    "sahamaNoArticle": "Diesen Artikel gibt es nicht (mehr).",
+    "sahamaDeleteOnlyOwn": "Diesen Eintrag kannst du nicht löschen, nur verstecken – er kommt aus dem Startbestand."
   },
   "confirmEmail": {
     "title": "E-Mail-Adresse bestätigen",
@@ -1234,5 +1239,70 @@
   },
   "sahamaReview": {
     "disclaimer": "Sahamas Wochenrückblick schreibt eine KI – auf Grundlage deiner Check-ins. Er ersetzt keine ärztliche Beratung."
+  },
+  "sahamaAdmin": {
+    "title": "Rituale & Artikel",
+    "description": "Hier legst du Rituale und Artikel an, änderst sie, stellst sie auf gratis oder Abo und versteckst sie.",
+    "adminCard": "Rituale und Artikel anlegen, ändern, gratis oder Abo stellen.",
+    "adminCardCta": "Inhalte verwalten",
+    "newRitual": "Neues Ritual",
+    "newArticle": "Neuer Artikel",
+    "editRitual": "Ritual bearbeiten",
+    "editArticle": "Artikel bearbeiten",
+    "ritualsTab": "Rituale ({count})",
+    "articlesTab": "Artikel ({count})",
+    "edit": "Bearbeiten",
+    "back": "Zurück zu allen Inhalten",
+    "hidden": "Versteckt",
+    "originOperator": "Von dir",
+    "originContent": "Startbestand",
+    "originHint": "„Startbestand“ sind die Entwürfe deines Assistenten. Sobald du einen davon hier änderst, gehört er dir: Spätere Aktualisierungen der App überschreiben ihn dann nicht mehr.",
+    "adoptHint": "Dieser Eintrag stammt aus dem Startbestand. Wenn du ihn speicherst, wird er deiner – spätere Aktualisierungen der App ändern ihn dann nicht mehr.",
+    "tier": {
+      "free": "Gratis",
+      "plus": "Sahama-Abo"
+    },
+    "save": "Speichern",
+    "saving": "Wird gespeichert …",
+    "saved": "Gespeichert.",
+    "deleted": "Gelöscht.",
+    "delete": "Löschen",
+    "deleteTitle": "„{title}“ löschen?",
+    "deleteText": "Der Eintrag verschwindet für alle Kundinnen. Das lässt sich nicht rückgängig machen. Wenn du ihn nur vorübergehend nicht zeigen möchtest, entferne stattdessen den Haken bei „Sichtbar“.",
+    "deleteConfirm": "Endgültig löschen",
+    "cancel": "Abbrechen",
+    "ritual": {
+      "textTitle": "Text",
+      "whenTitle": "Wann und für wen",
+      "tipsTitle": "Hinweise je Dosha",
+      "tipsHint": "Erscheint unter dem Ritual für Kundinnen, bei denen dieses Dosha führt. Leer lassen, wenn es keinen eigenen Hinweis braucht.",
+      "imageTitle": "Bild"
+    },
+    "fields": {
+      "title": "Titel",
+      "summary": "Ein Satz unter dem Titel",
+      "body": "Anleitung",
+      "bodyHint": "Absätze mit einer Leerzeile trennen. Konkret schreiben, Ayurveda als Tradition, keine Heilversprechen.",
+      "articleBodyHint": "Absätze mit einer Leerzeile trennen. Eine Zeile, die mit „## “ beginnt, wird zur Zwischenüberschrift.",
+      "minutes": "Dauer",
+      "timeOfDay": "Tageszeit",
+      "doshas": "Passt besonders zu",
+      "doshasHint": "Keins ankreuzen = passt zu allen.",
+      "concerns": "Passt zu diesen Anliegen",
+      "image": "Bild hochladen",
+      "replaceImage": "Neues Bild hochladen",
+      "removeImage": "Bild entfernen",
+      "imageHint": "JPG, PNG oder WebP, höchstens {max}. Querformat sieht am schönsten aus.",
+      "imageTooLarge": "Das Bild ist zu groß – höchstens {max}.",
+      "imageAlt": "Bildbeschreibung",
+      "imageAltPlaceholder": "Zum Beispiel: Eine Tasse Tee auf einer Fensterbank im Morgenlicht",
+      "visibilityTitle": "Sichtbarkeit",
+      "tier": "Für wen",
+      "published": "Sichtbar für Kundinnen",
+      "article": "„Mehr dazu“ führt zu",
+      "noArticle": "Kein Artikel",
+      "position": "Reihenfolge",
+      "positionHint": "Kleinere Zahl = weiter vorn. Bei gleich guter Passung gewinnt das Ritual weiter vorn."
+    }
   }
 }

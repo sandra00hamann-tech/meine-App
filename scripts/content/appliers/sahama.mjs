@@ -7,8 +7,8 @@
 //    run re-asserts them from the files;
 //  · the admin surface writes `origin = 'operator'` rows in ONE environment.
 // Every upsert carries `where origin = 'content'`, so it cannot reach an
-// operator row — and when a file claims a slug an operator row holds, the run
-// REFUSES and names both, rather than skipping a row quietly.
+// operator row — and a slug the operator owns (she made it, or edited a repo
+// row in the app) is skipped and NAMED in the run's output, never overwritten.
 //
 // Pictures are referenced by media PATH (content/media-manifest.json), never
 // by media id: an id exists in one database only.
@@ -25,25 +25,29 @@ function load(name) {
   return { file, items: data[name] ?? [] };
 }
 
-async function refuseOperatorSlugs(sql, table, items, file) {
-  if (items.length === 0) return;
+/**
+ * Slugs the OPERATOR owns: she created them on the admin surface, or she edited
+ * a repo row there, which makes it hers (lib/sahama/content-admin.ts). The
+ * applier skips them and says so — her edits are never overwritten by a deploy.
+ */
+async function operatorSlugs(sql, table, items, file) {
+  if (items.length === 0) return new Set();
   const slugs = items.map((i) => i.slug);
-  const clash = await sql`
+  const rows = await sql`
     select slug from ${sql(table)} where origin = 'operator' and slug = any(${slugs})`;
-  if (clash.length > 0) {
-    throw new Error(
-      `${file}: slug(s) ${clash.map((c) => c.slug).join(", ")} already exist as operator-made ${table} rows. ` +
-        "Rename the slug in the file, or delete the operator row first — the applier never writes over what the operator made.",
-    );
+  for (const r of rows) {
+    console.log(`  · ${file}: "${r.slug}" belongs to the operator now (edited in the app) — left as it is`);
   }
+  return new Set(rows.map((r) => r.slug));
 }
 
 export async function apply(sql) {
   let count = 0;
 
   const rituals = load("rituals");
-  await refuseOperatorSlugs(sql, "sahama_rituals", rituals.items, rituals.file);
+  const ownRituals = await operatorSlugs(sql, "sahama_rituals", rituals.items, rituals.file);
   for (const r of rituals.items) {
+    if (ownRituals.has(r.slug)) continue;
     await sql`
       insert into sahama_rituals
         (id, slug, origin, title, summary, body, minutes, time_of_day, doshas, concerns,
@@ -65,8 +69,9 @@ export async function apply(sql) {
   }
 
   const articles = load("articles");
-  await refuseOperatorSlugs(sql, "sahama_articles", articles.items, articles.file);
+  const ownArticles = await operatorSlugs(sql, "sahama_articles", articles.items, articles.file);
   for (const a of articles.items) {
+    if (ownArticles.has(a.slug)) continue;
     await sql`
       insert into sahama_articles
         (id, slug, origin, title, summary, body, tier, image_path, published, position, updated_at)

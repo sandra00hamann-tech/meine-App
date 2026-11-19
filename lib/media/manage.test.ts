@@ -585,6 +585,9 @@ describe("every upload door enters the outer guard", () => {
     // ⚠️ `_post-images.ts` since the split of `manage.ts` (5,902 lines → eleven
     // domain files). The door did not move; the file it lives in was named.
     { file: "modules/community/lib/_post-images.ts", stores: "acceptUpload", guard: "guardUploadEntry" },
+    // Sahama: the operator's ritual picture in the content editor
+    // (requireOwner() in the action, both halves in uploadRitualImage()).
+    { file: "lib/sahama/content-admin.ts", stores: "acceptUpload", guard: "guardUploadEntry" },
     // Direct-to-bucket, half one: mints an address, stores nothing, and is
     // where the hourly slot is spent.
     {

@@ -36,7 +36,8 @@
     "today": "Hoy",
     "dosha": "Tu dosha",
     "knowledge": "Saber ayurveda",
-    "review": "Resumen"
+    "review": "Resumen",
+    "content": "Contenidos"
   },
   "shell": {
     "openNavigation": "Abrir la navegación",
@@ -678,7 +679,11 @@
     "sahamaCheckinTooOften": "Has hecho check-in muchas veces seguidas. Tómate una pausa y vuelve a intentarlo en una hora.",
     "sahamaNeedsPlan": "Esto forma parte de la suscripción Sahama.",
     "sahamaReviewTooEarly": "Para un resumen semanal hacen falta al menos dos check-ins esta semana.",
-    "sahamaReviewFailed": "Ahora mismo no se ha podido escribir tu resumen. Inténtalo más tarde."
+    "sahamaReviewFailed": "Ahora mismo no se ha podido escribir tu resumen. Inténtalo más tarde.",
+    "sahamaTitleMissing": "Escribe un título (máximo 120 caracteres).",
+    "sahamaBodyMissing": "Escribe un texto: al menos unas frases.",
+    "sahamaNoArticle": "Este artículo no existe (o ya no existe).",
+    "sahamaDeleteOnlyOwn": "No puedes borrar esta entrada, solo ocultarla: viene del contenido inicial."
   },
   "confirmEmail": {
     "title": "Confirmar tu dirección de correo electrónico",
@@ -1234,5 +1239,70 @@
   },
   "sahamaReview": {
     "disclaimer": "El resumen semanal de Sahama lo escribe una IA, a partir de tus check-ins. No sustituye el consejo médico."
+  },
+  "sahamaAdmin": {
+    "title": "Rituales y artículos",
+    "description": "Crea y cambia rituales y artículos, ponlos como gratis o de suscripción y ocúltalos.",
+    "adminCard": "Crear y cambiar rituales y artículos, gratis o de suscripción.",
+    "adminCardCta": "Gestionar contenidos",
+    "newRitual": "Nuevo ritual",
+    "newArticle": "Nuevo artículo",
+    "editRitual": "Editar ritual",
+    "editArticle": "Editar artículo",
+    "ritualsTab": "Rituales ({count})",
+    "articlesTab": "Artículos ({count})",
+    "edit": "Editar",
+    "back": "Volver a todos los contenidos",
+    "hidden": "Oculto",
+    "originOperator": "Tuyo",
+    "originContent": "Contenido inicial",
+    "originHint": "El «contenido inicial» son los borradores de tu asistente. En cuanto cambies uno aquí, pasa a ser tuyo: las actualizaciones posteriores de la app ya no lo sobrescriben.",
+    "adoptHint": "Esta entrada viene del contenido inicial. Al guardarla pasa a ser tuya: las actualizaciones posteriores de la app ya no la cambiarán.",
+    "tier": {
+      "free": "Gratis",
+      "plus": "Suscripción Sahama"
+    },
+    "save": "Guardar",
+    "saving": "Guardando …",
+    "saved": "Guardado.",
+    "deleted": "Borrado.",
+    "delete": "Borrar",
+    "deleteTitle": "¿Borrar «{title}»?",
+    "deleteText": "La entrada desaparece para todas las clientas. No se puede deshacer. Si solo quieres ocultarla un tiempo, quita la marca de «Visible».",
+    "deleteConfirm": "Borrar definitivamente",
+    "cancel": "Cancelar",
+    "ritual": {
+      "textTitle": "Texto",
+      "whenTitle": "Cuándo y para quién",
+      "tipsTitle": "Indicaciones por dosha",
+      "tipsHint": "Aparece bajo el ritual para las clientas cuyo resultado tiene este dosha al frente. Déjalo vacío si no necesita una indicación propia.",
+      "imageTitle": "Imagen"
+    },
+    "fields": {
+      "title": "Título",
+      "summary": "Una frase bajo el título",
+      "body": "Instrucciones",
+      "bodyHint": "Separa los párrafos con una línea vacía. Escribe en concreto, el ayurveda como tradición, sin promesas de curación.",
+      "articleBodyHint": "Separa los párrafos con una línea vacía. Una línea que empieza con «## » se convierte en subtítulo.",
+      "minutes": "Duración",
+      "timeOfDay": "Momento del día",
+      "doshas": "Encaja especialmente con",
+      "doshasHint": "Ninguno marcado = encaja con todos.",
+      "concerns": "Encaja con estas inquietudes",
+      "image": "Subir una imagen",
+      "replaceImage": "Subir una imagen nueva",
+      "removeImage": "Quitar la imagen",
+      "imageHint": "JPG, PNG o WebP, como máximo {max}. En horizontal queda mejor.",
+      "imageTooLarge": "La imagen es demasiado grande: como máximo {max}.",
+      "imageAlt": "Descripción de la imagen",
+      "imageAltPlaceholder": "Por ejemplo: Una taza de té en el alféizar con luz de la mañana",
+      "visibilityTitle": "Visibilidad",
+      "tier": "Para quién",
+      "published": "Visible para las clientas",
+      "article": "«Más» lleva a",
+      "noArticle": "Ningún artículo",
+      "position": "Orden",
+      "positionHint": "Número más pequeño = más arriba. Con igual encaje, gana el ritual que está más arriba."
+    }
   }
 }

@@ -3,7 +3,14 @@
 
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import { Users, Receipt, Coins, KeyRound, LogIn, ArrowRight } from "lucide-react";
+import {
+  Users,
+  Receipt,
+  Coins,
+  KeyRound,
+  LogIn,
+  ArrowRight,
+} from "lucide-react";
 
 import { requireOwner } from "@/lib/authz";
 import { MODULE_NAV } from "@/lib/modules/nav-registry";
@@ -28,6 +35,7 @@ export async function generateMetadata() {
 // all it takes.
 export default async function AdminPage() {
   const session = await requireOwner();
+  const ts = await getTranslations("sahamaAdmin");
   const [t, nav, shell] = await Promise.all([
     getTranslations("admin"),
     // The module entries' labels live in the `nav` namespace, merged in from
@@ -44,7 +52,8 @@ export default async function AdminPage() {
   const moduleAdmin = MODULE_NAV.flatMap((mod) => mod.NAVIGATION).filter(
     (item) =>
       item.ownerOnly &&
-      (item.featureKey === undefined || shell.features[item.featureKey] !== false),
+      (item.featureKey === undefined ||
+        shell.features[item.featureKey] !== false),
   );
 
   return (
@@ -55,6 +64,22 @@ export default async function AdminPage() {
       />
 
       <div className="grid gap-4 sm:grid-cols-2">
+        {/* Sahama: the operator's own content, first — it is what she edits most. */}
+        <Card>
+          <CardHeader>
+            <CardTitle>{ts("title")}</CardTitle>
+            <CardDescription>{ts("adminCard")}</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Button asChild>
+              <Link href="/dashboard/admin/sahama">
+                {ts("adminCardCta")}
+                <ArrowRight aria-hidden />
+              </Link>
+            </Button>
+          </CardContent>
+        </Card>
+
         <Card>
           <CardHeader>
             <div className="bg-primary/10 text-primary mb-2 grid size-9 place-items-center rounded-lg">
@@ -129,7 +154,9 @@ export default async function AdminPage() {
               </Link>
             </Button>
             <Button asChild variant="outline">
-              <Link href="/dashboard/admin/setup-audit">{t("setupAuditCta")}</Link>
+              <Link href="/dashboard/admin/setup-audit">
+                {t("setupAuditCta")}
+              </Link>
             </Button>
           </CardContent>
         </Card>
@@ -192,8 +219,12 @@ export default async function AdminPage() {
           module here would be prose the module cannot correct. */}
       {moduleAdmin.length > 0 && (
         <section className="mt-10">
-          <h2 className="mb-1 text-lg font-semibold">{t("moduleSurfacesTitle")}</h2>
-          <p className="text-muted-foreground mb-4 text-sm">{t("moduleSurfacesBody")}</p>
+          <h2 className="mb-1 text-lg font-semibold">
+            {t("moduleSurfacesTitle")}
+          </h2>
+          <p className="text-muted-foreground mb-4 text-sm">
+            {t("moduleSurfacesBody")}
+          </p>
           <div className="grid gap-4 sm:grid-cols-2">
             {moduleAdmin.map((item) => (
               <Card key={item.href}>

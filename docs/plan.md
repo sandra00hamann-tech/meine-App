@@ -37,9 +37,9 @@ hast._
 - [x] kurze Ayurveda-Artikel lesen — Grundlagen gratis, Vertiefung im Abo —
       und von jeder Ritual-Karte aus „Mehr dazu“ finden (gebaut 2026-11-19)
 - [x] jede Woche eine Rückblick-Karte bekommen und Lieblingsrituale behalten (gebaut 2026-11-19)
-- [ ] (Betreiberin) Rituale und Artikel mit Text, Bild und „gratis oder Abo“
+- [x] (Betreiberin) Rituale und Artikel mit Text, Bild und „gratis oder Abo“
       selbst anlegen und ändern, auch vom Handy — und die 30 Rituale und
-      10 Artikel aus dem Startbestand gegenlesen und freigeben
+      10 Artikel aus dem Startbestand gegenlesen und freigeben (gebaut 2026-11-19)
 - [ ] Sahama auf Dauer gratis nutzen (7 Einsteiger-Rituale + Ritual der Woche,
       eine persönliche Antwort pro Woche, Wochenzahlen, Grundlagen-Artikel,
       Dosha-Test) und mit dem Sahama-Abo über Digistore24 alles freischalten
