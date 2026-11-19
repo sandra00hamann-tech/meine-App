@@ -37,10 +37,10 @@ import { PWA_THEME_COLOR, PWA_THEME_COLOR_DARK } from "@/lib/pwa/manifest";
 // also why the variables are named after their ROLE rather than after the
 // fonts currently sitting on them — see docs/design-system.md → Typography.
 const appSans = localFont({
-  src: "../node_modules/@fontsource-variable/figtree/files/figtree-latin-wght-normal.woff2",
+  src: "../node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2",
   variable: "--font-app-sans",
   display: "swap",
-  weight: "300 900",
+  weight: "100 900",
   // The shipped locales (de, en) live inside `latin`; `latin-ext` is a second
   // file and buys nothing until i18n/config.ts grows a locale that needs it.
   fallback: ["system-ui", "-apple-system", "sans-serif"],
