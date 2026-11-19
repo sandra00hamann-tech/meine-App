@@ -1,5 +1,5 @@
 {
-  "_comment": "Sahama's rituals, authored in the repo. `node run.mjs content-apply` writes them into every environment (scripts/content/appliers/sahama.mjs), keyed by slug, as origin 'content'. Rituals the operator creates on the admin surface are origin 'operator' and are never touched by the applier. Status: DRAFT by the assistant (2026-11-19) — to be read and approved by the operator. Rules for every text: lifestyle and self-care only — no healing promises, no complaints, no herbs, supplements or dosages, no cures or fasting (docs/product-brief.md → Leitplanken). Fields: minutes 5|10|20; timeOfDay morning|midday|evening|any; doshas vata|pitta|kapha (empty = all); concerns from lib/sahama/catalog.ts; tier free|plus; imagePath = media path or null; articleSlug = article behind 'Mehr dazu' or null.",
+  "_comment": "Sahama's rituals, authored in the repo. `node run.mjs content-apply` writes them into every environment (scripts/content/appliers/sahama.mjs), keyed by slug, as origin 'content'. Rituals the operator creates on the admin surface are origin 'operator' and are never touched by the applier. Status: DRAFT by the assistant (2026-11-19) — to be read and approved by the operator. Rules for every text: lifestyle and self-care only — no healing promises, no complaints, no herbs, supplements or dosages, no cures or fasting (docs/product-brief.md → Leitplanken). Fields: doshaTips = { vata?, pitta?, kapha? } — one hint per Dosha, shown to members whose result leads with it (the same ritual is not right for everyone in the same way); minutes 5|10|20; timeOfDay morning|midday|evening|any; doshas vata|pitta|kapha (empty = all); concerns from lib/sahama/catalog.ts; tier free|plus; imagePath = media path or null; articleSlug = article behind 'Mehr dazu' or null.",
   "rituals": [
     {
       "slug": "warmes-wasser-am-morgen",
@@ -9,7 +9,14 @@
       "minutes": 5,
       "timeOfDay": "morning",
       "doshas": [],
-      "concerns": ["rushed_morning"],
+      "concerns": [
+        "rushed_morning"
+      ],
+      "doshaTips": {
+        "vata": "Für dich darf das Wasser schön warm sein – Wärme erdet Vata am Morgen.",
+        "pitta": "Für dich lieber lauwarm als heiß – Pitta bringt schon genug eigenes Feuer mit.",
+        "kapha": "Für dich darf es richtig warm sein, gern mit einer Scheibe frischem Ingwer – das macht wach."
+      },
       "tier": "free",
       "imagePath": null,
       "articleSlug": null,
@@ -22,8 +29,19 @@
       "body": "Ayurveda nennt die tägliche Routine Dinacharya. Sie muss nicht lang sein – drei Schritte reichen für den Anfang.\n\n1. Zunge reinigen und Gesicht erfrischen: Nach dem Zähneputzen sanft die Zunge mit einem Zungenschaber reinigen, dann das Gesicht mit kühlem Wasser benetzen.\n\n2. Bewegen: Fünf Minuten dehnen, strecken, die Schultern kreisen lassen. Ganz in deinem Tempo.\n\n3. Ankommen: Setz dich mit einem warmen Getränk hin und nimm dir vor, worauf du dich heute freust – nur ein Gedanke.\n\nDer Tag darf danach voll werden. Der Anfang gehört dir.",
       "minutes": 20,
       "timeOfDay": "morning",
-      "doshas": ["kapha", "vata"],
-      "concerns": ["rushed_morning", "afternoon_dip"],
+      "doshas": [
+        "kapha",
+        "vata"
+      ],
+      "concerns": [
+        "rushed_morning",
+        "afternoon_dip"
+      ],
+      "doshaTips": {
+        "vata": "Bewege dich sanft und fließend statt schnell – und gönn dir danach etwas Warmes.",
+        "pitta": "Erfrisch das Gesicht ruhig mit kühlem Wasser und mach die Bewegung ohne Ehrgeiz – es geht nicht um Leistung.",
+        "kapha": "Steh möglichst früh auf und bewege dich ruhig etwas kräftiger – das bringt Kapha in Schwung."
+      },
       "tier": "free",
       "imagePath": null,
       "articleSlug": null,
@@ -33,11 +51,22 @@
       "slug": "drei-bewusste-bissen",
       "title": "Drei bewusste Bissen",
       "summary": "Eine echte Mittagspause – auch wenn sie nur zehn Minuten hat.",
-      "body": "Leg Handy und Laptop für diese zehn Minuten außer Reichweite.\n\nBevor du anfängst zu essen: einmal tief durchatmen und dein Essen ansehen. Farben, Duft, Wärme.\n\nIss die ersten drei Bissen ganz bewusst. Langsam kauen, schmecken, schlucken.\n\nDanach darfst du ganz normal weiteressen. Im Ayurveda ist das Mittagessen die wichtigste Mahlzeit des Tages – schön, wenn sie warm und gekocht sein darf.",
+      "body": "Leg Handy und Laptop für diese zehn Minuten außer Reichweite.\n\nBevor du anfängst zu essen: einmal tief durchatmen und dein Essen ansehen. Farben, Duft, Wärme.\n\nIss die ersten drei Bissen ganz bewusst. Langsam kauen, schmecken, schlucken.\n\nDanach darfst du ganz normal weiteressen. Im Ayurveda ist das Mittagessen die wichtigste Mahlzeit des Tages – denn mittags ist die Verdauungskraft am stärksten. Was genau dir guttut, hängt von deinem Dosha ab.",
       "minutes": 10,
       "timeOfDay": "midday",
-      "doshas": ["pitta", "vata"],
-      "concerns": ["no_break", "irregular_meals"],
+      "doshas": [
+        "pitta",
+        "vata"
+      ],
+      "concerns": [
+        "no_break",
+        "irregular_meals"
+      ],
+      "doshaTips": {
+        "vata": "Für dich ist das Mittagessen am besten warm, gekocht und mit etwas gutem Fett – und möglichst immer zur gleichen Zeit.",
+        "pitta": "Für dich darf es frisch und kühlend sein: Salat, Gurke, Rohkost passen am ehesten mittags, wenn die Verdauungskraft am stärksten ist. Lieber nicht zu scharf.",
+        "kapha": "Für dich lieber leicht, warm und gut gewürzt – und ruhig etwas weniger, als du gewohnt bist."
+      },
       "tier": "free",
       "imagePath": null,
       "articleSlug": null,
@@ -50,8 +79,18 @@
       "body": "Zieh dir etwas über und geh für fünf Minuten nach draußen – vor die Tür, auf den Balkon, einmal um den Block.\n\nGeh etwas zügiger als sonst. Lass die Arme mitschwingen.\n\nAtme durch die Nase ein und schau bewusst in die Ferne, weg vom Bildschirm.\n\nWieder drinnen: ein Glas warmes Wasser statt des nächsten Kaffees. Spür nach, wie du dich jetzt fühlst.",
       "minutes": 5,
       "timeOfDay": "midday",
-      "doshas": ["kapha"],
-      "concerns": ["afternoon_dip", "no_break"],
+      "doshas": [
+        "kapha"
+      ],
+      "concerns": [
+        "afternoon_dip",
+        "no_break"
+      ],
+      "doshaTips": {
+        "vata": "Zieh dich warm an und geh lieber gemächlich – Wind und Hektik bringen Vata schnell durcheinander.",
+        "pitta": "Such dir einen schattigen Weg und geh ohne Ziel – einfach um des Gehens willen.",
+        "kapha": "Geh ruhig zügig, ein paar Treppen dürfen auch dabei sein – Bewegung bringt Kapha am besten durchs Nachmittagstief."
+      },
       "tier": "free",
       "imagePath": null,
       "articleSlug": null,
@@ -64,8 +103,19 @@
       "body": "Setz dich bequem hin, beide Füße auf dem Boden. Die Hände ruhen auf den Oberschenkeln.\n\nAtme durch die Nase ein und zähl dabei bis vier.\n\nAtme langsam aus und zähl dabei bis sechs. Lass die Schultern beim Ausatmen sinken.\n\nWiederhole das etwa zehnmal. Wenn du dich verzählst, fang einfach wieder an – es gibt hier nichts falsch zu machen.",
       "minutes": 5,
       "timeOfDay": "any",
-      "doshas": ["vata", "pitta"],
-      "concerns": ["busy_mind", "hard_to_unwind"],
+      "doshas": [
+        "vata",
+        "pitta"
+      ],
+      "concerns": [
+        "busy_mind",
+        "hard_to_unwind"
+      ],
+      "doshaTips": {
+        "vata": "Leg dir dabei eine Decke um die Schultern – Wärme und Ruhe helfen Vata beim Ankommen.",
+        "pitta": "Atme durch den leicht geöffneten Mund aus, als würdest du die Hitze des Tages hinauslassen.",
+        "kapha": "Mach die Übung im Stehen und am offenen Fenster – so bleibt sie belebend statt einschläfernd."
+      },
       "tier": "free",
       "imagePath": null,
       "articleSlug": null,
@@ -78,8 +128,17 @@
       "body": "Wärme etwas Sesamöl oder ein anderes Pflanzenöl in den Händen an.\n\nSetz dich auf die Bettkante und massiere erst den einen, dann den anderen Fuß – Sohle, Ferse, jeden Zeh. Ruhig mit etwas Druck.\n\nStreich zum Schluss von den Zehen zu den Knöcheln aus, als würdest du den Tag abstreifen.\n\nZieh dir warme Socken an. Im Ayurveda heißt die Ölmassage Padabhyanga – viele empfinden sie als schönen Übergang in den Abend.",
       "minutes": 10,
       "timeOfDay": "evening",
-      "doshas": ["vata"],
-      "concerns": ["hard_to_unwind"],
+      "doshas": [
+        "vata"
+      ],
+      "concerns": [
+        "hard_to_unwind"
+      ],
+      "doshaTips": {
+        "vata": "Sesamöl ist für dich genau richtig – es wärmt und erdet.",
+        "pitta": "Nimm lieber Kokosöl – es wirkt kühlend und passt besser zu Pitta.",
+        "kapha": "Nimm nur wenig Öl, zum Beispiel ein leichtes Senf- oder Sonnenblumenöl, und massiere ruhig etwas kräftiger."
+      },
       "tier": "free",
       "imagePath": null,
       "articleSlug": null,
@@ -92,8 +151,18 @@
       "body": "Nimm dir einen Zettel oder ein kleines Heft. Schreib drei Zeilen – nicht mehr:\n\n1. Was heute gut war.\n\n2. Was noch offen ist – und wann du dich darum kümmerst.\n\n3. Worauf du dich morgen freust.\n\nLeg den Zettel weg. Was aufgeschrieben ist, darf für heute aus dem Kopf.",
       "minutes": 10,
       "timeOfDay": "evening",
-      "doshas": ["pitta"],
-      "concerns": ["busy_mind", "hard_to_unwind"],
+      "doshas": [
+        "pitta"
+      ],
+      "concerns": [
+        "busy_mind",
+        "hard_to_unwind"
+      ],
+      "doshaTips": {
+        "vata": "Schreib mit einer warmen Tasse in der Hand – und lass die Liste wirklich bei drei Zeilen.",
+        "pitta": "Bei Zeile 2 genügt ein Wann – das Wie darf bis morgen warten. Kein Plan muss heute fertig werden.",
+        "kapha": "Schreib bei Zeile 3 etwas auf, das dich wirklich in Bewegung bringt – auch wenn es klein ist."
+      },
       "tier": "free",
       "imagePath": null,
       "articleSlug": null,

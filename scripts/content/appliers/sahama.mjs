@@ -47,16 +47,17 @@ export async function apply(sql) {
     await sql`
       insert into sahama_rituals
         (id, slug, origin, title, summary, body, minutes, time_of_day, doshas, concerns,
-         tier, image_path, article_slug, published, position, updated_at)
+         dosha_tips, tier, image_path, article_slug, published, position, updated_at)
       values
         (${crypto.randomUUID()}, ${r.slug}, 'content', ${r.title}, ${r.summary ?? ""}, ${r.body},
          ${r.minutes}, ${r.timeOfDay ?? "any"}, ${r.doshas ?? []}, ${r.concerns ?? []},
-         ${r.tier ?? "plus"}, ${r.imagePath ?? null}, ${r.articleSlug ?? null},
+         ${sql.json(r.doshaTips ?? {})}, ${r.tier ?? "plus"}, ${r.imagePath ?? null}, ${r.articleSlug ?? null},
          ${r.published ?? true}, ${r.position ?? 0}, now())
       on conflict (slug) do update set
         title = excluded.title, summary = excluded.summary, body = excluded.body,
         minutes = excluded.minutes, time_of_day = excluded.time_of_day,
-        doshas = excluded.doshas, concerns = excluded.concerns, tier = excluded.tier,
+        doshas = excluded.doshas, concerns = excluded.concerns, dosha_tips = excluded.dosha_tips,
+        tier = excluded.tier,
         image_path = excluded.image_path, article_slug = excluded.article_slug,
         published = excluded.published, position = excluded.position, updated_at = now()
       where sahama_rituals.origin = 'content'`;

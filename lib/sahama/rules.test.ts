@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
-import { CONCERNS, DOSHAS, DOSHA_QUESTIONS, MINUTE_OPTIONS, TIMES_OF_DAY, type DoshaAnswers } from "./catalog";
+import { CONCERNS, DOSHAS, DOSHA_QUESTIONS, MINUTE_OPTIONS, TIMES_OF_DAY, answerOrder, type DoshaAnswers } from "./catalog";
 import {
   SahamaError,
   chooseRitual,
@@ -27,12 +27,14 @@ function answersWith(counts: { vata: number; pitta: number; kapha: number }): Do
 
 describe("scoreDosha", () => {
   it("turns twelve answers into shares that sum to exactly 100", () => {
+    expect(DOSHA_QUESTIONS).toHaveLength(24);
     for (const counts of [
-      { vata: 12, pitta: 0, kapha: 0 },
-      { vata: 5, pitta: 4, kapha: 3 },
-      { vata: 4, pitta: 4, kapha: 4 },
-      { vata: 7, pitta: 3, kapha: 2 },
-      { vata: 1, pitta: 1, kapha: 10 },
+      { vata: 24, pitta: 0, kapha: 0 },
+      { vata: 10, pitta: 8, kapha: 6 },
+      { vata: 8, pitta: 8, kapha: 8 },
+      { vata: 13, pitta: 7, kapha: 4 },
+      { vata: 1, pitta: 2, kapha: 21 },
+      { vata: 11, pitta: 11, kapha: 2 },
     ]) {
       const s = scoreDosha(answersWith(counts));
       expect(s.vata + s.pitta + s.kapha).toBe(100);
@@ -40,15 +42,15 @@ describe("scoreDosha", () => {
   });
 
   it("weights each answer the same", () => {
-    expect(scoreDosha(answersWith({ vata: 6, pitta: 3, kapha: 3 }))).toEqual({ vata: 50, pitta: 25, kapha: 25 });
-    expect(scoreDosha(answersWith({ vata: 12, pitta: 0, kapha: 0 }))).toEqual({ vata: 100, pitta: 0, kapha: 0 });
+    expect(scoreDosha(answersWith({ vata: 12, pitta: 6, kapha: 6 }))).toEqual({ vata: 50, pitta: 25, kapha: 25 });
+    expect(scoreDosha(answersWith({ vata: 24, pitta: 0, kapha: 0 }))).toEqual({ vata: 100, pitta: 0, kapha: 0 });
   });
 
   it("refuses half a test rather than presenting it as whole", () => {
-    const partial = answersWith({ vata: 6, pitta: 3, kapha: 3 });
+    const partial = answersWith({ vata: 12, pitta: 6, kapha: 6 });
     delete partial.sleep;
     expect(() => scoreDosha(partial)).toThrow(SahamaError);
-    expect(() => scoreDosha({ ...answersWith({ vata: 12, pitta: 0, kapha: 0 }), frame: "fire" as never })).toThrow(
+    expect(() => scoreDosha({ ...answersWith({ vata: 24, pitta: 0, kapha: 0 }), frame: "fire" as never })).toThrow(
       "sahamaDoshaIncomplete",
     );
   });
@@ -61,9 +63,23 @@ describe("leadingDoshas", () => {
   it("names two when the second is within 15 points", () => {
     expect(leadingDoshas({ vata: 42, pitta: 33, kapha: 25 })).toEqual(["vata", "pitta"]);
   });
+  it("names all three when they lie close together (Tridosha)", () => {
+    expect(leadingDoshas({ vata: 34, pitta: 33, kapha: 33 })).toEqual(["vata", "pitta", "kapha"]);
+    expect(leadingDoshas({ vata: 38, pitta: 33, kapha: 29 })).toHaveLength(3);
+  });
   it("breaks an exact tie in the fixed order Vata, Pitta, Kapha", () => {
-    expect(leadingDoshas({ vata: 34, pitta: 33, kapha: 33 })[0]).toBe("vata");
     expect(leadingDoshas({ vata: 20, pitta: 40, kapha: 40 })).toEqual(["pitta", "kapha"]);
+  });
+});
+
+describe("answerOrder — the answers are shown in varying order", () => {
+  it("shows every Dosha once per question, and Vata is not always first", () => {
+    const firsts = new Set<string>();
+    DOSHA_QUESTIONS.forEach((_, i) => {
+      expect([...answerOrder(i)].sort()).toEqual(["kapha", "pitta", "vata"]);
+      firsts.add(answerOrder(i)[0]);
+    });
+    expect(firsts.size).toBe(3);
   });
 });
 
@@ -165,6 +181,7 @@ describe("content/sahama/rituals.json — what the applier will write", () => {
       expect(TIMES_OF_DAY as readonly string[], String(r.slug)).toContain(r.timeOfDay);
       expect(["free", "plus"], String(r.slug)).toContain(r.tier);
       for (const d of r.doshas as string[]) expect(DOSHAS as readonly string[]).toContain(d);
+      for (const d of Object.keys((r.doshaTips ?? {}) as object)) expect(DOSHAS as readonly string[]).toContain(d);
       for (const c of r.concerns as string[]) expect(CONCERNS as readonly string[]).toContain(c);
       expect(String(r.title).length, String(r.slug)).toBeGreaterThan(0);
       expect(String(r.body).length, String(r.slug)).toBeGreaterThan(40);
@@ -179,6 +196,9 @@ describe("content/sahama/rituals.json — what the applier will write", () => {
 
   it("keeps the wording rules: no healing promises, no herbs or cures", () => {
     const forbidden = /heil(t|ung|en)\b|gegen (schmerz|krank)|therapie|ashwagandha|triphala|kapsel|dosierung|detox|fasten|panchakarma|garantiert/i;
-    for (const r of rituals) expect(`${r.title} ${r.summary} ${r.body}`, String(r.slug)).not.toMatch(forbidden);
+    for (const r of rituals) {
+      const tips = Object.values((r.doshaTips ?? {}) as Record<string, string>).join(" ");
+      expect(`${r.title} ${r.summary} ${r.body} ${tips}`, String(r.slug)).not.toMatch(forbidden);
+    }
   });
 });

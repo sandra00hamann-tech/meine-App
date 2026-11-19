@@ -22,7 +22,7 @@ export async function DoshaResultCard({
   const format = await getFormatter();
   const leading = leadingDoshas(shares);
   const name = (d: Dosha) => t(`doshaName.${d}`);
-  const title = leading.map(name).join("-");
+  const title = leading.length === 3 ? t("dosha.result.triTitle") : leading.map(name).join("-");
 
   return (
     <Card>
@@ -58,11 +58,12 @@ export async function DoshaResultCard({
         </ul>
         <div className="space-y-3">
           <p className="leading-relaxed">{t(`dosha.result.describe.${leading[0]}`)}</p>
-          {leading[1] && (
+          {leading.length === 2 && (
             <p className="text-muted-foreground leading-relaxed">
               {t("dosha.result.dual", { first: name(leading[0]), second: name(leading[1]) })}
             </p>
           )}
+          {leading.length === 3 && <p className="text-muted-foreground leading-relaxed">{t("dosha.result.tri")}</p>}
           <p className="text-muted-foreground text-sm">{t("dosha.disclaimer")}</p>
         </div>
         {children && <div className="flex flex-wrap gap-3">{children}</div>}

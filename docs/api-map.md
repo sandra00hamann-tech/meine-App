@@ -525,7 +525,7 @@ commit — `lib/privacy/inventory.test.ts` fails the build otherwise.
 
 ### db/schema-sahama.ts
 
-- `sahama_rituals` (`sahamaRituals`): `id`, `slug`, `origin` (sahamaOriginEnum), `title`, `summary`, `body`, `minutes` (integer), `timeOfDay` (sahamaTimeOfDayEnum), `doshas`, `concerns`, `tier` (sahamaTierEnum), `imagePath`, `articleSlug`, `published` (boolean), `position` (integer), `createdAt` (timestamp), `updatedAt` (timestamp)
+- `sahama_rituals` (`sahamaRituals`): `id`, `slug`, `origin` (sahamaOriginEnum), `title`, `summary`, `body`, `minutes` (integer), `timeOfDay` (sahamaTimeOfDayEnum), `doshas`, `concerns`, `doshaTips` (jsonb), `tier` (sahamaTierEnum), `imagePath`, `articleSlug`, `published` (boolean), `position` (integer), `createdAt` (timestamp), `updatedAt` (timestamp)
 - `sahama_articles` (`sahamaArticles`): `id`, `slug`, `origin` (sahamaOriginEnum), `title`, `summary`, `body`, `tier` (sahamaTierEnum), `imagePath`, `published` (boolean), `position` (integer), `createdAt` (timestamp), `updatedAt` (timestamp)
 - `sahama_profiles` (`sahamaProfiles`): `memberId`, `concerns`, `usualMinutes` (integer), `vata` (integer), `pitta` (integer), `kapha` (integer), `doshaAnswers` (jsonb), `doshaTakenAt` (timestamp), `createdAt` (timestamp), `updatedAt` (timestamp)
 - `sahama_suggestions` (`sahamaSuggestions`): `id`, `memberId`, `ritualSlug`, `minutes` (integer), `createdAt` (timestamp)

@@ -1,6 +1,6 @@
 "use client";
 
-// The Dosha test as one form: twelve questions, then what occupies her and
+// The Dosha test as one form: 24 questions in three parts, then what occupies her and
 // how much time she has. A failed submit keeps every answer: all choices live
 // in React state, and the submit BUILDS the FormData from that state and hands
 // it to the action itself (onSubmit + startTransition) instead of using
@@ -21,7 +21,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { EMPTY_ACTION_STATE } from "@/lib/action-state";
-import { CONCERNS, DOSHAS, DOSHA_QUESTIONS, MINUTE_OPTIONS } from "@/lib/sahama/catalog";
+import { CONCERNS, DOSHA_QUESTIONS, DOSHA_SECTIONS, MINUTE_OPTIONS, answerOrder } from "@/lib/sahama/catalog";
 
 import { saveDoshaAction } from "./actions";
 
@@ -50,37 +50,48 @@ export function DoshaForm({
 
   return (
     <form onSubmit={submit} className="space-y-6">
-      <ol className="space-y-4">
-        {DOSHA_QUESTIONS.map((q, index) => (
-          <li key={q}>
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-base">
-                  <span className="text-muted-foreground mr-2">{index + 1}.</span>
-                  {t(`dosha.questions.${q}.text`)}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <RadioGroup
-                  value={answers[q] ?? ""}
-                  onValueChange={(value) => setAnswers((prev) => ({ ...prev, [q]: value }))}
-                  aria-label={t(`dosha.questions.${q}.text`)}
-                  className="gap-3"
-                >
-                  {DOSHAS.map((d) => (
-                    <div key={d} className="flex items-start gap-3">
-                      <RadioGroupItem value={d} id={`q_${q}_${d}`} className="mt-0.5" />
-                      <Label htmlFor={`q_${q}_${d}`} className="leading-snug font-normal">
-                        {t(`dosha.questions.${q}.${d}`)}
-                      </Label>
-                    </div>
-                  ))}
-                </RadioGroup>
-              </CardContent>
-            </Card>
-          </li>
-        ))}
-      </ol>
+      <p className="text-lg leading-relaxed font-medium">{t("dosha.intro")}</p>
+      {DOSHA_SECTIONS.map((section) => (
+        <section key={section.id} aria-labelledby={`part_${section.id}`} className="space-y-4">
+          <h2 id={`part_${section.id}`} className="pt-2 text-lg font-semibold">
+            {t(`dosha.sections.${section.id}`)}
+          </h2>
+          <ol className="space-y-4">
+            {section.questions.map((q) => {
+              const index = DOSHA_QUESTIONS.indexOf(q);
+              return (
+                <li key={q}>
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="text-base">
+                        <span className="text-muted-foreground mr-2">{index + 1}.</span>
+                        {t(`dosha.questions.${q}.text`)}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <RadioGroup
+                        value={answers[q] ?? ""}
+                        onValueChange={(value) => setAnswers((prev) => ({ ...prev, [q]: value }))}
+                        aria-label={t(`dosha.questions.${q}.text`)}
+                        className="gap-3"
+                      >
+                        {answerOrder(index).map((d) => (
+                          <div key={d} className="flex items-start gap-3">
+                            <RadioGroupItem value={d} id={`q_${q}_${d}`} className="mt-0.5" />
+                            <Label htmlFor={`q_${q}_${d}`} className="leading-snug font-normal">
+                              {t(`dosha.questions.${q}.${d}`)}
+                            </Label>
+                          </div>
+                        ))}
+                      </RadioGroup>
+                    </CardContent>
+                  </Card>
+                </li>
+              );
+            })}
+          </ol>
+        </section>
+      ))}
 
       <Card>
         <CardHeader>

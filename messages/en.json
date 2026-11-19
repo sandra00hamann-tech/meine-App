@@ -667,7 +667,7 @@
     "userNotFound": "User not found.",
     "userWithoutEmail": "This account has no email address — there is nowhere to send the link.",
     "zeroAmount": "0 is not a correction — please enter an amount other than zero.",
-    "sahamaDoshaIncomplete": "Please answer all twelve questions — only then does your result give a full picture.",
+    "sahamaDoshaIncomplete": "Please answer all 24 questions — only then does your result give a full picture.",
     "sahamaMinutesInvalid": "Please choose how much time you have: 5, 10 or 20 minutes.",
     "sahamaNoRitual": "We have no ritual for that much time right now. Choose a little more time — or come back later.",
     "sahamaNoProfile": "Take your Dosha test first — then we know which rituals suit you."
@@ -940,7 +940,7 @@
     "dosha": {
       "eyebrow": "Getting started",
       "title": "Your Dosha test",
-      "description": "Twelve short questions, about two minutes. Pick what fits you best — the way you usually are, not just today.",
+      "description": "24 short questions in three parts, about four to five minutes. Pick what fits you best each time.",
       "disclaimer": "The test gives you an orientation about your constitution according to Ayurveda. It is not a diagnosis and does not replace medical advice.",
       "progress": "{done} of {total} answered",
       "concernsTitle": "What is on your mind at the moment?",
@@ -1020,6 +1020,78 @@
           "vata": "quick and bubbly",
           "pitta": "clear and convincing",
           "kapha": "calm and considered"
+        },
+        "weight": {
+          "text": "With my weight …",
+          "vata": "I find it hard to gain, even when I eat a lot",
+          "pitta": "I keep it steady and change it easily when I want to",
+          "kapha": "I gain easily and lose with difficulty"
+        },
+        "hair": {
+          "text": "My hair is rather …",
+          "vata": "dry, fine, slightly frizzy",
+          "pitta": "fine, straight, greying or thinning early",
+          "kapha": "strong, thick and shiny"
+        },
+        "joints": {
+          "text": "My joints and bones are …",
+          "vata": "delicate, my joints often crack",
+          "pitta": "medium and flexible",
+          "kapha": "broad and strong, well padded"
+        },
+        "extremities": {
+          "text": "My hands and feet are usually …",
+          "vata": "cold",
+          "pitta": "warm",
+          "kapha": "cool, but not unpleasantly so"
+        },
+        "eyes": {
+          "text": "My eyes are rather …",
+          "vata": "small, lively, often moving",
+          "pitta": "clear, piercing, sensitive to light",
+          "kapha": "large, calm, with full lashes"
+        },
+        "thirst": {
+          "text": "I feel thirsty …",
+          "vata": "sometimes a lot, sometimes I forget to drink",
+          "pitta": "often and strongly",
+          "kapha": "rarely"
+        },
+        "afterMeal": {
+          "text": "After eating I usually feel …",
+          "vata": "sometimes light, sometimes unsettled",
+          "pitta": "warm and content, but soon hungry again",
+          "kapha": "full and a little sluggish"
+        },
+        "taste": {
+          "text": "What I like best is …",
+          "vata": "warm, sweet, salty food",
+          "pitta": "cool, fresh, often sweet food",
+          "kapha": "spicy, hot, light food"
+        },
+        "memory": {
+          "text": "My memory is …",
+          "vata": "good for recent things, older ones fade fast",
+          "pitta": "sharp and clear",
+          "kapha": "slow, but very long-lasting"
+        },
+        "decisions": {
+          "text": "I make decisions …",
+          "vata": "quickly, and often change them again",
+          "pitta": "clearly and firmly",
+          "kapha": "after long thought — then I stick with them"
+        },
+        "wellbeing": {
+          "text": "When I am really well, I am …",
+          "vata": "enthusiastic, creative, full of ideas",
+          "pitta": "brave, clear, determined",
+          "kapha": "loving, patient, balanced"
+        },
+        "money": {
+          "text": "With money I am rather …",
+          "vata": "spontaneous, it flows quickly",
+          "pitta": "planned, I like spending on good things",
+          "kapha": "thrifty, I like to keep it"
         }
       },
       "result": {
@@ -1034,7 +1106,15 @@
         },
         "dual": "Your result lies between {first} and {second} — both shape you. Your rituals take both into account.",
         "next": "To your ritual for today",
-        "retake": "Take the test again"
+        "retake": "Take the test again",
+        "tri": "All three Doshas lie close together in you — this is called Tridosha and is rather rare. Your rituals take all three into account.",
+        "triTitle": "Tridosha"
+      },
+      "intro": "Answer the way you have been most of your life — not how you feel right now. If two answers fit, take the one that has been true for longer.",
+      "sections": {
+        "body": "Part 1 · Your body",
+        "daily": "Part 2 · Food, sleep & energy",
+        "mind": "Part 3 · Mind & feeling"
       }
     },
     "today": {
@@ -1045,7 +1125,7 @@
       "doshaLine": "Your Dosha: {name}",
       "doshaLink": "See result",
       "noProfileTitle": "Get to know your Dosha first",
-      "noProfileText": "Twelve short questions, about two minutes — then you get your first ritual card, made for you.",
+      "noProfileText": "24 short questions, about four to five minutes — then you get your first ritual card, made for you.",
       "noProfileAction": "Start the Dosha test",
       "noCardTitle": "No card for today yet",
       "noCardText": "Tell us how much time you have — and we pick a ritual that fits.",
@@ -1057,12 +1137,13 @@
     },
     "card": {
       "freeBadge": "Free",
-      "plusBadge": "Sahama subscription"
+      "plusBadge": "Sahama subscription",
+      "tipsFor": "For you as {name}"
     },
     "dashboard": {
       "title": "Your ritual for today",
       "startTitle": "Welcome to Sahama Ayurveda",
-      "startText": "Take your Dosha test — twelve short questions. Then you get your first ritual card, made for you and your time.",
+      "startText": "Take your Dosha test — 24 short questions. Then you get your first ritual card, made for you and your time.",
       "startAction": "Start the Dosha test",
       "openAction": "To your ritual card"
     }

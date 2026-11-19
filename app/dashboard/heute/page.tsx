@@ -46,9 +46,8 @@ export default async function TodayPage({
   }
 
   const current = await currentRitual(session.user.id);
-  const dosha = leadingDoshas(sharesOf(profile))
-    .map((d) => t(`doshaName.${d}`))
-    .join("-");
+  const leading = leadingDoshas(sharesOf(profile));
+  const dosha = leading.length === 3 ? t("dosha.result.triTitle") : leading.map((d) => t(`doshaName.${d}`)).join("-");
 
   return (
     <div className="mx-auto max-w-3xl space-y-6">
@@ -63,7 +62,7 @@ export default async function TodayPage({
       </p>
 
       {current ? (
-        <RitualCard ritual={current.ritual} />
+        <RitualCard ritual={current.ritual} leading={leading} />
       ) : (
         <EmptyState icon={Leaf} title={t("today.noCardTitle")} description={t("today.noCardText")} />
       )}

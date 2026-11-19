@@ -32,9 +32,12 @@ moment the feature works. Written down by your assistant, from the conversation
 
 ### Dosha test and result — `/dashboard/dosha`
 
-- **Does:** twelve questions (`DOSHA_QUESTIONS`, lib/sahama/catalog.ts), plus
+- **Does:** 24 questions in three parts (`DOSHA_SECTIONS`, lib/sahama/catalog.ts;
+  answers shown in a varying fixed order, `answerOrder`), opening with "answer
+  the way you have been most of your life, not how you feel right now", plus
   what occupies her (`CONCERNS`) and how much time she usually has (5/10/20).
-  Scores the shares of Vata, Pitta and Kapha (sum 100), saves her profile,
+  Scores the shares of Vata, Pitta and Kapha (sum 100) — one, two or all three
+  leading (Tridosha, all within 15 points) — saves her profile,
   chooses her first ritual card and sends her to `/dashboard/heute`. With a
   profile the page shows the result card; `?neu=1` retakes the test. Every text
   says it is an orientation, never a diagnosis.
@@ -51,7 +54,8 @@ moment the feature works. Written down by your assistant, from the conversation
   and lets her ask for a new one for 5, 10 or 20 minutes. The choice
   (`chooseRitual`) prefers her leading Dosha, her concerns and the time of day
   in Berlin, avoids her last six cards, and never offers a ritual longer than
-  her minutes or one she may not open. First card on `/dashboard` too
+  her minutes or one she may not open. Under the steps, the hint for each of
+  her leading Doshas (`sahama_rituals.dosha_tips`). First card on `/dashboard` too
   (`components/sahama/today-overview-card.tsx`).
 - **Done when:** sie sagt, wie viel Zeit sie hat, und bekommt eine passende
   Ritual-Karte — the minutes part checked 2026-11-19; the card picture and the
@@ -63,6 +67,14 @@ moment the feature works. Written down by your assistant, from the conversation
 - **Tests:** `lib/sahama/rules.test.ts`
 
 ## Decisions worth remembering
+
+- **24 questions, not 12** (operator, 2026-11-19): twelve could not tell the
+  constitution (Prakriti) from the current state; the intro line "answer the
+  way you have been most of your life" matters to her — a Vata whose weight
+  changed in menopause is not Kapha now. Keep it.
+- **Every ritual carries a hint per Dosha** (operator, 2026-11-19): "warm and
+  cooked for everyone" is wrong — Vata needs warm food, Pitta does well with
+  cooling, fresh food. A new ritual gets `doshaTips` for all three.
 
 - **No language removal.** The operator's market is German, but the template
   holds four locales in ~25 tests; removing three broke them (tried

@@ -67,6 +67,14 @@ export const sahamaRituals = pgTable(
     doshas: text("doshas").array().notNull().default([]),
     /** Concern codes it answers (lib/sahama/concerns.ts); empty = general. */
     concerns: text("concerns").array().notNull().default([]),
+    /**
+     * A hint per Dosha, shown under the ritual to members whose result leads
+     * with that Dosha: { vata?: string, pitta?: string, kapha?: string }.
+     * The same ritual is not right for everyone in the same way — warm cooked
+     * food suits Vata, Pitta does well with cooling, fresh food (operator,
+     * 2026-11-19).
+     */
+    doshaTips: jsonb("dosha_tips").$type<Partial<Record<"vata" | "pitta" | "kapha", string>>>().notNull().default({}),
     tier: sahamaTierEnum("tier").notNull().default("plus"),
     /** Media PATH of the card picture (content/media-manifest.json), never a media id. */
     imagePath: text("image_path"),

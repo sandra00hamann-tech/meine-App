@@ -1,0 +1,1 @@
+ALTER TABLE "sahama_rituals" ADD COLUMN "dosha_tips" jsonb DEFAULT '{}'::jsonb NOT NULL;

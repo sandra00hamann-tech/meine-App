@@ -73,13 +73,16 @@ export function scoreDosha(answers: DoshaAnswers): DoshaShares {
 }
 
 /**
- * The Doshas that shape her result, strongest first: one, or two when the
- * second is within 15 points of the first ("Vata-Pitta").
+ * The Doshas that shape her result, strongest first: one; two when the second
+ * is within 15 points of the first ("Vata-Pitta"); all three when even the
+ * third is (Tridosha — rare, and then every Dosha's hint applies).
  */
 export function leadingDoshas(shares: DoshaShares): Dosha[] {
   const sorted = [...DOSHAS].sort((a, b) => shares[b] - shares[a] || DOSHAS.indexOf(a) - DOSHAS.indexOf(b));
-  const [first, second] = sorted;
-  return shares[first] - shares[second] <= 15 ? [first, second] : [first];
+  const [first, second, third] = sorted;
+  if (shares[first] - shares[third] <= 15) return [first, second, third];
+  if (shares[first] - shares[second] <= 15) return [first, second];
+  return [first];
 }
 
 /** Keeps only known concern codes, each once. */

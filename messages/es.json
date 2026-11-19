@@ -667,7 +667,7 @@
     "userNotFound": "Usuario no encontrado.",
     "userWithoutEmail": "Esta cuenta no tiene dirección de correo electrónico — no hay ningún destino para el enlace.",
     "zeroAmount": "0 no es una corrección — indica un importe distinto de cero.",
-    "sahamaDoshaIncomplete": "Responde las doce preguntas, por favor: solo así tu resultado da una imagen completa.",
+    "sahamaDoshaIncomplete": "Responde las 24 preguntas, por favor: solo así tu resultado da una imagen completa.",
     "sahamaMinutesInvalid": "Elige cuánto tiempo tienes: 5, 10 o 20 minutos.",
     "sahamaNoRitual": "Ahora mismo no tenemos un ritual para ese tiempo. Elige un poco más de tiempo o vuelve más tarde.",
     "sahamaNoProfile": "Haz primero tu test de dosha: así sabremos qué rituales encajan contigo."
@@ -940,7 +940,7 @@
     "dosha": {
       "eyebrow": "Tu comienzo",
       "title": "Tu test de dosha",
-      "description": "Doce preguntas breves, unos dos minutos. Elige lo que mejor te describe: como eres normalmente, no solo hoy.",
+      "description": "24 preguntas breves en tres partes, unos cuatro o cinco minutos. Elige cada vez lo que mejor te describa.",
       "disclaimer": "El test te da una orientación sobre tu constitución según el Ayurveda. No es un diagnóstico y no sustituye el consejo médico.",
       "progress": "{done} de {total} respondidas",
       "concernsTitle": "¿Qué te preocupa en este momento?",
@@ -1020,6 +1020,78 @@
           "vata": "rápida y espontánea",
           "pitta": "clara y convincente",
           "kapha": "tranquila y reflexiva"
+        },
+        "weight": {
+          "text": "Con mi peso …",
+          "vata": "me cuesta engordar, aunque coma mucho",
+          "pitta": "lo mantengo bien y lo cambio fácilmente si quiero",
+          "kapha": "engordo con facilidad y adelgazo con dificultad"
+        },
+        "hair": {
+          "text": "Mi pelo es más bien …",
+          "vata": "seco, fino, algo encrespado",
+          "pitta": "fino, liso, con canas o menos densidad pronto",
+          "kapha": "fuerte, denso y brillante"
+        },
+        "joints": {
+          "text": "Mis articulaciones y mis huesos son …",
+          "vata": "delicados, las articulaciones crujen a menudo",
+          "pitta": "medianos y flexibles",
+          "kapha": "anchos y fuertes, bien acolchados"
+        },
+        "extremities": {
+          "text": "Mis manos y pies suelen estar …",
+          "vata": "fríos",
+          "pitta": "cálidos",
+          "kapha": "frescos, pero no de forma desagradable"
+        },
+        "eyes": {
+          "text": "Mis ojos son más bien …",
+          "vata": "pequeños, vivos, siempre en movimiento",
+          "pitta": "claros, penetrantes, sensibles a la luz",
+          "kapha": "grandes, tranquilos, con pestañas abundantes"
+        },
+        "thirst": {
+          "text": "Tengo sed …",
+          "vata": "a veces mucha, a veces me olvido de beber",
+          "pitta": "a menudo y con fuerza",
+          "kapha": "pocas veces"
+        },
+        "afterMeal": {
+          "text": "Después de comer suelo sentirme …",
+          "vata": "a veces ligera, a veces con el estómago inquieto",
+          "pitta": "cálida y satisfecha, pero pronto vuelvo a tener hambre",
+          "kapha": "llena y un poco pesada"
+        },
+        "taste": {
+          "text": "Lo que más me gusta es …",
+          "vata": "lo cálido, dulce y salado",
+          "pitta": "lo fresco y ligero, a menudo dulce",
+          "kapha": "lo especiado, picante y ligero"
+        },
+        "memory": {
+          "text": "Mi memoria es …",
+          "vata": "buena para lo reciente, lo antiguo se borra pronto",
+          "pitta": "aguda y clara",
+          "kapha": "lenta, pero muy duradera"
+        },
+        "decisions": {
+          "text": "Tomo decisiones …",
+          "vata": "rápido, y a menudo las cambio",
+          "pitta": "con claridad y firmeza",
+          "kapha": "tras pensarlo mucho, y luego las mantengo"
+        },
+        "wellbeing": {
+          "text": "Cuando estoy realmente bien, soy …",
+          "vata": "entusiasta, creativa, llena de ideas",
+          "pitta": "valiente, clara, decidida",
+          "kapha": "cariñosa, paciente, equilibrada"
+        },
+        "money": {
+          "text": "Con el dinero soy más bien …",
+          "vata": "espontánea, se me va rápido",
+          "pitta": "planificadora, me gusta gastar en cosas buenas",
+          "kapha": "ahorradora, me gusta guardarlo"
         }
       },
       "result": {
@@ -1034,7 +1106,15 @@
         },
         "dual": "Tu resultado está entre {first} y {second}: ambos te definen. Tus rituales tienen en cuenta los dos.",
         "next": "A tu ritual de hoy",
-        "retake": "Repetir el test"
+        "retake": "Repetir el test",
+        "tri": "En ti los tres doshas están muy cerca entre sí: se llama Tridosha y es más bien raro. Tus rituales tienen en cuenta los tres.",
+        "triTitle": "Tridosha"
+      },
+      "intro": "Responde como has sido la mayor parte de tu vida, no como te sientes ahora. Si encajan dos respuestas, elige la que lleva más tiempo siendo cierta.",
+      "sections": {
+        "body": "Parte 1 · Tu cuerpo",
+        "daily": "Parte 2 · Comida, sueño y energía",
+        "mind": "Parte 3 · Mente y sentimientos"
       }
     },
     "today": {
@@ -1045,7 +1125,7 @@
       "doshaLine": "Tu dosha: {name}",
       "doshaLink": "Ver resultado",
       "noProfileTitle": "Conoce primero tu dosha",
-      "noProfileText": "Doce preguntas breves, unos dos minutos. Después recibes tu primera tarjeta de ritual, hecha para ti.",
+      "noProfileText": "24 preguntas breves, unos cuatro o cinco minutos. Después recibes tu primera tarjeta de ritual, hecha para ti.",
       "noProfileAction": "Empezar el test de dosha",
       "noCardTitle": "Todavía no hay tarjeta para hoy",
       "noCardText": "Dinos cuánto tiempo tienes y te elegimos un ritual que encaje.",
@@ -1057,12 +1137,13 @@
     },
     "card": {
       "freeBadge": "Gratis",
-      "plusBadge": "Suscripción Sahama"
+      "plusBadge": "Suscripción Sahama",
+      "tipsFor": "Para ti, como {name}"
     },
     "dashboard": {
       "title": "Tu ritual de hoy",
       "startTitle": "Bienvenida a Sahama Ayurveda",
-      "startText": "Haz tu test de dosha: doce preguntas breves. Después recibes tu primera tarjeta de ritual, adaptada a ti y a tu tiempo.",
+      "startText": "Haz tu test de dosha: 24 preguntas breves. Después recibes tu primera tarjeta de ritual, adaptada a ti y a tu tiempo.",
       "startAction": "Empezar el test de dosha",
       "openAction": "A tu tarjeta de ritual"
     }

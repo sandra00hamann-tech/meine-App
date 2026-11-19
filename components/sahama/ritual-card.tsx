@@ -12,6 +12,7 @@ import { getTranslations } from "next-intl/server";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { slugifyAnchor } from "@/lib/content-source/anchors";
+import type { Dosha } from "@/lib/sahama/catalog";
 import type { SahamaRitual } from "@/lib/sahama/manage";
 
 /** Splits the body into its paragraphs (blank-line separated). */
@@ -24,10 +25,13 @@ export function paragraphsOf(body: string): string[] {
 
 export async function RitualCard({
   ritual,
+  leading = [],
   imageUrl,
   children,
 }: {
   ritual: SahamaRitual;
+  /** Her leading Dosha(s) — each one's hint is shown under the steps. */
+  leading?: Dosha[];
   /** A URL the caller resolved through the media layer AFTER mayAccess(); null for none. */
   imageUrl?: string | null;
   /** Actions under the card. */
@@ -61,6 +65,14 @@ export async function RitualCard({
             </p>
           ))}
         </div>
+        {leading
+          .filter((d) => ritual.doshaTips[d])
+          .map((d) => (
+            <div key={d} className="bg-muted space-y-1 rounded-lg p-4">
+              <p className="text-sm font-semibold">{t("card.tipsFor", { name: t(`doshaName.${d}`) })}</p>
+              <p className="leading-relaxed">{ritual.doshaTips[d]}</p>
+            </div>
+          ))}
         {children && <div className="flex flex-wrap gap-3 pt-2">{children}</div>}
       </CardContent>
     </Card>
