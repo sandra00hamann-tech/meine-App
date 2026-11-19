@@ -18,30 +18,40 @@ hast._
   sie bezahlt, ist die passende Karte und die Antwort auf ihren Check-in
 - **Rechnet ab:** Abo (monatlich und jährlich)
 - **Aussehen:** docs/design.md — „Salbei & Gold“ (2026-11-19)
+- **Bilder der Ritual-Karten:** von einer KI erzeugt, einheitlicher Stil mit
+  filigranem Gold und erdigen Farben, ca. 5 Cent pro Bild; die Betreiberin
+  sieht jedes Bild vorher (2026-11-19)
 - **Tempo:** in Etappen (nach jeder Zeile öffnet sich die App zum Ansehen)
 
 ## Was die Kundin tun können wird
 
 - [x] sich anmelden und ihr eigenes Dashboard finden (Vorlage, vorhanden)
-- [ ] in 2 Minuten sagen, was sie beschäftigt und wie viel Zeit sie hat, und
+- [ ] den Dosha-Test machen (rund 12 Fragen) und ihre Ergebnis-Karte sehen,
+      dazu sagen, was sie beschäftigt und wie viel Zeit sie meist hat — und
       sofort ihre erste Ritual-Karte bekommen
 - [ ] jeden Tag sagen, wie viel Zeit sie heute hat, und eine passende
-      Ritual-Karte mit Bild bekommen, zum Speichern oder Ausdrucken
+      Ritual-Karte mit Bild bekommen, die zu ihrem Dosha passt, zum Speichern
+      oder Ausdrucken
 - [ ] nach dem Ritual kurz einchecken und eine persönliche Antwort mit einem
-      angepassten Vorschlag für morgen bekommen
-- [ ] jede Woche eine Rückblick-Karte bekommen und Lieblingsrituale behalten
+      Ayurveda-Tipp und einem Vorschlag für morgen bekommen
 - [ ] kurze Ayurveda-Artikel lesen — Grundlagen gratis, Vertiefung im Abo —
       und von jeder Ritual-Karte aus „Mehr dazu“ finden
+- [ ] jede Woche eine Rückblick-Karte bekommen und Lieblingsrituale behalten
 - [ ] (Betreiberin) Rituale und Artikel mit Text, Bild und „gratis oder Abo“
       selbst anlegen und ändern, auch vom Handy — und die 30 Rituale und
       10 Artikel aus dem Startbestand gegenlesen und freigeben
 - [ ] Sahama gratis nutzen (7 Einsteiger-Rituale, 3 persönliche Antworten zum
-      Probieren) und mit dem Sahama-Abo über Digistore24 alles freischalten
+      Probieren, Grundlagen-Artikel, Dosha-Test) und mit dem Sahama-Abo über
+      Digistore24 alles freischalten
+
+## Woran wir merken, dass eine Kundin bleibt
+
+- **Aktivierung:** sie hat ihr erstes Ritual gemacht und eingecheckt (der
+  erste Check-in). — bestätigt 2026-11-19
+- **Wiederkehr:** sie checkt in weiteren Wochen wieder ein.
 
 ## Nicht in der ersten Version (entschieden, nicht vergessen)
 
-- **Dosha-Test** — 2026-11-19: erst nach dem ersten Verkauf; die erste Version
-  startet mit „was beschäftigt dich, wie viel Zeit hast du“.
 - **Rezepte und Ernährungspläne** — 2026-11-19: nach dem ersten Verkauf.
 - **Community** — 2026-11-19: nach dem ersten Verkauf.
 - **Videos, Telefon- oder Videoberatung, Live-Termine** — 2026-11-19: nie;

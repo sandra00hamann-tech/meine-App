@@ -56,6 +56,11 @@ antwortet.
 
 ## Funktionen der ersten Version
 
+0. **Dosha-Test** (entschieden am 2026-11-19, gratis) — rund 12 Fragen,
+   gemeinsam mit der Betreiberin formuliert; Ergebnis-Karte mit den Anteilen
+   von Vata, Pitta und Kapha, als Orientierung formuliert, nie als Diagnose,
+   jederzeit wiederholbar. Ritual-Vorschläge und Antworten richten sich danach.
+
 1. **Einstieg in 2 Minuten** — sie wählt, was sie beschäftigt (z. B. hektischer
    Morgen, keine echte Pause, abends schwer abschalten) und wie viel Zeit sie
    meist hat (5 / 10 / 20 Minuten) und bekommt sofort ihre erste Ritual-Karte.
