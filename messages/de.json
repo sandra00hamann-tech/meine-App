@@ -1183,7 +1183,8 @@
       "back": "Alle Artikel",
       "lockedTitle": "Dieser Artikel gehört zum Sahama-Abo",
       "lockedText": "Die Grundlagen-Artikel sind gratis. Die Vertiefungen – zu deinem Dosha, zu den Jahreszeiten, zu Gewürzen und Ölmassage – liest du mit dem Sahama-Abo, zusammen mit allen Ritualen und einer persönlichen Antwort auf jeden Check-in.",
-      "lockedAction": "Sahama-Abo ansehen"
+      "lockedAction": "Sahama-Abo ansehen",
+      "moreInfo": "Du möchtest tiefer einsteigen? Mehr Infos zu Ayurveda findest du auf"
     }
   },
   "sahamaCheckin": {

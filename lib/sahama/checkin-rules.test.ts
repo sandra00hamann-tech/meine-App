@@ -56,11 +56,13 @@ describe("config/sahama.json is read fail-closed", () => {
       checkinReplies: false,
       freeReplies: 0,
       adviceUrl: null,
+      moreInfoUrl: null,
     });
     expect(parseSahamaConfig({ checkinReplies: true, freeReplies: 3, adviceUrl: "https://example.com/beratung" })).toEqual({
       checkinReplies: true,
       freeReplies: 3,
       adviceUrl: "https://example.com/beratung",
+      moreInfoUrl: null,
     });
   });
 });

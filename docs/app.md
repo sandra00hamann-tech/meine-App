@@ -125,6 +125,12 @@ moment the feature works. Written down by your assistant, from the conversation
   The page and any later content source ask this one function.
 - **Data:** `sahama_articles` (content, from `content/sahama/articles.json`,
   drafts for the operator to read).
+- **Every article ends with a pointer** to the operator's own Ayurveda site
+  (`moreInfoUrl` in config/sahama.json, https://ayurveda.sahama-lebensdesign.de)
+  — the articles stay short on purpose; whoever wants more goes there
+  (operator, 2026-11-19). The same address is `adviceUrl`, where Sahama's
+  check-in replies send deeper questions. ⚠️ The site has to exist before
+  go-live, or both links lead nowhere.
 - **Tests:** `lib/sahama/rules.test.ts` (articles block)
 
 ## Decisions worth remembering

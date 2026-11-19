@@ -1183,7 +1183,8 @@
       "back": "All articles",
       "lockedTitle": "This article comes with the Sahama subscription",
       "lockedText": "The basics are free. The deeper articles — about your Dosha, the seasons, spices and oil massage — come with the Sahama subscription, together with every ritual and a personal reply to every check-in.",
-      "lockedAction": "See the Sahama subscription"
+      "lockedAction": "See the Sahama subscription",
+      "moreInfo": "Want to go deeper? You'll find more about Ayurveda at"
     }
   },
   "sahamaCheckin": {

@@ -1183,7 +1183,8 @@
       "back": "Tous les articles",
       "lockedTitle": "Cet article fait partie de l'abonnement Sahama",
       "lockedText": "Les articles de base sont gratuits. Les approfondissements — sur ton dosha, les saisons, les épices et le massage à l'huile — se lisent avec l'abonnement Sahama, avec tous les rituels et une réponse personnelle à chaque check-in.",
-      "lockedAction": "Voir l'abonnement Sahama"
+      "lockedAction": "Voir l'abonnement Sahama",
+      "moreInfo": "Tu veux aller plus loin ? Tu trouveras plus d'infos sur l'ayurvéda sur"
     }
   },
   "sahamaCheckin": {

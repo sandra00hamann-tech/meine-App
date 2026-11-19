@@ -1183,7 +1183,8 @@
       "back": "Todos los artículos",
       "lockedTitle": "Este artículo forma parte de la suscripción Sahama",
       "lockedText": "Los artículos básicos son gratis. Los de profundización —sobre tu dosha, las estaciones, las especias y el masaje con aceite— los lees con la suscripción Sahama, junto con todos los rituales y una respuesta personal a cada check-in.",
-      "lockedAction": "Ver la suscripción Sahama"
+      "lockedAction": "Ver la suscripción Sahama",
+      "moreInfo": "¿Quieres profundizar? Encontrarás más sobre ayurveda en"
     }
   },
   "sahamaCheckin": {

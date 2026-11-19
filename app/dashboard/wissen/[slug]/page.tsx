@@ -15,6 +15,7 @@ import { Callout } from "@/components/ui/callout";
 import { Card, CardContent } from "@/components/ui/card";
 import { requireActiveUser } from "@/lib/authz";
 import { articleBySlug, mayReadArticle } from "@/lib/sahama/articles";
+import { sahamaConfig } from "@/lib/sahama/config";
 
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const session = await requireActiveUser();
@@ -23,6 +24,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const article = await articleBySlug(slug);
   if (!article) notFound();
   const mayRead = await mayReadArticle(session.user.id, article);
+  const moreInfoUrl = sahamaConfig().moreInfoUrl;
 
   return (
     <div className="mx-auto max-w-3xl space-y-6">
@@ -34,8 +36,16 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       <PageHeader eyebrow={t("knowledge.title")} title={article.title} description={article.summary || undefined} />
       {mayRead ? (
         <Card>
-          <CardContent>
+          <CardContent className="space-y-6">
             <ArticleBody body={article.body} />
+            {moreInfoUrl && (
+              <p className="bg-muted rounded-lg p-4 leading-relaxed">
+                {t("knowledge.moreInfo")}{" "}
+                <a href={moreInfoUrl} target="_blank" rel="noopener noreferrer" className="text-primary font-medium underline-offset-4 hover:underline">
+                  {moreInfoUrl.replace(/^https:\/\//, "")}
+                </a>
+              </p>
+            )}
           </CardContent>
         </Card>
       ) : (
