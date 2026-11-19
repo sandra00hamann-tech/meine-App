@@ -4,7 +4,7 @@
      scripts/api-map.test.ts compares this file with what the generator
      produces, and a hand edit is undone by the next run. -->
 
-_51 files, 228 exported functions, 46 tables. Regenerate
+_51 files, 228 exported functions, 53 tables. Regenerate
 with `node run.mjs api-map` after adding an export or a table; the suite says so
 when it is behind._
 
@@ -522,6 +522,16 @@ commit — `lib/privacy/inventory.test.ts` fails the build otherwise.
 ### db/schema-notify.ts
 
 - `notification_sends` (`notificationSends`): `key`, `claimedAt` (timestamp)
+
+### db/schema-sahama.ts
+
+- `sahama_rituals` (`sahamaRituals`): `id`, `slug`, `origin` (sahamaOriginEnum), `title`, `summary`, `body`, `minutes` (integer), `timeOfDay` (sahamaTimeOfDayEnum), `doshas`, `concerns`, `tier` (sahamaTierEnum), `imagePath`, `articleSlug`, `published` (boolean), `position` (integer), `createdAt` (timestamp), `updatedAt` (timestamp)
+- `sahama_articles` (`sahamaArticles`): `id`, `slug`, `origin` (sahamaOriginEnum), `title`, `summary`, `body`, `tier` (sahamaTierEnum), `imagePath`, `published` (boolean), `position` (integer), `createdAt` (timestamp), `updatedAt` (timestamp)
+- `sahama_profiles` (`sahamaProfiles`): `memberId`, `concerns`, `usualMinutes` (integer), `vata` (integer), `pitta` (integer), `kapha` (integer), `doshaAnswers` (jsonb), `doshaTakenAt` (timestamp), `createdAt` (timestamp), `updatedAt` (timestamp)
+- `sahama_suggestions` (`sahamaSuggestions`): `id`, `memberId`, `ritualSlug`, `minutes` (integer), `createdAt` (timestamp)
+- `sahama_checkins` (`sahamaCheckins`): `id`, `memberId`, `suggestionId`, `ritualSlug`, `note`, `reply`, `repliedAt` (timestamp), `createdAt` (timestamp)
+- `sahama_kept` (`sahamaKept`): `id`, `memberId`, `ritualSlug`, `createdAt` (timestamp)
+- `sahama_weekly_reviews` (`sahamaWeeklyReviews`): `id`, `memberId`, `weekStart` (date), `body`, `createdAt` (timestamp)
 
 ### db/schema-setup.ts
 

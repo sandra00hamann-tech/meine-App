@@ -58,6 +58,11 @@ import {
   tokenAccounts,
   tokenLedger,
   users,
+  sahamaProfiles,
+  sahamaSuggestions,
+  sahamaCheckins,
+  sahamaKept,
+  sahamaWeeklyReviews,
 } from "@/db/schema";
 
 /**
@@ -83,6 +88,13 @@ export const MEMBER_EXPORT_SECTIONS = [
   "media",
   "setupActs",
   "setupKeys",
+  // Sahama Ayurveda — her Dosha result and start answers, the cards she was
+  // shown, her check-ins with the replies, kept rituals, weekly reviews.
+  "sahamaProfile",
+  "sahamaSuggestions",
+  "sahamaCheckins",
+  "sahamaKept",
+  "sahamaWeeklyReviews",
   // ⚠️ **A module's sections are NOT in this list, and they are not optional
   // either.** The community's thirteen used to be spelled out here; they now
   // live in `modules/community/privacy/sections.ts` beside the queries that
@@ -445,6 +457,28 @@ export async function buildMemberExport(
       .orderBy(asc(media.createdAt)),
   ]);
 
+  // Sahama Ayurveda — everything one member did in the app (docs/data-protection.md § 16).
+  const [sahamaProfileRows, sahamaSuggestionRows, sahamaCheckinRows, sahamaKeptRows, sahamaReviewRows] =
+    await Promise.all([
+      db.select().from(sahamaProfiles).where(eq(sahamaProfiles.memberId, memberId)),
+      db
+        .select()
+        .from(sahamaSuggestions)
+        .where(eq(sahamaSuggestions.memberId, memberId))
+        .orderBy(asc(sahamaSuggestions.createdAt)),
+      db
+        .select()
+        .from(sahamaCheckins)
+        .where(eq(sahamaCheckins.memberId, memberId))
+        .orderBy(asc(sahamaCheckins.createdAt)),
+      db.select().from(sahamaKept).where(eq(sahamaKept.memberId, memberId)).orderBy(asc(sahamaKept.createdAt)),
+      db
+        .select()
+        .from(sahamaWeeklyReviews)
+        .where(eq(sahamaWeeklyReviews.memberId, memberId))
+        .orderBy(asc(sahamaWeeklyReviews.weekStart)),
+    ]);
+
   return {
     subject: { memberId, email },
     generatedAt: new Date().toISOString(),
@@ -491,6 +525,11 @@ export async function buildMemberExport(
     media: mediaRows,
     setupActs: setupActRows,
     setupKeys: setupKeyRows,
+    sahamaProfile: sahamaProfileRows[0] ?? null,
+    sahamaSuggestions: sahamaSuggestionRows,
+    sahamaCheckins: sahamaCheckinRows,
+    sahamaKept: sahamaKeptRows,
+    sahamaWeeklyReviews: sahamaReviewRows,
 
     // 🚨 And whatever the installed modules hold about this person — the
     // community's thirteen sections among them, since Epic 24 moved them into

@@ -1,0 +1,103 @@
+{
+  "_comment": "Sahama's rituals, authored in the repo. `node run.mjs content-apply` writes them into every environment (scripts/content/appliers/sahama.mjs), keyed by slug, as origin 'content'. Rituals the operator creates on the admin surface are origin 'operator' and are never touched by the applier. Status: DRAFT by the assistant (2026-11-19) — to be read and approved by the operator. Rules for every text: lifestyle and self-care only — no healing promises, no complaints, no herbs, supplements or dosages, no cures or fasting (docs/product-brief.md → Leitplanken). Fields: minutes 5|10|20; timeOfDay morning|midday|evening|any; doshas vata|pitta|kapha (empty = all); concerns from lib/sahama/catalog.ts; tier free|plus; imagePath = media path or null; articleSlug = article behind 'Mehr dazu' or null.",
+  "rituals": [
+    {
+      "slug": "warmes-wasser-am-morgen",
+      "title": "Ein Glas warmes Wasser",
+      "summary": "Der sanfteste Start in den Tag – noch bevor das Handy dran ist.",
+      "body": "Stell dir am Abend vorher eine Tasse und den Wasserkocher bereit. So musst du morgens nicht nachdenken.\n\nErwärme nach dem Aufstehen ein Glas Wasser – angenehm warm, nicht heiß.\n\nSetz dich damit ans Fenster oder auf die Bettkante. Trink es in kleinen Schlucken, ganz ohne Nebenbei.\n\nSpür, wie die Wärme sich ausbreitet. Im Ayurveda gilt warmes Wasser am Morgen als freundliches „Guten Morgen“ an deinen Körper.",
+      "minutes": 5,
+      "timeOfDay": "morning",
+      "doshas": [],
+      "concerns": ["rushed_morning"],
+      "tier": "free",
+      "imagePath": null,
+      "articleSlug": null,
+      "position": 10
+    },
+    {
+      "slug": "ruhiger-morgen-in-drei-schritten",
+      "title": "Dein ruhiger Morgen in drei Schritten",
+      "summary": "Eine kleine Morgenroutine nach dem ayurvedischen Tagesrhythmus.",
+      "body": "Ayurveda nennt die tägliche Routine Dinacharya. Sie muss nicht lang sein – drei Schritte reichen für den Anfang.\n\n1. Zunge reinigen und Gesicht erfrischen: Nach dem Zähneputzen sanft die Zunge mit einem Zungenschaber reinigen, dann das Gesicht mit kühlem Wasser benetzen.\n\n2. Bewegen: Fünf Minuten dehnen, strecken, die Schultern kreisen lassen. Ganz in deinem Tempo.\n\n3. Ankommen: Setz dich mit einem warmen Getränk hin und nimm dir vor, worauf du dich heute freust – nur ein Gedanke.\n\nDer Tag darf danach voll werden. Der Anfang gehört dir.",
+      "minutes": 20,
+      "timeOfDay": "morning",
+      "doshas": ["kapha", "vata"],
+      "concerns": ["rushed_morning", "afternoon_dip"],
+      "tier": "free",
+      "imagePath": null,
+      "articleSlug": null,
+      "position": 20
+    },
+    {
+      "slug": "drei-bewusste-bissen",
+      "title": "Drei bewusste Bissen",
+      "summary": "Eine echte Mittagspause – auch wenn sie nur zehn Minuten hat.",
+      "body": "Leg Handy und Laptop für diese zehn Minuten außer Reichweite.\n\nBevor du anfängst zu essen: einmal tief durchatmen und dein Essen ansehen. Farben, Duft, Wärme.\n\nIss die ersten drei Bissen ganz bewusst. Langsam kauen, schmecken, schlucken.\n\nDanach darfst du ganz normal weiteressen. Im Ayurveda ist das Mittagessen die wichtigste Mahlzeit des Tages – schön, wenn sie warm und gekocht sein darf.",
+      "minutes": 10,
+      "timeOfDay": "midday",
+      "doshas": ["pitta", "vata"],
+      "concerns": ["no_break", "irregular_meals"],
+      "tier": "free",
+      "imagePath": null,
+      "articleSlug": null,
+      "position": 30
+    },
+    {
+      "slug": "fuenf-minuten-an-der-luft",
+      "title": "Fünf Minuten an der Luft",
+      "summary": "Kurz raus, wenn der Nachmittag schwer wird.",
+      "body": "Zieh dir etwas über und geh für fünf Minuten nach draußen – vor die Tür, auf den Balkon, einmal um den Block.\n\nGeh etwas zügiger als sonst. Lass die Arme mitschwingen.\n\nAtme durch die Nase ein und schau bewusst in die Ferne, weg vom Bildschirm.\n\nWieder drinnen: ein Glas warmes Wasser statt des nächsten Kaffees. Spür nach, wie du dich jetzt fühlst.",
+      "minutes": 5,
+      "timeOfDay": "midday",
+      "doshas": ["kapha"],
+      "concerns": ["afternoon_dip", "no_break"],
+      "tier": "free",
+      "imagePath": null,
+      "articleSlug": null,
+      "position": 40
+    },
+    {
+      "slug": "laenger-aus-als-einatmen",
+      "title": "Länger aus- als einatmen",
+      "summary": "Eine kleine Atempause für zwischendurch – überall möglich.",
+      "body": "Setz dich bequem hin, beide Füße auf dem Boden. Die Hände ruhen auf den Oberschenkeln.\n\nAtme durch die Nase ein und zähl dabei bis vier.\n\nAtme langsam aus und zähl dabei bis sechs. Lass die Schultern beim Ausatmen sinken.\n\nWiederhole das etwa zehnmal. Wenn du dich verzählst, fang einfach wieder an – es gibt hier nichts falsch zu machen.",
+      "minutes": 5,
+      "timeOfDay": "any",
+      "doshas": ["vata", "pitta"],
+      "concerns": ["busy_mind", "hard_to_unwind"],
+      "tier": "free",
+      "imagePath": null,
+      "articleSlug": null,
+      "position": 50
+    },
+    {
+      "slug": "fuesse-oelen-und-loslassen",
+      "title": "Füße ölen und den Tag loslassen",
+      "summary": "Ein warmes Abendritual, das dich vom Tag in den Abend begleitet.",
+      "body": "Wärme etwas Sesamöl oder ein anderes Pflanzenöl in den Händen an.\n\nSetz dich auf die Bettkante und massiere erst den einen, dann den anderen Fuß – Sohle, Ferse, jeden Zeh. Ruhig mit etwas Druck.\n\nStreich zum Schluss von den Zehen zu den Knöcheln aus, als würdest du den Tag abstreifen.\n\nZieh dir warme Socken an. Im Ayurveda heißt die Ölmassage Padabhyanga – viele empfinden sie als schönen Übergang in den Abend.",
+      "minutes": 10,
+      "timeOfDay": "evening",
+      "doshas": ["vata"],
+      "concerns": ["hard_to_unwind"],
+      "tier": "free",
+      "imagePath": null,
+      "articleSlug": null,
+      "position": 60
+    },
+    {
+      "slug": "drei-zeilen-fuer-den-tag",
+      "title": "Drei Zeilen für den Tag",
+      "summary": "Den Kopf leeren, bevor der Abend beginnt.",
+      "body": "Nimm dir einen Zettel oder ein kleines Heft. Schreib drei Zeilen – nicht mehr:\n\n1. Was heute gut war.\n\n2. Was noch offen ist – und wann du dich darum kümmerst.\n\n3. Worauf du dich morgen freust.\n\nLeg den Zettel weg. Was aufgeschrieben ist, darf für heute aus dem Kopf.",
+      "minutes": 10,
+      "timeOfDay": "evening",
+      "doshas": ["pitta"],
+      "concerns": ["busy_mind", "hard_to_unwind"],
+      "tier": "free",
+      "imagePath": null,
+      "articleSlug": null,
+      "position": 70
+    }
+  ]
+}

@@ -32,7 +32,9 @@
     "groupOperator": "Operator",
     "purchases": "Purchases",
     "aiCosts": "AI costs",
-    "impersonations": "Access log"
+    "impersonations": "Access log",
+    "today": "Today",
+    "dosha": "Your Dosha"
   },
   "shell": {
     "openNavigation": "Open navigation",
@@ -664,7 +666,11 @@
     "userBlocked": "This account is blocked. Lift the block before sending a sign-in link.",
     "userNotFound": "User not found.",
     "userWithoutEmail": "This account has no email address — there is nowhere to send the link.",
-    "zeroAmount": "0 is not a correction — please enter an amount other than zero."
+    "zeroAmount": "0 is not a correction — please enter an amount other than zero.",
+    "sahamaDoshaIncomplete": "Please answer all twelve questions — only then does your result give a full picture.",
+    "sahamaMinutesInvalid": "Please choose how much time you have: 5, 10 or 20 minutes.",
+    "sahamaNoRitual": "We have no ritual for that much time right now. Choose a little more time — or come back later.",
+    "sahamaNoProfile": "Take your Dosha test first — then we know which rituals suit you."
   },
   "confirmEmail": {
     "title": "Confirm your email address",
@@ -904,5 +910,161 @@
       "low": "low"
     },
     "cta": "Open the admin area"
+  },
+  "sahama": {
+    "doshaName": {
+      "vata": "Vata",
+      "pitta": "Pitta",
+      "kapha": "Kapha"
+    },
+    "doshaElements": {
+      "vata": "Air & space",
+      "pitta": "Fire & water",
+      "kapha": "Earth & water"
+    },
+    "concerns": {
+      "rushed_morning": "My mornings are rushed",
+      "no_break": "I never take a real break",
+      "hard_to_unwind": "I find it hard to unwind in the evening",
+      "afternoon_dip": "I feel sluggish in the afternoon",
+      "busy_mind": "My mind is always full",
+      "irregular_meals": "I eat at irregular times"
+    },
+    "minutes": "{count} minutes",
+    "timeOfDay": {
+      "morning": "Morning",
+      "midday": "Midday",
+      "evening": "Evening",
+      "any": "Any time"
+    },
+    "dosha": {
+      "eyebrow": "Getting started",
+      "title": "Your Dosha test",
+      "description": "Twelve short questions, about two minutes. Pick what fits you best — the way you usually are, not just today.",
+      "disclaimer": "The test gives you an orientation about your constitution according to Ayurveda. It is not a diagnosis and does not replace medical advice.",
+      "progress": "{done} of {total} answered",
+      "concernsTitle": "What is on your mind at the moment?",
+      "concernsHint": "Pick what fits — several, or none at all.",
+      "minutesTitle": "How much time do you have for yourself on a normal day?",
+      "submit": "Show my result",
+      "submitting": "One moment …",
+      "questions": {
+        "frame": {
+          "text": "My build is rather …",
+          "vata": "slim and light, I find it hard to gain weight",
+          "pitta": "medium and athletic",
+          "kapha": "solid and sturdy, I gain weight easily"
+        },
+        "skin": {
+          "text": "My skin is rather …",
+          "vata": "dry and cool",
+          "pitta": "warm, sensitive, reddens easily",
+          "kapha": "soft, rather moist and cool"
+        },
+        "temperature": {
+          "text": "The weather I like least is …",
+          "vata": "cold and wind",
+          "pitta": "heat",
+          "kapha": "damp cold"
+        },
+        "appetite": {
+          "text": "My appetite is …",
+          "vata": "irregular — sometimes big, sometimes barely there",
+          "pitta": "strong, I get grumpy when I miss a meal",
+          "kapha": "steady, I can easily skip a meal"
+        },
+        "sleep": {
+          "text": "My sleep is usually …",
+          "vata": "light, I wake up easily",
+          "pitta": "short but good",
+          "kapha": "deep and long, I find it hard to get up"
+        },
+        "energy": {
+          "text": "My energy comes …",
+          "vata": "in bursts — full of drive, then suddenly drained",
+          "pitta": "strong and focused",
+          "kapha": "calm and lasting, I need a little warm-up"
+        },
+        "pace": {
+          "text": "My everyday pace is …",
+          "vata": "fast, I do many things at once",
+          "pitta": "brisk and organised",
+          "kapha": "leisurely and relaxed"
+        },
+        "mind": {
+          "text": "I learn new things …",
+          "vata": "quickly — and forget them quickly too",
+          "pitta": "thoroughly and with clear focus",
+          "kapha": "slowly, but then they stay for good"
+        },
+        "stress": {
+          "text": "Under stress I tend to become …",
+          "vata": "restless and worried",
+          "pitta": "irritable and impatient",
+          "kapha": "withdrawn and sluggish"
+        },
+        "weather": {
+          "text": "I feel best …",
+          "vata": "when it is warm and still",
+          "pitta": "when it is cool and fresh",
+          "kapha": "when it is warm and dry"
+        },
+        "routine": {
+          "text": "With fixed routines …",
+          "vata": "I struggle, every day is different",
+          "pitta": "I get on well, I like to plan",
+          "kapha": "I feel at home, I like the familiar"
+        },
+        "speech": {
+          "text": "When I speak, I am rather …",
+          "vata": "quick and bubbly",
+          "pitta": "clear and convincing",
+          "kapha": "calm and considered"
+        }
+      },
+      "result": {
+        "eyebrow": "Your result",
+        "title": "Your Dosha: {name}",
+        "takenAt": "Determined on {date}",
+        "shareLabel": "{name}: {value} %",
+        "describe": {
+          "vata": "You show a lot of Vata — mobile, creative and full of ideas. When life gets hectic, Vata easily loses its balance. Warm, calm and regular rituals are especially good for you.",
+          "pitta": "You show a lot of Pitta — clear, determined and full of energy. When things heat up, Pitta builds up easily. Cooling, slowing rituals and real breaks are especially good for you.",
+          "kapha": "You show a lot of Kapha — calm, steady and warm-hearted. When everyday life stands still, Kapha easily becomes sluggish. Invigorating rituals and movement are especially good for you."
+        },
+        "dual": "Your result lies between {first} and {second} — both shape you. Your rituals take both into account.",
+        "next": "To your ritual for today",
+        "retake": "Take the test again"
+      }
+    },
+    "today": {
+      "eyebrow": "Sahama Ayurveda",
+      "title": "Your ritual for today",
+      "description": "A small step that fits into your time.",
+      "started": "Your Dosha result is saved — here is your first ritual card.",
+      "doshaLine": "Your Dosha: {name}",
+      "doshaLink": "See result",
+      "noProfileTitle": "Get to know your Dosha first",
+      "noProfileText": "Twelve short questions, about two minutes — then you get your first ritual card, made for you.",
+      "noProfileAction": "Start the Dosha test",
+      "noCardTitle": "No card for today yet",
+      "noCardText": "Tell us how much time you have — and we pick a ritual that fits.",
+      "minutesBadge": "{count} min",
+      "steps": "How it works",
+      "newCardTitle": "How much time do you have right now?",
+      "newCard": "{count} minutes",
+      "newCardHint": "We pick a ritual that fits into that time."
+    },
+    "card": {
+      "freeBadge": "Free",
+      "plusBadge": "Sahama subscription"
+    },
+    "dashboard": {
+      "title": "Your ritual for today",
+      "startTitle": "Welcome to Sahama Ayurveda",
+      "startText": "Take your Dosha test — twelve short questions. Then you get your first ritual card, made for you and your time.",
+      "startAction": "Start the Dosha test",
+      "openAction": "To your ritual card"
+    }
   }
 }

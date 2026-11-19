@@ -27,6 +27,7 @@ import {
   type OnboardingStepView,
 } from "@/components/onboarding-checklist";
 import { PageHeader } from "@/components/page-header";
+import { TodayOverviewCard } from "@/components/sahama/today-overview-card";
 import { RoleBadge } from "@/components/role-badge";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -261,6 +262,9 @@ export default async function DashboardPage({
         absence is the acknowledgement, and it survives a reload, which the
         toast above cannot (it clears its own parameter by design).
       */}
+      {/* Sahama: what she came for, first (docs/ux.md § 0). */}
+      <TodayOverviewCard memberId={session.user.id} />
+
       <OnboardingChecklist steps={onboardingSteps} className="mb-6" />
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

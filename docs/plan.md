@@ -26,9 +26,9 @@ hast._
 ## Was die Kundin tun können wird
 
 - [x] sich anmelden und ihr eigenes Dashboard finden (Vorlage, vorhanden)
-- [ ] den Dosha-Test machen (rund 12 Fragen) und ihre Ergebnis-Karte sehen,
+- [x] den Dosha-Test machen (rund 12 Fragen) und ihre Ergebnis-Karte sehen,
       dazu sagen, was sie beschäftigt und wie viel Zeit sie meist hat — und
-      sofort ihre erste Ritual-Karte bekommen
+      sofort ihre erste Ritual-Karte bekommen (gebaut 2026-11-19)
 - [ ] jeden Tag sagen, wie viel Zeit sie heute hat, und eine passende
       Ritual-Karte mit Bild bekommen, die zu ihrem Dosha passt, zum Speichern
       oder Ausdrucken

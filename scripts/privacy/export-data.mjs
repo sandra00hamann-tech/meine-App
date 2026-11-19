@@ -218,6 +218,25 @@ try {
         where owner_id = ${memberId} order by created_at`
     : [];
 
+  // --- Sahama Ayurveda ----------------------------------------------------------
+  // Her Dosha result and start answers, the cards she was shown, her check-ins
+  // with Sahama's replies, kept rituals, weekly reviews (docs/data-protection.md § 16).
+  const sahamaProfile = memberId
+    ? ((await sql`select * from sahama_profiles where member_id = ${memberId}`)[0] ?? null)
+    : null;
+  const sahamaSuggestions = memberId
+    ? await sql`select * from sahama_suggestions where member_id = ${memberId} order by created_at`
+    : [];
+  const sahamaCheckins = memberId
+    ? await sql`select * from sahama_checkins where member_id = ${memberId} order by created_at`
+    : [];
+  const sahamaKept = memberId
+    ? await sql`select * from sahama_kept where member_id = ${memberId} order by created_at`
+    : [];
+  const sahamaWeeklyReviews = memberId
+    ? await sql`select * from sahama_weekly_reviews where member_id = ${memberId} order by week_start`
+    : [];
+
   // --- What they uploaded ------------------------------------------------------
   // The rows, not the files. An export is a JSON document; somebody who wants
   // their pictures back downloads them from the app.
@@ -304,6 +323,11 @@ try {
     impersonations,
     setupActs,
     setupKeys,
+    sahamaProfile,
+    sahamaSuggestions,
+    sahamaCheckins,
+    sahamaKept,
+    sahamaWeeklyReviews,
     media: mediaRows,
     webhookEvents,
     // 🚨 And whatever the installed modules hold about this person — the same

@@ -1366,6 +1366,37 @@ Worth stating, because a privacy policy that claims less is easier to keep true:
 - No password is ever readable, mailed, logged, or shown — including to the
   operator.
 
+## 16. Sahama Ayurveda — what one member does in the app
+
+This app's own tables (`db/schema-sahama.ts`). All are keyed on the member,
+all cascade away when the account is deleted, and all are in both exports
+(`lib/privacy/export.ts` and `node run.mjs data-export`).
+
+| Table | What it holds | Why |
+|---|---|---|
+| `sahama_profiles` | Her Dosha test answers and shares (Vata/Pitta/Kapha in %), the concerns she picked ("my mornings are rushed" …), the minutes she usually has | To choose rituals that suit her |
+| `sahama_suggestions` | Every ritual card she was shown: which ritual, for how many minutes, when | Today's card, variety, the weekly review |
+| `sahama_checkins` | What she wrote after a ritual, and Sahama's reply | The reply itself; her own record; the weekly review |
+| `sahama_kept` | Rituals she chose to keep | Her favourites |
+| `sahama_weekly_reviews` | The weekly observation written for her | Her weekly review card |
+
+⚠️ **Check-ins are free text, and a member may write about her health** ("I
+slept badly again"). That can make a row special-category data (Art. 9 GDPR)
+even though the app never asks for it. Three consequences, decided
+2026-11-19 (docs/product-brief.md → Leitplanken):
+
+- The app never asks about complaints and never answers with health advice;
+  the reply text is instructed to recommend a doctor where somebody writes
+  about real complaints.
+- When the replies are switched on, the check-in text is sent to the AI
+  provider that writes the reply (`config/ai-models.json`), fenced as
+  customer text, and the privacy policy names that provider (§ 5, § 8a).
+- She can download and delete it herself, like everything above.
+
+**Retention:** as long as the account exists; deleting the account deletes
+every row in these five tables. The content tables (`sahama_rituals`,
+`sahama_articles`) hold no personal data.
+
 ## The setup surface
 
 Three tables behind `/api/setup`, the surface a developer's coding agent uses to

@@ -32,7 +32,9 @@
     "groupOperator": "Opérateur",
     "purchases": "Achats",
     "aiCosts": "Coûts de l'IA",
-    "impersonations": "Accès"
+    "impersonations": "Accès",
+    "today": "Aujourd'hui",
+    "dosha": "Ton dosha"
   },
   "shell": {
     "openNavigation": "Ouvrir la navigation",
@@ -664,7 +666,11 @@
     "userBlocked": "Ce compte est bloqué. Lève le blocage avant d'envoyer un lien de connexion.",
     "userNotFound": "Utilisateur introuvable.",
     "userWithoutEmail": "Ce compte n'a pas d'adresse e-mail — il n'y a aucune destination pour le lien.",
-    "zeroAmount": "0 n'est pas une correction — indique un montant différent de zéro."
+    "zeroAmount": "0 n'est pas une correction — indique un montant différent de zéro.",
+    "sahamaDoshaIncomplete": "Réponds aux douze questions, s'il te plaît : c'est seulement ainsi que ton résultat donne une image complète.",
+    "sahamaMinutesInvalid": "Choisis le temps dont tu disposes : 5, 10 ou 20 minutes.",
+    "sahamaNoRitual": "Nous n'avons pas de rituel pour cette durée pour le moment. Choisis un peu plus de temps, ou reviens plus tard.",
+    "sahamaNoProfile": "Fais d'abord ton test de dosha : nous saurons alors quels rituels te conviennent."
   },
   "confirmEmail": {
     "title": "Confirmer ton adresse e-mail",
@@ -904,5 +910,161 @@
       "low": "faible"
     },
     "cta": "Ouvrir l'administration"
+  },
+  "sahama": {
+    "doshaName": {
+      "vata": "Vata",
+      "pitta": "Pitta",
+      "kapha": "Kapha"
+    },
+    "doshaElements": {
+      "vata": "Air et espace",
+      "pitta": "Feu et eau",
+      "kapha": "Terre et eau"
+    },
+    "concerns": {
+      "rushed_morning": "Mes matins sont pressés",
+      "no_break": "Je ne fais jamais de vraie pause",
+      "hard_to_unwind": "Le soir, j'ai du mal à décrocher",
+      "afternoon_dip": "L'après-midi, je manque d'énergie",
+      "busy_mind": "Ma tête est toujours pleine",
+      "irregular_meals": "Je mange à des heures irrégulières"
+    },
+    "minutes": "{count} minutes",
+    "timeOfDay": {
+      "morning": "Le matin",
+      "midday": "À midi",
+      "evening": "Le soir",
+      "any": "À tout moment"
+    },
+    "dosha": {
+      "eyebrow": "Ton départ",
+      "title": "Ton test de dosha",
+      "description": "Douze questions courtes, environ deux minutes. Choisis ce qui te correspond le mieux : comme tu es d'habitude, pas seulement aujourd'hui.",
+      "disclaimer": "Le test te donne une orientation sur ta constitution selon l'Ayurveda. Ce n'est pas un diagnostic et il ne remplace pas un avis médical.",
+      "progress": "{done} sur {total} répondues",
+      "concernsTitle": "Qu'est-ce qui te préoccupe en ce moment ?",
+      "concernsHint": "Choisis ce qui te correspond : plusieurs choses, ou rien du tout.",
+      "minutesTitle": "Combien de temps as-tu pour toi un jour normal ?",
+      "submit": "Voir mon résultat",
+      "submitting": "Un instant …",
+      "questions": {
+        "frame": {
+          "text": "Ma silhouette est plutôt …",
+          "vata": "fine et légère, j'ai du mal à prendre du poids",
+          "pitta": "moyenne et athlétique",
+          "kapha": "robuste et stable, je prends facilement du poids"
+        },
+        "skin": {
+          "text": "Ma peau est plutôt …",
+          "vata": "sèche et fraîche",
+          "pitta": "chaude, sensible, rougit facilement",
+          "kapha": "douce, plutôt humide et fraîche"
+        },
+        "temperature": {
+          "text": "Le temps que j'aime le moins, c'est …",
+          "vata": "le froid et le vent",
+          "pitta": "la chaleur",
+          "kapha": "le froid humide"
+        },
+        "appetite": {
+          "text": "Mon appétit est …",
+          "vata": "irrégulier : parfois grand, parfois presque absent",
+          "pitta": "fort, je deviens grincheuse si je saute un repas",
+          "kapha": "régulier, je peux facilement sauter un repas"
+        },
+        "sleep": {
+          "text": "Mon sommeil est en général …",
+          "vata": "léger, je me réveille facilement",
+          "pitta": "court mais bon",
+          "kapha": "profond et long, j'ai du mal à me lever"
+        },
+        "energy": {
+          "text": "Mon énergie vient …",
+          "vata": "par vagues : pleine d'élan, puis soudain épuisée",
+          "pitta": "avec force et concentration",
+          "kapha": "calme et durable, il me faut un peu d'élan"
+        },
+        "pace": {
+          "text": "Mon rythme au quotidien est …",
+          "vata": "rapide, je fais plein de choses à la fois",
+          "pitta": "soutenu et organisé",
+          "kapha": "tranquille et serein"
+        },
+        "mind": {
+          "text": "J'apprends les choses nouvelles …",
+          "vata": "vite, et je les oublie vite aussi",
+          "pitta": "à fond et avec un objectif clair",
+          "kapha": "lentement, mais ensuite elles restent"
+        },
+        "stress": {
+          "text": "Sous le stress, je deviens plutôt …",
+          "vata": "agitée et inquiète",
+          "pitta": "irritable et impatiente",
+          "kapha": "repliée et lente"
+        },
+        "weather": {
+          "text": "Je me sens le mieux …",
+          "vata": "quand il fait chaud et sans vent",
+          "pitta": "quand il fait frais",
+          "kapha": "quand il fait chaud et sec"
+        },
+        "routine": {
+          "text": "Avec des routines fixes …",
+          "vata": "j'ai du mal, chaque jour est différent",
+          "pitta": "je m'en sors bien, j'aime planifier",
+          "kapha": "je me sens bien, j'aime ce qui est familier"
+        },
+        "speech": {
+          "text": "Quand je parle, je suis plutôt …",
+          "vata": "rapide et pétillante",
+          "pitta": "claire et convaincante",
+          "kapha": "calme et réfléchie"
+        }
+      },
+      "result": {
+        "eyebrow": "Ton résultat",
+        "title": "Ton dosha : {name}",
+        "takenAt": "Déterminé le {date}",
+        "shareLabel": "{name} : {value} %",
+        "describe": {
+          "vata": "Chez toi, Vata est très présent : mobile, créative et pleine d'idées. Quand tout s'accélère, Vata perd facilement l'équilibre. Les rituels chauds, calmes et réguliers te font particulièrement du bien.",
+          "pitta": "Chez toi, Pitta est très présent : claire, déterminée et pleine d'énergie. Quand ça chauffe, Pitta s'accumule facilement. Les rituels rafraîchissants et apaisants, et les vraies pauses, te font particulièrement du bien.",
+          "kapha": "Chez toi, Kapha est très présent : calme, constante et chaleureuse. Quand le quotidien s'immobilise, Kapha devient facilement lourd. Les rituels stimulants et le mouvement te font particulièrement du bien."
+        },
+        "dual": "Ton résultat se situe entre {first} et {second} : les deux te façonnent. Tes rituels tiennent compte des deux.",
+        "next": "Vers ton rituel du jour",
+        "retake": "Refaire le test"
+      }
+    },
+    "today": {
+      "eyebrow": "Sahama Ayurveda",
+      "title": "Ton rituel du jour",
+      "description": "Un petit pas qui tient dans ton temps.",
+      "started": "Ton résultat de dosha est enregistré : voici ta première carte de rituel.",
+      "doshaLine": "Ton dosha : {name}",
+      "doshaLink": "Voir le résultat",
+      "noProfileTitle": "Découvre d'abord ton dosha",
+      "noProfileText": "Douze questions courtes, environ deux minutes. Ensuite, tu reçois ta première carte de rituel, faite pour toi.",
+      "noProfileAction": "Commencer le test de dosha",
+      "noCardTitle": "Pas encore de carte pour aujourd'hui",
+      "noCardText": "Dis-nous combien de temps tu as, et nous te choisissons un rituel adapté.",
+      "minutesBadge": "{count} min",
+      "steps": "Comment faire",
+      "newCardTitle": "Combien de temps as-tu maintenant ?",
+      "newCard": "{count} minutes",
+      "newCardHint": "Nous te choisissons un rituel qui tient dans ce temps."
+    },
+    "card": {
+      "freeBadge": "Gratuit",
+      "plusBadge": "Abonnement Sahama"
+    },
+    "dashboard": {
+      "title": "Ton rituel du jour",
+      "startTitle": "Bienvenue chez Sahama Ayurveda",
+      "startText": "Fais ton test de dosha : douze questions courtes. Ensuite, tu reçois ta première carte de rituel, adaptée à toi et à ton temps.",
+      "startAction": "Commencer le test de dosha",
+      "openAction": "Vers ta carte de rituel"
+    }
   }
 }

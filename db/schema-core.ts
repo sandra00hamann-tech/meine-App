@@ -176,3 +176,10 @@ export * from "./schema-media";
 // which is the shipped state. See schema-setup.ts and docs/setup-mcp.md.
 export * from "./schema-setup";
 
+
+// --- Sahama Ayurveda (this app) ------------------------------------------------
+// `sahama_rituals`, `sahama_articles` — the operator's content (origin column:
+// applier or admin surface). `sahama_profiles`, `sahama_suggestions`,
+// `sahama_checkins`, `sahama_kept`, `sahama_weekly_reviews` — what one member
+// did. See schema-sahama.ts and docs/app.md.
+export * from "./schema-sahama";

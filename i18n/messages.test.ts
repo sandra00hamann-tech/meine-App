@@ -17,6 +17,7 @@ import { EMAIL_CHANGE_ERROR_CODES } from "@/lib/email-change/rules";
 import { CHAT_ERROR_CODES } from "@/lib/ai/rules";
 import { PROVIDER_ERROR_CODES } from "@/lib/ai/providers/types";
 import { CONSENT_ERROR_CODES } from "@/lib/consent/rules";
+import { SAHAMA_ERROR_CODES } from "@/lib/sahama/rules";
 import { MEDIA_ERROR_CODES } from "@/lib/media/rules";
 import { ROLES } from "@/lib/roles";
 import { IMPERSONATION_END_REASONS } from "@/db/schema-impersonation";
@@ -180,6 +181,7 @@ const ERROR_CODE_UNIONS: Record<string, readonly string[]> = {
   "lib/ai/providers/types.ts": PROVIDER_ERROR_CODES,
   "lib/consent/rules.ts": CONSENT_ERROR_CODES,
   "lib/media/rules.ts": MEDIA_ERROR_CODES,
+  "lib/sahama/rules.ts": SAHAMA_ERROR_CODES,
 };
 
 // Plus the unions an installed module declares. A module names its own source

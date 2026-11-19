@@ -39,8 +39,9 @@ here overrides CLAUDE.md § UI or docs/ux.md._
 - **Dashboard home:** today's ritual card first and large (picture, title,
   duration, time of day), the check-in right below it; the week and the
   knowledge articles after that — never the other way round
-- **Ritual card:** one `Card` with the picture on top, title in the heading
-  face, duration and time of day as small badges, "Mehr dazu" as a link
+- **Ritual card:** one `Card` with the picture on top, the title large and
+  semibold (the serif heading face reaches `h1` only — app/globals.css),
+  duration and time of day as small badges, "Mehr dazu" as a link
 - **Knowledge articles:** a calm reading column, heading face for titles,
   generous spacing; free and subscription articles look the same, the lock is
   a badge, never a greyed-out card
@@ -49,8 +50,8 @@ here overrides CLAUDE.md § UI or docs/ux.md._
 - **Settings/account:** unchanged — the same on every app, on purpose
 
 ## Signature element
-The **ritual card** — a picture with fine gold ornament, the title in the
-serif heading face, and the minutes as a badge. It appears on the dashboard,
+The **ritual card** — a picture with fine gold ornament, a large title, and
+the minutes as a badge. It appears on the dashboard,
 in the ritual list and in the weekly review.
 
 ## Do / Don't
