@@ -32,7 +32,8 @@ hast._
 - [ ] jede Woche eine Rückblick-Karte bekommen und Lieblingsrituale behalten
 - [ ] (Betreiberin) Rituale mit Text, Dauer, Tageszeit und Bild in die
       Sammlung legen
-- [ ] das Sahama-Abo über Digistore24 kaufen und damit alles freischalten
+- [ ] Sahama gratis nutzen (7 Einsteiger-Rituale, 3 persönliche Antworten zum
+      Probieren) und mit dem Sahama-Abo über Digistore24 alles freischalten
 
 ## Nicht in der ersten Version (entschieden, nicht vergessen)
 
@@ -40,8 +41,12 @@ hast._
   startet mit „was beschäftigt dich, wie viel Zeit hast du“.
 - **Rezepte und Ernährungspläne** — 2026-11-19: nach dem ersten Verkauf.
 - **Community** — 2026-11-19: nach dem ersten Verkauf.
-- **Live-Termine** — 2026-11-19: nach dem ersten Verkauf; Sahama bleibt
-  zunächst ohne feste Termine.
+- **Videos, Telefon- oder Videoberatung, Live-Termine** — 2026-11-19: nie;
+  die Betreiberin bleibt ohne Video und berät nur schriftlich. Fotos von ihr
+  sind in Ordnung.
+- **Kräuter-, Präparat- und Kurempfehlungen durch die KI** — 2026-11-19: nie;
+  dafür verweist Sahama auf die Seite bzw. schriftliche Beratung der
+  Betreiberin.
 - **Tägliche Erinnerungs-E-Mails** — 2026-11-19: nach dem ersten Verkauf.
 - **App im App Store** — 2026-11-19: nicht nötig; Sahama lässt sich wie eine
   App auf den Handy-Startbildschirm legen.

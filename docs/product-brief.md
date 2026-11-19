@@ -48,7 +48,7 @@ antwortet.
 
 **Output artifact:** eine gestaltete Ritual-Karte mit Bild für die Zeit, die sie heute hat, zum Speichern oder Ausdrucken — und jede Woche eine Rückblick-Karte mit dem, was ihr gutgetan hat.
 
-**Alongside the customer:** Sahama liest jeden Check-in und antwortet persönlich, passt den Vorschlag für den nächsten Tag an und schreibt am Wochenende einen Rückblick mit einer Beobachtung — ohne Vorwurf nach einer Pause.
+**Alongside the customer:** Sahama liest jeden Check-in und antwortet persönlich mit alltagstauglichen Ayurveda-Tipps, passt den Vorschlag für den nächsten Tag an und schreibt am Wochenende einen Rückblick mit einer Beobachtung — ohne Vorwurf nach einer Pause.
 
 ## Funktionen der ersten Version
 
@@ -65,6 +65,21 @@ antwortet.
 5. **Ritual-Sammlung (Betreiberin)** — hier legt die Betreiberin die Rituale an:
    Text, Dauer, Tageszeit, Bild. Für den Start etwa 20–30 Rituale.
 
+## Gratis und Abo
+
+Entschieden am 2026-11-19: Jede, die sich anmeldet, kann Sahama gratis nutzen
+— der Einstieg für Leserinnen von Blog und Pinterest. Das Abo schaltet mehr frei.
+
+| | Gratis (angemeldet, ohne Kauf) | Sahama-Abo |
+|---|---|---|
+| Einstieg + erste Ritual-Karte | ja | ja |
+| Ritual-Karten | 7 Einsteiger-Rituale | die ganze Sammlung |
+| Check-in | notieren; **3 persönliche Antworten zum Probieren** | jede Antwort persönlich |
+| Wochenrückblick, Lieblingsrituale behalten | – | ja |
+
+Die persönlichen Antworten kosten bei jeder Nutzung etwas; deshalb gehören sie
+— bis auf die drei zum Probieren — ins Abo.
+
 ## Abrechnung über Digistore24
 
 **Abo.** Ein Angebot mit zwei Zahlweisen: monatlich kündbar (Vorschlag um
@@ -77,9 +92,22 @@ bezahlten Zeit.
 
 - **Keine Heilversprechen** (Heilmittelwerbegesetz): Texte bleiben bei Ruhe,
   Routinen und Selbstfürsorge, nie bei Beschwerden oder deren Linderung.
-- **Die KI erfindet keine Ayurveda-Ratschläge** — sie wählt aus der Sammlung der
-  Betreiberin und antwortet auf Check-ins; ihre Antworten sind als KI-Antworten
-  gekennzeichnet (EU AI Act Art. 50).
+- **Die KI gibt allgemeine Ayurveda-Tipps für den Alltag** (z. B. warmes Wasser
+  am Morgen, Ölmassage, Tagesrhythmus, warme gekochte Mahlzeiten, Gewürze,
+  Rituale zur Jahreszeit) — in der Stimme der Betreiberin, gestützt auf einen
+  Leitfaden aus ihrem Wissen (Skill `ai-chat-knowledge` / `knowledge-intake`).
+  Ritual-Karten kommen nur aus ihrer Sammlung.
+- **Die KI gibt nie:** Diagnosen, Heilversprechen, Ratschläge zu Beschwerden,
+  Empfehlungen für Kräuter, Präparate oder Nahrungsergänzung (keine
+  Mengenangaben), Kuren, Fasten, Detox oder Panchakarma.
+- **Wer tiefer eintauchen will**, wird freundlich auf die Seite der Betreiberin
+  bzw. ihre schriftliche Beratung verwiesen (Adresse folgt; bis dahin allgemein
+  „persönliche schriftliche Beratung“). Bei echten Beschwerden zusätzlich: bitte
+  ärztlich abklären lassen.
+- **Ihre Antworten sind als KI-Antworten gekennzeichnet** (EU AI Act Art. 50).
+- **Die Betreiberin bleibt ohne Video, Telefon und Live-Termine** — Beratung
+  gibt es nur schriftlich. Sahama schlägt nie ein Gespräch oder einen Termin
+  vor. Fotos von ihr (z. B. Porträt auf der Verkaufsseite) sind in Ordnung.
 - **Check-ins sind persönliche Daten** und können Gesundheitliches berühren:
   geschützt gespeichert, herunterladbar und löschbar; der KI-Dienst wird in der
   Datenschutzerklärung genannt. Prüfung vor dem Livegang (`compliance-check`).
