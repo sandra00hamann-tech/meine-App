@@ -202,3 +202,33 @@ describe("content/sahama/rituals.json — what the applier will write", () => {
     }
   });
 });
+
+describe("content/sahama/articles.json — what the applier will write", () => {
+  const root = join(__dirname, "..", "..", "content", "sahama");
+  const articles: Array<Record<string, unknown>> = JSON.parse(readFileSync(join(root, "articles.json"), "utf8")).articles;
+  const rituals: Array<Record<string, unknown>> = JSON.parse(readFileSync(join(root, "rituals.json"), "utf8")).rituals;
+
+  it("has unique, anchor-safe slugs and a known tier", () => {
+    const slugs = articles.map((a) => a.slug);
+    expect(new Set(slugs).size).toBe(slugs.length);
+    for (const a of articles) {
+      expect(a.slug).toMatch(/^[a-z0-9]+(-[a-z0-9]+)*$/);
+      expect(["free", "plus"]).toContain(a.tier);
+    }
+  });
+
+  it("keeps the basics free (the operator's split: 4 free, the deeper ones with the plan)", () => {
+    expect(articles.filter((a) => a.tier === "free").length).toBeGreaterThanOrEqual(4);
+    expect(articles.filter((a) => a.tier === "plus").length).toBeGreaterThanOrEqual(1);
+  });
+
+  it("every 'Mehr dazu' on a ritual points at an article that exists", () => {
+    const slugs = new Set(articles.map((a) => a.slug));
+    for (const r of rituals) if (r.articleSlug) expect(slugs, String(r.slug)).toContain(r.articleSlug);
+  });
+
+  it("keeps the wording rules: no healing promises, no herbs, supplements or cures", () => {
+    const forbidden = /heilt\b|heilung|gegen (schmerz|krank)|therapie|ashwagandha|triphala|kapsel(n)? (nehmen|einnehmen)|dosierung|detox|fasten|panchakarma|garantiert|wirkt wunder/i;
+    for (const a of articles) expect(`${a.title} ${a.summary} ${a.body}`, String(a.slug)).not.toMatch(forbidden);
+  });
+});

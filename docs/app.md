@@ -109,6 +109,24 @@ moment the feature works. Written down by your assistant, from the conversation
 - **Locally the app is started with `NODE_USE_ENV_PROXY=1`** in this cloud
   container, so Node's fetch reaches OpenAI through the network proxy.
 
+### Ayurveda knowledge — `/dashboard/wissen`, `/dashboard/wissen/[slug]`
+
+- **Does:** a list of short articles (4 basics free, 6 deeper with the plan;
+  a locked one shows a badge, never a greyed card) and one page per article.
+  Body format: paragraphs, `## ` subheadings with stable anchors
+  (`components/sahama/article-body.tsx`). Rituals link to their article as
+  "Mehr dazu im Ayurveda-Wissen" (`articleSlug`, 18 of 30 rituals).
+- **Done when:** sie liest kurze Ayurveda-Artikel – Grundlagen gratis,
+  Vertiefung im Abo – und findet sie von der Ritual-Karte aus über „Mehr dazu“
+  — checked 2026-11-19: all 10 pages as the owner, a deeper one refused to a
+  free member (title, summary, way to the plan; no body), unknown slug 404.
+- **Access:** `mayReadArticle(memberId, article)` (lib/sahama/articles.ts) —
+  free for all, plus through `mayUseTier(tier, hasSahamaPlan(memberId))`.
+  The page and any later content source ask this one function.
+- **Data:** `sahama_articles` (content, from `content/sahama/articles.json`,
+  drafts for the operator to read).
+- **Tests:** `lib/sahama/rules.test.ts` (articles block)
+
 ## Decisions worth remembering
 
 - **The template's support assistant ("Lia", /dashboard/chat) is still the

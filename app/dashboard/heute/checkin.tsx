@@ -44,7 +44,7 @@ export function Checkin({ freeLeft, repliesOn }: { freeLeft: number | null; repl
         {state.savedAt && state.noReply === "noFreeRepliesLeft" && (
           <Callout variant="info" title={t("noFreeLeftTitle")}>
             <p>{t("noFreeLeftText")}</p>
-            <Button asChild size="sm" className="mt-3">
+            <Button asChild size="sm" className="mt-3 no-underline">
               <Link href="/plans?needs=sahama">{t("noFreeLeftAction")}</Link>
             </Button>
           </Callout>

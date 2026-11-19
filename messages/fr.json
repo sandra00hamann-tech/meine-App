@@ -34,7 +34,8 @@
     "aiCosts": "Coûts de l'IA",
     "impersonations": "Accès",
     "today": "Aujourd'hui",
-    "dosha": "Ton dosha"
+    "dosha": "Ton dosha",
+    "knowledge": "Savoir ayurvéda"
   },
   "shell": {
     "openNavigation": "Ouvrir la navigation",
@@ -1143,7 +1144,8 @@
       "plusBadge": "Abonnement Sahama",
       "tipsFor": "Pour toi, en tant que {name}",
       "print": "Imprimer ou enregistrer en PDF",
-      "printHint": "Astuce : dans la fenêtre d'impression, tu peux choisir « Enregistrer au format PDF » au lieu d'une imprimante."
+      "printHint": "Astuce : dans la fenêtre d'impression, tu peux choisir « Enregistrer au format PDF » au lieu d'une imprimante.",
+      "more": "Plus dans Savoir ayurvéda"
     },
     "dashboard": {
       "title": "Ton rituel du jour",
@@ -1170,6 +1172,18 @@
       "switchedOff": "Ton check-in est enregistré.",
       "historyTitle": "Tes derniers check-ins",
       "historyEmpty": "Tes check-ins et les réponses de Sahama apparaissent ici."
+    },
+    "knowledge": {
+      "eyebrow": "Sahama Ayurveda",
+      "title": "Savoir ayurvéda",
+      "description": "De courts articles à lire : les bases sont gratuites, les approfondissements font partie de l'abonnement Sahama.",
+      "deeper": "Approfondissement",
+      "emptyTitle": "Pas encore d'articles",
+      "emptyText": "De courts articles sur l'ayurvéda au quotidien apparaîtront bientôt ici.",
+      "back": "Tous les articles",
+      "lockedTitle": "Cet article fait partie de l'abonnement Sahama",
+      "lockedText": "Les articles de base sont gratuits. Les approfondissements — sur ton dosha, les saisons, les épices et le massage à l'huile — se lisent avec l'abonnement Sahama, avec tous les rituels et une réponse personnelle à chaque check-in.",
+      "lockedAction": "Voir l'abonnement Sahama"
     }
   },
   "sahamaCheckin": {

@@ -7,6 +7,7 @@
 // The picture slot shows nothing until the ritual has an image path — a
 // placeholder picture would be one more thing to replace, not a design.
 
+import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 
 import { Badge } from "@/components/ui/badge";
@@ -65,6 +66,13 @@ export async function RitualCard({
             </p>
           ))}
         </div>
+        {ritual.articleSlug && (
+          <p className="print:hidden">
+            <Link href={`/dashboard/wissen/${ritual.articleSlug}`} className="text-primary text-sm font-medium underline-offset-4 hover:underline">
+              {t("card.more")} →
+            </Link>
+          </p>
+        )}
         {leading
           .filter((d) => ritual.doshaTips[d])
           .map((d) => (

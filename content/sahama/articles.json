@@ -1,0 +1,95 @@
+{
+  "_comment": "Sahama's knowledge articles, authored in the repo; written into every environment by scripts/content/appliers/sahama.mjs as origin 'content'. DRAFT by the assistant (2026-11-19) for the operator to read. Body: paragraphs separated by blank lines; a line starting with '## ' is a subheading. Writing rules: docs/app.md → How a ritual is written (no promises, Ayurveda as tradition, no herbs/supplements/cures, concrete). tier free|plus.",
+  "articles": [
+    {
+      "slug": "was-ist-ayurveda",
+      "title": "Was ist Ayurveda?",
+      "summary": "Eine alte Lehre vom guten Leben – kurz und alltagsnah erklärt.",
+      "body": "Ayurveda kommt aus Indien und ist mehrere tausend Jahre alt. Das Wort setzt sich aus zwei Sanskrit-Wörtern zusammen: „Ayus“ heißt Leben, „Veda“ heißt Wissen. Ayurveda ist also das Wissen vom Leben – oder, etwas freier übersetzt, die Lehre davon, wie ein Alltag aussehen kann, der zu dir passt.\n\n## Jeder Mensch ist anders\n\nEin Grundgedanke im Ayurveda ist, dass es nicht die eine richtige Lebensweise für alle gibt. Was der einen guttut, bringt die andere aus dem Takt. Deshalb beschreibt die ayurvedische Tradition drei Grundkräfte, die Doshas – Vata, Pitta und Kapha –, die in jedem Menschen in einer eigenen Mischung vorkommen.\n\n## Rhythmus statt Regeln\n\nAyurveda schaut darauf, wie du isst, schläfst, dich bewegst und zur Ruhe kommst – und wann. Tageszeiten und Jahreszeiten spielen dabei eine große Rolle. Viele ayurvedische Empfehlungen sind deshalb kleine Gewohnheiten: ein warmes Getränk am Morgen, eine echte Mittagspause, ein ruhiger Abend.\n\n## Was Ayurveda in Sahama ist – und was nicht\n\nIn Sahama nutzt du Ayurveda als Inspiration für deinen Alltag: kleine Rituale, die in deine Zeit passen. Ayurveda ist in Deutschland keine anerkannte medizinische Behandlung. Bei Beschwerden ist deshalb immer eine Ärztin oder ein Arzt die richtige Ansprechperson.",
+      "tier": "free",
+      "imagePath": null,
+      "position": 10
+    },
+    {
+      "slug": "die-drei-doshas",
+      "title": "Die drei Doshas kurz erklärt",
+      "summary": "Vata, Pitta und Kapha – was hinter den drei Begriffen steckt.",
+      "body": "Im Ayurveda werden drei Grundkräfte beschrieben, die Doshas. Jede steht für bestimmte Eigenschaften, und jeder Mensch trägt alle drei in sich – in einer eigenen Mischung. Meist sind eine oder zwei davon stärker ausgeprägt.\n\n## Vata – Luft und Raum\n\nVata steht in der Tradition für Bewegung. Menschen mit viel Vata werden oft als beweglich, kreativ und begeisterungsfähig beschrieben, manchmal auch als schnell aus dem Takt gebracht. Wärme, Ruhe und Regelmäßigkeit gelten als ausgleichend.\n\n## Pitta – Feuer und Wasser\n\nPitta steht für Umwandlung und Wärme. Menschen mit viel Pitta gelten als klar, zielstrebig und tatkräftig, unter Druck auch als ungeduldig. Als ausgleichend gelten Kühle, Pausen und ein bisschen Gelassenheit.\n\n## Kapha – Erde und Wasser\n\nKapha steht für Stabilität. Menschen mit viel Kapha werden als ruhig, beständig und warmherzig beschrieben, manchmal auch als träge, wenn wenig passiert. Bewegung, Leichtigkeit und Anregung gelten als ausgleichend.\n\n## Konstitution und Tagesform\n\nDie Tradition unterscheidet zwischen deiner Grundkonstitution (Prakriti), die dich ein Leben lang begleitet, und deinem aktuellen Zustand (Vikriti), der sich mit Lebensphasen, Jahreszeiten oder Stress verändert. Darum fragt der Dosha-Test in Sahama danach, wie du die meiste Zeit deines Lebens warst – nicht, wie du dich heute fühlst.",
+      "tier": "free",
+      "imagePath": null,
+      "position": 20
+    },
+    {
+      "slug": "dein-tag-im-ayurvedischen-rhythmus",
+      "title": "Dein Tag im ayurvedischen Rhythmus",
+      "summary": "Dinacharya – warum die Tageszeit im Ayurveda eine Rolle spielt.",
+      "body": "Im Ayurveda heißt die tägliche Routine Dinacharya. Dahinter steht die Idee, dass der Tag einen eigenen Rhythmus hat und dass es leichter fällt, mit ihm zu leben als gegen ihn.\n\n## Die Dosha-Zeiten des Tages\n\nDie Tradition ordnet den Tageszeiten jeweils ein Dosha zu. Der frühe Morgen und der frühe Abend gelten als Kapha-Zeit – eher ruhig und schwer. Die Mittagszeit gilt als Pitta-Zeit, in der die Verdauungskraft am stärksten sein soll. Der Nachmittag und die frühen Morgenstunden gelten als Vata-Zeit – beweglich und luftig.\n\n## Was das für deinen Alltag heißt\n\nAus diesem Rhythmus leiten sich viele klassische Empfehlungen ab: früh aufstehen, am Morgen ein warmes Getränk, mittags die Hauptmahlzeit, abends eher leicht essen und den Tag ruhig ausklingen lassen.\n\n## Klein anfangen\n\nNiemand muss den ganzen Tag umstellen. Such dir eine Tageszeit aus, die dir gerade am meisten am Herzen liegt – den Morgen, die Mittagspause oder den Abend – und probiere dort ein kleines Ritual aus. Genau dafür gibt es die Ritual-Karten in Sahama.",
+      "tier": "free",
+      "imagePath": null,
+      "position": 30
+    },
+    {
+      "slug": "warm-statt-kalt",
+      "title": "Warm statt kalt – warum eigentlich?",
+      "summary": "Warum im Ayurveda so oft von warmem Wasser und gekochtem Essen die Rede ist.",
+      "body": "Wer sich mit Ayurveda beschäftigt, liest oft: warmes Wasser statt kalter Getränke, gekochtes Essen statt Rohkost. Dahinter steht ein zentraler Begriff der Tradition: Agni, das Verdauungsfeuer.\n\n## Agni – das Verdauungsfeuer\n\nIm Ayurveda wird die Verdauung bildhaft als Feuer beschrieben. Warme, gekochte Speisen und warme Getränke gelten als freundlich für dieses Feuer, sehr kalte Getränke und viel Rohes dagegen als eher dämpfend.\n\n## Nicht für alle gleich\n\nWie so oft im Ayurveda hängt es vom Dosha ab. Für Vata gilt Wärme als besonders wohltuend: warmes Wasser, gekochte Mahlzeiten, etwas gutes Fett. Pitta bringt in der Tradition schon viel eigenes Feuer mit – hier dürfen Speisen auch frisch und kühlend sein, Salat oder Gurke passen am ehesten mittags. Für Kapha gelten warme, leichte und gut gewürzte Speisen als passend.\n\n## Ein einfacher Einstieg\n\nProbier es mit einem Glas warmem Wasser nach dem Aufstehen – nicht heiß, sondern angenehm warm. Spür nach, wie sich das für dich anfühlt. Ob es zu dir passt, entscheidest du.",
+      "tier": "free",
+      "imagePath": null,
+      "position": 40
+    },
+    {
+      "slug": "vata-im-alltag",
+      "title": "Vata im Alltag: Wärme, Ruhe, Regelmäßigkeit",
+      "summary": "Wie du Vata in einer vollen Woche gut begleitest.",
+      "body": "Vata steht im Ayurveda für Bewegung, Leichtigkeit und Kreativität. Ein voller Alltag mit vielen Reizen, wechselnden Zeiten und wenig Pausen gilt in der Tradition als typisch für ein Vata, das aus dem Gleichgewicht gerät.\n\n## Regelmäßigkeit\n\nFür Vata gilt Regelmäßigkeit als besonders hilfreich: möglichst zur gleichen Zeit aufstehen, essen und schlafen gehen. Schon eine feste Zeit für das Mittagessen kann ein Anfang sein.\n\n## Wärme\n\nWarme Kleidung, warme Getränke, warme und gekochte Mahlzeiten mit etwas gutem Fett – zum Beispiel ein Löffel Ghee im Gemüse – werden für Vata traditionell empfohlen. Auch die Selbstmassage mit warmem Sesamöl gilt als typisches Vata-Ritual.\n\n## Ruhe und Erdung\n\nVata mag Ruhe nach vielen Eindrücken: ein paar Minuten ohne Bildschirm, bewusstes Ausatmen, barfuß auf dem Boden stehen. Kleine Inseln im Tag sind wertvoller als ein großer Plan, den du dann doch nicht durchhältst.\n\n## Rituale in Sahama, die dazu passen\n\nEin Glas warmes Wasser am Morgen, Füße ölen und den Tag loslassen, Länger aus- als einatmen, Eine Tasse Goldene Milch.",
+      "tier": "plus",
+      "imagePath": null,
+      "position": 110
+    },
+    {
+      "slug": "pitta-im-alltag",
+      "title": "Pitta im Alltag: Kühle, Pausen, Gelassenheit",
+      "summary": "Wie du Pitta begleitest, wenn es heiß hergeht.",
+      "body": "Pitta steht im Ayurveda für Feuer, Klarheit und Tatkraft. Viel Leistungsdruck, Hitze, wenig Pausen und scharfes Essen gelten in der Tradition als Situationen, in denen sich Pitta leicht anstaut.\n\n## Echte Pausen\n\nFür Pitta gelten Pausen ohne Ziel als besonders wertvoll: zehn Minuten nichts tun, ein Spaziergang ohne Schrittzähler, eine Mittagspause ohne Laptop. Das fällt Pitta oft schwer – genau deshalb lohnt es sich, es auszuprobieren.\n\n## Kühlendes und Mildes\n\nIn der ayurvedischen Küche gelten für Pitta milde, nicht zu scharfe Speisen als passend, dazu Frisches wie Gurke, Salat oder süßes Obst – am ehesten mittags. Getränke dürfen lauwarm statt heiß sein.\n\n## Gelassenheit am Abend\n\nAbends gilt es für Pitta als hilfreich, die Arbeit wirklich ruhen zu lassen: keine Mails mehr, keine Pläne für morgen im Bett. Ein kurzes Aufschreiben dessen, was offen ist, kann den Kopf freier machen.\n\n## Rituale in Sahama, die dazu passen\n\nDrei Zeilen für den Tag, Zehn Minuten nichts tun, Blickpause vom Bildschirm, Den Tag rückwärts erzählen.",
+      "tier": "plus",
+      "imagePath": null,
+      "position": 120
+    },
+    {
+      "slug": "kapha-im-alltag",
+      "title": "Kapha im Alltag: Bewegung, Leichtigkeit, Anregung",
+      "summary": "Wie du Kapha in Schwung bringst, ohne dich zu hetzen.",
+      "body": "Kapha steht im Ayurveda für Stabilität, Ruhe und Ausdauer. Wenn der Alltag sehr gleichförmig wird, wenig Bewegung hat und viel Schweres auf dem Teller landet, gilt Kapha in der Tradition als leicht träge.\n\n## Bewegung\n\nFür Kapha wird Bewegung besonders empfohlen – nicht als Leistung, sondern als fester Teil des Tages: ein zügiger Gang nach dem Mittagessen, ein paar Sonnengrüße am Morgen, Treppen statt Aufzug.\n\n## Leichtigkeit beim Essen\n\nIn der ayurvedischen Küche gelten für Kapha warme, leichte und gut gewürzte Speisen als passend, eher weniger Süßes und Schweres. Ein früheres, leichtes Abendessen wird traditionell empfohlen.\n\n## Neues ausprobieren\n\nKapha liebt das Gewohnte. Kleine Abwechslungen – ein neuer Weg zur Arbeit, ein neues Rezept, ein neues Ritual – gelten als anregend.\n\n## Rituale in Sahama, die dazu passen\n\nSanfte Sonnengrüße, Fünf Minuten an der Luft, Hundert Schritte nach dem Essen, Eine Tasse Ingwerwasser.",
+      "tier": "plus",
+      "imagePath": null,
+      "position": 130
+    },
+    {
+      "slug": "ayurveda-im-herbst-und-winter",
+      "title": "Ayurveda im Herbst und Winter",
+      "summary": "Wie die ayurvedische Tradition durch die kalte Jahreszeit begleitet.",
+      "body": "Im Ayurveda haben auch die Jahreszeiten ein Dosha. Der Herbst mit Wind, Kälte und Trockenheit gilt als Vata-Zeit, der späte Winter mit Kälte und Nässe als Kapha-Zeit. Die Tradition nennt die Anpassung an die Jahreszeiten Ritucharya.\n\n## Im Herbst: Wärme und Halt\n\nWenn draußen der Wind weht und die Tage kürzer werden, gelten Wärme und feste Abläufe als besonders wohltuend: warme Suppen und Eintöpfe, warme Getränke, warme Füße, regelmäßige Schlafenszeiten. Die Selbstmassage mit warmem Öl ist im Herbst ein klassisches Ritual.\n\n## Im Winter: in Bewegung bleiben\n\nIn der nass-kalten Zeit wird es leicht schwer und träge. Hier gelten Bewegung an der frischen Luft, Tageslicht und gut gewürzte, warme Speisen als ausgleichend – etwa mit Ingwer, Zimt oder Kreuzkümmel.\n\n## Für alle Doshas\n\nLass deinen Dosha-Hinweis auf den Ritual-Karten dabei mitentscheiden: Eine Pitta-Frau braucht auch im Winter keine scharfen Speisen, eine Vata-Frau profitiert in der Tradition besonders von Wärme und Ruhe.",
+      "tier": "plus",
+      "imagePath": null,
+      "position": 140
+    },
+    {
+      "slug": "gewuerze-in-der-ayurvedischen-kueche",
+      "title": "Gewürze in der ayurvedischen Küche",
+      "summary": "Ingwer, Kurkuma, Kreuzkümmel & Co. – als Küchengewürze im Alltag.",
+      "body": "Gewürze spielen in der ayurvedischen Küche eine große Rolle – nicht als Mittel gegen etwas, sondern als Teil jeder Mahlzeit. Viele davon stehen ohnehin in deinem Küchenschrank.\n\n## Ingwer\n\nFrischer Ingwer gilt in der Tradition als wärmend. In Scheiben in heißes Wasser, gerieben ins Gemüse oder in die Suppe. Für Pitta eher sparsam, für Vata und Kapha gern.\n\n## Kurkuma\n\nKurkuma gibt Reis, Linsen und Gemüse eine goldgelbe Farbe und ist Bestandteil der Goldenen Milch. Eine Prise genügt.\n\n## Kreuzkümmel, Koriander und Fenchel\n\nDiese drei Samen werden in der ayurvedischen Küche oft gemeinsam verwendet, zum Beispiel kurz in Ghee angeröstet als Grundlage für Gemüse oder Dal. Koriander und Fenchel gelten als mild und passen in der Tradition auch zu Pitta.\n\n## Zimt und Kardamom\n\nZimt und Kardamom passen zu Haferbrei, Milchgetränken und Obst. Kardamom gilt als mild, Zimt als wärmend.\n\n## Ein Hinweis\n\nHier geht es um Gewürze in normalen Küchenmengen. Konzentrierte Präparate, Kapseln oder Nahrungsergänzungen sind etwas anderes – dazu berät dich eine Fachperson, nicht eine App.",
+      "tier": "plus",
+      "imagePath": null,
+      "position": 150
+    },
+    {
+      "slug": "abhyanga-die-selbstmassage",
+      "title": "Abhyanga: die Selbstmassage mit Öl",
+      "summary": "Wie die ayurvedische Ölmassage funktioniert – und wie du sie an dich anpasst.",
+      "body": "Abhyanga ist die Selbstmassage mit warmem Öl und gehört in der ayurvedischen Tradition zur täglichen Morgenroutine. Eine kleine Form davon ist Padabhyanga, die Fußmassage am Abend.\n\n## So geht's\n\nWärme das Öl in einem warmen Wasserbad an und prüfe einen Tropfen auf der Haut. Massiere dich dann von oben nach unten: kreisend über die Gelenke, mit langen Strichen über Arme und Beine. Wenn du magst, lass das Öl ein paar Minuten einwirken und dusch danach warm. Vorsicht: Mit Öl an den Füßen ist der Duschboden rutschig.\n\n## Welches Öl?\n\nTraditionell wird Sesamöl für Vata empfohlen, Kokos- oder Sonnenblumenöl für Pitta. Für Kapha gilt wenig Öl oder eine Trockenmassage mit einem Seidenhandschuh (Garshana) als passend.\n\n## Klein anfangen\n\nDu musst nicht täglich den ganzen Körper massieren. Beginne mit den Füßen am Abend oder den Armen am Morgen. Wenn dir die Haut empfindlich ist oder du ein Öl nicht verträgst, lass es weg oder probiere ein anderes.\n\n## Rituale in Sahama, die dazu passen\n\nSelbstmassage mit warmem Öl, Füße ölen und den Tag loslassen, Sanfte Kopf- und Ohrenmassage.",
+      "tier": "plus",
+      "imagePath": null,
+      "position": 160
+    }
+  ]
+}

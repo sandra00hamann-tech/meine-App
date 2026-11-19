@@ -34,7 +34,8 @@
     "aiCosts": "Costes de IA",
     "impersonations": "Accesos",
     "today": "Hoy",
-    "dosha": "Tu dosha"
+    "dosha": "Tu dosha",
+    "knowledge": "Saber ayurveda"
   },
   "shell": {
     "openNavigation": "Abrir la navegación",
@@ -1143,7 +1144,8 @@
       "plusBadge": "Suscripción Sahama",
       "tipsFor": "Para ti, como {name}",
       "print": "Imprimir o guardar como PDF",
-      "printHint": "Consejo: en la ventana de impresión puedes elegir «Guardar como PDF» en lugar de una impresora."
+      "printHint": "Consejo: en la ventana de impresión puedes elegir «Guardar como PDF» en lugar de una impresora.",
+      "more": "Más en Saber ayurveda"
     },
     "dashboard": {
       "title": "Tu ritual de hoy",
@@ -1170,6 +1172,18 @@
       "switchedOff": "Tu check-in está guardado.",
       "historyTitle": "Tus últimos check-ins",
       "historyEmpty": "Aquí aparecen tus check-ins y las respuestas de Sahama."
+    },
+    "knowledge": {
+      "eyebrow": "Sahama Ayurveda",
+      "title": "Saber ayurveda",
+      "description": "Artículos breves para leer: lo básico es gratis, los artículos de profundización forman parte de la suscripción Sahama.",
+      "deeper": "Profundización",
+      "emptyTitle": "Todavía no hay artículos",
+      "emptyText": "Pronto aparecerán aquí artículos breves sobre el ayurveda en el día a día.",
+      "back": "Todos los artículos",
+      "lockedTitle": "Este artículo forma parte de la suscripción Sahama",
+      "lockedText": "Los artículos básicos son gratis. Los de profundización —sobre tu dosha, las estaciones, las especias y el masaje con aceite— los lees con la suscripción Sahama, junto con todos los rituales y una respuesta personal a cada check-in.",
+      "lockedAction": "Ver la suscripción Sahama"
     }
   },
   "sahamaCheckin": {

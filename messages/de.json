@@ -34,7 +34,8 @@
     "aiCosts": "KI-Kosten",
     "impersonations": "Zugriffe",
     "today": "Heute",
-    "dosha": "Dein Dosha"
+    "dosha": "Dein Dosha",
+    "knowledge": "Ayurveda-Wissen"
   },
   "shell": {
     "openNavigation": "Navigation öffnen",
@@ -1143,7 +1144,8 @@
       "plusBadge": "Sahama-Abo",
       "tipsFor": "Für dich als {name}",
       "print": "Drucken oder als PDF speichern",
-      "printHint": "Tipp: Im Druckfenster kannst du statt eines Druckers „Als PDF speichern“ wählen."
+      "printHint": "Tipp: Im Druckfenster kannst du statt eines Druckers „Als PDF speichern“ wählen.",
+      "more": "Mehr dazu im Ayurveda-Wissen"
     },
     "dashboard": {
       "title": "Dein Ritual für heute",
@@ -1170,6 +1172,18 @@
       "switchedOff": "Dein Check-in ist gespeichert.",
       "historyTitle": "Deine letzten Check-ins",
       "historyEmpty": "Hier erscheinen deine Check-ins und Sahamas Antworten."
+    },
+    "knowledge": {
+      "eyebrow": "Sahama Ayurveda",
+      "title": "Ayurveda-Wissen",
+      "description": "Kurze Artikel zum Nachlesen – die Grundlagen sind gratis, die Vertiefungen gehören zum Sahama-Abo.",
+      "deeper": "Vertiefung",
+      "emptyTitle": "Noch keine Artikel",
+      "emptyText": "Hier erscheinen bald kurze Artikel rund um Ayurveda im Alltag.",
+      "back": "Alle Artikel",
+      "lockedTitle": "Dieser Artikel gehört zum Sahama-Abo",
+      "lockedText": "Die Grundlagen-Artikel sind gratis. Die Vertiefungen – zu deinem Dosha, zu den Jahreszeiten, zu Gewürzen und Ölmassage – liest du mit dem Sahama-Abo, zusammen mit allen Ritualen und einer persönlichen Antwort auf jeden Check-in.",
+      "lockedAction": "Sahama-Abo ansehen"
     }
   },
   "sahamaCheckin": {

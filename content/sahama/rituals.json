@@ -19,7 +19,7 @@
       },
       "tier": "free",
       "imagePath": "rituale/warmes-wasser-am-morgen.webp",
-      "articleSlug": null,
+      "articleSlug": "warm-statt-kalt",
       "position": 10
     },
     {
@@ -44,7 +44,7 @@
       },
       "tier": "free",
       "imagePath": "rituale/ruhiger-morgen-in-drei-schritten.webp",
-      "articleSlug": null,
+      "articleSlug": "dein-tag-im-ayurvedischen-rhythmus",
       "position": 20
     },
     {
@@ -69,7 +69,7 @@
       },
       "tier": "free",
       "imagePath": "rituale/drei-bewusste-bissen.webp",
-      "articleSlug": null,
+      "articleSlug": "warm-statt-kalt",
       "position": 30
     },
     {
@@ -93,7 +93,7 @@
       },
       "tier": "free",
       "imagePath": "rituale/fuenf-minuten-an-der-luft.webp",
-      "articleSlug": null,
+      "articleSlug": "kapha-im-alltag",
       "position": 40
     },
     {
@@ -118,7 +118,7 @@
       },
       "tier": "free",
       "imagePath": "rituale/laenger-aus-als-einatmen.webp",
-      "articleSlug": null,
+      "articleSlug": "die-drei-doshas",
       "position": 50
     },
     {
@@ -141,7 +141,7 @@
       },
       "tier": "free",
       "imagePath": "rituale/fuesse-oelen-und-loslassen.webp",
-      "articleSlug": null,
+      "articleSlug": "abhyanga-die-selbstmassage",
       "position": 60
     },
     {
@@ -165,7 +165,7 @@
       },
       "tier": "free",
       "imagePath": "rituale/drei-zeilen-fuer-den-tag.webp",
-      "articleSlug": null,
+      "articleSlug": "pitta-im-alltag",
       "position": 70
     },
     {
@@ -189,7 +189,7 @@
       },
       "tier": "plus",
       "imagePath": "rituale/selbstmassage-am-morgen.webp",
-      "articleSlug": null,
+      "articleSlug": "abhyanga-die-selbstmassage",
       "position": 100
     },
     {
@@ -213,7 +213,7 @@
       },
       "tier": "plus",
       "imagePath": "rituale/drei-sanfte-sonnengruesse.webp",
-      "articleSlug": null,
+      "articleSlug": "kapha-im-alltag",
       "position": 110
     },
     {
@@ -258,7 +258,7 @@
       },
       "tier": "plus",
       "imagePath": "rituale/warmes-fruehstueck.webp",
-      "articleSlug": null,
+      "articleSlug": "warm-statt-kalt",
       "position": 130
     },
     {
@@ -401,7 +401,7 @@
       },
       "tier": "plus",
       "imagePath": "rituale/ingwerwasser-am-nachmittag.webp",
-      "articleSlug": null,
+      "articleSlug": "gewuerze-in-der-ayurvedischen-kueche",
       "position": 220
     },
     {
@@ -448,7 +448,7 @@
       },
       "tier": "plus",
       "imagePath": "rituale/zehn-minuten-nichts-tun.webp",
-      "articleSlug": null,
+      "articleSlug": "pitta-im-alltag",
       "position": 240
     },
     {
@@ -470,7 +470,7 @@
       },
       "tier": "plus",
       "imagePath": "rituale/mittagessen-fuer-morgen.webp",
-      "articleSlug": null,
+      "articleSlug": "dein-tag-im-ayurvedischen-rhythmus",
       "position": 250
     },
     {
@@ -494,7 +494,7 @@
       },
       "tier": "plus",
       "imagePath": "rituale/leichtes-fruehes-abendessen.webp",
-      "articleSlug": null,
+      "articleSlug": "dein-tag-im-ayurvedischen-rhythmus",
       "position": 300
     },
     {
@@ -542,7 +542,7 @@
       },
       "tier": "plus",
       "imagePath": "rituale/goldene-milch.webp",
-      "articleSlug": null,
+      "articleSlug": "gewuerze-in-der-ayurvedischen-kueche",
       "position": 320
     },
     {
@@ -566,7 +566,7 @@
       },
       "tier": "plus",
       "imagePath": "rituale/kopf-und-ohrenmassage.webp",
-      "articleSlug": null,
+      "articleSlug": "abhyanga-die-selbstmassage",
       "position": 330
     },
     {
@@ -636,7 +636,7 @@
       },
       "tier": "plus",
       "imagePath": "rituale/abend-ab-neun.webp",
-      "articleSlug": null,
+      "articleSlug": "dein-tag-im-ayurvedischen-rhythmus",
       "position": 360
     },
     {
@@ -660,7 +660,7 @@
       },
       "tier": "plus",
       "imagePath": "rituale/warmes-fussbad.webp",
-      "articleSlug": null,
+      "articleSlug": "ayurveda-im-herbst-und-winter",
       "position": 370
     },
     {
