@@ -476,7 +476,7 @@ export function UserTable({
                       >
                         {user.email ?? tCommon("none")}
                         {isSelf && (
-                          <span className="text-muted-foreground font-normal no-underline">
+                          <span className="text-muted-foreground font-normal">
                             {" "}
                             · {t("you")}
                           </span>

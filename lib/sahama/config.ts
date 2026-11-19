@@ -6,7 +6,8 @@ import raw from "@/config/sahama.json";
 
 export interface SahamaConfig {
   checkinReplies: boolean;
-  freeReplies: number;
+  /** Personal replies per Berlin week for a member without the plan. */
+  freeRepliesPerWeek: number;
   adviceUrl: string | null;
   /** The operator's Ayurveda site — the pointer under every article. */
   moreInfoUrl: string | null;
@@ -14,14 +15,22 @@ export interface SahamaConfig {
 
 export function parseSahamaConfig(value: unknown): SahamaConfig {
   const v = (value ?? {}) as Record<string, unknown>;
-  const free = v.freeReplies;
+  const free = v.freeRepliesPerWeek;
   const url = v.adviceUrl;
   const more = v.moreInfoUrl;
   return {
     checkinReplies: v.checkinReplies === true,
-    freeReplies: typeof free === "number" && Number.isInteger(free) && free >= 0 && free <= 50 ? free : 0,
-    adviceUrl: typeof url === "string" && /^https:\/\/\S+$/.test(url) ? url : null,
-    moreInfoUrl: typeof more === "string" && /^https:\/\/\S+$/.test(more) ? more : null,
+    freeRepliesPerWeek:
+      typeof free === "number" &&
+      Number.isInteger(free) &&
+      free >= 0 &&
+      free <= 50
+        ? free
+        : 0,
+    adviceUrl:
+      typeof url === "string" && /^https:\/\/\S+$/.test(url) ? url : null,
+    moreInfoUrl:
+      typeof more === "string" && /^https:\/\/\S+$/.test(more) ? more : null,
   };
 }
 

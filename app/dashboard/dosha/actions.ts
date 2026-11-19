@@ -20,13 +20,17 @@ import { SahamaError, cleanConcerns, parseMinutes } from "@/lib/sahama/rules";
 export type { ActionState } from "@/lib/action-state";
 import type { ActionState } from "@/lib/action-state";
 
-export async function saveDoshaAction(_prev: ActionState, form: FormData): Promise<ActionState> {
+export async function saveDoshaAction(
+  _prev: ActionState,
+  form: FormData,
+): Promise<ActionState> {
   const session = await requireActiveUser();
   try {
     const answers: DoshaAnswers = {};
     for (const q of DOSHA_QUESTIONS) {
       const value = form.get(`q_${q}`);
-      if (typeof value === "string") answers[q] = value as DoshaAnswers[typeof q];
+      if (typeof value === "string")
+        answers[q] = value as DoshaAnswers[typeof q];
     }
     const minutes = parseMinutes(form.get("minutes"));
     const concerns = cleanConcerns(form.getAll("concerns"));

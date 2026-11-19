@@ -2,7 +2,15 @@ import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
-import { CONCERNS, DOSHAS, DOSHA_QUESTIONS, MINUTE_OPTIONS, TIMES_OF_DAY, answerOrder, type DoshaAnswers } from "./catalog";
+import {
+  CONCERNS,
+  DOSHAS,
+  DOSHA_QUESTIONS,
+  MINUTE_OPTIONS,
+  TIMES_OF_DAY,
+  answerOrder,
+  type DoshaAnswers,
+} from "./catalog";
 import {
   SahamaError,
   chooseRitual,
@@ -14,15 +22,21 @@ import {
   type ChoiceInput,
   type RitualForChoice,
 } from "./rules";
-import { mayUseTier } from "./access";
+import { mayUseRitual, mayUseTier, weeklyRitualSlug } from "./access";
 
-function answersWith(counts: { vata: number; pitta: number; kapha: number }): DoshaAnswers {
+function answersWith(counts: {
+  vata: number;
+  pitta: number;
+  kapha: number;
+}): DoshaAnswers {
   const list = [
     ...Array(counts.vata).fill("vata"),
     ...Array(counts.pitta).fill("pitta"),
     ...Array(counts.kapha).fill("kapha"),
   ];
-  return Object.fromEntries(DOSHA_QUESTIONS.map((q, i) => [q, list[i]])) as DoshaAnswers;
+  return Object.fromEntries(
+    DOSHA_QUESTIONS.map((q, i) => [q, list[i]]),
+  ) as DoshaAnswers;
 }
 
 describe("scoreDosha", () => {
@@ -42,17 +56,28 @@ describe("scoreDosha", () => {
   });
 
   it("weights each answer the same", () => {
-    expect(scoreDosha(answersWith({ vata: 12, pitta: 6, kapha: 6 }))).toEqual({ vata: 50, pitta: 25, kapha: 25 });
-    expect(scoreDosha(answersWith({ vata: 24, pitta: 0, kapha: 0 }))).toEqual({ vata: 100, pitta: 0, kapha: 0 });
+    expect(scoreDosha(answersWith({ vata: 12, pitta: 6, kapha: 6 }))).toEqual({
+      vata: 50,
+      pitta: 25,
+      kapha: 25,
+    });
+    expect(scoreDosha(answersWith({ vata: 24, pitta: 0, kapha: 0 }))).toEqual({
+      vata: 100,
+      pitta: 0,
+      kapha: 0,
+    });
   });
 
   it("refuses half a test rather than presenting it as whole", () => {
     const partial = answersWith({ vata: 12, pitta: 6, kapha: 6 });
     delete partial.sleep;
     expect(() => scoreDosha(partial)).toThrow(SahamaError);
-    expect(() => scoreDosha({ ...answersWith({ vata: 24, pitta: 0, kapha: 0 }), frame: "fire" as never })).toThrow(
-      "sahamaDoshaIncomplete",
-    );
+    expect(() =>
+      scoreDosha({
+        ...answersWith({ vata: 24, pitta: 0, kapha: 0 }),
+        frame: "fire" as never,
+      }),
+    ).toThrow("sahamaDoshaIncomplete");
   });
 });
 
@@ -61,14 +86,24 @@ describe("leadingDoshas", () => {
     expect(leadingDoshas({ vata: 58, pitta: 25, kapha: 17 })).toEqual(["vata"]);
   });
   it("names two when the second is within 15 points", () => {
-    expect(leadingDoshas({ vata: 42, pitta: 33, kapha: 25 })).toEqual(["vata", "pitta"]);
+    expect(leadingDoshas({ vata: 42, pitta: 33, kapha: 25 })).toEqual([
+      "vata",
+      "pitta",
+    ]);
   });
   it("names all three when they lie close together (Tridosha)", () => {
-    expect(leadingDoshas({ vata: 34, pitta: 33, kapha: 33 })).toEqual(["vata", "pitta", "kapha"]);
+    expect(leadingDoshas({ vata: 34, pitta: 33, kapha: 33 })).toEqual([
+      "vata",
+      "pitta",
+      "kapha",
+    ]);
     expect(leadingDoshas({ vata: 38, pitta: 33, kapha: 29 })).toHaveLength(3);
   });
   it("breaks an exact tie in the fixed order Vata, Pitta, Kapha", () => {
-    expect(leadingDoshas({ vata: 20, pitta: 40, kapha: 40 })).toEqual(["pitta", "kapha"]);
+    expect(leadingDoshas({ vata: 20, pitta: 40, kapha: 40 })).toEqual([
+      "pitta",
+      "kapha",
+    ]);
   });
 });
 
@@ -85,12 +120,15 @@ describe("answerOrder — the answers are shown in varying order", () => {
 
 describe("start answers", () => {
   it("keeps only known concerns, each once", () => {
-    expect(cleanConcerns(["busy_mind", "busy_mind", "headache", 3, "no_break"])).toEqual(["busy_mind", "no_break"]);
+    expect(
+      cleanConcerns(["busy_mind", "busy_mind", "headache", 3, "no_break"]),
+    ).toEqual(["busy_mind", "no_break"]);
   });
   it("accepts only 5, 10 or 20 minutes", () => {
     expect(parseMinutes("10")).toBe(10);
     expect(parseMinutes(20)).toBe(20);
-    for (const bad of ["0", "7", "", null, "abc", 60]) expect(() => parseMinutes(bad)).toThrow("sahamaMinutesInvalid");
+    for (const bad of ["0", "7", "", null, "abc", 60])
+      expect(() => parseMinutes(bad)).toThrow("sahamaMinutesInvalid");
   });
 });
 
@@ -103,7 +141,9 @@ describe("timeOfDayAt — her clock is Germany's", () => {
   });
 });
 
-const R = (over: Partial<RitualForChoice> & { slug: string }): RitualForChoice => ({
+const R = (
+  over: Partial<RitualForChoice> & { slug: string },
+): RitualForChoice => ({
   minutes: 5,
   timeOfDay: "any",
   doshas: [],
@@ -123,37 +163,90 @@ const base: Omit<ChoiceInput, "rituals"> = {
 
 describe("chooseRitual", () => {
   it("never offers a ritual she may not open", () => {
-    const rituals = [R({ slug: "plus-perfect", doshas: ["vata"], timeOfDay: "evening", allowed: false }), R({ slug: "free-plain" })];
+    const rituals = [
+      R({
+        slug: "plus-perfect",
+        doshas: ["vata"],
+        timeOfDay: "evening",
+        allowed: false,
+      }),
+      R({ slug: "free-plain" }),
+    ];
     expect(chooseRitual({ ...base, rituals })).toBe("free-plain");
   });
 
   it("never offers a ritual longer than her minutes", () => {
-    const rituals = [R({ slug: "long", minutes: 20, doshas: ["vata"], timeOfDay: "evening" }), R({ slug: "short", minutes: 5 })];
+    const rituals = [
+      R({ slug: "long", minutes: 20, doshas: ["vata"], timeOfDay: "evening" }),
+      R({ slug: "short", minutes: 5 }),
+    ];
     expect(chooseRitual({ ...base, rituals })).toBe("short");
   });
 
   it("prefers her Dosha, her concerns and the time of day", () => {
     const rituals = [
       R({ slug: "morning-kapha", doshas: ["kapha"], timeOfDay: "morning" }),
-      R({ slug: "evening-vata", doshas: ["vata"], timeOfDay: "evening", concerns: ["hard_to_unwind"] }),
+      R({
+        slug: "evening-vata",
+        doshas: ["vata"],
+        timeOfDay: "evening",
+        concerns: ["hard_to_unwind"],
+      }),
     ];
-    expect(chooseRitual({ ...base, concerns: ["hard_to_unwind"], rituals })).toBe("evening-vata");
+    expect(
+      chooseRitual({ ...base, concerns: ["hard_to_unwind"], rituals }),
+    ).toBe("evening-vata");
   });
 
   it("does not repeat yesterday's card while another fits", () => {
     const rituals = [R({ slug: "a", doshas: ["vata"] }), R({ slug: "b" })];
     expect(chooseRitual({ ...base, rituals, recent: ["a"] })).toBe("b");
-    expect(chooseRitual({ ...base, rituals: [rituals[0]], recent: ["a"] })).toBe("a");
+    expect(
+      chooseRitual({ ...base, rituals: [rituals[0]], recent: ["a"] }),
+    ).toBe("a");
   });
 
   it("says so when nothing fits, instead of an empty card", () => {
-    expect(() => chooseRitual({ ...base, rituals: [] })).toThrow("sahamaNoRitual");
-    expect(() => chooseRitual({ ...base, minutes: 5, rituals: [R({ slug: "x", minutes: 10 })] })).toThrow("sahamaNoRitual");
+    expect(() => chooseRitual({ ...base, rituals: [] })).toThrow(
+      "sahamaNoRitual",
+    );
+    expect(() =>
+      chooseRitual({
+        ...base,
+        minutes: 5,
+        rituals: [R({ slug: "x", minutes: 10 })],
+      }),
+    ).toThrow("sahamaNoRitual");
   });
 
   it("breaks ties by the operator's order", () => {
-    const rituals = [R({ slug: "second", position: 20 }), R({ slug: "first", position: 10 })];
+    const rituals = [
+      R({ slug: "second", position: 20 }),
+      R({ slug: "first", position: 10 }),
+    ];
     expect(chooseRitual({ ...base, rituals })).toBe("first");
+  });
+});
+
+describe("Ritual der Woche — one subscription ritual free each week", () => {
+  const plus = ["a", "b", "c"];
+  it("rotates through every plus ritual before any repeats", () => {
+    const weeks = ["2026-01-05", "2026-01-12", "2026-01-19", "2026-01-26"].map(
+      (w) => weeklyRitualSlug(plus, w),
+    );
+    expect(new Set(weeks.slice(0, 3)).size).toBe(3);
+    expect(weeks[3]).toBe(weeks[0]);
+  });
+  it("is null without plus rituals, and stable within a week", () => {
+    expect(weeklyRitualSlug([], "2026-11-16")).toBeNull();
+    expect(weeklyRitualSlug(plus, "2026-11-16")).toBe(
+      weeklyRitualSlug(plus, "2026-11-16"),
+    );
+  });
+  it("opens exactly that ritual to a free member", () => {
+    expect(mayUseRitual({ tier: "plus", slug: "b" }, false, "b")).toBe(true);
+    expect(mayUseRitual({ tier: "plus", slug: "c" }, false, "b")).toBe(false);
+    expect(mayUseRitual({ tier: "free", slug: "x" }, false, null)).toBe(true);
   });
 });
 
@@ -166,7 +259,12 @@ describe("access — one question for every caller", () => {
 });
 
 describe("content/sahama/rituals.json — what the applier will write", () => {
-  const file = JSON.parse(readFileSync(join(__dirname, "..", "..", "content", "sahama", "rituals.json"), "utf8"));
+  const file = JSON.parse(
+    readFileSync(
+      join(__dirname, "..", "..", "content", "sahama", "rituals.json"),
+      "utf8",
+    ),
+  );
   const rituals: Array<Record<string, unknown>> = file.rituals;
 
   it("has unique slugs in the anchor-safe form", () => {
@@ -177,12 +275,19 @@ describe("content/sahama/rituals.json — what the applier will write", () => {
 
   it("uses only the known vocabularies", () => {
     for (const r of rituals) {
-      expect(MINUTE_OPTIONS as readonly number[], String(r.slug)).toContain(r.minutes);
-      expect(TIMES_OF_DAY as readonly string[], String(r.slug)).toContain(r.timeOfDay);
+      expect(MINUTE_OPTIONS as readonly number[], String(r.slug)).toContain(
+        r.minutes,
+      );
+      expect(TIMES_OF_DAY as readonly string[], String(r.slug)).toContain(
+        r.timeOfDay,
+      );
       expect(["free", "plus"], String(r.slug)).toContain(r.tier);
-      for (const d of r.doshas as string[]) expect(DOSHAS as readonly string[]).toContain(d);
-      for (const d of Object.keys((r.doshaTips ?? {}) as object)) expect(DOSHAS as readonly string[]).toContain(d);
-      for (const c of r.concerns as string[]) expect(CONCERNS as readonly string[]).toContain(c);
+      for (const d of r.doshas as string[])
+        expect(DOSHAS as readonly string[]).toContain(d);
+      for (const d of Object.keys((r.doshaTips ?? {}) as object))
+        expect(DOSHAS as readonly string[]).toContain(d);
+      for (const c of r.concerns as string[])
+        expect(CONCERNS as readonly string[]).toContain(c);
       expect(String(r.title).length, String(r.slug)).toBeGreaterThan(0);
       expect(String(r.body).length, String(r.slug)).toBeGreaterThan(40);
     }
@@ -190,23 +295,36 @@ describe("content/sahama/rituals.json — what the applier will write", () => {
 
   it("offers at least one free ritual for every time budget, so a new member always gets a card", () => {
     for (const m of MINUTE_OPTIONS) {
-      expect(rituals.some((r) => r.tier === "free" && (r.minutes as number) <= m), `${m} min`).toBe(true);
+      expect(
+        rituals.some((r) => r.tier === "free" && (r.minutes as number) <= m),
+        `${m} min`,
+      ).toBe(true);
     }
   });
 
   it("keeps the wording rules: no healing promises, no herbs or cures", () => {
-    const forbidden = /heil(t|ung|en)\b|gegen (schmerz|krank)|therapie|ashwagandha|triphala|kapsel|dosierung|detox|fasten|panchakarma|garantiert/i;
+    const forbidden =
+      /heil(t|ung|en)\b|gegen (schmerz|krank)|therapie|ashwagandha|triphala|kapsel|dosierung|detox|fasten|panchakarma|garantiert/i;
     for (const r of rituals) {
-      const tips = Object.values((r.doshaTips ?? {}) as Record<string, string>).join(" ");
-      expect(`${r.title} ${r.summary} ${r.body} ${tips}`, String(r.slug)).not.toMatch(forbidden);
+      const tips = Object.values(
+        (r.doshaTips ?? {}) as Record<string, string>,
+      ).join(" ");
+      expect(
+        `${r.title} ${r.summary} ${r.body} ${tips}`,
+        String(r.slug),
+      ).not.toMatch(forbidden);
     }
   });
 });
 
 describe("content/sahama/articles.json — what the applier will write", () => {
   const root = join(__dirname, "..", "..", "content", "sahama");
-  const articles: Array<Record<string, unknown>> = JSON.parse(readFileSync(join(root, "articles.json"), "utf8")).articles;
-  const rituals: Array<Record<string, unknown>> = JSON.parse(readFileSync(join(root, "rituals.json"), "utf8")).rituals;
+  const articles: Array<Record<string, unknown>> = JSON.parse(
+    readFileSync(join(root, "articles.json"), "utf8"),
+  ).articles;
+  const rituals: Array<Record<string, unknown>> = JSON.parse(
+    readFileSync(join(root, "rituals.json"), "utf8"),
+  ).rituals;
 
   it("has unique, anchor-safe slugs and a known tier", () => {
     const slugs = articles.map((a) => a.slug);
@@ -218,17 +336,26 @@ describe("content/sahama/articles.json — what the applier will write", () => {
   });
 
   it("keeps the basics free (the operator's split: 4 free, the deeper ones with the plan)", () => {
-    expect(articles.filter((a) => a.tier === "free").length).toBeGreaterThanOrEqual(4);
-    expect(articles.filter((a) => a.tier === "plus").length).toBeGreaterThanOrEqual(1);
+    expect(
+      articles.filter((a) => a.tier === "free").length,
+    ).toBeGreaterThanOrEqual(4);
+    expect(
+      articles.filter((a) => a.tier === "plus").length,
+    ).toBeGreaterThanOrEqual(1);
   });
 
   it("every 'Mehr dazu' on a ritual points at an article that exists", () => {
     const slugs = new Set(articles.map((a) => a.slug));
-    for (const r of rituals) if (r.articleSlug) expect(slugs, String(r.slug)).toContain(r.articleSlug);
+    for (const r of rituals)
+      if (r.articleSlug) expect(slugs, String(r.slug)).toContain(r.articleSlug);
   });
 
   it("keeps the wording rules: no healing promises, no herbs, supplements or cures", () => {
-    const forbidden = /heilt\b|heilung|gegen (schmerz|krank)|therapie|ashwagandha|triphala|kapsel(n)? (nehmen|einnehmen)|dosierung|detox|fasten|panchakarma|garantiert|wirkt wunder/i;
-    for (const a of articles) expect(`${a.title} ${a.summary} ${a.body}`, String(a.slug)).not.toMatch(forbidden);
+    const forbidden =
+      /heilt\b|heilung|gegen (schmerz|krank)|therapie|ashwagandha|triphala|kapsel(n)? (nehmen|einnehmen)|dosierung|detox|fasten|panchakarma|garantiert|wirkt wunder/i;
+    for (const a of articles)
+      expect(`${a.title} ${a.summary} ${a.body}`, String(a.slug)).not.toMatch(
+        forbidden,
+      );
   });
 });

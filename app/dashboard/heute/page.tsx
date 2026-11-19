@@ -15,10 +15,22 @@ import { PageHeader } from "@/components/page-header";
 import { PrintButton } from "@/components/sahama/print-button";
 import { RitualCard } from "@/components/sahama/ritual-card";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { EmptyState } from "@/components/ui/empty-state";
 import { requireActiveUser } from "@/lib/authz";
-import { currentRitual, profileFor, sharesOf } from "@/lib/sahama/manage";
+import {
+  currentRitual,
+  profileFor,
+  sharesOf,
+  weeklyRitual,
+} from "@/lib/sahama/manage";
+import { againTodayAction } from "../rueckblick/actions";
 import { ritualImageUrl } from "@/lib/sahama/media";
 import { checkinStatus, recentCheckins } from "@/lib/sahama/checkin";
 import { hasSahamaPlan } from "@/lib/sahama/access";
@@ -44,7 +56,11 @@ export default async function TodayPage({
     return (
       <div className="mx-auto max-w-3xl space-y-6">
         <PageHeader eyebrow={t("today.eyebrow")} title={t("today.title")} />
-        <EmptyState icon={Leaf} title={t("today.noProfileTitle")} description={t("today.noProfileText")}>
+        <EmptyState
+          icon={Leaf}
+          title={t("today.noProfileTitle")}
+          description={t("today.noProfileText")}
+        >
           <Button asChild>
             <Link href="/dashboard/dosha">{t("today.noProfileAction")}</Link>
           </Button>
@@ -60,39 +76,99 @@ export default async function TodayPage({
     hasSahamaPlan(session.user.id),
     keptSlugs(session.user.id),
   ]);
+  const weekly = holdsPlan ? null : await weeklyRitual();
   const format = await getFormatter();
   const imageUrl = current
-    ? await ritualImageUrl(current.ritual.imagePath, { memberId: session.user.id, role: session.user.role ?? null })
+    ? await ritualImageUrl(current.ritual.imagePath, {
+        memberId: session.user.id,
+        role: session.user.role ?? null,
+      })
     : null;
   const leading = leadingDoshas(sharesOf(profile));
-  const dosha = leading.length === 3 ? t("dosha.result.triTitle") : leading.map((d) => t(`doshaName.${d}`)).join("-");
+  const dosha =
+    leading.length === 3
+      ? t("dosha.result.triTitle")
+      : leading.map((d) => t(`doshaName.${d}`)).join("-");
 
   return (
     <div className="mx-auto max-w-3xl space-y-6">
-      {start === "1" && <FlashToast message={t("today.started")} clearParam="start" />}
-      {again === "1" && <FlashToast message={t("review.againToast")} clearParam="again" />}
+      {start === "1" && (
+        <FlashToast message={t("today.started")} clearParam="start" />
+      )}
+      {again === "1" && (
+        <FlashToast message={t("review.againToast")} clearParam="again" />
+      )}
       <div className="print:hidden">
-        <PageHeader eyebrow={t("today.eyebrow")} title={t("today.title")} description={t("today.description")} />
+        <PageHeader
+          eyebrow={t("today.eyebrow")}
+          title={t("today.title")}
+          description={t("today.description")}
+        />
       </div>
 
       <p className="text-muted-foreground text-sm print:hidden">
         {t("today.doshaLine", { name: dosha })} ·{" "}
-        <Link href="/dashboard/dosha" className="text-primary underline-offset-4 hover:underline">
+        <Link
+          href="/dashboard/dosha"
+          className="text-primary underline-offset-4 hover:underline"
+        >
           {t("today.doshaLink")}
         </Link>
       </p>
 
       {current ? (
-        <RitualCard ritual={current.ritual} leading={leading} imageUrl={imageUrl}>
-          {holdsPlan && <KeepButton slug={current.ritual.slug} kept={kept.has(current.ritual.slug)} />}
+        <RitualCard
+          ritual={current.ritual}
+          leading={leading}
+          imageUrl={imageUrl}
+          weekly={current.ritual.slug === weekly?.slug}
+        >
+          {holdsPlan && (
+            <KeepButton
+              slug={current.ritual.slug}
+              kept={kept.has(current.ritual.slug)}
+            />
+          )}
           <PrintButton />
-          <p className="text-muted-foreground w-full text-sm print:hidden">{t("card.printHint")}</p>
+          <p className="text-muted-foreground w-full text-sm print:hidden">
+            {t("card.printHint")}
+          </p>
         </RitualCard>
       ) : (
-        <EmptyState icon={Leaf} title={t("today.noCardTitle")} description={t("today.noCardText")} />
+        <EmptyState
+          icon={Leaf}
+          title={t("today.noCardTitle")}
+          description={t("today.noCardText")}
+        />
       )}
 
-      {current && <Checkin freeLeft={status.freeLeft} repliesOn={status.repliesOn} />}
+      {weekly && current?.ritual.slug !== weekly.slug && (
+        <Card className="print:hidden">
+          <CardHeader>
+            <p className="text-muted-foreground text-sm">
+              {t("today.weeklyEyebrow")}
+            </p>
+            <CardTitle level="h2" className="text-xl">
+              {weekly.title}
+            </CardTitle>
+            {weekly.summary && (
+              <CardDescription>{weekly.summary}</CardDescription>
+            )}
+          </CardHeader>
+          <CardContent>
+            <form action={againTodayAction}>
+              <input type="hidden" name="slug" value={weekly.slug} />
+              <Button type="submit" variant="outline">
+                {t("today.weeklyAction")}
+              </Button>
+            </form>
+          </CardContent>
+        </Card>
+      )}
+
+      {current && (
+        <Checkin freeLeft={status.freeLeft} repliesOn={status.repliesOn} />
+      )}
 
       <Card className="print:hidden">
         <CardHeader>
@@ -103,12 +179,17 @@ export default async function TodayPage({
           <NewCard current={current?.minutes} />
         </CardContent>
       </Card>
-      <section className="space-y-3 print:hidden" aria-labelledby="checkin-history">
+      <section
+        className="space-y-3 print:hidden"
+        aria-labelledby="checkin-history"
+      >
         <h2 id="checkin-history" className="text-lg font-semibold">
           {t("checkin.historyTitle")}
         </h2>
         {history.length === 0 ? (
-          <p className="text-muted-foreground text-sm">{t("checkin.historyEmpty")}</p>
+          <p className="text-muted-foreground text-sm">
+            {t("checkin.historyEmpty")}
+          </p>
         ) : (
           <ul className="space-y-3">
             {history.map((c) => (
@@ -116,13 +197,23 @@ export default async function TodayPage({
                 <Card>
                   <CardContent className="space-y-3">
                     <p className="text-muted-foreground text-xs">
-                      {format.dateTime(c.createdAt, { dateStyle: "medium", timeStyle: "short", timeZone: "Europe/Berlin" })}
+                      {format.dateTime(c.createdAt, {
+                        dateStyle: "medium",
+                        timeStyle: "short",
+                        timeZone: "Europe/Berlin",
+                      })}
                     </p>
-                    <p className="leading-relaxed whitespace-pre-line">{c.note}</p>
+                    <p className="leading-relaxed whitespace-pre-line">
+                      {c.note}
+                    </p>
                     {c.reply && (
                       <div className="bg-muted space-y-1 rounded-lg p-3">
-                        <p className="text-sm font-semibold">{t("checkin.replyTitle")}</p>
-                        <p className="leading-relaxed whitespace-pre-line">{c.reply}</p>
+                        <p className="text-sm font-semibold">
+                          {t("checkin.replyTitle")}
+                        </p>
+                        <p className="leading-relaxed whitespace-pre-line">
+                          {c.reply}
+                        </p>
                       </div>
                     )}
                   </CardContent>

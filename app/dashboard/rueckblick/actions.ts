@@ -15,14 +15,19 @@ import { SahamaError, leadingDoshas } from "@/lib/sahama/rules";
 export type { ActionState } from "@/lib/action-state";
 import type { ActionState } from "@/lib/action-state";
 
-export async function writeReviewAction(_prev: ActionState, _form: FormData): Promise<ActionState> {
+export async function writeReviewAction(
+  _prev: ActionState,
+  _form: FormData,
+): Promise<ActionState> {
   const session = await requireActiveUser();
   const t = await getTranslations("sahama");
   try {
     const body = await writeWeeklyReview(session.user.id, {
       dosha: (shares) => {
         const lead = leadingDoshas(shares);
-        return lead.length === 3 ? t("dosha.result.triTitle") : lead.map((d) => t(`doshaName.${d}`)).join("-");
+        return lead.length === 3
+          ? t("dosha.result.triTitle")
+          : lead.map((d) => t(`doshaName.${d}`)).join("-");
       },
       time: (time) => t(`review.favouriteTime.${time}`),
     });
@@ -31,7 +36,8 @@ export async function writeReviewAction(_prev: ActionState, _form: FormData): Pr
   } catch (error) {
     unstable_rethrow(error);
     const te = await getTranslations("errors");
-    if (error instanceof SahamaError) return { error: te(error.code), ok: null };
+    if (error instanceof SahamaError)
+      return { error: te(error.code), ok: null };
     console.error("[sahama] weekly review failed:", error);
     return { error: te("sahamaReviewFailed"), ok: null };
   }

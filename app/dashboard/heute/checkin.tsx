@@ -12,15 +12,34 @@ import { useTranslations } from "next-intl";
 import { AiDisclosure } from "@/components/ai-disclosure";
 import { Button } from "@/components/ui/button";
 import { Callout } from "@/components/ui/callout";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
 import { checkinAction, type CheckinState } from "./actions";
 
-const INITIAL: CheckinState = { error: null, note: "", reply: null, noReply: null, nextRitualTitle: null, savedAt: null };
+const INITIAL: CheckinState = {
+  error: null,
+  note: "",
+  reply: null,
+  noReply: null,
+  nextRitualTitle: null,
+  savedAt: null,
+};
 
-export function Checkin({ freeLeft, repliesOn }: { freeLeft: number | null; repliesOn: boolean }) {
+export function Checkin({
+  freeLeft,
+  repliesOn,
+}: {
+  freeLeft: number | null;
+  repliesOn: boolean;
+}) {
   const t = useTranslations("sahama.checkin");
   const [state, formAction, pending] = useActionState(checkinAction, INITIAL);
 
@@ -36,7 +55,10 @@ export function Checkin({ freeLeft, repliesOn }: { freeLeft: number | null; repl
         <AiDisclosure surface="sahamaCheckin" />
 
         {state.savedAt && state.reply && (
-          <div className="bg-muted max-h-96 space-y-2 overflow-y-auto rounded-lg p-4" aria-live="polite">
+          <div
+            className="bg-muted max-h-96 space-y-2 overflow-y-auto rounded-lg p-4"
+            aria-live="polite"
+          >
             <p className="text-sm font-semibold">{t("replyTitle")}</p>
             <p className="leading-relaxed whitespace-pre-line">{state.reply}</p>
           </div>
@@ -44,18 +66,28 @@ export function Checkin({ freeLeft, repliesOn }: { freeLeft: number | null; repl
         {state.savedAt && state.noReply === "noFreeRepliesLeft" && (
           <Callout variant="info" title={t("noFreeLeftTitle")}>
             <p>{t("noFreeLeftText")}</p>
-            <Button asChild size="sm" className="mt-3 no-underline">
+            <Button asChild size="sm" className="mt-3">
               <Link href="/plans?needs=sahama">{t("noFreeLeftAction")}</Link>
             </Button>
           </Callout>
         )}
-        {state.savedAt && state.noReply === "replyFailed" && <Callout variant="warning">{t("replyFailed")}</Callout>}
-        {state.savedAt && state.noReply === "switchedOff" && <Callout variant="success">{t("switchedOff")}</Callout>}
+        {state.savedAt && state.noReply === "replyFailed" && (
+          <Callout variant="warning">{t("replyFailed")}</Callout>
+        )}
+        {state.savedAt && state.noReply === "switchedOff" && (
+          <Callout variant="success">{t("switchedOff")}</Callout>
+        )}
         {state.savedAt && state.nextRitualTitle && (
-          <p className="text-muted-foreground text-sm">{t("next", { title: state.nextRitualTitle })}</p>
+          <p className="text-muted-foreground text-sm">
+            {t("next", { title: state.nextRitualTitle })}
+          </p>
         )}
 
-        <form action={formAction} className="space-y-3" key={state.savedAt ?? "new"}>
+        <form
+          action={formAction}
+          className="space-y-3"
+          key={state.savedAt ?? "new"}
+        >
           <Label htmlFor="checkin-note" className="sr-only">
             {t("title")}
           </Label>
@@ -74,7 +106,9 @@ export function Checkin({ freeLeft, repliesOn }: { freeLeft: number | null; repl
               {pending ? t("submitting") : t("submit")}
             </Button>
             {repliesOn && freeLeft !== null && (
-              <p className="text-muted-foreground text-sm">{t("freeLeft", { count: freeLeft })}</p>
+              <p className="text-muted-foreground text-sm">
+                {t("freeLeft", { count: freeLeft })}
+              </p>
             )}
           </div>
         </form>

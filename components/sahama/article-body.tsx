@@ -14,7 +14,11 @@ export function ArticleBody({ body }: { body: string }) {
     <div className="space-y-4 leading-relaxed">
       {blocks.map((block, i) =>
         block.startsWith("## ") ? (
-          <h2 key={i} id={slugifyAnchor(block.slice(3))} className="scroll-mt-20 pt-2 text-lg font-semibold">
+          <h2
+            key={i}
+            id={slugifyAnchor(block.slice(3))}
+            className="scroll-mt-20 pt-2 text-lg font-semibold"
+          >
             {block.slice(3)}
           </h2>
         ) : (

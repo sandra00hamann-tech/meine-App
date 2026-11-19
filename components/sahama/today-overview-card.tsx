@@ -8,7 +8,13 @@ import { getTranslations } from "next-intl/server";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { currentRitual, profileFor } from "@/lib/sahama/manage";
 
 export async function TodayOverviewCard({ memberId }: { memberId: string }) {
@@ -21,7 +27,9 @@ export async function TodayOverviewCard({ memberId }: { memberId: string }) {
       <Card className="mb-6">
         <CardHeader>
           <CardTitle level="h2">{t("dashboard.startTitle")}</CardTitle>
-          <CardDescription className="text-base">{t("dashboard.startText")}</CardDescription>
+          <CardDescription className="text-base">
+            {t("dashboard.startText")}
+          </CardDescription>
         </CardHeader>
         <CardContent>
           <Button asChild>
@@ -42,7 +50,11 @@ export async function TodayOverviewCard({ memberId }: { memberId: string }) {
             <CardTitle level="h2" className="text-xl">
               {current.ritual.title}
             </CardTitle>
-            {current.ritual.summary && <CardDescription className="text-base">{current.ritual.summary}</CardDescription>}
+            {current.ritual.summary && (
+              <CardDescription className="text-base">
+                {current.ritual.summary}
+              </CardDescription>
+            )}
           </>
         ) : (
           <CardTitle level="h2" className="text-xl">
@@ -51,7 +63,11 @@ export async function TodayOverviewCard({ memberId }: { memberId: string }) {
         )}
       </CardHeader>
       <CardContent className="flex flex-wrap items-center gap-3">
-        {current && <Badge variant="secondary">{t("today.minutesBadge", { count: current.ritual.minutes })}</Badge>}
+        {current && (
+          <Badge variant="secondary">
+            {t("today.minutesBadge", { count: current.ritual.minutes })}
+          </Badge>
+        )}
         <Button asChild>
           <Link href="/dashboard/heute">{t("dashboard.openAction")}</Link>
         </Button>

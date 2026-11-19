@@ -1141,7 +1141,9 @@
       "steps": "So geht's",
       "newCardTitle": "Wie viel Zeit hast du gerade?",
       "newCard": "{count} Minuten",
-      "newCardHint": "Wir suchen dir ein Ritual aus, das in diese Zeit passt."
+      "newCardHint": "Wir suchen dir ein Ritual aus, das in diese Zeit passt.",
+      "weeklyEyebrow": "Ritual der Woche – diese Woche gratis für dich",
+      "weeklyAction": "Heute machen"
     },
     "card": {
       "freeBadge": "Gratis",
@@ -1149,7 +1151,8 @@
       "tipsFor": "Für dich als {name}",
       "print": "Drucken oder als PDF speichern",
       "printHint": "Tipp: Im Druckfenster kannst du statt eines Druckers „Als PDF speichern“ wählen.",
-      "more": "Mehr dazu im Ayurveda-Wissen"
+      "more": "Mehr dazu im Ayurveda-Wissen",
+      "weeklyBadge": "Ritual der Woche"
     },
     "dashboard": {
       "title": "Dein Ritual für heute",
@@ -1164,13 +1167,13 @@
       "placeholder": "Zum Beispiel: Hat gutgetan, aber ich war so müde …",
       "submit": "Einchecken",
       "submitting": "Sahama liest …",
-      "freeLeft": "{count, plural, =0 {Deine Probe-Antworten sind aufgebraucht.} one {Noch # persönliche Antwort zum Probieren.} other {Noch # persönliche Antworten zum Probieren.}}",
+      "freeLeft": "{count, plural, =0 {Deine persönliche Antwort für diese Woche ist vergeben – nächste Woche gibt es wieder eine.} one {Diese Woche noch # persönliche Antwort für dich.} other {Diese Woche noch # persönliche Antworten für dich.}}",
       "replyTitle": "Sahamas Antwort",
       "yourNote": "Dein Check-in",
       "saved": "Dein Check-in ist gespeichert.",
       "next": "Dein nächstes Ritual: {title}",
-      "noFreeLeftTitle": "Deine drei Probe-Antworten sind aufgebraucht",
-      "noFreeLeftText": "Dein Check-in ist gespeichert. Mit dem Sahama-Abo bekommst du auf jeden Check-in eine persönliche Antwort – dazu alle Rituale und deinen Wochenrückblick.",
+      "noFreeLeftTitle": "Deine persönliche Antwort für diese Woche ist vergeben",
+      "noFreeLeftText": "Dein Check-in ist gespeichert. Nächste Woche antwortet dir Sahama wieder. Mit dem Sahama-Abo bekommst du auf jeden Check-in eine persönliche Antwort – dazu alle Rituale und deinen Wochenrückblick.",
       "noFreeLeftAction": "Sahama-Abo ansehen",
       "replyFailed": "Dein Check-in ist gespeichert, aber die Antwort konnte gerade nicht geschrieben werden. Versuch es später noch einmal mit einem neuen Check-in.",
       "switchedOff": "Dein Check-in ist gespeichert.",
@@ -1221,8 +1224,8 @@
       "keptEmpty": "Leg Rituale, die dir gutgetan haben, mit „Behalten“ auf der Ritual-Karte hierher.",
       "again": "Heute noch einmal",
       "againToast": "Ist jetzt deine Karte für heute.",
-      "lockedTitle": "Rückblick und Lieblingsrituale gehören zum Sahama-Abo",
-      "lockedText": "Mit dem Abo siehst du jede Woche, was du für dich getan hast, bekommst Sahamas persönliche Beobachtung und kannst deine Lieblingsrituale behalten.",
+      "lockedTitle": "Sahamas Beobachtung und deine Lieblingsrituale gehören zum Sahama-Abo",
+      "lockedText": "Deine Woche siehst du hier immer. Mit dem Abo schreibt Sahama dir jede Woche eine persönliche Beobachtung dazu, und du kannst deine Lieblingsrituale behalten.",
       "lockedAction": "Sahama-Abo ansehen"
     }
   },

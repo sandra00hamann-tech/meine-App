@@ -72,7 +72,9 @@ export function scoreDosha(answers: DoshaAnswers): DoshaShares {
   const floored = raw.map((r) => ({ ...r, value: Math.floor(r.exact) }));
   let missing = 100 - floored.reduce((sum, r) => sum + r.value, 0);
   const byRemainder = [...floored].sort(
-    (a, b) => b.exact - b.value - (a.exact - a.value) || DOSHAS.indexOf(a.d) - DOSHAS.indexOf(b.d),
+    (a, b) =>
+      b.exact - b.value - (a.exact - a.value) ||
+      DOSHAS.indexOf(a.d) - DOSHAS.indexOf(b.d),
   );
   for (const r of byRemainder) {
     if (missing <= 0) break;
@@ -90,7 +92,9 @@ export function scoreDosha(answers: DoshaAnswers): DoshaShares {
  * third is (Tridosha — rare, and then every Dosha's hint applies).
  */
 export function leadingDoshas(shares: DoshaShares): Dosha[] {
-  const sorted = [...DOSHAS].sort((a, b) => shares[b] - shares[a] || DOSHAS.indexOf(a) - DOSHAS.indexOf(b));
+  const sorted = [...DOSHAS].sort(
+    (a, b) => shares[b] - shares[a] || DOSHAS.indexOf(a) - DOSHAS.indexOf(b),
+  );
   const [first, second, third] = sorted;
   if (shares[first] - shares[third] <= 15) return [first, second, third];
   if (shares[first] - shares[second] <= 15) return [first, second];
@@ -109,9 +113,16 @@ export function parseMinutes(value: unknown): MinuteOption {
 }
 
 /** The time of day in Germany — her rituals follow her clock, not the server's. */
-export function timeOfDayAt(now: Date, timeZone = "Europe/Berlin"): Exclude<TimeOfDay, "any"> {
+export function timeOfDayAt(
+  now: Date,
+  timeZone = "Europe/Berlin",
+): Exclude<TimeOfDay, "any"> {
   const hour = Number(
-    new Intl.DateTimeFormat("en-GB", { hour: "numeric", hourCycle: "h23", timeZone }).format(now),
+    new Intl.DateTimeFormat("en-GB", {
+      hour: "numeric",
+      hourCycle: "h23",
+      timeZone,
+    }).format(now),
   );
   if (hour >= 4 && hour < 11) return "morning";
   if (hour >= 11 && hour < 16) return "midday";
@@ -163,10 +174,17 @@ export function ritualScore(r: RitualForChoice, input: ChoiceInput): number {
  * an empty card.
  */
 export function chooseRitual(input: ChoiceInput): string {
-  const candidates = input.rituals.filter((r) => r.allowed && r.minutes <= input.minutes);
+  const candidates = input.rituals.filter(
+    (r) => r.allowed && r.minutes <= input.minutes,
+  );
   if (candidates.length === 0) throw new SahamaError("sahamaNoRitual");
   const ranked = candidates
     .map((r) => ({ r, score: ritualScore(r, input) }))
-    .sort((a, b) => b.score - a.score || a.r.position - b.r.position || a.r.slug.localeCompare(b.r.slug));
+    .sort(
+      (a, b) =>
+        b.score - a.score ||
+        a.r.position - b.r.position ||
+        a.r.slug.localeCompare(b.r.slug),
+    );
   return ranked[0].r.slug;
 }

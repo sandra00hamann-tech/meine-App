@@ -15,7 +15,10 @@ import { newCardAction } from "./actions";
 
 export function NewCard({ current }: { current?: number }) {
   const t = useTranslations("sahama.today");
-  const [state, formAction, pending] = useActionState(newCardAction, EMPTY_ACTION_STATE);
+  const [state, formAction, pending] = useActionState(
+    newCardAction,
+    EMPTY_ACTION_STATE,
+  );
 
   return (
     <form action={formAction} className="space-y-3">

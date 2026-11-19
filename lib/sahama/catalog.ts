@@ -37,26 +37,70 @@ export type TimeOfDay = (typeof TIMES_OF_DAY)[number];
  * (messages → sahama.dosha.disclaimer) — never a diagnosis.
  */
 export const DOSHA_SECTIONS = [
-  { id: "body", questions: ["frame", "weight", "skin", "hair", "joints", "extremities", "eyes", "temperature"] },
-  { id: "daily", questions: ["appetite", "thirst", "afterMeal", "taste", "sleep", "energy", "pace", "weather"] },
-  { id: "mind", questions: ["mind", "memory", "decisions", "stress", "wellbeing", "routine", "money", "speech"] },
+  {
+    id: "body",
+    questions: [
+      "frame",
+      "weight",
+      "skin",
+      "hair",
+      "joints",
+      "extremities",
+      "eyes",
+      "temperature",
+    ],
+  },
+  {
+    id: "daily",
+    questions: [
+      "appetite",
+      "thirst",
+      "afterMeal",
+      "taste",
+      "sleep",
+      "energy",
+      "pace",
+      "weather",
+    ],
+  },
+  {
+    id: "mind",
+    questions: [
+      "mind",
+      "memory",
+      "decisions",
+      "stress",
+      "wellbeing",
+      "routine",
+      "money",
+      "speech",
+    ],
+  },
 ] as const;
 
 export const DOSHA_QUESTIONS = DOSHA_SECTIONS.flatMap((s) => s.questions);
-export type DoshaQuestion = (typeof DOSHA_SECTIONS)[number]["questions"][number];
+export type DoshaQuestion =
+  (typeof DOSHA_SECTIONS)[number]["questions"][number];
 
 export type DoshaAnswers = Partial<Record<DoshaQuestion, Dosha>>;
 
 export function isDosha(value: unknown): value is Dosha {
-  return typeof value === "string" && (DOSHAS as readonly string[]).includes(value);
+  return (
+    typeof value === "string" && (DOSHAS as readonly string[]).includes(value)
+  );
 }
 
 export function isConcern(value: unknown): value is Concern {
-  return typeof value === "string" && (CONCERNS as readonly string[]).includes(value);
+  return (
+    typeof value === "string" && (CONCERNS as readonly string[]).includes(value)
+  );
 }
 
 export function isMinuteOption(value: unknown): value is MinuteOption {
-  return typeof value === "number" && (MINUTE_OPTIONS as readonly number[]).includes(value);
+  return (
+    typeof value === "number" &&
+    (MINUTE_OPTIONS as readonly number[]).includes(value)
+  );
 }
 
 /**

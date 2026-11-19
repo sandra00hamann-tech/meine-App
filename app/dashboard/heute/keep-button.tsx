@@ -16,13 +16,21 @@ import { keepAction } from "./actions";
 
 export function KeepButton({ slug, kept }: { slug: string; kept: boolean }) {
   const t = useTranslations("sahama.keep");
-  const [state, formAction, pending] = useActionState(keepAction, EMPTY_ACTION_STATE);
+  const [state, formAction, pending] = useActionState(
+    keepAction,
+    EMPTY_ACTION_STATE,
+  );
   useActionToast(state);
   return (
     <form action={formAction} className="print:hidden">
       <input type="hidden" name="slug" value={slug} />
       <input type="hidden" name="keep" value={kept ? "0" : "1"} />
-      <Button type="submit" variant={kept ? "secondary" : "outline"} disabled={pending} aria-pressed={kept}>
+      <Button
+        type="submit"
+        variant={kept ? "secondary" : "outline"}
+        disabled={pending}
+        aria-pressed={kept}
+      >
         <Heart aria-hidden className={kept ? "fill-current" : undefined} />
         {kept ? t("kept") : t("keep")}
       </Button>

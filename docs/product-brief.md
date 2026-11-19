@@ -76,18 +76,22 @@ antwortet.
 
 ## Gratis und Abo
 
-Entschieden am 2026-11-19: Jede, die sich anmeldet, kann Sahama gratis nutzen
-— der Einstieg für Leserinnen von Blog und Pinterest. Das Abo schaltet mehr frei.
+Entschieden am 2026-11-19 und am selben Tag nachgeschärft: Die Gratis-Version
+soll **auf Dauer** lebendig bleiben – viele bleiben bei Gratis, und auch sie
+sind Leserinnen, Empfehlerinnen und spätere Käuferinnen.
 
 | | Gratis (angemeldet, ohne Kauf) | Sahama-Abo |
 |---|---|---|
-| Einstieg + erste Ritual-Karte | ja | ja |
-| Ritual-Karten | 7 Einsteiger-Rituale | die ganze Sammlung |
-| Check-in | notieren; **3 persönliche Antworten zum Probieren** | jede Antwort persönlich |
-| Wochenrückblick, Lieblingsrituale behalten | – | ja |
+| Dosha-Test, Ergebnis-Karte | ja | ja |
+| Ritual-Karten | 7 Einsteiger-Rituale **+ jede Woche ein „Ritual der Woche“** aus dem Abo | alle Rituale, passend zu Zeit und Dosha |
+| Check-in | jede Woche **eine** persönliche Antwort, sonst notieren | jede Antwort persönlich |
+| Rückblick | die Wochenzahlen (Check-ins, Tage, häufigste Tageszeit) | dazu Sahamas Wochenbeobachtung, frühere Wochen |
+| Lieblingsrituale behalten | – | ja |
+| Ayurveda-Wissen | Grundlagen + einzelne Artikel, die die Betreiberin gratis stellt | alle Artikel |
 
-Die persönlichen Antworten kosten bei jeder Nutzung etwas; deshalb gehören sie
-— bis auf die drei zum Probieren — ins Abo.
+Die persönlichen Antworten kosten bei jeder Nutzung etwas (etwa 1 Cent) –
+deshalb gratis nur eine pro Woche. Das Ritual der Woche rotiert der Reihe
+nach durch alle Abo-Rituale.
 
 ## Ayurveda-Wissen
 

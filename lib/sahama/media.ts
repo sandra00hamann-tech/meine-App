@@ -16,12 +16,20 @@ import { mayAccess, type Viewer } from "@/lib/media/manage";
 import { mediaUrlFor } from "@/lib/media/url";
 
 /** The address of a ritual's picture for this viewer, or null (no path, no row, no access). */
-export async function ritualImageUrl(path: string | null, viewer: Viewer): Promise<string | null> {
+export async function ritualImageUrl(
+  path: string | null,
+  viewer: Viewer,
+): Promise<string | null> {
   if (!path) return null;
   const [row] = await db
     .select()
     .from(media)
-    .where(eq(media.storageKey, CONTENT_MEDIA_BUCKET_PREFIX + path.replace(/^\/+/, "")));
+    .where(
+      eq(
+        media.storageKey,
+        CONTENT_MEDIA_BUCKET_PREFIX + path.replace(/^\/+/, ""),
+      ),
+    );
   if (!row) return null;
   if (!(await mayAccess(row, viewer))) return null;
   return mediaUrlFor(row);

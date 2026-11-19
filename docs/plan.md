@@ -40,9 +40,10 @@ hast._
 - [ ] (Betreiberin) Rituale und Artikel mit Text, Bild und „gratis oder Abo“
       selbst anlegen und ändern, auch vom Handy — und die 30 Rituale und
       10 Artikel aus dem Startbestand gegenlesen und freigeben
-- [ ] Sahama gratis nutzen (7 Einsteiger-Rituale, 3 persönliche Antworten zum
-      Probieren, Grundlagen-Artikel, Dosha-Test) und mit dem Sahama-Abo über
-      Digistore24 alles freischalten
+- [ ] Sahama auf Dauer gratis nutzen (7 Einsteiger-Rituale + Ritual der Woche,
+      eine persönliche Antwort pro Woche, Wochenzahlen, Grundlagen-Artikel,
+      Dosha-Test) und mit dem Sahama-Abo über Digistore24 alles freischalten
+      — die Gratis-Seite gebaut 2026-11-19, der Kauf über Digistore24 fehlt noch
 
 ## Woran wir merken, dass eine Kundin bleibt
 

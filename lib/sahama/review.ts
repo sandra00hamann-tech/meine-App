@@ -9,12 +9,18 @@
 import { and, asc, desc, eq, gte, inArray, lt } from "drizzle-orm";
 
 import { db } from "@/db";
-import { sahamaCheckins, sahamaKept, sahamaRituals, sahamaSuggestions, sahamaWeeklyReviews } from "@/db/schema";
+import {
+  sahamaCheckins,
+  sahamaKept,
+  sahamaRituals,
+  sahamaSuggestions,
+  sahamaWeeklyReviews,
+} from "@/db/schema";
 import { runTask } from "@/lib/ai/run";
 
-import { hasSahamaPlan, mayUseTier } from "./access";
+import { hasSahamaPlan, mayUseRitual } from "./access";
 import type { TimeOfDay } from "./catalog";
-import { profileFor, sharesOf } from "./manage";
+import { profileFor, sharesOf, weeklyRitual } from "./manage";
 import {
   MIN_CHECKINS_FOR_REVIEW,
   buildReviewRequest,
@@ -28,18 +34,24 @@ import { SahamaError, type DoshaShares } from "./rules";
 export type SahamaRitualRow = typeof sahamaRituals.$inferSelect;
 
 async function requirePlan(memberId: string) {
-  if (!(await hasSahamaPlan(memberId))) throw new SahamaError("sahamaNeedsPlan");
+  if (!(await hasSahamaPlan(memberId)))
+    throw new SahamaError("sahamaNeedsPlan");
 }
 
 // ── Kept rituals ─────────────────────────────────────────────────────────
 
 export async function keptSlugs(memberId: string): Promise<Set<string>> {
-  const rows = await db.select({ slug: sahamaKept.ritualSlug }).from(sahamaKept).where(eq(sahamaKept.memberId, memberId));
+  const rows = await db
+    .select({ slug: sahamaKept.ritualSlug })
+    .from(sahamaKept)
+    .where(eq(sahamaKept.memberId, memberId));
   return new Set(rows.map((r) => r.slug));
 }
 
 /** Her kept rituals that still exist and are published, newest kept first. */
-export async function keptRituals(memberId: string): Promise<SahamaRitualRow[]> {
+export async function keptRituals(
+  memberId: string,
+): Promise<SahamaRitualRow[]> {
   const kept = await db
     .select({ slug: sahamaKept.ritualSlug })
     .from(sahamaKept)
@@ -49,39 +61,75 @@ export async function keptRituals(memberId: string): Promise<SahamaRitualRow[]> 
   const rows = await db
     .select()
     .from(sahamaRituals)
-    .where(and(inArray(sahamaRituals.slug, kept.map((k) => k.slug)), eq(sahamaRituals.published, true)));
+    .where(
+      and(
+        inArray(
+          sahamaRituals.slug,
+          kept.map((k) => k.slug),
+        ),
+        eq(sahamaRituals.published, true),
+      ),
+    );
   const bySlug = new Map(rows.map((r) => [r.slug, r]));
-  return kept.map((k) => bySlug.get(k.slug)).filter((r): r is SahamaRitualRow => Boolean(r));
+  return kept
+    .map((k) => bySlug.get(k.slug))
+    .filter((r): r is SahamaRitualRow => Boolean(r));
 }
 
 /** Keep or let go of a ritual. Only a ritual she may open can be kept. */
-export async function setKept(memberId: string, slug: string, keep: boolean): Promise<void> {
+export async function setKept(
+  memberId: string,
+  slug: string,
+  keep: boolean,
+): Promise<void> {
   await requirePlan(memberId);
   if (!keep) {
-    await db.delete(sahamaKept).where(and(eq(sahamaKept.memberId, memberId), eq(sahamaKept.ritualSlug, slug)));
+    await db
+      .delete(sahamaKept)
+      .where(
+        and(eq(sahamaKept.memberId, memberId), eq(sahamaKept.ritualSlug, slug)),
+      );
     return;
   }
   const [ritual] = await db
     .select({ slug: sahamaRituals.slug })
     .from(sahamaRituals)
-    .where(and(eq(sahamaRituals.slug, slug), eq(sahamaRituals.published, true)));
+    .where(
+      and(eq(sahamaRituals.slug, slug), eq(sahamaRituals.published, true)),
+    );
   if (!ritual) throw new SahamaError("sahamaNoRitual");
-  await db.insert(sahamaKept).values({ memberId, ritualSlug: slug }).onConflictDoNothing();
+  await db
+    .insert(sahamaKept)
+    .values({ memberId, ritualSlug: slug })
+    .onConflictDoNothing();
 }
 
 /** Makes a ritual she may open her card for today ("noch einmal machen"). */
-export async function chooseRitualNow(memberId: string, slug: string): Promise<void> {
+export async function chooseRitualNow(
+  memberId: string,
+  slug: string,
+): Promise<void> {
   const [ritual] = await db
     .select()
     .from(sahamaRituals)
-    .where(and(eq(sahamaRituals.slug, slug), eq(sahamaRituals.published, true)));
-  if (!ritual || !mayUseTier(ritual.tier, await hasSahamaPlan(memberId))) throw new SahamaError("sahamaNoRitual");
-  await db.insert(sahamaSuggestions).values({ memberId, ritualSlug: slug, minutes: ritual.minutes });
+    .where(
+      and(eq(sahamaRituals.slug, slug), eq(sahamaRituals.published, true)),
+    );
+  const holdsPlan = await hasSahamaPlan(memberId);
+  const weekly = holdsPlan ? null : ((await weeklyRitual())?.slug ?? null);
+  if (!ritual || !mayUseRitual(ritual, holdsPlan, weekly))
+    throw new SahamaError("sahamaNoRitual");
+  await db
+    .insert(sahamaSuggestions)
+    .values({ memberId, ritualSlug: slug, minutes: ritual.minutes });
 }
 
 // ── The weekly review ────────────────────────────────────────────────────
 
-export async function weekCheckins(memberId: string, weekStart: string): Promise<WeekCheckin[]> {
+export async function weekCheckins(
+  memberId: string,
+  weekStart: string,
+): Promise<WeekCheckin[]> {
   const { from, to } = weekBounds(weekStart);
   const rows = await db
     .select({
@@ -92,7 +140,13 @@ export async function weekCheckins(memberId: string, weekStart: string): Promise
     })
     .from(sahamaCheckins)
     .leftJoin(sahamaRituals, eq(sahamaRituals.slug, sahamaCheckins.ritualSlug))
-    .where(and(eq(sahamaCheckins.memberId, memberId), gte(sahamaCheckins.createdAt, from), lt(sahamaCheckins.createdAt, to)))
+    .where(
+      and(
+        eq(sahamaCheckins.memberId, memberId),
+        gte(sahamaCheckins.createdAt, from),
+        lt(sahamaCheckins.createdAt, to),
+      ),
+    )
     .orderBy(asc(sahamaCheckins.createdAt));
   return rows.map((r) => ({
     at: r.at,
@@ -118,7 +172,10 @@ export async function storedReviews(memberId: string, limit = 6) {
  */
 export async function writeWeeklyReview(
   memberId: string,
-  labels: { dosha: (shares: DoshaShares) => string; time: (t: string) => string },
+  labels: {
+    dosha: (shares: DoshaShares) => string;
+    time: (t: string) => string;
+  },
   now = new Date(),
 ): Promise<string> {
   await requirePlan(memberId);
@@ -128,21 +185,35 @@ export async function writeWeeklyReview(
   const [existing] = await db
     .select({ body: sahamaWeeklyReviews.body })
     .from(sahamaWeeklyReviews)
-    .where(and(eq(sahamaWeeklyReviews.memberId, memberId), eq(sahamaWeeklyReviews.weekStart, weekStart)));
+    .where(
+      and(
+        eq(sahamaWeeklyReviews.memberId, memberId),
+        eq(sahamaWeeklyReviews.weekStart, weekStart),
+      ),
+    );
   if (existing) return existing.body;
 
   const checkins = await weekCheckins(memberId, weekStart);
-  if (checkins.length < MIN_CHECKINS_FOR_REVIEW) throw new SahamaError("sahamaReviewTooEarly");
+  if (checkins.length < MIN_CHECKINS_FOR_REVIEW)
+    throw new SahamaError("sahamaReviewTooEarly");
   const numbers = weekNumbers(checkins);
   const request = buildReviewRequest({
     dosha: labels.dosha(sharesOf(profile)),
     numbers,
-    favouriteTimeLabel: numbers.favouriteTime ? labels.time(numbers.favouriteTime) : null,
-    notes: checkins.map((c, i) => ({ label: `Check-in ${i + 1} (${c.ritualTitle})`, text: c.note })),
+    favouriteTimeLabel: numbers.favouriteTime
+      ? labels.time(numbers.favouriteTime)
+      : null,
+    notes: checkins.map((c, i) => ({
+      label: `Check-in ${i + 1} (${c.ritualTitle})`,
+      text: c.note,
+    })),
   });
   const result = await runTask("sahama.review", { ...request, memberId });
   const body = result.text.trim();
   if (!body) throw new SahamaError("sahamaReviewFailed");
-  await db.insert(sahamaWeeklyReviews).values({ memberId, weekStart, body }).onConflictDoNothing();
+  await db
+    .insert(sahamaWeeklyReviews)
+    .values({ memberId, weekStart, body })
+    .onConflictDoNothing();
   return body;
 }

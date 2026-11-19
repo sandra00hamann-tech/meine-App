@@ -19,16 +19,23 @@ export async function listArticles(): Promise<SahamaArticle[]> {
     .orderBy(asc(sahamaArticles.position));
 }
 
-export async function articleBySlug(slug: string): Promise<SahamaArticle | null> {
+export async function articleBySlug(
+  slug: string,
+): Promise<SahamaArticle | null> {
   const [row] = await db
     .select()
     .from(sahamaArticles)
-    .where(and(eq(sahamaArticles.slug, slug), eq(sahamaArticles.published, true)));
+    .where(
+      and(eq(sahamaArticles.slug, slug), eq(sahamaArticles.published, true)),
+    );
   return row ?? null;
 }
 
 /** May this member read this article in full? Free for all, plus with the plan. */
-export async function mayReadArticle(memberId: string, article: Pick<SahamaArticle, "tier">): Promise<boolean> {
+export async function mayReadArticle(
+  memberId: string,
+  article: Pick<SahamaArticle, "tier">,
+): Promise<boolean> {
   if (article.tier === "free") return true;
   return mayUseTier(article.tier, await hasSahamaPlan(memberId));
 }

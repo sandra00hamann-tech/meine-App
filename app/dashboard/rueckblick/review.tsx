@@ -14,16 +14,28 @@ import { EMPTY_ACTION_STATE } from "@/lib/action-state";
 
 import { writeReviewAction } from "./actions";
 
-export function Review({ stored, canWrite }: { stored: string | null; canWrite: boolean }) {
+export function Review({
+  stored,
+  canWrite,
+}: {
+  stored: string | null;
+  canWrite: boolean;
+}) {
   const t = useTranslations("sahama.review");
-  const [state, formAction, pending] = useActionState(writeReviewAction, EMPTY_ACTION_STATE);
+  const [state, formAction, pending] = useActionState(
+    writeReviewAction,
+    EMPTY_ACTION_STATE,
+  );
   const body = stored ?? state.ok;
 
   return (
     <div className="space-y-3">
       <AiDisclosure surface="sahamaReview" />
       {body ? (
-        <div className="bg-muted max-h-96 space-y-2 overflow-y-auto rounded-lg p-4" aria-live="polite">
+        <div
+          className="bg-muted max-h-96 space-y-2 overflow-y-auto rounded-lg p-4"
+          aria-live="polite"
+        >
           <p className="text-sm font-semibold">{t("observationTitle")}</p>
           <p className="leading-relaxed whitespace-pre-line">{body}</p>
         </div>

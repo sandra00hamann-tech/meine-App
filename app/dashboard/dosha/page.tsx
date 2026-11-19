@@ -31,12 +31,17 @@ export default async function DoshaPage({
     return (
       <div className="mx-auto max-w-3xl space-y-6">
         <PageHeader eyebrow={t("dosha.eyebrow")} title={t("dosha.title")} />
-        <DoshaResultCard shares={sharesOf(profile)} takenAt={profile.doshaTakenAt}>
+        <DoshaResultCard
+          shares={sharesOf(profile)}
+          takenAt={profile.doshaTakenAt}
+        >
           <Button asChild>
             <Link href="/dashboard/heute">{t("dosha.result.next")}</Link>
           </Button>
           <Button asChild variant="outline">
-            <Link href="/dashboard/dosha?neu=1">{t("dosha.result.retake")}</Link>
+            <Link href="/dashboard/dosha?neu=1">
+              {t("dosha.result.retake")}
+            </Link>
           </Button>
         </DoshaResultCard>
       </div>
@@ -45,9 +50,16 @@ export default async function DoshaPage({
 
   return (
     <div className="mx-auto max-w-3xl space-y-6">
-      <PageHeader eyebrow={t("dosha.eyebrow")} title={t("dosha.title")} description={t("dosha.description")} />
+      <PageHeader
+        eyebrow={t("dosha.eyebrow")}
+        title={t("dosha.title")}
+        description={t("dosha.description")}
+      />
       <Callout variant="info">{t("dosha.disclaimer")}</Callout>
-      <DoshaForm initialConcerns={profile?.concerns} initialMinutes={profile?.usualMinutes} />
+      <DoshaForm
+        initialConcerns={profile?.concerns}
+        initialMinutes={profile?.usualMinutes}
+      />
     </div>
   );
 }

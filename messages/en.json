@@ -1141,7 +1141,9 @@
       "steps": "How it works",
       "newCardTitle": "How much time do you have right now?",
       "newCard": "{count} minutes",
-      "newCardHint": "We pick a ritual that fits into that time."
+      "newCardHint": "We pick a ritual that fits into that time.",
+      "weeklyEyebrow": "Ritual of the week — free for you this week",
+      "weeklyAction": "Do it today"
     },
     "card": {
       "freeBadge": "Free",
@@ -1149,7 +1151,8 @@
       "tipsFor": "For you as {name}",
       "print": "Print or save as PDF",
       "printHint": "Tip: in the print window you can choose “Save as PDF” instead of a printer.",
-      "more": "More in Ayurveda knowledge"
+      "more": "More in Ayurveda knowledge",
+      "weeklyBadge": "Ritual of the week"
     },
     "dashboard": {
       "title": "Your ritual for today",
@@ -1164,13 +1167,13 @@
       "placeholder": "For example: It felt good, but I was so tired …",
       "submit": "Check in",
       "submitting": "Sahama is reading …",
-      "freeLeft": "{count, plural, =0 {Your trial replies are used up.} one {# personal reply left to try.} other {# personal replies left to try.}}",
+      "freeLeft": "{count, plural, =0 {Your personal reply for this week is used — there will be another one next week.} one {# more personal reply for you this week.} other {# more personal replies for you this week.}}",
       "replyTitle": "Sahama's reply",
       "yourNote": "Your check-in",
       "saved": "Your check-in is saved.",
       "next": "Your next ritual: {title}",
-      "noFreeLeftTitle": "Your three trial replies are used up",
-      "noFreeLeftText": "Your check-in is saved. With the Sahama subscription you get a personal reply to every check-in — plus every ritual and your weekly review.",
+      "noFreeLeftTitle": "Your personal reply for this week is used",
+      "noFreeLeftText": "Your check-in is saved. Sahama will reply again next week. With the Sahama subscription you get a personal reply to every check-in — plus every ritual and your weekly review.",
       "noFreeLeftAction": "See the Sahama subscription",
       "replyFailed": "Your check-in is saved, but the reply could not be written just now. Try again later with a new check-in.",
       "switchedOff": "Your check-in is saved.",
@@ -1221,8 +1224,8 @@
       "keptEmpty": "Use “Keep” on a ritual card to put rituals that felt good here.",
       "again": "Again today",
       "againToast": "This is now your card for today.",
-      "lockedTitle": "Review and favourite rituals come with the Sahama subscription",
-      "lockedText": "With the subscription you see each week what you did for yourself, get Sahama's personal observation and can keep your favourite rituals.",
+      "lockedTitle": "Sahama's observation and your favourite rituals come with the Sahama subscription",
+      "lockedText": "You can always see your week here. With the subscription Sahama writes you a personal observation each week, and you can keep your favourite rituals.",
       "lockedAction": "See the Sahama subscription"
     }
   },

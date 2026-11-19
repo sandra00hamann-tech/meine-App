@@ -20,25 +20,46 @@ describe("cleanNote", () => {
   it("refuses an empty note and a too long one", () => {
     expect(cleanNote("   ")).toEqual({ problem: "sahamaCheckinEmpty" });
     expect(cleanNote(undefined)).toEqual({ problem: "sahamaCheckinEmpty" });
-    expect(cleanNote("a".repeat(MAX_NOTE_CHARS + 1))).toEqual({ problem: "sahamaCheckinTooLong" });
+    expect(cleanNote("a".repeat(MAX_NOTE_CHARS + 1))).toEqual({
+      problem: "sahamaCheckinTooLong",
+    });
   });
 });
 
-describe("replies — three to try, every one with the plan", () => {
+describe("replies — free ones per week, every one with the plan", () => {
   const base = { enabled: true, holdsPlan: false, freeReplies: 3 };
   it("gives a free member exactly three", () => {
-    expect([0, 1, 2, 3, 4].map((repliesUsed) => replyAllowed({ ...base, repliesUsed }))).toEqual([true, true, true, false, false]);
+    expect(
+      [0, 1, 2, 3, 4].map((repliesUsed) =>
+        replyAllowed({ ...base, repliesUsed }),
+      ),
+    ).toEqual([true, true, true, false, false]);
   });
   it("never runs out with the plan", () => {
-    expect(replyAllowed({ ...base, holdsPlan: true, repliesUsed: 500 })).toBe(true);
+    expect(replyAllowed({ ...base, holdsPlan: true, repliesUsed: 500 })).toBe(
+      true,
+    );
   });
   it("is off for everybody when switched off", () => {
-    expect(replyAllowed({ ...base, enabled: false, holdsPlan: true, repliesUsed: 0 })).toBe(false);
+    expect(
+      replyAllowed({
+        ...base,
+        enabled: false,
+        holdsPlan: true,
+        repliesUsed: 0,
+      }),
+    ).toBe(false);
   });
   it("counts what is left, never below zero", () => {
-    expect(freeRepliesLeft({ holdsPlan: false, freeReplies: 3, repliesUsed: 1 })).toBe(2);
-    expect(freeRepliesLeft({ holdsPlan: false, freeReplies: 3, repliesUsed: 9 })).toBe(0);
-    expect(freeRepliesLeft({ holdsPlan: true, freeReplies: 3, repliesUsed: 9 })).toBeNull();
+    expect(
+      freeRepliesLeft({ holdsPlan: false, freeReplies: 3, repliesUsed: 1 }),
+    ).toBe(2);
+    expect(
+      freeRepliesLeft({ holdsPlan: false, freeReplies: 3, repliesUsed: 9 }),
+    ).toBe(0);
+    expect(
+      freeRepliesLeft({ holdsPlan: true, freeReplies: 3, repliesUsed: 9 }),
+    ).toBeNull();
   });
 });
 
@@ -52,15 +73,27 @@ describe("daysSince", () => {
 
 describe("config/sahama.json is read fail-closed", () => {
   it("turns anything odd into off / defaults", () => {
-    expect(parseSahamaConfig({ checkinReplies: "yes", freeReplies: -1, adviceUrl: "javascript:x" })).toEqual({
+    expect(
+      parseSahamaConfig({
+        checkinReplies: "yes",
+        freeRepliesPerWeek: -1,
+        adviceUrl: "javascript:x",
+      }),
+    ).toEqual({
       checkinReplies: false,
-      freeReplies: 0,
+      freeRepliesPerWeek: 0,
       adviceUrl: null,
       moreInfoUrl: null,
     });
-    expect(parseSahamaConfig({ checkinReplies: true, freeReplies: 3, adviceUrl: "https://example.com/beratung" })).toEqual({
+    expect(
+      parseSahamaConfig({
+        checkinReplies: true,
+        freeRepliesPerWeek: 1,
+        adviceUrl: "https://example.com/beratung",
+      }),
+    ).toEqual({
       checkinReplies: true,
-      freeReplies: 3,
+      freeRepliesPerWeek: 1,
       adviceUrl: "https://example.com/beratung",
       moreInfoUrl: null,
     });
@@ -96,7 +129,13 @@ describe("the request — only her note is customer text, and it is fenced", () 
   });
 
   it("carries the operator's limits in the instruction", () => {
-    for (const rule of ["Keine Diagnosen", "Kräuter", "ärztlich abklären", "Kein Vorschlag für ein Gespräch", "als Tradition"]) {
+    for (const rule of [
+      "Keine Diagnosen",
+      "Kräuter",
+      "ärztlich abklären",
+      "Kein Vorschlag für ein Gespräch",
+      "als Tradition",
+    ]) {
       expect(CHECKIN_INSTRUCTION).toContain(rule);
     }
   });

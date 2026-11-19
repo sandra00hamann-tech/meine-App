@@ -17,7 +17,11 @@ import { requireActiveUser } from "@/lib/authz";
 import { articleBySlug, mayReadArticle } from "@/lib/sahama/articles";
 import { sahamaConfig } from "@/lib/sahama/config";
 
-export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function ArticlePage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const session = await requireActiveUser();
   const t = await getTranslations("sahama");
   const { slug } = await params;
@@ -29,11 +33,18 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   return (
     <div className="mx-auto max-w-3xl space-y-6">
       <div className="print:hidden">
-        <Link href="/dashboard/wissen" className="text-primary text-sm underline-offset-4 hover:underline">
+        <Link
+          href="/dashboard/wissen"
+          className="text-primary text-sm underline-offset-4 hover:underline"
+        >
           ← {t("knowledge.back")}
         </Link>
       </div>
-      <PageHeader eyebrow={t("knowledge.title")} title={article.title} description={article.summary || undefined} />
+      <PageHeader
+        eyebrow={t("knowledge.title")}
+        title={article.title}
+        description={article.summary || undefined}
+      />
       {mayRead ? (
         <Card>
           <CardContent className="space-y-6">
@@ -41,7 +52,12 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             {moreInfoUrl && (
               <p className="bg-muted rounded-lg p-4 leading-relaxed">
                 {t("knowledge.moreInfo")}{" "}
-                <a href={moreInfoUrl} target="_blank" rel="noopener noreferrer" className="text-primary font-medium underline-offset-4 hover:underline">
+                <a
+                  href={moreInfoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary font-medium underline-offset-4 hover:underline"
+                >
                   {moreInfoUrl.replace(/^https:\/\//, "")}
                 </a>
               </p>
@@ -51,8 +67,10 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       ) : (
         <Callout variant="info" title={t("knowledge.lockedTitle")}>
           <p>{t("knowledge.lockedText")}</p>
-          <Button asChild size="sm" className="mt-3 no-underline">
-            <Link href="/plans?needs=sahama">{t("knowledge.lockedAction")}</Link>
+          <Button asChild size="sm" className="mt-3">
+            <Link href="/plans?needs=sahama">
+              {t("knowledge.lockedAction")}
+            </Link>
           </Button>
         </Callout>
       )}

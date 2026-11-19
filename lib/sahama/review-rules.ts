@@ -13,7 +13,12 @@ const TZ = "Europe/Berlin";
 
 /** "YYYY-MM-DD" of a moment's calendar day in Berlin. */
 export function berlinDay(at: Date): string {
-  return new Intl.DateTimeFormat("en-CA", { timeZone: TZ, year: "numeric", month: "2-digit", day: "2-digit" }).format(at);
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: TZ,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(at);
 }
 
 /** The Monday ("YYYY-MM-DD") of the Berlin week a moment falls in. */
@@ -29,10 +34,15 @@ export function weekStartOf(at: Date): string {
 export function weekBounds(weekStart: string): { from: Date; to: Date } {
   // Monday 00:00 Berlin. Berlin is UTC+1 or +2; probe both and keep the one
   // whose Berlin day is the Monday at 00:xx.
-  const candidates = [-1, -2].map((h) => new Date(`${weekStart}T00:00:00Z`).getTime() + h * 3600_000);
+  const candidates = [-1, -2].map(
+    (h) => new Date(`${weekStart}T00:00:00Z`).getTime() + h * 3600_000,
+  );
   const fromMs =
-    candidates.find((ms) => berlinDay(new Date(ms)) === weekStart && berlinDay(new Date(ms - 1)) !== weekStart) ??
-    candidates[0];
+    candidates.find(
+      (ms) =>
+        berlinDay(new Date(ms)) === weekStart &&
+        berlinDay(new Date(ms - 1)) !== weekStart,
+    ) ?? candidates[0];
   const from = new Date(fromMs);
   const to = new Date(fromMs + 7 * 24 * 3600_000 + 2 * 3600_000); // +2h covers the autumn DST hour
   // Trim `to` back to the next Monday's start.
@@ -62,7 +72,13 @@ export interface WeekNumbers {
 }
 
 function clockTime(at: Date): Exclude<TimeOfDay, "any"> {
-  const hour = Number(new Intl.DateTimeFormat("en-GB", { hour: "numeric", hourCycle: "h23", timeZone: TZ }).format(at));
+  const hour = Number(
+    new Intl.DateTimeFormat("en-GB", {
+      hour: "numeric",
+      hourCycle: "h23",
+      timeZone: TZ,
+    }).format(at),
+  );
   if (hour >= 4 && hour < 11) return "morning";
   if (hour >= 11 && hour < 16) return "midday";
   return "evening";
@@ -86,7 +102,9 @@ export function weekNumbers(checkins: WeekCheckin[]): WeekNumbers {
       favouriteTime = t;
     }
   }
-  const rituals = [...titles.entries()].sort((a, b) => b[1] - a[1]).map(([t]) => t);
+  const rituals = [...titles.entries()]
+    .sort((a, b) => b[1] - a[1])
+    .map(([t]) => t);
   return { checkins: checkins.length, days: days.size, favouriteTime, rituals };
 }
 
@@ -119,8 +137,14 @@ export function buildReviewRequest(input: {
       { label: "Ihr Dosha", value: input.dosha },
       { label: "Check-ins diese Woche", value: String(input.numbers.checkins) },
       { label: "An so vielen Tagen", value: String(input.numbers.days) },
-      { label: "Häufigste Tageszeit", value: input.favouriteTimeLabel ?? "keine eindeutige" },
-      { label: "Rituale der Woche", value: input.numbers.rituals.join("; ") || "keine" },
+      {
+        label: "Häufigste Tageszeit",
+        value: input.favouriteTimeLabel ?? "keine eindeutige",
+      },
+      {
+        label: "Rituale der Woche",
+        value: input.numbers.rituals.join("; ") || "keine",
+      },
     ],
     work: input.notes,
     ask: "Schreib ihr jetzt ihren Wochenrückblick.",

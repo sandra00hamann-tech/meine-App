@@ -69,7 +69,7 @@ export function Callout({
       // interrupting (e.g. a failed purchase) set role="alert" from outside.
       role="status"
       className={cn(
-        "flex gap-3 rounded-xl border px-4 py-3 text-sm [&_a]:underline [&_code]:rounded [&_code]:bg-black/10 [&_code]:px-1 [&_code]:py-0.5 dark:[&_code]:bg-white/10",
+        "flex gap-3 rounded-xl border px-4 py-3 text-sm [&_a:not([data-slot=button])]:underline [&_code]:rounded [&_code]:bg-black/10 [&_code]:px-1 [&_code]:py-0.5 dark:[&_code]:bg-white/10",
         box,
         className,
       )}

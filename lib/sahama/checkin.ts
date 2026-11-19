@@ -8,7 +8,7 @@
 // loses what she wrote; a failed reply leaves `reply` null and the page says so.
 // The member id comes from the caller's session (requireActiveUser), never a form.
 
-import { and, count, desc, eq, isNotNull, lt } from "drizzle-orm";
+import { and, count, desc, eq, gte, isNotNull, lt } from "drizzle-orm";
 
 import { db } from "@/db";
 import { sahamaCheckins, sahamaSuggestions } from "@/db/schema";
@@ -16,9 +16,16 @@ import { runTask } from "@/lib/ai/run";
 import { isLimited, record, type Limit } from "@/lib/rate-limit";
 
 import { hasSahamaPlan } from "./access";
-import { buildCheckinRequest, cleanNote, daysSince, freeRepliesLeft, replyAllowed } from "./checkin-rules";
+import {
+  buildCheckinRequest,
+  cleanNote,
+  daysSince,
+  freeRepliesLeft,
+  replyAllowed,
+} from "./checkin-rules";
 import { sahamaConfig } from "./config";
 import { currentRitual, profileFor, sharesOf, suggestRitual } from "./manage";
+import { weekBounds, weekStartOf } from "./review-rules";
 import { SahamaError } from "./rules";
 
 const BUCKET = "sahama-checkin";
@@ -34,17 +41,30 @@ export interface CheckinOutcome {
   nextRitualTitle: string | null;
 }
 
-/** Replies she has already received — what the free tries are counted against. */
-export async function repliesUsed(memberId: string): Promise<number> {
+/** Replies she has received THIS Berlin week — what the free replies are counted against. */
+export async function repliesUsed(
+  memberId: string,
+  now = new Date(),
+): Promise<number> {
+  const { from } = weekBounds(weekStartOf(now));
   const [row] = await db
     .select({ n: count() })
     .from(sahamaCheckins)
-    .where(and(eq(sahamaCheckins.memberId, memberId), isNotNull(sahamaCheckins.reply)));
+    .where(
+      and(
+        eq(sahamaCheckins.memberId, memberId),
+        isNotNull(sahamaCheckins.reply),
+        gte(sahamaCheckins.createdAt, from),
+      ),
+    );
   return Number(row?.n ?? 0);
 }
 
 /** Her latest check-ins, newest first. */
-export async function recentCheckins(memberId: string, limit = 5): Promise<CheckinRow[]> {
+export async function recentCheckins(
+  memberId: string,
+  limit = 5,
+): Promise<CheckinRow[]> {
   return db
     .select()
     .from(sahamaCheckins)
@@ -60,14 +80,21 @@ export async function checkinStatus(memberId: string) {
   const used = await repliesUsed(memberId);
   return {
     repliesOn: config.checkinReplies,
-    freeLeft: freeRepliesLeft({ holdsPlan, freeReplies: config.freeReplies, repliesUsed: used }),
+    freeLeft: freeRepliesLeft({
+      holdsPlan,
+      freeReplies: config.freeRepliesPerWeek,
+      repliesUsed: used,
+    }),
   };
 }
 
 export async function checkIn(
   memberId: string,
   rawNote: unknown,
-  labels: { dosha: (shares: ReturnType<typeof sharesOf>) => string; concern: (code: string) => string },
+  labels: {
+    dosha: (shares: ReturnType<typeof sharesOf>) => string;
+    concern: (code: string) => string;
+  },
 ): Promise<CheckinOutcome> {
   const profile = await profileFor(memberId);
   if (!profile) throw new SahamaError("sahamaNoProfile");
@@ -77,14 +104,20 @@ export async function checkIn(
   const cleaned = cleanNote(rawNote);
   if ("problem" in cleaned) throw new SahamaError(cleaned.problem);
 
-  if (isLimited(BUCKET, memberId, LIMIT)) throw new SahamaError("sahamaCheckinTooOften");
+  if (isLimited(BUCKET, memberId, LIMIT))
+    throw new SahamaError("sahamaCheckinTooOften");
   record(BUCKET, memberId, LIMIT);
 
   const now = new Date();
   const [previous] = await db
     .select({ at: sahamaCheckins.createdAt })
     .from(sahamaCheckins)
-    .where(and(eq(sahamaCheckins.memberId, memberId), lt(sahamaCheckins.createdAt, now)))
+    .where(
+      and(
+        eq(sahamaCheckins.memberId, memberId),
+        lt(sahamaCheckins.createdAt, now),
+      ),
+    )
     .orderBy(desc(sahamaCheckins.createdAt))
     .limit(1);
 
@@ -92,20 +125,31 @@ export async function checkIn(
   const [suggestion] = await db
     .select({ id: sahamaSuggestions.id })
     .from(sahamaSuggestions)
-    .where(and(eq(sahamaSuggestions.memberId, memberId), eq(sahamaSuggestions.ritualSlug, current.ritual.slug)))
+    .where(
+      and(
+        eq(sahamaSuggestions.memberId, memberId),
+        eq(sahamaSuggestions.ritualSlug, current.ritual.slug),
+      ),
+    )
     .orderBy(desc(sahamaSuggestions.createdAt))
     .limit(1);
 
   // 1. Save the note — before anything can fail.
   const [checkin] = await db
     .insert(sahamaCheckins)
-    .values({ memberId, suggestionId: suggestion?.id ?? null, ritualSlug: current.ritual.slug, note: cleaned.note })
+    .values({
+      memberId,
+      suggestionId: suggestion?.id ?? null,
+      ritualSlug: current.ritual.slug,
+      note: cleaned.note,
+    })
     .returning();
 
   // 2. Her next card, so the reply can invite her to it.
   let nextRitualTitle: string | null = null;
   try {
-    nextRitualTitle = (await suggestRitual(memberId, profile.usualMinutes, now)).title;
+    nextRitualTitle = (await suggestRitual(memberId, profile.usualMinutes, now))
+      .title;
   } catch (error) {
     if (!(error instanceof SahamaError)) throw error;
   }
@@ -113,9 +157,17 @@ export async function checkIn(
   // 3. Is a reply due?
   const config = sahamaConfig();
   const holdsPlan = await hasSahamaPlan(memberId);
-  if (!config.checkinReplies) return { checkin, noReply: "switchedOff", nextRitualTitle };
+  if (!config.checkinReplies)
+    return { checkin, noReply: "switchedOff", nextRitualTitle };
   const used = await repliesUsed(memberId);
-  if (!replyAllowed({ enabled: true, holdsPlan, freeReplies: config.freeReplies, repliesUsed: used })) {
+  if (
+    !replyAllowed({
+      enabled: true,
+      holdsPlan,
+      freeReplies: config.freeRepliesPerWeek,
+      repliesUsed: used,
+    })
+  ) {
     return { checkin, noReply: "noFreeRepliesLeft", nextRitualTitle };
   }
 
@@ -137,7 +189,12 @@ export async function checkIn(
     const [saved] = await db
       .update(sahamaCheckins)
       .set({ reply, repliedAt: new Date() })
-      .where(and(eq(sahamaCheckins.id, checkin.id), eq(sahamaCheckins.memberId, memberId)))
+      .where(
+        and(
+          eq(sahamaCheckins.id, checkin.id),
+          eq(sahamaCheckins.memberId, memberId),
+        ),
+      )
       .returning();
     return { checkin: saved, noReply: null, nextRitualTitle };
   } catch (error) {
@@ -145,4 +202,3 @@ export async function checkIn(
     return { checkin, noReply: "replyFailed", nextRitualTitle };
   }
 }
-

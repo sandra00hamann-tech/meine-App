@@ -1141,7 +1141,9 @@
       "steps": "Así se hace",
       "newCardTitle": "¿Cuánto tiempo tienes ahora?",
       "newCard": "{count} minutos",
-      "newCardHint": "Te elegimos un ritual que quepa en ese tiempo."
+      "newCardHint": "Te elegimos un ritual que quepa en ese tiempo.",
+      "weeklyEyebrow": "Ritual de la semana: gratis para ti esta semana",
+      "weeklyAction": "Hacerlo hoy"
     },
     "card": {
       "freeBadge": "Gratis",
@@ -1149,7 +1151,8 @@
       "tipsFor": "Para ti, como {name}",
       "print": "Imprimir o guardar como PDF",
       "printHint": "Consejo: en la ventana de impresión puedes elegir «Guardar como PDF» en lugar de una impresora.",
-      "more": "Más en Saber ayurveda"
+      "more": "Más en Saber ayurveda",
+      "weeklyBadge": "Ritual de la semana"
     },
     "dashboard": {
       "title": "Tu ritual de hoy",
@@ -1164,13 +1167,13 @@
       "placeholder": "Por ejemplo: Me ha sentado bien, pero estaba muy cansada …",
       "submit": "Hacer check-in",
       "submitting": "Sahama está leyendo …",
-      "freeLeft": "{count, plural, =0 {Has usado tus respuestas de prueba.} one {Te queda # respuesta personal de prueba.} other {Te quedan # respuestas personales de prueba.}}",
+      "freeLeft": "{count, plural, =0 {Ya has usado tu respuesta personal de esta semana: la próxima semana tendrás otra.} one {Esta semana te queda # respuesta personal.} other {Esta semana te quedan # respuestas personales.}}",
       "replyTitle": "La respuesta de Sahama",
       "yourNote": "Tu check-in",
       "saved": "Tu check-in está guardado.",
       "next": "Tu próximo ritual: {title}",
-      "noFreeLeftTitle": "Has usado tus tres respuestas de prueba",
-      "noFreeLeftText": "Tu check-in está guardado. Con la suscripción Sahama recibes una respuesta personal a cada check-in, además de todos los rituales y tu resumen semanal.",
+      "noFreeLeftTitle": "Ya has usado tu respuesta personal de esta semana",
+      "noFreeLeftText": "Tu check-in está guardado. La próxima semana Sahama te responderá de nuevo. Con la suscripción Sahama recibes una respuesta personal a cada check-in, además de todos los rituales y tu resumen semanal.",
       "noFreeLeftAction": "Ver la suscripción Sahama",
       "replyFailed": "Tu check-in está guardado, pero ahora mismo no se ha podido escribir la respuesta. Inténtalo más tarde con un nuevo check-in.",
       "switchedOff": "Tu check-in está guardado.",
@@ -1221,8 +1224,8 @@
       "keptEmpty": "Usa «Guardar» en una tarjeta de ritual para traer aquí los rituales que te han sentado bien.",
       "again": "Hoy otra vez",
       "againToast": "Ahora es tu tarjeta de hoy.",
-      "lockedTitle": "El resumen y los rituales favoritos forman parte de la suscripción Sahama",
-      "lockedText": "Con la suscripción ves cada semana lo que has hecho por ti, recibes la observación personal de Sahama y puedes guardar tus rituales favoritos.",
+      "lockedTitle": "La observación de Sahama y tus rituales favoritos forman parte de la suscripción Sahama",
+      "lockedText": "Aquí siempre ves tu semana. Con la suscripción, Sahama te escribe cada semana una observación personal y puedes guardar tus rituales favoritos.",
       "lockedAction": "Ver la suscripción Sahama"
     }
   },

@@ -20,10 +20,13 @@ export const PAUSE_DAYS = 3;
 export type NoteProblem = "sahamaCheckinEmpty" | "sahamaCheckinTooLong";
 
 /** Trims the note and says what is wrong with it, if anything. */
-export function cleanNote(value: unknown): { note: string } | { problem: NoteProblem } {
+export function cleanNote(
+  value: unknown,
+): { note: string } | { problem: NoteProblem } {
   const note = typeof value === "string" ? value.trim() : "";
   if (note.length === 0) return { problem: "sahamaCheckinEmpty" };
-  if (note.length > MAX_NOTE_CHARS || hasControlChar(note)) return { problem: "sahamaCheckinTooLong" };
+  if (note.length > MAX_NOTE_CHARS || hasControlChar(note))
+    return { problem: "sahamaCheckinTooLong" };
   return { note };
 }
 
@@ -31,7 +34,8 @@ export function cleanNote(value: unknown): { note: string } | { problem: NotePro
  * Is a reply due for this check-in?
  *  - replies switched off → no
  *  - she holds the plan → yes
- *  - otherwise only while she has free replies left
+ *  - otherwise only while she has free replies left THIS WEEK
+ *    (`repliesUsed` is counted over the current Berlin week)
  */
 export function replyAllowed(input: {
   enabled: boolean;
@@ -45,7 +49,11 @@ export function replyAllowed(input: {
 }
 
 /** How many free replies are left, for the line under the form. Null with the plan. */
-export function freeRepliesLeft(input: { holdsPlan: boolean; freeReplies: number; repliesUsed: number }): number | null {
+export function freeRepliesLeft(input: {
+  holdsPlan: boolean;
+  freeReplies: number;
+  repliesUsed: number;
+}): number | null {
   if (input.holdsPlan) return null;
   return Math.max(0, input.freeReplies - input.repliesUsed);
 }
@@ -53,7 +61,9 @@ export function freeRepliesLeft(input: { holdsPlan: boolean; freeReplies: number
 /** Whole days between her previous check-in and now; null for her first. */
 export function daysSince(previous: Date | null, now: Date): number | null {
   if (!previous) return null;
-  return Math.floor((now.getTime() - previous.getTime()) / (24 * 60 * 60 * 1000));
+  return Math.floor(
+    (now.getTime() - previous.getTime()) / (24 * 60 * 60 * 1000),
+  );
 }
 
 /**
@@ -99,9 +109,18 @@ export interface CheckinContext {
 export function buildCheckinRequest(ctx: CheckinContext) {
   const about = [
     { label: "Ihr Dosha", value: ctx.dosha },
-    { label: "Was sie gerade beschäftigt", value: ctx.concerns.length ? ctx.concerns.join("; ") : "nichts angegeben" },
-    { label: "Ritual, das sie gerade gemacht hat", value: `${ctx.ritualTitle} (${ctx.ritualMinutes} Minuten)` },
-    { label: "Ihr nächstes Ritual", value: ctx.nextRitualTitle ?? "noch offen" },
+    {
+      label: "Was sie gerade beschäftigt",
+      value: ctx.concerns.length ? ctx.concerns.join("; ") : "nichts angegeben",
+    },
+    {
+      label: "Ritual, das sie gerade gemacht hat",
+      value: `${ctx.ritualTitle} (${ctx.ritualMinutes} Minuten)`,
+    },
+    {
+      label: "Ihr nächstes Ritual",
+      value: ctx.nextRitualTitle ?? "noch offen",
+    },
     {
       label: "Zuletzt eingecheckt",
       value:
@@ -111,7 +130,10 @@ export function buildCheckinRequest(ctx: CheckinContext) {
             ? `vor ${ctx.daysSincePrevious} Tagen – sie ist nach einer Pause zurück`
             : `vor ${ctx.daysSincePrevious} Tag(en)`,
     },
-    { label: "Link zur schriftlichen Beratung", value: ctx.adviceUrl ?? "noch keiner – nenne die Beratung ohne Link" },
+    {
+      label: "Link zur schriftlichen Beratung",
+      value: ctx.adviceUrl ?? "noch keiner – nenne die Beratung ohne Link",
+    },
   ];
   return buildFencedRequest({
     instruction: CHECKIN_INSTRUCTION,

@@ -13,7 +13,12 @@ import { Button } from "@/components/ui/button";
 export function PrintButton() {
   const t = useTranslations("sahama.card");
   return (
-    <Button type="button" variant="outline" onClick={() => window.print()} className="print:hidden">
+    <Button
+      type="button"
+      variant="outline"
+      onClick={() => window.print()}
+      className="print:hidden"
+    >
       <Printer aria-hidden />
       {t("print")}
     </Button>

@@ -11,7 +11,8 @@ import { db } from "@/db";
 import { sahamaProfiles, sahamaRituals, sahamaSuggestions } from "@/db/schema";
 
 import type { Concern, DoshaAnswers, MinuteOption, TimeOfDay } from "./catalog";
-import { hasSahamaPlan, mayUseTier } from "./access";
+import { hasSahamaPlan, mayUseRitual, weeklyRitualSlug } from "./access";
+import { weekStartOf } from "./review-rules";
 import {
   SahamaError,
   chooseRitual,
@@ -21,11 +22,34 @@ import {
   type DoshaShares,
 } from "./rules";
 
+/** This week's free subscription ritual (published, in the operator's order). */
+export async function weeklyRitual(
+  now = new Date(),
+): Promise<SahamaRitual | null> {
+  const plus = await db
+    .select()
+    .from(sahamaRituals)
+    .where(
+      and(eq(sahamaRituals.published, true), eq(sahamaRituals.tier, "plus")),
+    )
+    .orderBy(asc(sahamaRituals.position), asc(sahamaRituals.slug));
+  const slug = weeklyRitualSlug(
+    plus.map((r) => r.slug),
+    weekStartOf(now),
+  );
+  return plus.find((r) => r.slug === slug) ?? null;
+}
+
 export type SahamaProfile = typeof sahamaProfiles.$inferSelect;
 export type SahamaRitual = typeof sahamaRituals.$inferSelect;
 
-export async function profileFor(memberId: string): Promise<SahamaProfile | null> {
-  const [row] = await db.select().from(sahamaProfiles).where(eq(sahamaProfiles.memberId, memberId));
+export async function profileFor(
+  memberId: string,
+): Promise<SahamaProfile | null> {
+  const [row] = await db
+    .select()
+    .from(sahamaProfiles)
+    .where(eq(sahamaProfiles.memberId, memberId));
   return row ?? null;
 }
 
@@ -70,6 +94,7 @@ export async function suggestRitual(
   const profile = await profileFor(memberId);
   if (!profile) throw new SahamaError("sahamaNoProfile");
   const holdsPlan = await hasSahamaPlan(memberId);
+  const weekly = holdsPlan ? null : ((await weeklyRitual(now))?.slug ?? null);
 
   const rituals = await db
     .select()
@@ -91,7 +116,7 @@ export async function suggestRitual(
       doshas: r.doshas,
       concerns: r.concerns,
       position: r.position,
-      allowed: mayUseTier(r.tier, holdsPlan),
+      allowed: mayUseRitual(r, holdsPlan, weekly),
     })),
     minutes,
     leading: leadingDoshas(sharesOf(profile)),
@@ -100,7 +125,9 @@ export async function suggestRitual(
     recent: recent.map((r) => r.slug),
   });
 
-  await db.insert(sahamaSuggestions).values({ memberId, ritualSlug: slug, minutes });
+  await db
+    .insert(sahamaSuggestions)
+    .values({ memberId, ritualSlug: slug, minutes });
   return rituals.find((r) => r.slug === slug)!;
 }
 
@@ -113,7 +140,11 @@ export async function currentRitual(
   memberId: string,
 ): Promise<{ ritual: SahamaRitual; minutes: number; shownAt: Date } | null> {
   const [latest] = await db
-    .select({ slug: sahamaSuggestions.ritualSlug, minutes: sahamaSuggestions.minutes, at: sahamaSuggestions.createdAt })
+    .select({
+      slug: sahamaSuggestions.ritualSlug,
+      minutes: sahamaSuggestions.minutes,
+      at: sahamaSuggestions.createdAt,
+    })
     .from(sahamaSuggestions)
     .where(eq(sahamaSuggestions.memberId, memberId))
     .orderBy(desc(sahamaSuggestions.createdAt))
@@ -122,8 +153,15 @@ export async function currentRitual(
   const [ritual] = await db
     .select()
     .from(sahamaRituals)
-    .where(and(eq(sahamaRituals.slug, latest.slug), eq(sahamaRituals.published, true)));
+    .where(
+      and(
+        eq(sahamaRituals.slug, latest.slug),
+        eq(sahamaRituals.published, true),
+      ),
+    );
   if (!ritual) return null;
-  if (!mayUseTier(ritual.tier, await hasSahamaPlan(memberId))) return null;
+  const holdsPlan = await hasSahamaPlan(memberId);
+  const weekly = holdsPlan ? null : ((await weeklyRitual())?.slug ?? null);
+  if (!mayUseRitual(ritual, holdsPlan, weekly)) return null;
   return { ritual, minutes: latest.minutes, shownAt: latest.at };
 }

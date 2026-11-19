@@ -153,6 +153,21 @@ moment the feature works. Written down by your assistant, from the conversation
   app/dashboard/rueckblick/review.tsx.
 - **Tests:** `lib/sahama/review-rules.test.ts`
 
+### The free tier that lasts (operator, 2026-11-19)
+
+- **Ritual der Woche:** every Berlin week one plus ritual is open to everyone,
+  rotating through all plus rituals in the operator's order
+  (`weeklyRitualSlug`, `mayUseRitual` in lib/sahama/access.ts — the one access
+  question for rituals; chooser, today's card and "Heute noch einmal" all ask
+  it). Free members see it as its own card on `/dashboard/heute`.
+- **One personal reply per week** for free members (`freeRepliesPerWeek` in
+  config/sahama.json; counted over the Berlin week in `repliesUsed`).
+- **Week numbers free** on `/dashboard/rueckblick`; observation, earlier
+  weeks and kept rituals with the plan.
+- **Free articles:** set `tier: "free"` on any article.
+- Kit fix on the way: a `Button` inside a `Callout` is no longer underlined
+  (components/ui/callout.tsx).
+
 ## Decisions worth remembering
 
 - **The template's support assistant ("Lia", /dashboard/chat) is still the

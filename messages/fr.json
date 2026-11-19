@@ -1141,7 +1141,9 @@
       "steps": "Comment faire",
       "newCardTitle": "Combien de temps as-tu maintenant ?",
       "newCard": "{count} minutes",
-      "newCardHint": "Nous te choisissons un rituel qui tient dans ce temps."
+      "newCardHint": "Nous te choisissons un rituel qui tient dans ce temps.",
+      "weeklyEyebrow": "Rituel de la semaine : gratuit pour toi cette semaine",
+      "weeklyAction": "Le faire aujourd'hui"
     },
     "card": {
       "freeBadge": "Gratuit",
@@ -1149,7 +1151,8 @@
       "tipsFor": "Pour toi, en tant que {name}",
       "print": "Imprimer ou enregistrer en PDF",
       "printHint": "Astuce : dans la fenêtre d'impression, tu peux choisir « Enregistrer au format PDF » au lieu d'une imprimante.",
-      "more": "Plus dans Savoir ayurvéda"
+      "more": "Plus dans Savoir ayurvéda",
+      "weeklyBadge": "Rituel de la semaine"
     },
     "dashboard": {
       "title": "Ton rituel du jour",
@@ -1164,13 +1167,13 @@
       "placeholder": "Par exemple : Ça m'a fait du bien, mais j'étais si fatiguée …",
       "submit": "Faire mon check-in",
       "submitting": "Sahama lit …",
-      "freeLeft": "{count, plural, =0 {Tes réponses d'essai sont utilisées.} one {Encore # réponse personnelle à essayer.} other {Encore # réponses personnelles à essayer.}}",
+      "freeLeft": "{count, plural, =0 {Ta réponse personnelle de la semaine est utilisée : la semaine prochaine, il y en aura une autre.} one {Encore # réponse personnelle pour toi cette semaine.} other {Encore # réponses personnelles pour toi cette semaine.}}",
       "replyTitle": "La réponse de Sahama",
       "yourNote": "Ton check-in",
       "saved": "Ton check-in est enregistré.",
       "next": "Ton prochain rituel : {title}",
-      "noFreeLeftTitle": "Tes trois réponses d'essai sont utilisées",
-      "noFreeLeftText": "Ton check-in est enregistré. Avec l'abonnement Sahama, tu reçois une réponse personnelle à chaque check-in, ainsi que tous les rituels et ton bilan de la semaine.",
+      "noFreeLeftTitle": "Ta réponse personnelle de la semaine est utilisée",
+      "noFreeLeftText": "Ton check-in est enregistré. La semaine prochaine, Sahama te répondra à nouveau. Avec l'abonnement Sahama, tu reçois une réponse personnelle à chaque check-in, ainsi que tous les rituels et ton bilan de la semaine.",
       "noFreeLeftAction": "Voir l'abonnement Sahama",
       "replyFailed": "Ton check-in est enregistré, mais la réponse n'a pas pu être écrite pour le moment. Réessaie plus tard avec un nouveau check-in.",
       "switchedOff": "Ton check-in est enregistré.",
@@ -1221,8 +1224,8 @@
       "keptEmpty": "Utilise « Garder » sur une carte de rituel pour mettre ici les rituels qui t'ont fait du bien.",
       "again": "Encore aujourd'hui",
       "againToast": "C'est maintenant ta carte du jour.",
-      "lockedTitle": "Le bilan et les rituels préférés font partie de l'abonnement Sahama",
-      "lockedText": "Avec l'abonnement, tu vois chaque semaine ce que tu as fait pour toi, tu reçois l'observation personnelle de Sahama et tu peux garder tes rituels préférés.",
+      "lockedTitle": "L'observation de Sahama et tes rituels préférés font partie de l'abonnement Sahama",
+      "lockedText": "Tu vois toujours ta semaine ici. Avec l'abonnement, Sahama t'écrit chaque semaine une observation personnelle, et tu peux garder tes rituels préférés.",
       "lockedAction": "Voir l'abonnement Sahama"
     }
   },
