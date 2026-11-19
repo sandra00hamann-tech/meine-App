@@ -82,6 +82,8 @@ moment the feature works. Written down by your assistant, from the conversation
   constitution (Prakriti) from the current state; the intro line "answer the
   way you have been most of your life" matters to her — a Vata whose weight
   changed in menopause is not Kapha now. Keep it.
+- **Concrete over vague in every ritual text** (operator, 2026-11-19): not "a
+  warm cup" but "a cup of warm tea or warm water" — name the thing.
 - **Every ritual carries a hint per Dosha** (operator, 2026-11-19): "warm and
   cooked for everyone" is wrong — Vata needs warm food, Pitta does well with
   cooling, fresh food. A new ritual gets `doshaTips` for all three.

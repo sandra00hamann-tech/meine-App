@@ -26,7 +26,7 @@
       "slug": "ruhiger-morgen-in-drei-schritten",
       "title": "Dein ruhiger Morgen in drei Schritten",
       "summary": "Eine kleine Morgenroutine nach dem ayurvedischen Tagesrhythmus.",
-      "body": "Ayurveda nennt die tägliche Routine Dinacharya. Sie muss nicht lang sein – drei Schritte reichen für den Anfang.\n\n1. Zunge reinigen und Gesicht erfrischen: Nach dem Zähneputzen sanft die Zunge mit einem Zungenschaber reinigen, dann das Gesicht mit kühlem Wasser benetzen.\n\n2. Bewegen: Fünf Minuten dehnen, strecken, die Schultern kreisen lassen. Ganz in deinem Tempo.\n\n3. Ankommen: Setz dich mit einem warmen Getränk hin und nimm dir vor, worauf du dich heute freust – nur ein Gedanke.\n\nDer Tag darf danach voll werden. Der Anfang gehört dir.",
+      "body": "Ayurveda nennt die tägliche Routine Dinacharya. Sie muss nicht lang sein – drei Schritte reichen für den Anfang.\n\n1. Zunge reinigen und Gesicht erfrischen: Nach dem Zähneputzen sanft die Zunge mit einem Zungenschaber reinigen, dann das Gesicht mit kühlem Wasser benetzen.\n\n2. Bewegen: Fünf Minuten dehnen, strecken, die Schultern kreisen lassen. Ganz in deinem Tempo.\n\n3. Ankommen: Setz dich mit einer Tasse warmem Tee oder warmem Wasser hin und nimm dir vor, worauf du dich heute freust – nur ein Gedanke.\n\nDer Tag darf danach voll werden. Der Anfang gehört dir.",
       "minutes": 20,
       "timeOfDay": "morning",
       "doshas": [
@@ -159,7 +159,7 @@
         "hard_to_unwind"
       ],
       "doshaTips": {
-        "vata": "Schreib mit einer warmen Tasse in der Hand – und lass die Liste wirklich bei drei Zeilen.",
+        "vata": "Schreib mit einer Tasse warmem Tee oder warmem Wasser in der Hand – und lass die Liste wirklich bei drei Zeilen.",
         "pitta": "Bei Zeile 2 genügt ein Wann – das Wie darf bis morgen warten. Kein Plan muss heute fertig werden.",
         "kapha": "Schreib bei Zeile 3 etwas auf, das dich wirklich in Bewegung bringt – auch wenn es klein ist."
       },
@@ -172,7 +172,7 @@
       "slug": "selbstmassage-am-morgen",
       "title": "Selbstmassage mit warmem Öl",
       "summary": "Abhyanga – zwanzig Minuten, die sich wie eine Umarmung anfühlen.",
-      "body": "Stell eine kleine Flasche Öl in eine Schüssel mit heißem Wasser, bis es angenehm warm ist.\n\nBeginne am Kopf und arbeite dich nach unten: kreisend über Gelenke, mit langen Strichen über Arme und Beine. Nimm dir für jeden Bereich ein paar Atemzüge Zeit.\n\nLass das Öl danach noch fünf bis zehn Minuten einwirken – zieh dir einen alten Bademantel über und trink etwas Warmes.\n\nDusche warm, nicht heiß. Im Ayurveda heißt diese Ölmassage Abhyanga und ist ein fester Teil der Morgenroutine.",
+      "body": "Stell eine kleine Flasche Öl in eine Schüssel mit heißem Wasser, bis es angenehm warm ist.\n\nBeginne am Kopf und arbeite dich nach unten: kreisend über Gelenke, mit langen Strichen über Arme und Beine. Nimm dir für jeden Bereich ein paar Atemzüge Zeit.\n\nLass das Öl danach noch fünf bis zehn Minuten einwirken – zieh dir einen alten Bademantel über und trink eine Tasse warmen Tee oder warmes Wasser.\n\nDusche warm, nicht heiß. Im Ayurveda heißt diese Ölmassage Abhyanga und ist ein fester Teil der Morgenroutine.",
       "minutes": 20,
       "timeOfDay": "morning",
       "doshas": [
@@ -228,7 +228,7 @@
         "rushed_morning"
       ],
       "doshaTips": {
-        "vata": "Nimm dir eine warme Tasse mit ans Fenster – Licht und Wärme zusammen tun dir besonders gut.",
+        "vata": "Nimm dir eine Tasse warmen Tee oder warmes Wasser mit ans Fenster – Licht und Wärme zusammen tun dir besonders gut.",
         "pitta": "Die frühe, sanfte Sonne ist genau richtig für dich – genieß sie, bevor der Tag heiß wird.",
         "kapha": "Öffne das Fenster weit und lass die frische Luft herein – das macht dich richtig wach."
       },
@@ -442,7 +442,7 @@
         "busy_mind"
       ],
       "doshaTips": {
-        "vata": "Setz dich an einen warmen, geschützten Platz – und halte die Hände um eine warme Tasse.",
+        "vata": "Setz dich an einen warmen, geschützten Platz – und halte die Hände um eine Tasse warmen Tee oder warmes Wasser.",
         "pitta": "Es wird dir schwerfallen, nichts zu tun – genau deshalb ist es für dich so wertvoll.",
         "kapha": "Mach die zehn Minuten draußen im Stehen oder beim langsamen Gehen – so wirst du nicht schläfrig."
       },
