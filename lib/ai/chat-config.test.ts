@@ -1,7 +1,9 @@
 // Copyright (c) 2026 Digistore24 Inc, St. Petersburg, USA
 // SPDX-License-Identifier: MIT
 
-import { afterEach, describe, it, expect, vi } from "vitest";
+import { afterEach, beforeEach, describe, it, expect, vi } from "vitest";
+
+import rawChatConfig from "@/config/ai-chat.json";
 
 import {
   DEFAULT_CHAT_CONFIG,
@@ -53,8 +55,17 @@ describe("one key is enough to switch her on", () => {
   // implementation of the same question. The shipped `chat` binding is `"auto"`,
   // so each of the five keys on its own has to be sufficient. This is the test
   // that fails if somebody pins the shipped binding back to one company.
+  // The property is "a key is enough ONCE the operator wants her", so it is
+  // asserted with the switch on whatever the app ships: an app may keep her off
+  // (Sahama does until she has a handbook — docs/app.md) and this still holds.
+  const file = rawChatConfig as { enabled: boolean };
+  const shipped = file.enabled;
+  beforeEach(() => {
+    file.enabled = true;
+  });
   afterEach(() => {
     vi.unstubAllEnvs();
+    file.enabled = shipped;
   });
 
   function withOnly(envVar: string) {

@@ -193,10 +193,12 @@ moment the feature works. Written down by your assistant, from the conversation
 
 ## Decisions worth remembering
 
-- **The template's support assistant ("Lia", /dashboard/chat) is still the
-  template's**: it went live with the OpenAI key and knows nothing about Sahama
-  yet. Its handbook is the skill `ai-chat-knowledge`; switching it off breaks
-  six shipped tests that assume it ships on, so it stays on until then.
+- **The template's support assistant ("Lia", /dashboard/chat) is OFF**
+  (operator, 2026-11-19): `"enabled": false` in `config/ai-chat.json` until
+  she has a Sahama handbook (skill `ai-chat-knowledge`) — she knew only the
+  template. `lib/ai/chat-config.test.ts` now asserts "one key is enough" with
+  the switch forced on, so the property holds whatever this app ships. The
+  salespage does not mention her.
 
 - **24 questions, not 12** (operator, 2026-11-19): twelve could not tell the
   constitution (Prakriti) from the current state; the intro line "answer the
