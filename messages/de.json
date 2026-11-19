@@ -35,7 +35,8 @@
     "impersonations": "Zugriffe",
     "today": "Heute",
     "dosha": "Dein Dosha",
-    "knowledge": "Ayurveda-Wissen"
+    "knowledge": "Ayurveda-Wissen",
+    "review": "Rückblick"
   },
   "shell": {
     "openNavigation": "Navigation öffnen",
@@ -674,7 +675,10 @@
     "sahamaNoProfile": "Mach zuerst deinen Dosha-Test – dann wissen wir, welche Rituale zu dir passen.",
     "sahamaCheckinEmpty": "Schreib ein paar Worte, wie es dir mit dem Ritual ging.",
     "sahamaCheckinTooLong": "Das ist etwas zu lang für einen Check-in – ein paar Sätze reichen völlig (höchstens 1.500 Zeichen).",
-    "sahamaCheckinTooOften": "Du hast gerade sehr oft eingecheckt. Gönn dir eine kleine Pause und versuch es in einer Stunde wieder."
+    "sahamaCheckinTooOften": "Du hast gerade sehr oft eingecheckt. Gönn dir eine kleine Pause und versuch es in einer Stunde wieder.",
+    "sahamaNeedsPlan": "Das gehört zum Sahama-Abo.",
+    "sahamaReviewTooEarly": "Für einen Wochenrückblick braucht es mindestens zwei Check-ins in dieser Woche.",
+    "sahamaReviewFailed": "Dein Rückblick konnte gerade nicht geschrieben werden. Versuch es später noch einmal."
   },
   "confirmEmail": {
     "title": "E-Mail-Adresse bestätigen",
@@ -1185,9 +1189,47 @@
       "lockedText": "Die Grundlagen-Artikel sind gratis. Die Vertiefungen – zu deinem Dosha, zu den Jahreszeiten, zu Gewürzen und Ölmassage – liest du mit dem Sahama-Abo, zusammen mit allen Ritualen und einer persönlichen Antwort auf jeden Check-in.",
       "lockedAction": "Sahama-Abo ansehen",
       "moreInfo": "Du möchtest tiefer einsteigen? Mehr Infos zu Ayurveda findest du auf"
+    },
+    "keep": {
+      "keep": "Behalten",
+      "kept": "Behalten ✓",
+      "keptToast": "Zu deinen Lieblingsritualen gelegt.",
+      "unkeptToast": "Aus deinen Lieblingsritualen genommen."
+    },
+    "review": {
+      "eyebrow": "Sahama Ayurveda",
+      "title": "Dein Rückblick",
+      "description": "Deine Woche mit Sahama – und die Rituale, die du behalten möchtest.",
+      "weekTitle": "Diese Woche",
+      "weekRange": "Woche ab {date}",
+      "checkins": "{count, plural, =0 {Noch kein Check-in} one {# Check-in} other {# Check-ins}}",
+      "days": "{count, plural, =0 {an keinem Tag} one {an # Tag} other {an # Tagen}}",
+      "favourite": "Am häufigsten hast du {time} etwas für dich getan.",
+      "favouriteTime": {
+        "morning": "morgens",
+        "midday": "mittags",
+        "evening": "abends"
+      },
+      "rituals": "Deine Rituale der Woche",
+      "emptyWeek": "Sobald du diese Woche eincheckst, siehst du hier deine Woche.",
+      "observationTitle": "Sahamas Beobachtung",
+      "write": "Sahamas Wochenrückblick schreiben",
+      "writing": "Sahama schreibt …",
+      "tooEarly": "Ab zwei Check-ins in dieser Woche kann Sahama dir einen Rückblick schreiben.",
+      "pastTitle": "Frühere Wochen",
+      "keptTitle": "Meine Lieblingsrituale",
+      "keptEmpty": "Leg Rituale, die dir gutgetan haben, mit „Behalten“ auf der Ritual-Karte hierher.",
+      "again": "Heute noch einmal",
+      "againToast": "Ist jetzt deine Karte für heute.",
+      "lockedTitle": "Rückblick und Lieblingsrituale gehören zum Sahama-Abo",
+      "lockedText": "Mit dem Abo siehst du jede Woche, was du für dich getan hast, bekommst Sahamas persönliche Beobachtung und kannst deine Lieblingsrituale behalten.",
+      "lockedAction": "Sahama-Abo ansehen"
     }
   },
   "sahamaCheckin": {
     "disclaimer": "Sahamas Antworten schreibt eine KI – auf Grundlage der Inhalte von Sahama Ayurveda. Sie ersetzen keine ärztliche Beratung."
+  },
+  "sahamaReview": {
+    "disclaimer": "Sahamas Wochenrückblick schreibt eine KI – auf Grundlage deiner Check-ins. Er ersetzt keine ärztliche Beratung."
   }
 }

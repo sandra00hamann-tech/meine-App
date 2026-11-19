@@ -1391,6 +1391,8 @@ even though the app never asks for it. Three consequences, decided
 - When the replies are switched on, the check-in text is sent to the AI
   provider that writes the reply (`config/ai-models.json`), fenced as
   customer text, and the privacy policy names that provider (§ 5, § 8a).
+  The weekly review sends the same provider that week's check-in notes,
+  once, when she asks for it (task `sahama.review`).
 - She can download and delete it herself, like everything above.
 
 **Retention:** as long as the account exists; deleting the account deletes

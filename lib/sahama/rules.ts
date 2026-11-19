@@ -32,6 +32,12 @@ export const SAHAMA_ERROR_CODES = [
   "sahamaCheckinTooLong",
   /** Too many check-ins in a short time (cost brake). */
   "sahamaCheckinTooOften",
+  /** The feature comes with the sahama plan. */
+  "sahamaNeedsPlan",
+  /** Fewer than two check-ins this week — nothing to look back on yet. */
+  "sahamaReviewTooEarly",
+  /** The review could not be written just now. */
+  "sahamaReviewFailed",
 ] as const;
 export type SahamaErrorCode = (typeof SAHAMA_ERROR_CODES)[number];
 

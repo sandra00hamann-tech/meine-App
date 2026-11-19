@@ -133,6 +133,26 @@ moment the feature works. Written down by your assistant, from the conversation
   go-live, or both links lead nowhere.
 - **Tests:** `lib/sahama/rules.test.ts` (articles block)
 
+### Weekly review and kept rituals — `/dashboard/rueckblick`, "Behalten" on `/dashboard/heute`
+
+- **Does:** the current week (Monday–Sunday, Berlin): check-ins, days, her
+  most frequent time of day, the week's rituals — computed live, no model.
+  From two check-ins she can ask Sahama for the week's observation once (task
+  `sahama.review`, her notes fenced; stored in `sahama_weekly_reviews`, earlier
+  weeks listed below). Printable. "Behalten" on today's card keeps a ritual;
+  "Meine Lieblingsrituale" lists them with "Heute noch einmal", which makes one
+  today's card again.
+- **Done when:** sie bekommt jede Woche eine Rückblick-Karte und kann
+  Lieblingsrituale behalten — checked 2026-11-19 in the browser: kept a
+  ritual, wrote a real review, "Heute noch einmal"; a free member sees the
+  locked page and no "Behalten".
+- **Access:** `hasSahamaPlan(memberId)` → `hasPlan(memberId, "sahama")`, asked
+  inside lib/sahama/review.ts (`requirePlan`) for every write, and by the page.
+- **Data:** `sahama_kept`, `sahama_weekly_reviews`, read from `sahama_checkins`.
+- **AI notice:** `<AiDisclosure surface="sahamaReview" />` in
+  app/dashboard/rueckblick/review.tsx.
+- **Tests:** `lib/sahama/review-rules.test.ts`
+
 ## Decisions worth remembering
 
 - **The template's support assistant ("Lia", /dashboard/chat) is still the

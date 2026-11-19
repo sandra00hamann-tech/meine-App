@@ -42,6 +42,7 @@ export const MEMBER_NAV_KEYS = [
   "today",
   "dosha",
   "knowledge",
+  "review",
   "account",
   "billing",
   "chat",

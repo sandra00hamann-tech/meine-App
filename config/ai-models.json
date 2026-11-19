@@ -28,6 +28,12 @@
       "provider": "auto",
       "model": "auto",
       "maxTokens": 700
+    },
+    "sahama.review": {
+      "_comment": "Sahama's weekly review text (lib/sahama/review.ts), once per member and week. Its own entry so its cost is its own line on the AI-costs page.",
+      "provider": "auto",
+      "model": "auto",
+      "maxTokens": 900
     }
   }
 }

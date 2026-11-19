@@ -11,6 +11,7 @@ import { getTranslations } from "next-intl/server";
 import { requireActiveUser } from "@/lib/authz";
 import { suggestRitual } from "@/lib/sahama/manage";
 import { checkIn } from "@/lib/sahama/checkin";
+import { setKept } from "@/lib/sahama/review";
 import { SahamaError, leadingDoshas as leadingOf, parseMinutes } from "@/lib/sahama/rules";
 
 export type { ActionState } from "@/lib/action-state";
@@ -75,5 +76,26 @@ export async function checkinAction(_prev: CheckinState, form: FormData): Promis
     const message = error instanceof SahamaError ? te(error.code) : te("unknown");
     if (!(error instanceof SahamaError)) console.error("[sahama] check-in failed:", error);
     return { error: message, note, reply: null, noReply: null, nextRitualTitle: null, savedAt: null };
+  }
+}
+
+// ── Keep a ritual ────────────────────────────────────────────────────────
+
+export async function keepAction(_prev: ActionState, form: FormData): Promise<ActionState> {
+  const session = await requireActiveUser();
+  const slug = String(form.get("slug") ?? "");
+  const keep = form.get("keep") === "1";
+  const t = await getTranslations("sahama.keep");
+  try {
+    await setKept(session.user.id, slug, keep);
+    revalidatePath("/dashboard/heute");
+    revalidatePath("/dashboard/rueckblick");
+    return { error: null, ok: keep ? t("keptToast") : t("unkeptToast") };
+  } catch (error) {
+    unstable_rethrow(error);
+    const te = await getTranslations("errors");
+    if (error instanceof SahamaError) return { error: te(error.code), ok: null };
+    console.error("[sahama] keep failed:", error);
+    return { error: te("unknown"), ok: null };
   }
 }

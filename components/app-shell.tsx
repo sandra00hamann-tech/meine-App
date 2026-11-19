@@ -54,7 +54,7 @@ import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
-import { LayoutDashboard, Sun, Leaf, BookOpen, CircleUser, CreditCard, FileText, MessageCircle, ShieldCheck, Users, Receipt, Coins, LogIn, LogOut, Menu } from "lucide-react";
+import { LayoutDashboard, Sun, Leaf, BookOpen, CalendarHeart, CircleUser, CreditCard, FileText, MessageCircle, ShieldCheck, Users, Receipt, Coins, LogIn, LogOut, Menu } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { initialsFrom } from "@/lib/initials";
@@ -119,6 +119,7 @@ export const NAVIGATION: NavItem[] = [
   { href: "/dashboard/heute", labelKey: "today", icon: Sun },
   { href: "/dashboard/dosha", labelKey: "dosha", icon: Leaf },
   { href: "/dashboard/wissen", labelKey: "knowledge", icon: BookOpen },
+  { href: "/dashboard/rueckblick", labelKey: "review", icon: CalendarHeart },
   // The Member's own account: what they may use, until when, and their balance
   // (story 3.5). Under /dashboard, so `proxy.ts` already guards it — a
   // route OUTSIDE that prefix would be public until the matcher named it.

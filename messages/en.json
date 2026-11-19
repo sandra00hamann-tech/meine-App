@@ -35,7 +35,8 @@
     "impersonations": "Access log",
     "today": "Today",
     "dosha": "Your Dosha",
-    "knowledge": "Ayurveda knowledge"
+    "knowledge": "Ayurveda knowledge",
+    "review": "Review"
   },
   "shell": {
     "openNavigation": "Open navigation",
@@ -674,7 +675,10 @@
     "sahamaNoProfile": "Take your Dosha test first — then we know which rituals suit you.",
     "sahamaCheckinEmpty": "Write a few words about how the ritual went for you.",
     "sahamaCheckinTooLong": "That is a little long for a check-in — a few sentences are plenty (at most 1,500 characters).",
-    "sahamaCheckinTooOften": "You have checked in very often just now. Take a short break and try again in an hour."
+    "sahamaCheckinTooOften": "You have checked in very often just now. Take a short break and try again in an hour.",
+    "sahamaNeedsPlan": "This comes with the Sahama subscription.",
+    "sahamaReviewTooEarly": "A weekly review needs at least two check-ins this week.",
+    "sahamaReviewFailed": "Your review could not be written just now. Please try again later."
   },
   "confirmEmail": {
     "title": "Confirm your email address",
@@ -1185,9 +1189,47 @@
       "lockedText": "The basics are free. The deeper articles — about your Dosha, the seasons, spices and oil massage — come with the Sahama subscription, together with every ritual and a personal reply to every check-in.",
       "lockedAction": "See the Sahama subscription",
       "moreInfo": "Want to go deeper? You'll find more about Ayurveda at"
+    },
+    "keep": {
+      "keep": "Keep",
+      "kept": "Kept ✓",
+      "keptToast": "Added to your favourite rituals.",
+      "unkeptToast": "Removed from your favourite rituals."
+    },
+    "review": {
+      "eyebrow": "Sahama Ayurveda",
+      "title": "Your review",
+      "description": "Your week with Sahama — and the rituals you want to keep.",
+      "weekTitle": "This week",
+      "weekRange": "Week from {date}",
+      "checkins": "{count, plural, =0 {No check-in yet} one {# check-in} other {# check-ins}}",
+      "days": "{count, plural, =0 {on no day} one {on # day} other {on # days}}",
+      "favourite": "You did something for yourself most often {time}.",
+      "favouriteTime": {
+        "morning": "in the morning",
+        "midday": "at midday",
+        "evening": "in the evening"
+      },
+      "rituals": "Your rituals this week",
+      "emptyWeek": "As soon as you check in this week, you'll see your week here.",
+      "observationTitle": "Sahama's observation",
+      "write": "Write Sahama's weekly review",
+      "writing": "Sahama is writing …",
+      "tooEarly": "From two check-ins this week, Sahama can write you a review.",
+      "pastTitle": "Earlier weeks",
+      "keptTitle": "My favourite rituals",
+      "keptEmpty": "Use “Keep” on a ritual card to put rituals that felt good here.",
+      "again": "Again today",
+      "againToast": "This is now your card for today.",
+      "lockedTitle": "Review and favourite rituals come with the Sahama subscription",
+      "lockedText": "With the subscription you see each week what you did for yourself, get Sahama's personal observation and can keep your favourite rituals.",
+      "lockedAction": "See the Sahama subscription"
     }
   },
   "sahamaCheckin": {
     "disclaimer": "Sahama's replies are written by an AI, based on Sahama Ayurveda's content. They do not replace medical advice."
+  },
+  "sahamaReview": {
+    "disclaimer": "Sahama's weekly review is written by an AI, based on your check-ins. It does not replace medical advice."
   }
 }

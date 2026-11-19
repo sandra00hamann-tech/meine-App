@@ -21,20 +21,23 @@ import { requireActiveUser } from "@/lib/authz";
 import { currentRitual, profileFor, sharesOf } from "@/lib/sahama/manage";
 import { ritualImageUrl } from "@/lib/sahama/media";
 import { checkinStatus, recentCheckins } from "@/lib/sahama/checkin";
+import { hasSahamaPlan } from "@/lib/sahama/access";
+import { keptSlugs } from "@/lib/sahama/review";
 import { getFormatter } from "next-intl/server";
 import { leadingDoshas } from "@/lib/sahama/rules";
 
 import { Checkin } from "./checkin";
+import { KeepButton } from "./keep-button";
 import { NewCard } from "./new-card";
 
 export default async function TodayPage({
   searchParams,
 }: {
-  searchParams: Promise<{ start?: string }>;
+  searchParams: Promise<{ start?: string; again?: string }>;
 }) {
   const session = await requireActiveUser();
   const t = await getTranslations("sahama");
-  const { start } = await searchParams;
+  const { start, again } = await searchParams;
   const profile = await profileFor(session.user.id);
 
   if (!profile) {
@@ -51,7 +54,12 @@ export default async function TodayPage({
   }
 
   const current = await currentRitual(session.user.id);
-  const [status, history] = await Promise.all([checkinStatus(session.user.id), recentCheckins(session.user.id)]);
+  const [status, history, holdsPlan, kept] = await Promise.all([
+    checkinStatus(session.user.id),
+    recentCheckins(session.user.id),
+    hasSahamaPlan(session.user.id),
+    keptSlugs(session.user.id),
+  ]);
   const format = await getFormatter();
   const imageUrl = current
     ? await ritualImageUrl(current.ritual.imagePath, { memberId: session.user.id, role: session.user.role ?? null })
@@ -62,6 +70,7 @@ export default async function TodayPage({
   return (
     <div className="mx-auto max-w-3xl space-y-6">
       {start === "1" && <FlashToast message={t("today.started")} clearParam="start" />}
+      {again === "1" && <FlashToast message={t("review.againToast")} clearParam="again" />}
       <div className="print:hidden">
         <PageHeader eyebrow={t("today.eyebrow")} title={t("today.title")} description={t("today.description")} />
       </div>
@@ -75,6 +84,7 @@ export default async function TodayPage({
 
       {current ? (
         <RitualCard ritual={current.ritual} leading={leading} imageUrl={imageUrl}>
+          {holdsPlan && <KeepButton slug={current.ritual.slug} kept={kept.has(current.ritual.slug)} />}
           <PrintButton />
           <p className="text-muted-foreground w-full text-sm print:hidden">{t("card.printHint")}</p>
         </RitualCard>

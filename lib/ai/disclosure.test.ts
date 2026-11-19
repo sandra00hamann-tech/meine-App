@@ -107,7 +107,13 @@ describe("the registry is real, so the loops below can fail", () => {
       // happened to point at another long file would otherwise pass. Restored
       // after a code review found it had been dropped in the rewrite.
       const componentName =
-        surface.id === "chat" ? "ChatWindow" : surface.id === "sahamaCheckin" ? "function Checkin" : "CompanionPanel";
+        surface.id === "chat"
+          ? "ChatWindow"
+          : surface.id === "sahamaCheckin"
+            ? "function Checkin"
+            : surface.id === "sahamaReview"
+              ? "function Review"
+              : "CompanionPanel";
       expect(source, surface.rendersIn).toContain(componentName);
     }
   });

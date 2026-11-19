@@ -36,7 +36,7 @@ hast._
       Ayurveda-Tipp und einem Vorschlag für morgen bekommen (gebaut 2026-11-19)
 - [x] kurze Ayurveda-Artikel lesen — Grundlagen gratis, Vertiefung im Abo —
       und von jeder Ritual-Karte aus „Mehr dazu“ finden (gebaut 2026-11-19)
-- [ ] jede Woche eine Rückblick-Karte bekommen und Lieblingsrituale behalten
+- [x] jede Woche eine Rückblick-Karte bekommen und Lieblingsrituale behalten (gebaut 2026-11-19)
 - [ ] (Betreiberin) Rituale und Artikel mit Text, Bild und „gratis oder Abo“
       selbst anlegen und ändern, auch vom Handy — und die 30 Rituale und
       10 Artikel aus dem Startbestand gegenlesen und freigeben
