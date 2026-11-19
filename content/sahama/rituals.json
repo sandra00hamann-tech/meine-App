@@ -167,6 +167,550 @@
       "imagePath": null,
       "articleSlug": null,
       "position": 70
+    },
+    {
+      "slug": "selbstmassage-am-morgen",
+      "title": "Selbstmassage mit warmem Öl",
+      "summary": "Abhyanga – zwanzig Minuten, die sich wie eine Umarmung anfühlen.",
+      "body": "Stell eine kleine Flasche Öl in eine Schüssel mit heißem Wasser, bis es angenehm warm ist.\n\nBeginne am Kopf und arbeite dich nach unten: kreisend über Gelenke, mit langen Strichen über Arme und Beine. Nimm dir für jeden Bereich ein paar Atemzüge Zeit.\n\nLass das Öl danach noch fünf bis zehn Minuten einwirken – zieh dir einen alten Bademantel über und trink etwas Warmes.\n\nDusche warm, nicht heiß. Im Ayurveda heißt diese Ölmassage Abhyanga und ist ein fester Teil der Morgenroutine.",
+      "minutes": 20,
+      "timeOfDay": "morning",
+      "doshas": [
+        "vata"
+      ],
+      "concerns": [
+        "rushed_morning",
+        "hard_to_unwind"
+      ],
+      "doshaTips": {
+        "vata": "Sesamöl ist für dich ideal – nimm ruhig großzügig davon und lass es lange einwirken.",
+        "pitta": "Kokos- oder Sonnenblumenöl passen besser zu dir – sie wirken kühlend. Massiere sanft statt kräftig.",
+        "kapha": "Nimm nur wenig Öl oder massiere trocken mit einem Seidenhandschuh (Garshana) – kräftig und zügig, zum Herzen hin."
+      },
+      "tier": "plus",
+      "imagePath": null,
+      "articleSlug": null,
+      "position": 100
+    },
+    {
+      "slug": "drei-sanfte-sonnengruesse",
+      "title": "Drei sanfte Sonnengrüße",
+      "summary": "Den Körper aufwecken – in deinem eigenen Tempo.",
+      "body": "Stell dich ans offene Fenster oder auf deine Matte. Füße hüftbreit, Hände vor der Brust.\n\nMach drei Runden des Sonnengrußes – so langsam, dass jede Bewegung zu einem Atemzug passt. Wenn dir eine Haltung nicht guttut, lass sie weg oder mach sie kleiner.\n\nBleib am Ende eine Minute stehen, die Augen geschlossen, und spür, wie dein Körper sich jetzt anfühlt.\n\nEs geht nicht um Perfektion. Drei ruhige Runden sind mehr wert als zehn hastige.",
+      "minutes": 10,
+      "timeOfDay": "morning",
+      "doshas": [
+        "kapha"
+      ],
+      "concerns": [
+        "afternoon_dip",
+        "rushed_morning"
+      ],
+      "doshaTips": {
+        "vata": "Bewege dich besonders langsam und fließend – und bleib in jeder Haltung einen Atemzug länger.",
+        "pitta": "Mach die Runden ohne Ehrgeiz und atme in den Vorbeugen bewusst aus – heute zählt nicht, wie weit du kommst.",
+        "kapha": "Du darfst ruhig etwas zügiger werden und eine vierte Runde anhängen – das bringt Kapha in Schwung."
+      },
+      "tier": "plus",
+      "imagePath": null,
+      "articleSlug": null,
+      "position": 110
+    },
+    {
+      "slug": "morgenlicht-am-fenster",
+      "title": "Fünf Minuten Morgenlicht",
+      "summary": "Bevor der Tag dich hat, holst du dir das Licht.",
+      "body": "Geh nach dem Aufstehen ans Fenster oder auf den Balkon – noch bevor du aufs Handy schaust.\n\nSchau in den Himmel, nicht direkt in die Sonne. Atme ein paar Mal tief durch die Nase.\n\nNimm wahr, wie das Licht heute ist: grau, golden, klar. Es gibt kein richtiges Wetter für dieses Ritual.\n\nNach fünf Minuten kehrst du zurück. Der Tag hat mit dir begonnen – nicht mit deinen Nachrichten.",
+      "minutes": 5,
+      "timeOfDay": "morning",
+      "doshas": [],
+      "concerns": [
+        "rushed_morning"
+      ],
+      "doshaTips": {
+        "vata": "Nimm dir eine warme Tasse mit ans Fenster – Licht und Wärme zusammen tun dir besonders gut.",
+        "pitta": "Die frühe, sanfte Sonne ist genau richtig für dich – genieß sie, bevor der Tag heiß wird.",
+        "kapha": "Öffne das Fenster weit und lass die frische Luft herein – das macht dich richtig wach."
+      },
+      "tier": "plus",
+      "imagePath": null,
+      "articleSlug": null,
+      "position": 120
+    },
+    {
+      "slug": "warmes-fruehstueck",
+      "title": "Ein warmes Frühstück in Ruhe",
+      "summary": "Zehn Minuten am Tisch statt Brot im Gehen.",
+      "body": "Bereite dir etwas Einfaches zu – zum Beispiel einen Haferbrei mit ein paar Gewürzen wie Zimt oder Kardamom.\n\nSetz dich dafür hin. Kein Handy, keine Zeitung, nur du und dein Frühstück.\n\nIss langsam und hör auf, wenn du angenehm satt bist – nicht erst, wenn der Teller leer ist.\n\nIm Ayurveda soll das Frühstück den Körper sanft wecken, nicht beschweren. Was das für dich heißt, hängt von deinem Dosha ab.",
+      "minutes": 10,
+      "timeOfDay": "morning",
+      "doshas": [
+        "vata"
+      ],
+      "concerns": [
+        "irregular_meals",
+        "rushed_morning"
+      ],
+      "doshaTips": {
+        "vata": "Für dich ist ein warmes, nahrhaftes Frühstück genau richtig – Haferbrei mit etwas Ghee und gedünstetem Obst.",
+        "pitta": "Ein nicht zu heißes Frühstück passt gut zu dir – auch Obst, Haferflocken oder ein mildes Müsli sind in Ordnung. Lass das Frühstück nicht ausfallen.",
+        "kapha": "Wenn du morgens keinen Hunger hast, darfst du klein frühstücken – ein warmer Apfel mit Zimt reicht oft schon."
+      },
+      "tier": "plus",
+      "imagePath": null,
+      "articleSlug": null,
+      "position": 130
+    },
+    {
+      "slug": "ein-satz-fuer-den-tag",
+      "title": "Ein Satz für deinen Tag",
+      "summary": "Eine kleine Absicht, die dich durch den Tag trägt.",
+      "body": "Setz dich nach dem Aufstehen für einen Moment hin und schließ die Augen.\n\nFrag dich: Wie möchte ich mich heute fühlen? Nicht: Was muss ich heute schaffen?\n\nFormuliere einen kurzen Satz, zum Beispiel „Heute gehe ich freundlich mit mir um“ oder „Heute nehme ich mir eine echte Pause“.\n\nSag ihn dir dreimal leise. Im Yoga und Ayurveda heißt so eine Absicht Sankalpa. Du kannst sie dir auch auf einen Zettel schreiben.",
+      "minutes": 5,
+      "timeOfDay": "morning",
+      "doshas": [],
+      "concerns": [
+        "busy_mind",
+        "rushed_morning"
+      ],
+      "doshaTips": {
+        "vata": "Wähle einen Satz, der dir Ruhe und Halt gibt – zum Beispiel „Ich habe Zeit“.",
+        "pitta": "Wähle einen Satz, der Druck herausnimmt – zum Beispiel „Gut ist gut genug“.",
+        "kapha": "Wähle einen Satz, der dich in Bewegung bringt – zum Beispiel „Heute probiere ich etwas Neues“."
+      },
+      "tier": "plus",
+      "imagePath": null,
+      "articleSlug": null,
+      "position": 140
+    },
+    {
+      "slug": "wechselatmung",
+      "title": "Wechselatmung für einen klaren Kopf",
+      "summary": "Nadi Shodhana – zehn Minuten, die dich ausgleichen.",
+      "body": "Setz dich aufrecht hin. Leg den rechten Daumen an das rechte Nasenloch, den Ringfinger ans linke.\n\nSchließ rechts, atme links ein. Schließ links, öffne rechts, atme rechts aus. Atme rechts ein, schließ rechts, atme links aus. Das ist eine Runde.\n\nAtme ruhig und ohne Anstrengung. Wenn dir schwindelig wird, mach eine Pause und atme normal weiter.\n\nNach etwa zehn Runden lässt du die Hand sinken und spürst nach. Wenn deine Nase verstopft ist, lass die Übung heute aus.",
+      "minutes": 10,
+      "timeOfDay": "any",
+      "doshas": [
+        "vata",
+        "pitta"
+      ],
+      "concerns": [
+        "busy_mind"
+      ],
+      "doshaTips": {
+        "vata": "Atme besonders langsam und gleichmäßig – die Ruhe im Rhythmus ist für dich das Wichtigste.",
+        "pitta": "Lass die Ausatmung etwas länger werden als die Einatmung – das kühlt und beruhigt.",
+        "kapha": "Mach die Übung am Morgen und im Sitzen am offenen Fenster – so wirkt sie für dich belebend."
+      },
+      "tier": "plus",
+      "imagePath": null,
+      "articleSlug": null,
+      "position": 150
+    },
+    {
+      "slug": "ohne-handy-in-den-tag",
+      "title": "Die ersten zwanzig Minuten ohne Handy",
+      "summary": "Der Morgen gehört dir, bevor er den anderen gehört.",
+      "body": "Leg dein Handy am Abend in ein anderes Zimmer und nimm einen einfachen Wecker.\n\nNach dem Aufstehen bleibt es zwanzig Minuten dort, wo es ist. Keine Nachrichten, keine Mails, keine Neuigkeiten.\n\nNutze die Zeit für das, was dir guttut: ein Glas warmes Wasser, ein Blick aus dem Fenster, ein paar Bewegungen.\n\nErst danach holst du das Handy. Vielleicht merkst du, dass die Welt die zwanzig Minuten gut ohne dich ausgekommen ist.",
+      "minutes": 20,
+      "timeOfDay": "morning",
+      "doshas": [
+        "vata",
+        "pitta"
+      ],
+      "concerns": [
+        "rushed_morning",
+        "busy_mind"
+      ],
+      "doshaTips": {
+        "vata": "Für dich ist der ruhige Start besonders wertvoll – ohne Reizflut bleibt Vata länger im Gleichgewicht.",
+        "pitta": "Widersteh dem Drang, „nur kurz“ die Mails zu checken – die Pläne für den Tag dürfen noch zwanzig Minuten warten.",
+        "kapha": "Nutze die zwanzig Minuten für Bewegung – ein kurzer Gang um den Block wirkt Wunder gegen Morgenmüdigkeit."
+      },
+      "tier": "plus",
+      "imagePath": null,
+      "articleSlug": null,
+      "position": 160
+    },
+    {
+      "slug": "augen-ausruhen",
+      "title": "Fünf Minuten für deine Augen",
+      "summary": "Eine kleine Pause vom Bildschirm.",
+      "body": "Reib deine Handflächen kräftig aneinander, bis sie warm sind.\n\nLeg sie sanft über die geschlossenen Augen, ohne Druck. Atme ein paar Mal ruhig ein und aus.\n\nÖffne die Augen hinter den Händen, nimm die Hände langsam weg und schau aus dem Fenster in die Ferne.\n\nLass den Blick ein paar Mal zwischen nah und fern wandern. Dann geht es zurück an die Arbeit – ein bisschen frischer.",
+      "minutes": 5,
+      "timeOfDay": "midday",
+      "doshas": [
+        "pitta"
+      ],
+      "concerns": [
+        "no_break"
+      ],
+      "doshaTips": {
+        "vata": "Halte die warmen Hände etwas länger über den Augen – die Wärme tut dir gut.",
+        "pitta": "Wasch dir danach das Gesicht mit kühlem Wasser – das erfrischt die Augen zusätzlich.",
+        "kapha": "Steh für den Blick in die Ferne auf und streck dich dabei einmal ausgiebig."
+      },
+      "tier": "plus",
+      "imagePath": null,
+      "articleSlug": null,
+      "position": 200
+    },
+    {
+      "slug": "hundert-schritte-nach-dem-essen",
+      "title": "Hundert Schritte nach dem Essen",
+      "summary": "Ein kurzer Gang, damit der Nachmittag leichter wird.",
+      "body": "Wenn du mit dem Mittagessen fertig bist, steh direkt auf – noch bevor du dich wieder an den Schreibtisch setzt.\n\nGeh langsam etwa hundert Schritte: durch den Flur, ums Haus, über den Hof.\n\nGehe in deinem eigenen Tempo und atme dabei ruhig durch die Nase.\n\nIm Ayurveda heißt es, ein kurzer, gemächlicher Gang nach dem Essen lasse die Mahlzeit sich setzen. Viele merken, dass der Nachmittag dann leichter beginnt.",
+      "minutes": 10,
+      "timeOfDay": "midday",
+      "doshas": [
+        "kapha"
+      ],
+      "concerns": [
+        "afternoon_dip",
+        "irregular_meals"
+      ],
+      "doshaTips": {
+        "vata": "Geh wirklich gemächlich – Hetze nach dem Essen bringt Vata durcheinander.",
+        "pitta": "Such dir einen schattigen Weg und lass die Gedanken an die Arbeit für diese Minuten los.",
+        "kapha": "Hundert Schritte sind dein Minimum – geh ruhig noch eine Runde mehr."
+      },
+      "tier": "plus",
+      "imagePath": null,
+      "articleSlug": null,
+      "position": 210
+    },
+    {
+      "slug": "ingwerwasser-am-nachmittag",
+      "title": "Eine Tasse Ingwerwasser",
+      "summary": "Ein warmes Getränk statt des nächsten Kaffees.",
+      "body": "Schneide zwei, drei dünne Scheiben frischen Ingwer ab und gib sie in eine Tasse.\n\nGieß heißes Wasser auf und lass es fünf Minuten ziehen.\n\nSetz dich mit der Tasse hin und trink in kleinen Schlucken. Schau dabei nicht auf den Bildschirm.\n\nWenn es dir zu scharf ist, nimm weniger Ingwer oder gib einen Teelöffel Honig dazu, sobald es etwas abgekühlt ist.",
+      "minutes": 10,
+      "timeOfDay": "midday",
+      "doshas": [
+        "kapha",
+        "vata"
+      ],
+      "concerns": [
+        "afternoon_dip",
+        "no_break"
+      ],
+      "doshaTips": {
+        "vata": "Ingwer wärmt dich angenehm von innen – genieß die Tasse ganz in Ruhe.",
+        "pitta": "Ingwer ist für dich eher zu feurig – nimm lieber ein paar Fenchelsamen oder frische Minze in heißes Wasser.",
+        "kapha": "Gib ruhig etwas mehr Ingwer und eine Prise Zimt hinein – das macht dich wach."
+      },
+      "tier": "plus",
+      "imagePath": null,
+      "articleSlug": null,
+      "position": 220
+    },
+    {
+      "slug": "schultern-loesen",
+      "title": "Schultern lösen",
+      "summary": "Fünf Minuten für alles, was du heute schon getragen hast.",
+      "body": "Setz dich aufrecht hin oder stell dich hin. Zieh beim Einatmen die Schultern zu den Ohren.\n\nLass sie beim Ausatmen mit einem Seufzer fallen. Wiederhole das fünfmal.\n\nKreise die Schultern dann langsam nach hinten, zehnmal, und anschließend nach vorn.\n\nLeg zum Schluss eine Hand auf die gegenüberliegende Schulter und drück sie sanft. Dann die andere Seite.",
+      "minutes": 5,
+      "timeOfDay": "any",
+      "doshas": [],
+      "concerns": [
+        "no_break",
+        "busy_mind"
+      ],
+      "doshaTips": {
+        "vata": "Mach die Bewegungen sehr langsam und leg dir danach einen Schal um die Schultern.",
+        "pitta": "Seufze beim Fallenlassen ruhig hörbar – das hilft, angestaute Anspannung loszulassen.",
+        "kapha": "Mach die Kreise ruhig größer und schneller – und steh danach einmal auf und streck dich."
+      },
+      "tier": "plus",
+      "imagePath": null,
+      "articleSlug": null,
+      "position": 230
+    },
+    {
+      "slug": "zehn-minuten-nichts-tun",
+      "title": "Zehn Minuten nichts tun",
+      "summary": "Eine echte Pause – ohne Programm.",
+      "body": "Stell dir einen Wecker auf zehn Minuten.\n\nSetz dich irgendwohin, wo du ungestört bist: auf eine Bank, ans Fenster, in die Küche.\n\nTu nichts. Kein Handy, kein Buch, keine Musik. Wenn Gedanken kommen, lass sie vorbeiziehen wie Wolken.\n\nWenn der Wecker klingelt, steh langsam auf. Diese zehn Minuten waren keine verlorene Zeit.",
+      "minutes": 10,
+      "timeOfDay": "midday",
+      "doshas": [
+        "vata",
+        "pitta"
+      ],
+      "concerns": [
+        "no_break",
+        "busy_mind"
+      ],
+      "doshaTips": {
+        "vata": "Setz dich an einen warmen, geschützten Platz – und halte die Hände um eine warme Tasse.",
+        "pitta": "Es wird dir schwerfallen, nichts zu tun – genau deshalb ist es für dich so wertvoll.",
+        "kapha": "Mach die zehn Minuten draußen im Stehen oder beim langsamen Gehen – so wirst du nicht schläfrig."
+      },
+      "tier": "plus",
+      "imagePath": null,
+      "articleSlug": null,
+      "position": 240
+    },
+    {
+      "slug": "mittagessen-fuer-morgen",
+      "title": "Dein Mittagessen für morgen",
+      "summary": "Zwanzig Minuten, die dir morgen die Pause retten.",
+      "body": "Überleg dir am Nachmittag oder Abend: Was esse ich morgen Mittag?\n\nKoch eine einfache Portion vor – zum Beispiel Reis mit Gemüse und ein paar Gewürzen – oder bereite die Zutaten vor.\n\nPack sie in eine Dose, die du morgen nur noch aufwärmen musst.\n\nSo wird das Mittagessen morgen nicht zur Nebensache. Im Ayurveda ist es die wichtigste Mahlzeit des Tages.",
+      "minutes": 20,
+      "timeOfDay": "evening",
+      "doshas": [],
+      "concerns": [
+        "irregular_meals",
+        "no_break"
+      ],
+      "doshaTips": {
+        "vata": "Plane etwas Warmes, Gekochtes mit gutem Fett – zum Beispiel Gemüse mit Reis und etwas Ghee.",
+        "pitta": "Plane etwas Frisches dazu – einen Salat oder Gurke zum warmen Essen, nicht zu scharf gewürzt.",
+        "kapha": "Plane eine leichte Portion mit viel Gemüse und kräftigen Gewürzen – lieber etwas weniger als zu viel."
+      },
+      "tier": "plus",
+      "imagePath": null,
+      "articleSlug": null,
+      "position": 250
+    },
+    {
+      "slug": "leichtes-fruehes-abendessen",
+      "title": "Ein leichtes, frühes Abendessen",
+      "summary": "Den Tag nicht mit vollem Bauch beenden.",
+      "body": "Plane dein Abendessen heute für spätestens 19 Uhr – oder so früh, wie es bei dir möglich ist.\n\nKoch etwas Einfaches und Warmes, zum Beispiel eine Suppe oder einen Eintopf.\n\nIss etwas weniger als mittags und setz dich dafür in Ruhe hin.\n\nIm Ayurveda soll das Abendessen leicht sein, damit der Körper in der Nacht zur Ruhe kommen kann.",
+      "minutes": 20,
+      "timeOfDay": "evening",
+      "doshas": [
+        "kapha"
+      ],
+      "concerns": [
+        "irregular_meals",
+        "hard_to_unwind"
+      ],
+      "doshaTips": {
+        "vata": "Eine warme, sämige Suppe mit etwas Ghee passt gut zu dir – nicht zu wenig, damit du nicht hungrig ins Bett gehst.",
+        "pitta": "Eine milde Gemüsesuppe oder Reis mit Gemüse passt gut zu dir – lass scharfe und saure Speisen am Abend weg.",
+        "kapha": "Eine leichte Gemüsesuppe mit kräftigen Gewürzen ist ideal – und je früher, desto besser."
+      },
+      "tier": "plus",
+      "imagePath": null,
+      "articleSlug": null,
+      "position": 300
+    },
+    {
+      "slug": "letzte-stunde-ohne-bildschirm",
+      "title": "Die letzte Stunde ohne Bildschirm",
+      "summary": "Ein Abend, der wirklich zur Ruhe kommen darf.",
+      "body": "Leg eine Stunde vor dem Schlafengehen alle Bildschirme weg – Handy, Laptop und Fernseher.\n\nMach das Licht etwas gedämpfter. Eine Lampe statt der Deckenleuchte reicht.\n\nSuch dir etwas für diese Stunde: ein Buch, ein Gespräch, ein Bad, leise Musik, ein Puzzle.\n\nAm Anfang fühlt sich das ungewohnt an. Viele merken nach ein paar Abenden, wie viel ruhiger der Kopf dadurch wird.",
+      "minutes": 20,
+      "timeOfDay": "evening",
+      "doshas": [
+        "vata",
+        "pitta"
+      ],
+      "concerns": [
+        "hard_to_unwind",
+        "busy_mind"
+      ],
+      "doshaTips": {
+        "vata": "Kuschel dich mit einer Wärmflasche und einem Buch ein – Wärme und Ruhe sind am Abend genau richtig für dich.",
+        "pitta": "Lass die Arbeit wirklich ruhen – keine Mails, keine Pläne für morgen in dieser Stunde.",
+        "kapha": "Nutze die Stunde für etwas Aktives, das nicht leuchtet – ein Gespräch, etwas aufräumen, ein kurzer Abendspaziergang."
+      },
+      "tier": "plus",
+      "imagePath": null,
+      "articleSlug": null,
+      "position": 310
+    },
+    {
+      "slug": "goldene-milch",
+      "title": "Eine Tasse Goldene Milch",
+      "summary": "Ein warmes Getränk für den Abend.",
+      "body": "Erwärme eine Tasse Milch oder Pflanzenmilch in einem kleinen Topf.\n\nGib eine Prise Kurkuma, etwas Zimt und eine Prise Kardamom dazu und lass alles kurz mitziehen.\n\nWenn du magst, süß sie mit einem Teelöffel Honig, sobald sie nicht mehr kocht.\n\nSetz dich damit hin und trink sie langsam. Viele empfinden das als schönes Signal: Jetzt ist Feierabend.",
+      "minutes": 10,
+      "timeOfDay": "evening",
+      "doshas": [
+        "vata"
+      ],
+      "concerns": [
+        "hard_to_unwind"
+      ],
+      "doshaTips": {
+        "vata": "Kuhmilch oder Hafermilch mit einem Löffel Ghee passt gut zu dir – schön warm.",
+        "pitta": "Nimm Mandel- oder Kokosmilch und lass sie nur warm, nicht heiß werden – und eher mehr Kardamom als Zimt.",
+        "kapha": "Nimm eine leichte Pflanzenmilch, etwas weniger davon, und gib eine Prise Ingwer dazu."
+      },
+      "tier": "plus",
+      "imagePath": null,
+      "articleSlug": null,
+      "position": 320
+    },
+    {
+      "slug": "kopf-und-ohrenmassage",
+      "title": "Sanfte Kopf- und Ohrenmassage",
+      "summary": "Zehn Minuten, die den Tag aus dem Kopf streichen.",
+      "body": "Setz dich bequem hin. Massiere mit den Fingerkuppen deine Kopfhaut in kleinen Kreisen, von der Stirn bis zum Nacken.\n\nStreich mehrmals mit den Händen über den Kopf nach hinten, als würdest du die Gedanken des Tages abstreifen.\n\nMassiere dann sanft deine Ohrmuscheln von oben nach unten und zieh ganz leicht an den Ohrläppchen.\n\nWenn du magst, nimm ein paar Tropfen warmes Öl für die Kopfhaut – aber nur, wenn du die Haare danach waschen kannst oder ohnehin morgen wäschst.",
+      "minutes": 10,
+      "timeOfDay": "evening",
+      "doshas": [
+        "vata"
+      ],
+      "concerns": [
+        "hard_to_unwind",
+        "busy_mind"
+      ],
+      "doshaTips": {
+        "vata": "Ein paar Tropfen warmes Sesamöl auf der Kopfhaut sind für dich ideal.",
+        "pitta": "Nimm, wenn überhaupt, etwas Kokosöl – und massiere besonders sanft an den Schläfen.",
+        "kapha": "Massiere trocken und ruhig etwas kräftiger – das belebt statt zu beschweren."
+      },
+      "tier": "plus",
+      "imagePath": null,
+      "articleSlug": null,
+      "position": 330
+    },
+    {
+      "slug": "den-tag-rueckwaerts-erzaehlen",
+      "title": "Den Tag rückwärts erzählen",
+      "summary": "Ein kleines Abendritual im Bett.",
+      "body": "Leg dich hin, schließ die Augen und atme ein paar Mal ruhig.\n\nGeh deinen Tag rückwärts durch – vom Moment jetzt bis zum Aufwachen. Wie ein Film, der zurückgespult wird.\n\nBewerte nichts. Schau einfach, was war: ein Gespräch, ein Essen, ein Weg.\n\nWenn du beim Aufwachen angekommen bist, sag innerlich: „Das war heute.“ Und lass den Tag los.",
+      "minutes": 5,
+      "timeOfDay": "evening",
+      "doshas": [
+        "pitta"
+      ],
+      "concerns": [
+        "busy_mind",
+        "hard_to_unwind"
+      ],
+      "doshaTips": {
+        "vata": "Zieh dir die Decke bis unters Kinn und geh langsam vor – wenn du einschläfst, ist das völlig in Ordnung.",
+        "pitta": "Wenn ein Ärger auftaucht, schau ihn kurz an und spul weiter – heute muss nichts mehr gelöst werden.",
+        "kapha": "Halte dich an die schönen Momente etwas länger auf – das nimmt die Schwere aus dem Abend."
+      },
+      "tier": "plus",
+      "imagePath": null,
+      "articleSlug": null,
+      "position": 340
+    },
+    {
+      "slug": "beine-an-der-wand",
+      "title": "Beine hoch an der Wand",
+      "summary": "Zehn Minuten, die müde Beine leicht machen.",
+      "body": "Leg dich mit dem Po nah an eine Wand und streck die Beine an der Wand nach oben.\n\nDie Arme liegen locker neben dir, die Handflächen zeigen nach oben. Schließ die Augen.\n\nAtme ruhig in den Bauch. Bleib etwa zehn Minuten liegen – oder so lange, wie es sich gut anfühlt.\n\nRoll dich zum Aufstehen erst auf die Seite. Wenn diese Haltung dir nicht guttut, leg die Unterschenkel stattdessen auf einen Stuhl.",
+      "minutes": 10,
+      "timeOfDay": "evening",
+      "doshas": [
+        "vata",
+        "pitta"
+      ],
+      "concerns": [
+        "hard_to_unwind"
+      ],
+      "doshaTips": {
+        "vata": "Leg dir eine Decke über – im Liegen kühlt der Körper schnell aus.",
+        "pitta": "Leg dir ein kühles Tuch über die Augen – das verstärkt die Ruhe.",
+        "kapha": "Bleib eher fünf als fünfzehn Minuten liegen und steh danach langsam, aber bewusst wieder auf."
+      },
+      "tier": "plus",
+      "imagePath": null,
+      "articleSlug": null,
+      "position": 350
+    },
+    {
+      "slug": "abend-ab-neun",
+      "title": "Dein Abend ab neun Uhr",
+      "summary": "Zwanzig Minuten, die den Weg ins Bett ebnen.",
+      "body": "Ab etwa 21 Uhr beginnt im Ayurveda die ruhige Kapha-Zeit – der Körper wird schwer und bereit für die Nacht.\n\nNutze die Zeit für ein kleines Programm: Licht dämmen, Zähne putzen, Gesicht waschen, morgen früh vorbereiten.\n\nLeg dir zum Schluss etwas für die Nacht bereit – ein Glas Wasser, ein Buch, warme Socken.\n\nViele merken: Wer gegen 22 Uhr im Bett liegt, schläft leichter ein als eine Stunde später, wenn die zweite Wachphase des Abends beginnt.",
+      "minutes": 20,
+      "timeOfDay": "evening",
+      "doshas": [],
+      "concerns": [
+        "hard_to_unwind",
+        "busy_mind"
+      ],
+      "doshaTips": {
+        "vata": "Halte dich jeden Abend an die gleiche Reihenfolge – Regelmäßigkeit gibt dir Halt.",
+        "pitta": "Leg die Arbeit spätestens um 21 Uhr weg – sonst ist der Kopf um 23 Uhr wieder hellwach.",
+        "kapha": "Bleib ab 21 Uhr nicht auf dem Sofa liegen – ein paar kleine Handgriffe halten dich bis zum Bett in Bewegung."
+      },
+      "tier": "plus",
+      "imagePath": null,
+      "articleSlug": null,
+      "position": 360
+    },
+    {
+      "slug": "warmes-fussbad",
+      "title": "Ein warmes Fußbad",
+      "summary": "Zwanzig Minuten, die von unten wärmen.",
+      "body": "Füll eine Schüssel mit warmem Wasser, so warm, wie es dir angenehm ist.\n\nGib, wenn du magst, eine Handvoll Salz dazu. Setz dich bequem hin und stell die Füße hinein.\n\nBleib zehn bis fünfzehn Minuten sitzen – mit einem Tee, einem Buch oder einfach mit geschlossenen Augen.\n\nTrockne die Füße gut ab und zieh warme Socken an. Ein schöner Abschluss für einen langen Tag.",
+      "minutes": 20,
+      "timeOfDay": "evening",
+      "doshas": [
+        "vata",
+        "kapha"
+      ],
+      "concerns": [
+        "hard_to_unwind"
+      ],
+      "doshaTips": {
+        "vata": "Das Wasser darf schön warm sein – und massiere die Füße danach mit etwas Sesamöl.",
+        "pitta": "Nimm lauwarmes statt heißes Wasser – oder beende das Fußbad mit einem kurzen kühlen Guss.",
+        "kapha": "Mach es richtig warm und gib eine Prise Ingwerpulver ins Wasser."
+      },
+      "tier": "plus",
+      "imagePath": null,
+      "articleSlug": null,
+      "position": 370
+    },
+    {
+      "slug": "summen-wie-eine-biene",
+      "title": "Summen wie eine Biene",
+      "summary": "Bhramari – fünf Minuten, die innen ruhig machen.",
+      "body": "Setz dich aufrecht hin und schließ die Augen. Leg die Zeigefinger sanft auf die kleinen Knorpel vor den Ohren.\n\nAtme durch die Nase ein. Summ beim Ausatmen mit geschlossenem Mund ein tiefes „mmm“, so lange, wie es angenehm ist.\n\nSpür, wie der Ton in deinem Kopf und in deiner Brust vibriert.\n\nWiederhole das fünf- bis zehnmal. Danach bleib noch einen Moment still sitzen und lausch der Stille.",
+      "minutes": 5,
+      "timeOfDay": "any",
+      "doshas": [
+        "vata",
+        "pitta"
+      ],
+      "concerns": [
+        "busy_mind",
+        "hard_to_unwind"
+      ],
+      "doshaTips": {
+        "vata": "Summ eher tief und lang – der Ton beruhigt Vata besonders.",
+        "pitta": "Lass das Summen ganz weich werden – es geht nicht um Lautstärke.",
+        "kapha": "Summ ruhig etwas kräftiger und mach die Übung eher morgens oder mittags als spät am Abend."
+      },
+      "tier": "plus",
+      "imagePath": null,
+      "articleSlug": null,
+      "position": 400
+    },
+    {
+      "slug": "barfuss-ankommen",
+      "title": "Barfuß ankommen",
+      "summary": "Fünf Minuten Boden unter den Füßen.",
+      "body": "Zieh Schuhe und Socken aus. Wenn du kannst, geh nach draußen auf Gras, Erde oder Sand – sonst reicht der Holzboden.\n\nSteh still und spür, wie deine Fußsohlen den Boden berühren. Verlagere das Gewicht langsam nach vorn, nach hinten, zur Seite.\n\nGeh dann ein paar Minuten langsam und bewusst. Jeder Schritt: Ferse, Ballen, Zehen.\n\nBleib zum Schluss stehen und atme dreimal tief. Du bist angekommen – hier, jetzt.",
+      "minutes": 5,
+      "timeOfDay": "any",
+      "doshas": [
+        "vata"
+      ],
+      "concerns": [
+        "busy_mind",
+        "no_break"
+      ],
+      "doshaTips": {
+        "vata": "Mach das an warmen Tagen draußen, an kalten drinnen auf einem Teppich – kalte Füße tun dir nicht gut.",
+        "pitta": "Morgentau oder kühles Gras sind für dich besonders angenehm.",
+        "kapha": "Geh ruhig etwas zügiger und mach ein paar Schritte auf den Zehenspitzen – das weckt auf."
+      },
+      "tier": "plus",
+      "imagePath": null,
+      "articleSlug": null,
+      "position": 410
     }
   ]
 }

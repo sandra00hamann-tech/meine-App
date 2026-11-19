@@ -1138,7 +1138,9 @@
     "card": {
       "freeBadge": "Gratis",
       "plusBadge": "Sahama-Abo",
-      "tipsFor": "Für dich als {name}"
+      "tipsFor": "Für dich als {name}",
+      "print": "Drucken oder als PDF speichern",
+      "printHint": "Tipp: Im Druckfenster kannst du statt eines Druckers „Als PDF speichern“ wählen."
     },
     "dashboard": {
       "title": "Dein Ritual für heute",

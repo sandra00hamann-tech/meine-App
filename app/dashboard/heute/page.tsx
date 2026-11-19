@@ -12,6 +12,7 @@ import { Leaf } from "lucide-react";
 
 import { FlashToast } from "@/components/flash-toast";
 import { PageHeader } from "@/components/page-header";
+import { PrintButton } from "@/components/sahama/print-button";
 import { RitualCard } from "@/components/sahama/ritual-card";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -52,9 +53,11 @@ export default async function TodayPage({
   return (
     <div className="mx-auto max-w-3xl space-y-6">
       {start === "1" && <FlashToast message={t("today.started")} clearParam="start" />}
-      <PageHeader eyebrow={t("today.eyebrow")} title={t("today.title")} description={t("today.description")} />
+      <div className="print:hidden">
+        <PageHeader eyebrow={t("today.eyebrow")} title={t("today.title")} description={t("today.description")} />
+      </div>
 
-      <p className="text-muted-foreground text-sm">
+      <p className="text-muted-foreground text-sm print:hidden">
         {t("today.doshaLine", { name: dosha })} ·{" "}
         <Link href="/dashboard/dosha" className="text-primary underline-offset-4 hover:underline">
           {t("today.doshaLink")}
@@ -62,12 +65,15 @@ export default async function TodayPage({
       </p>
 
       {current ? (
-        <RitualCard ritual={current.ritual} leading={leading} />
+        <RitualCard ritual={current.ritual} leading={leading}>
+          <PrintButton />
+          <p className="text-muted-foreground w-full text-sm print:hidden">{t("card.printHint")}</p>
+        </RitualCard>
       ) : (
         <EmptyState icon={Leaf} title={t("today.noCardTitle")} description={t("today.noCardText")} />
       )}
 
-      <Card>
+      <Card className="print:hidden">
         <CardHeader>
           <CardTitle className="text-base">{t("today.newCardTitle")}</CardTitle>
           <CardDescription>{t("today.newCardHint")}</CardDescription>

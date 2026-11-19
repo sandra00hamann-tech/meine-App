@@ -487,7 +487,7 @@ export function AppShell({
   return (
     <div className="min-h-screen">
       {/* Sidebar — fixed from "lg" up, below that inside the Sheet (see below). */}
-      <aside className="bg-card fixed inset-y-0 left-0 z-40 hidden w-60 flex-col border-r lg:flex">
+      <aside className="bg-card fixed inset-y-0 left-0 z-40 hidden w-60 flex-col border-r lg:flex print:hidden">
         <div className="flex h-14 items-center border-b px-4">
           <BrandLink appName={appName} href="/dashboard" />
         </div>
@@ -497,8 +497,8 @@ export function AppShell({
         <SidebarFooter />
       </aside>
 
-      <div className="lg:pl-60">
-        <header className="bg-background/80 sticky top-0 z-30 flex h-14 items-center gap-3 border-b px-4 backdrop-blur-sm sm:px-6">
+      <div className="lg:pl-60 print:pl-0">
+        <header className="bg-background/80 sticky top-0 z-30 flex h-14 items-center gap-3 border-b px-4 backdrop-blur-sm sm:px-6 print:hidden">
           <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
             <SheetTrigger asChild>
               <Button

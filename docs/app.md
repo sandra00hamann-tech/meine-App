@@ -56,14 +56,17 @@ moment the feature works. Written down by your assistant, from the conversation
   in Berlin, avoids her last six cards, and never offers a ritual longer than
   her minutes or one she may not open. Under the steps, the hint for each of
   her leading Doshas (`sahama_rituals.dosha_tips`). First card on `/dashboard` too
-  (`components/sahama/today-overview-card.tsx`).
+  (`components/sahama/today-overview-card.tsx`). "Drucken oder als PDF
+  speichern" opens the browser's print dialog; the app shell and the page's
+  extras carry `print:hidden`, so only the card is printed.
 - **Done when:** sie sagt, wie viel Zeit sie hat, und bekommt eine passende
   Ritual-Karte — the minutes part checked 2026-11-19; the card picture and the
   Dosha-match on 30 rituals come with the next stage.
 - **Access:** per ritual through `mayUseTier(ritual.tier, await hasSahamaPlan(memberId))`
   (lib/sahama/access.ts) — `free` for everyone, `plus` with
   `hasPlan(memberId, "sahama")`. Every caller asks there; no second check.
-- **Data:** `sahama_rituals` (content), `sahama_suggestions` (state)
+- **Data:** `sahama_rituals` (content: 30 drafts in `content/sahama/rituals.json`,
+  7 free, 23 plus, each with hints for all three Doshas), `sahama_suggestions` (state)
 - **Tests:** `lib/sahama/rules.test.ts`
 
 ## Decisions worth remembering
