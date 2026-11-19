@@ -80,6 +80,24 @@ Entschieden am 2026-11-19: Jede, die sich anmeldet, kann Sahama gratis nutzen
 Die persönlichen Antworten kosten bei jeder Nutzung etwas; deshalb gehören sie
 — bis auf die drei zum Probieren — ins Abo.
 
+## Ayurveda-Wissen
+
+Kurze Artikel (3–5 Minuten Lesezeit). **Grundlagen gratis, Vertiefung im Abo.**
+Unter jeder Ritual-Karte führt „Mehr dazu“ zum passenden Artikel; auch die
+persönlichen Antworten dürfen auf einen Artikel verweisen.
+
+## Inhalte: wer sie schreibt und wie neue dazukommen
+
+Entschieden am 2026-11-19:
+
+- **Neue Inhalte auf beiden Wegen:** die Betreiberin legt Rituale und Artikel
+  selbst im Verwaltungsbereich an (auch vom Handy), **und** sie kann sie dem
+  Assistenten diktieren, der sie einträgt.
+- **Startbestand vom Assistenten als Entwurf:** 30 Rituale und 10 Artikel
+  (Startwert: 7 Rituale und 4 Artikel gratis, der Rest im Abo). Die Betreiberin
+  liest jeden Text gegen; nichts geht ohne ihr Okay online.
+- Noch keine Blogartikel vorhanden — die Website entsteht erst.
+
 ## Abrechnung über Digistore24
 
 **Abo.** Ein Angebot mit zwei Zahlweisen: monatlich kündbar (Vorschlag um

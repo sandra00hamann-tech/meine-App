@@ -30,8 +30,11 @@ hast._
 - [ ] nach dem Ritual kurz einchecken und eine persönliche Antwort mit einem
       angepassten Vorschlag für morgen bekommen
 - [ ] jede Woche eine Rückblick-Karte bekommen und Lieblingsrituale behalten
-- [ ] (Betreiberin) Rituale mit Text, Dauer, Tageszeit und Bild in die
-      Sammlung legen
+- [ ] kurze Ayurveda-Artikel lesen — Grundlagen gratis, Vertiefung im Abo —
+      und von jeder Ritual-Karte aus „Mehr dazu“ finden
+- [ ] (Betreiberin) Rituale und Artikel mit Text, Bild und „gratis oder Abo“
+      selbst anlegen und ändern, auch vom Handy — und die 30 Rituale und
+      10 Artikel aus dem Startbestand gegenlesen und freigeben
 - [ ] Sahama gratis nutzen (7 Einsteiger-Rituale, 3 persönliche Antworten zum
       Probieren) und mit dem Sahama-Abo über Digistore24 alles freischalten
 
