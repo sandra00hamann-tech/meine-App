@@ -39,7 +39,7 @@ export interface AiDisclosureProps {
    * walk. **Adding a third surface means adding an entry there**, or nothing
    * will ever notice its notice going missing.
    */
-  surface: "chat" | "companion";
+  surface: "chat" | "companion" | "sahamaCheckin";
   /**
    * Only the assistant's sentence takes one — she has a name. The companion's
    * is deliberately written without a placeholder, so an app whose companion has

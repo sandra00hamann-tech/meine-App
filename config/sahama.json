@@ -1,0 +1,6 @@
+{
+  "_comment": "Sahama's own switches. Read ONLY through lib/sahama/config.ts (fail-closed: a missing or malformed value counts as off / the shipped default). checkinReplies: whether Sahama writes a personal AI reply to a check-in — off means the note is still saved, just not answered (and the AI notice disappears with it, lib/ai/disclosure.mjs). freeReplies: how many replies a member WITHOUT the sahama plan gets to try (operator, 2026-11-19: 3). adviceUrl: the operator's page for written advice; Sahama points there when somebody wants to go deeper — null until the page exists, then the replies name 'persönliche schriftliche Beratung' without a link.",
+  "checkinReplies": true,
+  "freeReplies": 3,
+  "adviceUrl": null
+}

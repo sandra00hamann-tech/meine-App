@@ -106,7 +106,8 @@ describe("the registry is real, so the loops below can fail", () => {
       // The component's own name, not only its length — a wrong path that
       // happened to point at another long file would otherwise pass. Restored
       // after a code review found it had been dropped in the rewrite.
-      const componentName = surface.id === "chat" ? "ChatWindow" : "CompanionPanel";
+      const componentName =
+        surface.id === "chat" ? "ChatWindow" : surface.id === "sahamaCheckin" ? "function Checkin" : "CompanionPanel";
       expect(source, surface.rendersIn).toContain(componentName);
     }
   });

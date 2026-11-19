@@ -76,7 +76,45 @@ moment the feature works. Written down by your assistant, from the conversation
   7 free, 23 plus, each with hints for all three Doshas), `sahama_suggestions` (state)
 - **Tests:** `lib/sahama/rules.test.ts`
 
+### Check-in with a personal reply — `/dashboard/heute`
+
+- **Does:** under today's card, "Wie war's?" takes a short note (≤ 1,500
+  characters). The note is saved first; then, when a reply is due, Sahama
+  writes one through the task `sahama.checkin` (lib/sahama/checkin.ts →
+  `runTask`), with her Dosha, concerns, today's and the next ritual and a
+  pause flag as app-worded facts, and her note FENCED as customer text
+  (`buildCheckinRequest`, lib/sahama/checkin-rules.ts). The instruction holds
+  the operator's limits (no diagnosis, no cure claims, no herbs/supplements/
+  cures, doctor for real complaints, written advice for deeper questions, no
+  calls or videos). After a check-in her next card is lined up. The AI notice
+  (`<AiDisclosure surface="sahamaCheckin" />`) sits above the reply.
+- **Done when:** sie checkt nach dem Ritual ein und bekommt eine persönliche
+  Antwort mit einem Ayurveda-Tipp und einem Vorschlag für morgen.
+- **Access:** reply due by `replyAllowed()` — `hasPlan(memberId, "sahama")`
+  (through `hasSahamaPlan`), or fewer than `freeReplies` (3) replies so far.
+  Without either the note is saved and the page offers `/plans?needs=sahama`.
+- **Switches:** `config/sahama.json` — `checkinReplies`, `freeReplies`,
+  `adviceUrl` (the operator's page for written advice; null until it exists),
+  read only through lib/sahama/config.ts.
+- **Data:** `sahama_checkins` (note, reply); cost per reply on the AI-costs page
+  under `sahama.checkin`. Rate limit: 10 check-ins per hour per member.
+- **Tests:** `lib/sahama/checkin-rules.test.ts`; checked 2026-11-19 in the
+  browser with real replies: a member with the plan, a free member (three
+  replies, then the subscription notice, free rituals only), and a note about
+  weeks of sleep problems and palpitations asking for herbs (answered: see a
+  doctor, no herbs).
+- **Template fix on the way:** OpenAI's current models refuse `max_tokens`;
+  `lib/ai/providers/openai-compat.ts` now sends `max_completion_tokens` for
+  OpenAI (`tokenLimitField`), tested in `openai-compat.test.ts`.
+- **Locally the app is started with `NODE_USE_ENV_PROXY=1`** in this cloud
+  container, so Node's fetch reaches OpenAI through the network proxy.
+
 ## Decisions worth remembering
+
+- **The template's support assistant ("Lia", /dashboard/chat) is still the
+  template's**: it went live with the OpenAI key and knows nothing about Sahama
+  yet. Its handbook is the skill `ai-chat-knowledge`; switching it off breaks
+  six shipped tests that assume it ships on, so it stays on until then.
 
 - **24 questions, not 12** (operator, 2026-11-19): twelve could not tell the
   constitution (Prakriti) from the current state; the intro line "answer the

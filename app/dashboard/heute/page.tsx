@@ -20,8 +20,11 @@ import { EmptyState } from "@/components/ui/empty-state";
 import { requireActiveUser } from "@/lib/authz";
 import { currentRitual, profileFor, sharesOf } from "@/lib/sahama/manage";
 import { ritualImageUrl } from "@/lib/sahama/media";
+import { checkinStatus, recentCheckins } from "@/lib/sahama/checkin";
+import { getFormatter } from "next-intl/server";
 import { leadingDoshas } from "@/lib/sahama/rules";
 
+import { Checkin } from "./checkin";
 import { NewCard } from "./new-card";
 
 export default async function TodayPage({
@@ -48,6 +51,8 @@ export default async function TodayPage({
   }
 
   const current = await currentRitual(session.user.id);
+  const [status, history] = await Promise.all([checkinStatus(session.user.id), recentCheckins(session.user.id)]);
+  const format = await getFormatter();
   const imageUrl = current
     ? await ritualImageUrl(current.ritual.imagePath, { memberId: session.user.id, role: session.user.role ?? null })
     : null;
@@ -77,6 +82,8 @@ export default async function TodayPage({
         <EmptyState icon={Leaf} title={t("today.noCardTitle")} description={t("today.noCardText")} />
       )}
 
+      {current && <Checkin freeLeft={status.freeLeft} repliesOn={status.repliesOn} />}
+
       <Card className="print:hidden">
         <CardHeader>
           <CardTitle className="text-base">{t("today.newCardTitle")}</CardTitle>
@@ -86,6 +93,35 @@ export default async function TodayPage({
           <NewCard current={current?.minutes} />
         </CardContent>
       </Card>
+      <section className="space-y-3 print:hidden" aria-labelledby="checkin-history">
+        <h2 id="checkin-history" className="text-lg font-semibold">
+          {t("checkin.historyTitle")}
+        </h2>
+        {history.length === 0 ? (
+          <p className="text-muted-foreground text-sm">{t("checkin.historyEmpty")}</p>
+        ) : (
+          <ul className="space-y-3">
+            {history.map((c) => (
+              <li key={c.id}>
+                <Card>
+                  <CardContent className="space-y-3">
+                    <p className="text-muted-foreground text-xs">
+                      {format.dateTime(c.createdAt, { dateStyle: "medium", timeStyle: "short", timeZone: "Europe/Berlin" })}
+                    </p>
+                    <p className="leading-relaxed whitespace-pre-line">{c.note}</p>
+                    {c.reply && (
+                      <div className="bg-muted space-y-1 rounded-lg p-3">
+                        <p className="text-sm font-semibold">{t("checkin.replyTitle")}</p>
+                        <p className="leading-relaxed whitespace-pre-line">{c.reply}</p>
+                      </div>
+                    )}
+                  </CardContent>
+                </Card>
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
     </div>
   );
 }

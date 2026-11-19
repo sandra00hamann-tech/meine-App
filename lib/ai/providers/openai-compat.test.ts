@@ -84,6 +84,13 @@ describe("buildBody", () => {
     expect(buildBody(REQUEST, COMPAT_PROFILES.openai, false)).not.toHaveProperty("usage");
   });
 
+  it("names the cap the way each provider accepts it — OpenAI refuses max_tokens", () => {
+    const openai = buildBody(REQUEST, COMPAT_PROFILES.openai, false);
+    expect(openai).toHaveProperty("max_completion_tokens", REQUEST.maxTokens);
+    expect(openai).not.toHaveProperty("max_tokens");
+    expect(buildBody(REQUEST, COMPAT_PROFILES.mistral, false)).toHaveProperty("max_tokens", REQUEST.maxTokens);
+  });
+
   it("lets providerOptions override the model and the cap — it is the escape hatch", () => {
     const body = buildBody(
       { ...REQUEST, providerOptions: { max_tokens: 4000, reasoning_effort: "low" } },

@@ -670,7 +670,10 @@
     "sahamaDoshaIncomplete": "Responde las 24 preguntas, por favor: solo así tu resultado da una imagen completa.",
     "sahamaMinutesInvalid": "Elige cuánto tiempo tienes: 5, 10 o 20 minutos.",
     "sahamaNoRitual": "Ahora mismo no tenemos un ritual para ese tiempo. Elige un poco más de tiempo o vuelve más tarde.",
-    "sahamaNoProfile": "Haz primero tu test de dosha: así sabremos qué rituales encajan contigo."
+    "sahamaNoProfile": "Haz primero tu test de dosha: así sabremos qué rituales encajan contigo.",
+    "sahamaCheckinEmpty": "Escribe unas palabras sobre cómo te ha ido con el ritual.",
+    "sahamaCheckinTooLong": "Es un poco largo para un check-in: bastan unas frases (como máximo 1.500 caracteres).",
+    "sahamaCheckinTooOften": "Has hecho check-in muchas veces seguidas. Tómate una pausa y vuelve a intentarlo en una hora."
   },
   "confirmEmail": {
     "title": "Confirmar tu dirección de correo electrónico",
@@ -1148,6 +1151,28 @@
       "startText": "Haz tu test de dosha: 24 preguntas breves. Después recibes tu primera tarjeta de ritual, adaptada a ti y a tu tiempo.",
       "startAction": "Empezar el test de dosha",
       "openAction": "A tu tarjeta de ritual"
+    },
+    "checkin": {
+      "title": "¿Qué tal ha ido?",
+      "hint": "Escribe brevemente cómo te ha ido con el ritual: qué te ha sentado bien, qué no, qué te preocupa ahora.",
+      "placeholder": "Por ejemplo: Me ha sentado bien, pero estaba muy cansada …",
+      "submit": "Hacer check-in",
+      "submitting": "Sahama está leyendo …",
+      "freeLeft": "{count, plural, =0 {Has usado tus respuestas de prueba.} one {Te queda # respuesta personal de prueba.} other {Te quedan # respuestas personales de prueba.}}",
+      "replyTitle": "La respuesta de Sahama",
+      "yourNote": "Tu check-in",
+      "saved": "Tu check-in está guardado.",
+      "next": "Tu próximo ritual: {title}",
+      "noFreeLeftTitle": "Has usado tus tres respuestas de prueba",
+      "noFreeLeftText": "Tu check-in está guardado. Con la suscripción Sahama recibes una respuesta personal a cada check-in, además de todos los rituales y tu resumen semanal.",
+      "noFreeLeftAction": "Ver la suscripción Sahama",
+      "replyFailed": "Tu check-in está guardado, pero ahora mismo no se ha podido escribir la respuesta. Inténtalo más tarde con un nuevo check-in.",
+      "switchedOff": "Tu check-in está guardado.",
+      "historyTitle": "Tus últimos check-ins",
+      "historyEmpty": "Aquí aparecen tus check-ins y las respuestas de Sahama."
     }
+  },
+  "sahamaCheckin": {
+    "disclaimer": "Las respuestas de Sahama las escribe una IA, a partir de los contenidos de Sahama Ayurveda. No sustituyen el consejo médico."
   }
 }

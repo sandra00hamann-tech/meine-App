@@ -26,6 +26,12 @@ export const SAHAMA_ERROR_CODES = [
   "sahamaNoRitual",
   /** She has no profile yet — the Dosha test comes first. */
   "sahamaNoProfile",
+  /** The check-in note is empty. */
+  "sahamaCheckinEmpty",
+  /** The check-in note is too long, or carries characters a note cannot. */
+  "sahamaCheckinTooLong",
+  /** Too many check-ins in a short time (cost brake). */
+  "sahamaCheckinTooOften",
 ] as const;
 export type SahamaErrorCode = (typeof SAHAMA_ERROR_CODES)[number];
 

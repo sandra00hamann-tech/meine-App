@@ -670,7 +670,10 @@
     "sahamaDoshaIncomplete": "Please answer all 24 questions — only then does your result give a full picture.",
     "sahamaMinutesInvalid": "Please choose how much time you have: 5, 10 or 20 minutes.",
     "sahamaNoRitual": "We have no ritual for that much time right now. Choose a little more time — or come back later.",
-    "sahamaNoProfile": "Take your Dosha test first — then we know which rituals suit you."
+    "sahamaNoProfile": "Take your Dosha test first — then we know which rituals suit you.",
+    "sahamaCheckinEmpty": "Write a few words about how the ritual went for you.",
+    "sahamaCheckinTooLong": "That is a little long for a check-in — a few sentences are plenty (at most 1,500 characters).",
+    "sahamaCheckinTooOften": "You have checked in very often just now. Take a short break and try again in an hour."
   },
   "confirmEmail": {
     "title": "Confirm your email address",
@@ -1148,6 +1151,28 @@
       "startText": "Take your Dosha test — 24 short questions. Then you get your first ritual card, made for you and your time.",
       "startAction": "Start the Dosha test",
       "openAction": "To your ritual card"
+    },
+    "checkin": {
+      "title": "How was it?",
+      "hint": "Write briefly how the ritual went for you — what felt good, what didn't, what is on your mind.",
+      "placeholder": "For example: It felt good, but I was so tired …",
+      "submit": "Check in",
+      "submitting": "Sahama is reading …",
+      "freeLeft": "{count, plural, =0 {Your trial replies are used up.} one {# personal reply left to try.} other {# personal replies left to try.}}",
+      "replyTitle": "Sahama's reply",
+      "yourNote": "Your check-in",
+      "saved": "Your check-in is saved.",
+      "next": "Your next ritual: {title}",
+      "noFreeLeftTitle": "Your three trial replies are used up",
+      "noFreeLeftText": "Your check-in is saved. With the Sahama subscription you get a personal reply to every check-in — plus every ritual and your weekly review.",
+      "noFreeLeftAction": "See the Sahama subscription",
+      "replyFailed": "Your check-in is saved, but the reply could not be written just now. Try again later with a new check-in.",
+      "switchedOff": "Your check-in is saved.",
+      "historyTitle": "Your latest check-ins",
+      "historyEmpty": "Your check-ins and Sahama's replies appear here."
     }
+  },
+  "sahamaCheckin": {
+    "disclaimer": "Sahama's replies are written by an AI, based on Sahama Ayurveda's content. They do not replace medical advice."
   }
 }

@@ -670,7 +670,10 @@
     "sahamaDoshaIncomplete": "Bitte beantworte alle 24 Fragen – erst dann ergibt dein Ergebnis ein stimmiges Bild.",
     "sahamaMinutesInvalid": "Bitte wähle, wie viel Zeit du hast: 5, 10 oder 20 Minuten.",
     "sahamaNoRitual": "Für diese Zeit haben wir gerade kein passendes Ritual. Wähle etwas mehr Zeit – oder schau später wieder vorbei.",
-    "sahamaNoProfile": "Mach zuerst deinen Dosha-Test – dann wissen wir, welche Rituale zu dir passen."
+    "sahamaNoProfile": "Mach zuerst deinen Dosha-Test – dann wissen wir, welche Rituale zu dir passen.",
+    "sahamaCheckinEmpty": "Schreib ein paar Worte, wie es dir mit dem Ritual ging.",
+    "sahamaCheckinTooLong": "Das ist etwas zu lang für einen Check-in – ein paar Sätze reichen völlig (höchstens 1.500 Zeichen).",
+    "sahamaCheckinTooOften": "Du hast gerade sehr oft eingecheckt. Gönn dir eine kleine Pause und versuch es in einer Stunde wieder."
   },
   "confirmEmail": {
     "title": "E-Mail-Adresse bestätigen",
@@ -1148,6 +1151,28 @@
       "startText": "Mach deinen Dosha-Test – 24 kurze Fragen. Danach bekommst du deine erste Ritual-Karte, passend zu dir und deiner Zeit.",
       "startAction": "Dosha-Test starten",
       "openAction": "Zur Ritual-Karte"
+    },
+    "checkin": {
+      "title": "Wie war's?",
+      "hint": "Schreib kurz, wie es dir mit dem Ritual ging – was gutgetan hat, was nicht, was dich gerade beschäftigt.",
+      "placeholder": "Zum Beispiel: Hat gutgetan, aber ich war so müde …",
+      "submit": "Einchecken",
+      "submitting": "Sahama liest …",
+      "freeLeft": "{count, plural, =0 {Deine Probe-Antworten sind aufgebraucht.} one {Noch # persönliche Antwort zum Probieren.} other {Noch # persönliche Antworten zum Probieren.}}",
+      "replyTitle": "Sahamas Antwort",
+      "yourNote": "Dein Check-in",
+      "saved": "Dein Check-in ist gespeichert.",
+      "next": "Dein nächstes Ritual: {title}",
+      "noFreeLeftTitle": "Deine drei Probe-Antworten sind aufgebraucht",
+      "noFreeLeftText": "Dein Check-in ist gespeichert. Mit dem Sahama-Abo bekommst du auf jeden Check-in eine persönliche Antwort – dazu alle Rituale und deinen Wochenrückblick.",
+      "noFreeLeftAction": "Sahama-Abo ansehen",
+      "replyFailed": "Dein Check-in ist gespeichert, aber die Antwort konnte gerade nicht geschrieben werden. Versuch es später noch einmal mit einem neuen Check-in.",
+      "switchedOff": "Dein Check-in ist gespeichert.",
+      "historyTitle": "Deine letzten Check-ins",
+      "historyEmpty": "Hier erscheinen deine Check-ins und Sahamas Antworten."
     }
+  },
+  "sahamaCheckin": {
+    "disclaimer": "Sahamas Antworten schreibt eine KI – auf Grundlage der Inhalte von Sahama Ayurveda. Sie ersetzen keine ärztliche Beratung."
   }
 }

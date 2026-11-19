@@ -22,6 +22,12 @@
       "provider": "auto",
       "model": "auto",
       "maxTokens": 4000
+    },
+    "sahama.checkin": {
+      "_comment": "Sahama's personal reply to a check-in (lib/sahama/checkin.ts). Its own entry so its cost is its own line on the AI-costs page. Short answers, so a small cap.",
+      "provider": "auto",
+      "model": "auto",
+      "maxTokens": 700
     }
   }
 }
