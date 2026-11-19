@@ -82,6 +82,13 @@ moment the feature works. Written down by your assistant, from the conversation
   constitution (Prakriti) from the current state; the intro line "answer the
   way you have been most of your life" matters to her — a Vata whose weight
   changed in menopause is not Kapha now. Keep it.
+- **How a ritual is written** (operator's review of all 30, 2026-11-19):
+  no promises or predictions ("wirkt Wunder", "viele merken", "macht wach");
+  Ayurveda statements framed as tradition ("in vielen ayurvedischen
+  Tagesroutinen", "eine traditionelle Option für Vata"), never as fact; steps
+  offered as choices ("wenn du magst"), durations as a frame; a safety line
+  where one is needed (slippery floor after oil, water temperature, dizziness,
+  reduced feeling in the feet, rice cooled and reheated thoroughly).
 - **Concrete over vague in every ritual text** (operator, 2026-11-19): not "a
   warm cup" but "a cup of warm tea or warm water" — name the thing.
 - **Every ritual carries a hint per Dosha** (operator, 2026-11-19): "warm and
