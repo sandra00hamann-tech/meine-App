@@ -60,8 +60,15 @@ moment the feature works. Written down by your assistant, from the conversation
   speichern" opens the browser's print dialog; the app shell and the page's
   extras carry `print:hidden`, so only the card is printed.
 - **Done when:** sie sagt, wie viel Zeit sie hat, und bekommt eine passende
-  Ritual-Karte — the minutes part checked 2026-11-19; the card picture and the
-  Dosha-match on 30 rituals come with the next stage.
+  Ritual-Karte mit Bild, die zu ihrem Dosha passt, zum Speichern oder
+  Ausdrucken — checked 2026-11-19 with 30 rituals and their pictures.
+- **Pictures:** `content/media/rituale/<slug>.webp`, declared `public` in
+  `content/media-manifest.json`, referenced by path (`imagePath`) and resolved
+  by `ritualImageUrl()` (lib/sahama/media.ts: mayAccess, then mediaUrlFor).
+  Generated 2026-11-19 with OpenAI `gpt-image-2` in one style (watercolor,
+  sage/brown/terracotta, fine gold ornaments, no faces) — a new ritual gets a
+  picture in the same style. The OpenAI key is a network secret of the cloud
+  environment "meine-app"; locally `.env` holds a placeholder.
 - **Access:** per ritual through `mayUseTier(ritual.tier, await hasSahamaPlan(memberId))`
   (lib/sahama/access.ts) — `free` for everyone, `plus` with
   `hasPlan(memberId, "sahama")`. Every caller asks there; no second check.

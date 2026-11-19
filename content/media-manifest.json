@@ -1,0 +1,155 @@
+{
+  "_comment": "Product media (docs/content.md → Media). Ritual card pictures: generated with OpenAI (gpt-image-2) on 2026-11-19 in one style — watercolor, earthy palette, fine gold ornaments — for the operator to approve. Public: a picture alone gives nothing of a plus ritual away.",
+  "entries": [
+    {
+      "path": "rituale/warmes-wasser-am-morgen.webp",
+      "visibility": "public",
+      "alt": "Ein Glas warmes Wasser auf einer Fensterbank im Morgenlicht"
+    },
+    {
+      "path": "rituale/ruhiger-morgen-in-drei-schritten.webp",
+      "visibility": "public",
+      "alt": "Eine ruhige Morgenecke mit Yogamatte, Zungenschaber und einer dampfenden Tasse"
+    },
+    {
+      "path": "rituale/drei-bewusste-bissen.webp",
+      "visibility": "public",
+      "alt": "Eine Schale Reis mit Gemüse und ein Teller Gurkenscheiben auf einem Holztisch"
+    },
+    {
+      "path": "rituale/fuenf-minuten-an-der-luft.webp",
+      "visibility": "public",
+      "alt": "Eine Frau geht von hinten gesehen zügig durch einen grünen Park"
+    },
+    {
+      "path": "rituale/laenger-aus-als-einatmen.webp",
+      "visibility": "public",
+      "alt": "Eine Frau sitzt mit einer Decke um die Schultern ruhig am Fenster"
+    },
+    {
+      "path": "rituale/fuesse-oelen-und-loslassen.webp",
+      "visibility": "public",
+      "alt": "Hände massieren einen Fuß mit warmem Öl, daneben warme Socken"
+    },
+    {
+      "path": "rituale/drei-zeilen-fuer-den-tag.webp",
+      "visibility": "public",
+      "alt": "Ein aufgeschlagenes Notizheft mit Stift neben Kerze und Tee"
+    },
+    {
+      "path": "rituale/selbstmassage-am-morgen.webp",
+      "visibility": "public",
+      "alt": "Eine Ölflasche wärmt in einer Schale mit heißem Wasser, daneben ein Handtuch"
+    },
+    {
+      "path": "rituale/drei-sanfte-sonnengruesse.webp",
+      "visibility": "public",
+      "alt": "Eine Frau grüßt mit erhobenen Armen die Morgensonne am offenen Fenster"
+    },
+    {
+      "path": "rituale/morgenlicht-am-fenster.webp",
+      "visibility": "public",
+      "alt": "Ein offenes Fenster mit Blick auf einen sanften Sonnenaufgang"
+    },
+    {
+      "path": "rituale/warmes-fruehstueck.webp",
+      "visibility": "public",
+      "alt": "Eine Schale warmer Haferbrei mit Apfel, Zimt und Kardamom"
+    },
+    {
+      "path": "rituale/ein-satz-fuer-den-tag.webp",
+      "visibility": "public",
+      "alt": "Ein kleiner Zettel neben einer Tasse und einer einzelnen Blume"
+    },
+    {
+      "path": "rituale/wechselatmung.webp",
+      "visibility": "public",
+      "alt": "Eine Hand in einer ruhigen Atemhaltung vor einem hellen Fenster"
+    },
+    {
+      "path": "rituale/ohne-handy-in-den-tag.webp",
+      "visibility": "public",
+      "alt": "Ein Smartphone liegt umgedreht in einem Korb, im Hintergrund ein Wecker"
+    },
+    {
+      "path": "rituale/augen-ausruhen.webp",
+      "visibility": "public",
+      "alt": "Zwei gewölbte Hände, im Hintergrund ein Laptop und grüne Bäume"
+    },
+    {
+      "path": "rituale/hundert-schritte-nach-dem-essen.webp",
+      "visibility": "public",
+      "alt": "Eine Frau spaziert langsam über einen Gartenweg in der Mittagssonne"
+    },
+    {
+      "path": "rituale/ingwerwasser-am-nachmittag.webp",
+      "visibility": "public",
+      "alt": "Eine Tasse heißes Wasser mit frischen Ingwerscheiben"
+    },
+    {
+      "path": "rituale/schultern-loesen.webp",
+      "visibility": "public",
+      "alt": "Eine Frau am Schreibtisch kreist die Schultern"
+    },
+    {
+      "path": "rituale/zehn-minuten-nichts-tun.webp",
+      "visibility": "public",
+      "alt": "Eine leere Holzbank unter einem Baum, darauf eine Tasse Tee"
+    },
+    {
+      "path": "rituale/mittagessen-fuer-morgen.webp",
+      "visibility": "public",
+      "alt": "Eine Glasdose mit Reis und Gemüse wird mit Gewürzen vorbereitet"
+    },
+    {
+      "path": "rituale/leichtes-fruehes-abendessen.webp",
+      "visibility": "public",
+      "alt": "Eine Schale leichte Gemüsesuppe in der Abenddämmerung"
+    },
+    {
+      "path": "rituale/letzte-stunde-ohne-bildschirm.webp",
+      "visibility": "public",
+      "alt": "Ein gemütlicher Sessel mit Buch, Lampe, Wärmflasche und Decke"
+    },
+    {
+      "path": "rituale/goldene-milch.webp",
+      "visibility": "public",
+      "alt": "Eine Tasse Goldene Milch mit Zimtstangen und Kardamom"
+    },
+    {
+      "path": "rituale/kopf-und-ohrenmassage.webp",
+      "visibility": "public",
+      "alt": "Hände massieren sanft die Kopfhaut einer Frau im Abendlicht"
+    },
+    {
+      "path": "rituale/den-tag-rueckwaerts-erzaehlen.webp",
+      "visibility": "public",
+      "alt": "Ein Bett im Mondlicht, durchs Fenster scheint eine Mondsichel"
+    },
+    {
+      "path": "rituale/beine-an-der-wand.webp",
+      "visibility": "public",
+      "alt": "Beine liegen hochgelegt an einer warmen Wand auf einer Decke"
+    },
+    {
+      "path": "rituale/abend-ab-neun.webp",
+      "visibility": "public",
+      "alt": "Ein ruhiges Schlafzimmer mit gedimmter Lampe, Wasserglas und Buch"
+    },
+    {
+      "path": "rituale/warmes-fussbad.webp",
+      "visibility": "public",
+      "alt": "Füße in einer Holzschüssel mit warmem Wasser, daneben Tee und Kerze"
+    },
+    {
+      "path": "rituale/summen-wie-eine-biene.webp",
+      "visibility": "public",
+      "alt": "Eine Frau sitzt ruhig, daneben eine fein gezeichnete Biene"
+    },
+    {
+      "path": "rituale/barfuss-ankommen.webp",
+      "visibility": "public",
+      "alt": "Nackte Füße auf taunassem Gras mit kleinen Wildblumen"
+    }
+  ]
+}

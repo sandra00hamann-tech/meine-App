@@ -18,7 +18,7 @@
         "kapha": "Für dich darf es richtig warm sein, gern mit einer Scheibe frischem Ingwer – das macht wach."
       },
       "tier": "free",
-      "imagePath": null,
+      "imagePath": "rituale/warmes-wasser-am-morgen.webp",
       "articleSlug": null,
       "position": 10
     },
@@ -43,7 +43,7 @@
         "kapha": "Steh möglichst früh auf und bewege dich ruhig etwas kräftiger – das bringt Kapha in Schwung."
       },
       "tier": "free",
-      "imagePath": null,
+      "imagePath": "rituale/ruhiger-morgen-in-drei-schritten.webp",
       "articleSlug": null,
       "position": 20
     },
@@ -68,7 +68,7 @@
         "kapha": "Für dich lieber leicht, warm und gut gewürzt – und ruhig etwas weniger, als du gewohnt bist."
       },
       "tier": "free",
-      "imagePath": null,
+      "imagePath": "rituale/drei-bewusste-bissen.webp",
       "articleSlug": null,
       "position": 30
     },
@@ -92,7 +92,7 @@
         "kapha": "Geh ruhig zügig, ein paar Treppen dürfen auch dabei sein – Bewegung bringt Kapha am besten durchs Nachmittagstief."
       },
       "tier": "free",
-      "imagePath": null,
+      "imagePath": "rituale/fuenf-minuten-an-der-luft.webp",
       "articleSlug": null,
       "position": 40
     },
@@ -117,7 +117,7 @@
         "kapha": "Mach die Übung im Stehen und am offenen Fenster – so bleibt sie belebend statt einschläfernd."
       },
       "tier": "free",
-      "imagePath": null,
+      "imagePath": "rituale/laenger-aus-als-einatmen.webp",
       "articleSlug": null,
       "position": 50
     },
@@ -140,7 +140,7 @@
         "kapha": "Nimm nur wenig Öl, zum Beispiel ein leichtes Senf- oder Sonnenblumenöl, und massiere ruhig etwas kräftiger."
       },
       "tier": "free",
-      "imagePath": null,
+      "imagePath": "rituale/fuesse-oelen-und-loslassen.webp",
       "articleSlug": null,
       "position": 60
     },
@@ -164,7 +164,7 @@
         "kapha": "Schreib bei Zeile 3 etwas auf, das dich wirklich in Bewegung bringt – auch wenn es klein ist."
       },
       "tier": "free",
-      "imagePath": null,
+      "imagePath": "rituale/drei-zeilen-fuer-den-tag.webp",
       "articleSlug": null,
       "position": 70
     },
@@ -188,7 +188,7 @@
         "kapha": "Nimm nur wenig Öl oder massiere trocken mit einem Seidenhandschuh (Garshana) – kräftig und zügig, zum Herzen hin."
       },
       "tier": "plus",
-      "imagePath": null,
+      "imagePath": "rituale/selbstmassage-am-morgen.webp",
       "articleSlug": null,
       "position": 100
     },
@@ -212,7 +212,7 @@
         "kapha": "Du darfst ruhig etwas zügiger werden und eine vierte Runde anhängen – das bringt Kapha in Schwung."
       },
       "tier": "plus",
-      "imagePath": null,
+      "imagePath": "rituale/drei-sanfte-sonnengruesse.webp",
       "articleSlug": null,
       "position": 110
     },
@@ -233,7 +233,7 @@
         "kapha": "Öffne das Fenster weit und lass die frische Luft herein – das macht dich richtig wach."
       },
       "tier": "plus",
-      "imagePath": null,
+      "imagePath": "rituale/morgenlicht-am-fenster.webp",
       "articleSlug": null,
       "position": 120
     },
@@ -257,7 +257,7 @@
         "kapha": "Wenn du morgens keinen Hunger hast, darfst du klein frühstücken – ein warmer Apfel mit Zimt reicht oft schon."
       },
       "tier": "plus",
-      "imagePath": null,
+      "imagePath": "rituale/warmes-fruehstueck.webp",
       "articleSlug": null,
       "position": 130
     },
@@ -279,7 +279,7 @@
         "kapha": "Wähle einen Satz, der dich in Bewegung bringt – zum Beispiel „Heute probiere ich etwas Neues“."
       },
       "tier": "plus",
-      "imagePath": null,
+      "imagePath": "rituale/ein-satz-fuer-den-tag.webp",
       "articleSlug": null,
       "position": 140
     },
@@ -303,7 +303,7 @@
         "kapha": "Mach die Übung am Morgen und im Sitzen am offenen Fenster – so wirkt sie für dich belebend."
       },
       "tier": "plus",
-      "imagePath": null,
+      "imagePath": "rituale/wechselatmung.webp",
       "articleSlug": null,
       "position": 150
     },
@@ -328,7 +328,7 @@
         "kapha": "Nutze die zwanzig Minuten für Bewegung – ein kurzer Gang um den Block wirkt Wunder gegen Morgenmüdigkeit."
       },
       "tier": "plus",
-      "imagePath": null,
+      "imagePath": "rituale/ohne-handy-in-den-tag.webp",
       "articleSlug": null,
       "position": 160
     },
@@ -351,7 +351,7 @@
         "kapha": "Steh für den Blick in die Ferne auf und streck dich dabei einmal ausgiebig."
       },
       "tier": "plus",
-      "imagePath": null,
+      "imagePath": "rituale/augen-ausruhen.webp",
       "articleSlug": null,
       "position": 200
     },
@@ -375,7 +375,7 @@
         "kapha": "Hundert Schritte sind dein Minimum – geh ruhig noch eine Runde mehr."
       },
       "tier": "plus",
-      "imagePath": null,
+      "imagePath": "rituale/hundert-schritte-nach-dem-essen.webp",
       "articleSlug": null,
       "position": 210
     },
@@ -400,7 +400,7 @@
         "kapha": "Gib ruhig etwas mehr Ingwer und eine Prise Zimt hinein – das macht dich wach."
       },
       "tier": "plus",
-      "imagePath": null,
+      "imagePath": "rituale/ingwerwasser-am-nachmittag.webp",
       "articleSlug": null,
       "position": 220
     },
@@ -422,7 +422,7 @@
         "kapha": "Mach die Kreise ruhig größer und schneller – und steh danach einmal auf und streck dich."
       },
       "tier": "plus",
-      "imagePath": null,
+      "imagePath": "rituale/schultern-loesen.webp",
       "articleSlug": null,
       "position": 230
     },
@@ -447,7 +447,7 @@
         "kapha": "Mach die zehn Minuten draußen im Stehen oder beim langsamen Gehen – so wirst du nicht schläfrig."
       },
       "tier": "plus",
-      "imagePath": null,
+      "imagePath": "rituale/zehn-minuten-nichts-tun.webp",
       "articleSlug": null,
       "position": 240
     },
@@ -469,7 +469,7 @@
         "kapha": "Plane eine leichte Portion mit viel Gemüse und kräftigen Gewürzen – lieber etwas weniger als zu viel."
       },
       "tier": "plus",
-      "imagePath": null,
+      "imagePath": "rituale/mittagessen-fuer-morgen.webp",
       "articleSlug": null,
       "position": 250
     },
@@ -493,7 +493,7 @@
         "kapha": "Eine leichte Gemüsesuppe mit kräftigen Gewürzen ist ideal – und je früher, desto besser."
       },
       "tier": "plus",
-      "imagePath": null,
+      "imagePath": "rituale/leichtes-fruehes-abendessen.webp",
       "articleSlug": null,
       "position": 300
     },
@@ -518,7 +518,7 @@
         "kapha": "Nutze die Stunde für etwas Aktives, das nicht leuchtet – ein Gespräch, etwas aufräumen, ein kurzer Abendspaziergang."
       },
       "tier": "plus",
-      "imagePath": null,
+      "imagePath": "rituale/letzte-stunde-ohne-bildschirm.webp",
       "articleSlug": null,
       "position": 310
     },
@@ -541,7 +541,7 @@
         "kapha": "Nimm eine leichte Pflanzenmilch, etwas weniger davon, und gib eine Prise Ingwer dazu."
       },
       "tier": "plus",
-      "imagePath": null,
+      "imagePath": "rituale/goldene-milch.webp",
       "articleSlug": null,
       "position": 320
     },
@@ -565,7 +565,7 @@
         "kapha": "Massiere trocken und ruhig etwas kräftiger – das belebt statt zu beschweren."
       },
       "tier": "plus",
-      "imagePath": null,
+      "imagePath": "rituale/kopf-und-ohrenmassage.webp",
       "articleSlug": null,
       "position": 330
     },
@@ -589,7 +589,7 @@
         "kapha": "Halte dich an die schönen Momente etwas länger auf – das nimmt die Schwere aus dem Abend."
       },
       "tier": "plus",
-      "imagePath": null,
+      "imagePath": "rituale/den-tag-rueckwaerts-erzaehlen.webp",
       "articleSlug": null,
       "position": 340
     },
@@ -613,7 +613,7 @@
         "kapha": "Bleib eher fünf als fünfzehn Minuten liegen und steh danach langsam, aber bewusst wieder auf."
       },
       "tier": "plus",
-      "imagePath": null,
+      "imagePath": "rituale/beine-an-der-wand.webp",
       "articleSlug": null,
       "position": 350
     },
@@ -635,7 +635,7 @@
         "kapha": "Bleib ab 21 Uhr nicht auf dem Sofa liegen – ein paar kleine Handgriffe halten dich bis zum Bett in Bewegung."
       },
       "tier": "plus",
-      "imagePath": null,
+      "imagePath": "rituale/abend-ab-neun.webp",
       "articleSlug": null,
       "position": 360
     },
@@ -659,7 +659,7 @@
         "kapha": "Mach es richtig warm und gib eine Prise Ingwerpulver ins Wasser."
       },
       "tier": "plus",
-      "imagePath": null,
+      "imagePath": "rituale/warmes-fussbad.webp",
       "articleSlug": null,
       "position": 370
     },
@@ -684,7 +684,7 @@
         "kapha": "Summ ruhig etwas kräftiger und mach die Übung eher morgens oder mittags als spät am Abend."
       },
       "tier": "plus",
-      "imagePath": null,
+      "imagePath": "rituale/summen-wie-eine-biene.webp",
       "articleSlug": null,
       "position": 400
     },
@@ -708,7 +708,7 @@
         "kapha": "Geh ruhig etwas zügiger und mach ein paar Schritte auf den Zehenspitzen – das weckt auf."
       },
       "tier": "plus",
-      "imagePath": null,
+      "imagePath": "rituale/barfuss-ankommen.webp",
       "articleSlug": null,
       "position": 410
     }

@@ -19,6 +19,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { EmptyState } from "@/components/ui/empty-state";
 import { requireActiveUser } from "@/lib/authz";
 import { currentRitual, profileFor, sharesOf } from "@/lib/sahama/manage";
+import { ritualImageUrl } from "@/lib/sahama/media";
 import { leadingDoshas } from "@/lib/sahama/rules";
 
 import { NewCard } from "./new-card";
@@ -47,6 +48,9 @@ export default async function TodayPage({
   }
 
   const current = await currentRitual(session.user.id);
+  const imageUrl = current
+    ? await ritualImageUrl(current.ritual.imagePath, { memberId: session.user.id, role: session.user.role ?? null })
+    : null;
   const leading = leadingDoshas(sharesOf(profile));
   const dosha = leading.length === 3 ? t("dosha.result.triTitle") : leading.map((d) => t(`doshaName.${d}`)).join("-");
 
@@ -65,7 +69,7 @@ export default async function TodayPage({
       </p>
 
       {current ? (
-        <RitualCard ritual={current.ritual} leading={leading}>
+        <RitualCard ritual={current.ritual} leading={leading} imageUrl={imageUrl}>
           <PrintButton />
           <p className="text-muted-foreground w-full text-sm print:hidden">{t("card.printHint")}</p>
         </RitualCard>
