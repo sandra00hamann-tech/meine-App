@@ -1,8 +1,12 @@
-# Sahama — Produkt-Steckbrief
+# Sahama Ayurveda — Produkt-Steckbrief
 
 _Erarbeitet am 2026-11-19 im Gespräch (Skill `market-research`). Aufgeschrieben
 von deinem Assistenten, so weit wie möglich in deinen Worten — zum Gegenlesen,
 nicht als Versprechen, das du gegeben hast._
+
+**Name der App:** Sahama Ayurveda (entschieden am 2026-11-19) — „Sahama“ ist
+die Dachmarke; weitere Sahama-Apps zu anderen Themen sind möglich. Auf dem
+Handy-Startbildschirm steht kurz „Sahama“.
 
 ## Die Betreiberin
 

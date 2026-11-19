@@ -1,4 +1,4 @@
-# Sahama — how it looks
+# Sahama Ayurveda — how it looks
 
 _Chosen on 2026-11-19, direction "Salbei & Gold", via the skill `design`. Every
 page built since is expected to match this file rather than invent its own
@@ -13,8 +13,9 @@ here overrides CLAUDE.md § UI or docs/ux.md._
   the Ayurveda side of that (green instead of plum), gold stays shared.
 - **Gold:** there is no gold dial. Gold lives in the IMAGES (fine gold line
   ornaments on ritual cards and header images). A gold/sand shimmer on the
-  light neutral surfaces was shown to the operator as a comparison; the
-  outcome is recorded below under Tokens once she has seen it.
+  light neutral surfaces was shown to the operator as a side-by-side
+  comparison on 2026-11-19; she saw no difference, so it was NOT applied —
+  the neutral tokens keep their shipped values, and gold stays in the images.
 
 ## Tokens — delta from the shipped defaults
 (only what changed; everything unlisted keeps the shipped value)

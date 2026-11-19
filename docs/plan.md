@@ -1,4 +1,4 @@
-# Sahama — was noch gebaut wird
+# Sahama Ayurveda — was noch gebaut wird
 
 _Das vereinbarte Bild, in einfachen Worten. Eine Zeile hier ist etwas, das die
 Kundin TUN kann — nie eine Aufgabe, eine Datei oder eine Tabelle. Sie wandert
@@ -17,7 +17,7 @@ hast._
 - **Archetyp:** Gated-Tool — das Abo schaltet die Ritual-Begleitung frei; was
   sie bezahlt, ist die passende Karte und die Antwort auf ihren Check-in
 - **Rechnet ab:** Abo (monatlich und jährlich)
-- **Aussehen:** noch offen — kommt als Nächstes (Skill `design`)
+- **Aussehen:** docs/design.md — „Salbei & Gold“ (2026-11-19)
 - **Tempo:** in Etappen (nach jeder Zeile öffnet sich die App zum Ansehen)
 
 ## Was die Kundin tun können wird
