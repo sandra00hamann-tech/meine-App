@@ -127,8 +127,17 @@ describe("the greeting after a compaction", () => {
     expect(customerLanguage(null)).toBeNull();
     expect(afterCompactText({ language: "German" })).toContain("Here that language is German");
     expect(afterCompactText()).not.toContain("Here that language is");
-    // The template ships no docs/app.md, so the real hook run above says nothing about it.
-    expect(run.stdout).not.toContain("Here that language is");
+    // The real hook run above names a language only when this checkout knows one —
+    // the language guard's .dev/customer-language (written as soon as a customer
+    // types) or docs/app.md. A pristine template knows none and stays silent; a
+    // live project names exactly the language it recorded, and nothing else.
+    const { LANGUAGES, knownLanguage } = await import("./dev/hooks/language-guard.mjs");
+    const code = knownLanguage(ROOT);
+    if (code) {
+      expect(run.stdout).toContain(`Here that language is ${LANGUAGES[code].name}.`);
+    } else {
+      expect(run.stdout).not.toContain("Here that language is");
+    }
   });
 
   it("🚨 restates nothing that is not still written where it says it is", async () => {

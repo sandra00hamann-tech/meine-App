@@ -1,0 +1,47 @@
+# Sahama — was noch gebaut wird
+
+_Das vereinbarte Bild, in einfachen Worten. Eine Zeile hier ist etwas, das die
+Kundin TUN kann — nie eine Aufgabe, eine Datei oder eine Tabelle. Sie wandert
+nach docs/app.md, sobald es existiert und seine Tests grün sind; was in dieser
+Datei bleibt, ist also immer das, was noch vor uns liegt. docs/product-brief.md
+sagt, was das Produkt ist; diese Datei sagt, was noch fehlt. Aufgeschrieben von
+deinem Assistenten aus dem Gespräch, wo möglich in deinen Worten — dir
+vorgelesen ist es eine Notiz zum Gegenprüfen, kein Versprechen, das du gegeben
+hast._
+
+## Vor der ersten Seite geklärt
+
+- **Verkauft:** ein Sahama-Abo — tägliche Ayurveda-Rituale passend zur freien
+  Zeit, mit beantwortetem Check-in und Wochenrückblick (docs/product-brief.md)
+- **Für:** Frauen mitten im Leben mit Beruf und Familie, die Ayurveda entdecken
+- **Archetyp:** Gated-Tool — das Abo schaltet die Ritual-Begleitung frei; was
+  sie bezahlt, ist die passende Karte und die Antwort auf ihren Check-in
+- **Rechnet ab:** Abo (monatlich und jährlich)
+- **Aussehen:** noch offen — kommt als Nächstes (Skill `design`)
+- **Tempo:** in Etappen (nach jeder Zeile öffnet sich die App zum Ansehen)
+
+## Was die Kundin tun können wird
+
+- [x] sich anmelden und ihr eigenes Dashboard finden (Vorlage, vorhanden)
+- [ ] in 2 Minuten sagen, was sie beschäftigt und wie viel Zeit sie hat, und
+      sofort ihre erste Ritual-Karte bekommen
+- [ ] jeden Tag sagen, wie viel Zeit sie heute hat, und eine passende
+      Ritual-Karte mit Bild bekommen, zum Speichern oder Ausdrucken
+- [ ] nach dem Ritual kurz einchecken und eine persönliche Antwort mit einem
+      angepassten Vorschlag für morgen bekommen
+- [ ] jede Woche eine Rückblick-Karte bekommen und Lieblingsrituale behalten
+- [ ] (Betreiberin) Rituale mit Text, Dauer, Tageszeit und Bild in die
+      Sammlung legen
+- [ ] das Sahama-Abo über Digistore24 kaufen und damit alles freischalten
+
+## Nicht in der ersten Version (entschieden, nicht vergessen)
+
+- **Dosha-Test** — 2026-11-19: erst nach dem ersten Verkauf; die erste Version
+  startet mit „was beschäftigt dich, wie viel Zeit hast du“.
+- **Rezepte und Ernährungspläne** — 2026-11-19: nach dem ersten Verkauf.
+- **Community** — 2026-11-19: nach dem ersten Verkauf.
+- **Live-Termine** — 2026-11-19: nach dem ersten Verkauf; Sahama bleibt
+  zunächst ohne feste Termine.
+- **Tägliche Erinnerungs-E-Mails** — 2026-11-19: nach dem ersten Verkauf.
+- **App im App Store** — 2026-11-19: nicht nötig; Sahama lässt sich wie eine
+  App auf den Handy-Startbildschirm legen.
