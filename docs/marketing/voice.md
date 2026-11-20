@@ -23,3 +23,5 @@ Verkaufsseite, jede Mail und jeder Post wird daran gemessen._
    („Nicht X – sondern Y“); Superlative und Ausrufezeichen-Ketten.
 8. **Sicherheitszeile, wo es um den Körper geht:** „Bei Beschwerden lass dich
    bitte ärztlich beraten.“
+9. **Die Leserin tut etwas in der App, sie redet nicht mit ihr:** „Du wählst …“,
+   nicht „Sag der App …“ (Betreiberin, 2026-11-20).

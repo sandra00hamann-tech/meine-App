@@ -28,7 +28,7 @@ Assistentin „Lia“ (ausgeschaltet, 2026-11-19).
 Jeden Tag ein Ayurveda-Ritual für deine Zeit.
 
 **Unterzeile:**
-Für Frauen mitten im Leben. Sag der App Sahama Ayurveda, ob du heute 5, 10 oder 20 Minuten hast. Du bekommst ein Ritual, das in diese Zeit passt und zu deinem Dosha, deiner Grundnatur im Ayurveda.
+Für Frauen mitten im Leben. Du wählst, ob du heute 5, 10 oder 20 Minuten hast. Sahama Ayurveda gibt dir ein Ritual, das in diese Zeit passt. Und zu deinem Dosha, deiner Grundnatur im Ayurveda.
 
 **Knopf (Haupt):** Gratis starten
 **Link (daneben):** Preise ansehen
@@ -238,3 +238,12 @@ Wochen“ statt „alle früheren Wochen“ (die Seite zeigt höchstens sechs);
 gekürzt. Offen für die Betreiberin (Runde 3 war die letzte): 5 der Link auf
 ayurveda.sahama-lebensdesign.de, solange die Seite im Aufbau ist; 6 der Satz
 „Jedes Ritual habe ich selbst gelesen und so angepasst …“ bestätigen.
+
+### Rückmeldung der Betreiberin — 2026-11-20
+
+- Unterzeile „Sag der App Sahama Ayurveda …“: klingt doof. Grundsatz → voice.md
+  Zeile 9. Verworfen, kommt nicht wieder: „Sag der App …“.
+- Das Abo bietet zu wenig mehr als Gratis („ich würde es nicht kaufen“): das ist
+  eine Produktfrage, keine Textfrage. Abschnitte 3, 4, 6 und FAQ 5 warten auf
+  ihre Entscheidung, was ins Abo kommt.
+- Link auf ayurveda.sahama-lebensdesign.de bleibt: die Seite ist bis zum Start fertig.
