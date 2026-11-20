@@ -91,9 +91,10 @@ moment the feature works. Written down by your assistant, from the conversation
 - **Done when:** sie checkt nach dem Ritual ein und bekommt eine persönliche
   Antwort mit einem Ayurveda-Tipp und einem Vorschlag für morgen.
 - **Access:** reply due by `replyAllowed()` — `hasPlan(memberId, "sahama")`
-  (through `hasSahamaPlan`), or fewer than `freeReplies` (3) replies so far.
+  (through `hasSahamaPlan`), or fewer than `freeRepliesPerWeek` (1) replies
+  this week (Berlin week; changed from 3 in total on 2026-11-19).
   Without either the note is saved and the page offers `/plans?needs=sahama`.
-- **Switches:** `config/sahama.json` — `checkinReplies`, `freeReplies`,
+- **Switches:** `config/sahama.json` — `checkinReplies`, `freeRepliesPerWeek`,
   `adviceUrl` (the operator's page for written advice; null until it exists),
   read only through lib/sahama/config.ts.
 - **Data:** `sahama_checkins` (note, reply); cost per reply on the AI-costs page
