@@ -92,9 +92,9 @@ Probier es mit einem kleinen Schritt in deinem Alltag.
 **Überschrift:** Wer hinter Sahama steht
 
 Ich bin Ayurveda-Gesundheitsberaterin, Ayurveda-Ernährungscoach und Ayurveda-Lifestyle-Expertin.
-Auf meinem Blog SAHAMA Lebensdesign schreibe ich für Frauen mitten im Leben. Mein Motto ist „Alles ist möglich“.
-Ayurveda ist schön. Der Alltag ist voll.
-Deshalb gibt es Sahama. Jedes Ritual habe ich selbst gelesen und so angepasst, dass es in einen vollen Tag passt.
+Auf meinem Blog SAHAMA Lebensdesign schreibe ich für Frauen mitten im Leben, die sich mehr Raum für sich selbst schaffen wollen.
+Viele schöne Ayurveda-Ideen passen nicht in eine volle Woche mit Beruf und Familie.
+Darum gibt es Sahama: kleine Rituale, die auch an einem vollen Tag Platz haben. Jedes davon habe ich selbst gelesen und angepasst.
 
 **Kleine Zeile:** Wenn du tiefer eintauchen willst, findest du mehr auf ayurveda.sahama-lebensdesign.de.
 
@@ -247,3 +247,11 @@ ayurveda.sahama-lebensdesign.de, solange die Seite im Aufbau ist; 6 der Satz
   eine Produktfrage, keine Textfrage. Abschnitte 3, 4, 6 und FAQ 5 warten auf
   ihre Entscheidung, was ins Abo kommt.
 - Link auf ayurveda.sahama-lebensdesign.de bleibt: die Seite ist bis zum Start fertig.
+- „Über mich“ („Mein Motto ist … Ayurveda ist schön. Der Alltag ist voll.
+  Deshalb gibt es Sahama.“): klingt doof. Grundsatz → voice.md Zeile 10.
+  Verworfen, kommt nicht wieder: die Satzfetzen-Fassung. Neu geschrieben, bei
+  der Betreiberin zur Bestätigung.
+- Ins Abo kommen zusätzlich: Ritual-Reihen, Ayurveda-Küche, Wochenplan, Frag
+  Sahama (docs/plan.md). Kein Versprechen „jeden Monat neue Rituale“. Die
+  Abschnitte 3, 4, 6 und 7 werden neu geschrieben, wenn die vier gebaut sind —
+  die Seite verspricht nichts, was die App noch nicht hat.

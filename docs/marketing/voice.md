@@ -25,3 +25,6 @@ Verkaufsseite, jede Mail und jeder Post wird daran gemessen._
    bitte ärztlich beraten.“
 9. **Die Leserin tut etwas in der App, sie redet nicht mit ihr:** „Du wählst …“,
    nicht „Sag der App …“ (Betreiberin, 2026-11-20).
+10. **Kurz heißt nicht abgehackt:** keine Satzfetzen hintereinander („Ayurveda
+    ist schön. Der Alltag ist voll.“). Jeder Satz trägt seinen Zusammenhang mit
+    (darum, weil, auch an einem vollen Tag). (Betreiberin, 2026-11-20)

@@ -45,6 +45,19 @@ hast._
       Dosha-Test) und mit dem Sahama-Abo über Digistore24 alles freischalten
       — die Gratis-Seite gebaut 2026-11-19, der Kauf über Digistore24 fehlt noch
 
+**Was nur das Sahama-Abo hat** (entschieden 2026-11-20 — die Betreiberin:
+„den Unterschied zu 120 € im Jahr finde ich nicht groß, ich würde es nicht
+kaufen“; die Verkaufsseite wartet auf diese vier):
+
+- [ ] **Ritual-Reihen:** begleitete Folgen wie „7 Tage ruhiger Morgen“ — jeden
+      Tag das nächste Ritual, sie sieht, wie weit sie ist (Etappe 7)
+- [ ] **Ayurveda-Küche:** einfache Rezepte passend zum Dosha, mit Bild, zum
+      Ausdrucken (Etappe 8)
+- [ ] **Dein Wochenplan:** jeden Montag 7 Tage, passend zu Zeit und Dosha, zum
+      Ausdrucken (Etappe 9)
+- [ ] **Frag Sahama:** Fragen zu Ayurveda im Alltag, beantwortet aus dem
+      Wissen der Betreiberin, als KI gekennzeichnet (Etappe 10)
+
 ## Woran wir merken, dass eine Kundin bleibt
 
 - **Aktivierung:** sie hat ihr erstes Ritual gemacht und eingecheckt (der
@@ -56,7 +69,11 @@ hast._
 - **Bebilderte Anleitung zum Sonnengruß (Ritual „Sanfte Sonnengrüße“)** —
   2026-11-19: aus der Durchsicht der Betreiberin; nach dem ersten Verkauf.
 
-- **Rezepte und Ernährungspläne** — 2026-11-19: nach dem ersten Verkauf.
+- **Ernährungspläne** — 2026-11-19: nach dem ersten Verkauf. (Rezepte sind
+  seit 2026-11-20 Teil des Abos, Etappe 8.)
+- **Jeden Monat neue Rituale versprechen** — 2026-11-20: nein; die
+  Betreiberin weiß nicht, ob sie dauerhaft 3–4 neue im Monat schreiben kann.
+  Neue Rituale kommen dazu, wenn sie welche hat, ohne Versprechen.
 - **Community** — 2026-11-19: nach dem ersten Verkauf.
 - **Videos, Telefon- oder Videoberatung, Live-Termine** — 2026-11-19: nie;
   die Betreiberin bleibt ohne Video und berät nur schriftlich. Fotos von ihr
