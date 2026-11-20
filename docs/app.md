@@ -192,6 +192,33 @@ moment the feature works. Written down by your assistant, from the conversation
   Registered as an upload door in `lib/media/manage.test.ts`.
 - **Code:** lib/sahama/content-admin.ts, app/dashboard/admin/sahama/
 
+### Ritual-Reihen — `/dashboard/reihen`, `/dashboard/reihen/[slug]` (Abo, 2026-11-20)
+
+- **Does:** three 7-day series (morning, evening, small breaks), each day a
+  ritual from the collection plus one sentence for that day. She starts a
+  series, takes today's ritual as her card on Heute (where the check-in is),
+  marks the day done; the next day opens on the next Berlin calendar day.
+  A pause costs nothing: the series waits and welcomes her back. Heute shows
+  the day waiting (or "Tag n von 7 erledigt. Morgen geht es weiter.").
+- **Done when:** eine Abonnentin startet „7 Tage ruhiger Morgen“, bekommt
+  jeden Tag das nächste Ritual und sieht „Tag 3 von 7“ — checked 2026-11-20 in
+  the browser: started, took day 1 as today's card, marked it done (Heute and
+  the series page both say "erledigt, morgen geht es weiter"), started over
+  through the dialog; a free member sees the list, every day and the way to
+  the subscription, and no button that would only refuse.
+- **Access:** `hasSahamaPlan(memberId)` → `hasPlan(memberId, "sahama")`,
+  asked in lib/sahama/series.ts (`requirePlan`) on every act;
+  `todayInSeries()` returns null without it.
+- **Content:** content/sahama/series.json, read by the code (no table, no
+  applier — travels with every deploy). Not editable on the admin surface yet:
+  the operator dictates changes (decided 2026-11-20, three series do not need
+  an editor). A day whose ritual is hidden shows "nicht verfügbar".
+- **Data:** `sahama_series_progress` (docs/data-protection.md § 16, both exports).
+  Marking done is one UPDATE whose WHERE is the rule (not today, not finished),
+  so a double click counts once.
+- **Tests:** `lib/sahama/series-rules.test.ts` (file shape, every named ritual
+  exists, one day per calendar day, pause, finish, DST).
+
 ## Decisions worth remembering
 
 - **The template's support assistant ("Lia", /dashboard/chat) is OFF**

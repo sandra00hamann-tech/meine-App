@@ -37,6 +37,9 @@ import { hasSahamaPlan } from "@/lib/sahama/access";
 import { keptSlugs } from "@/lib/sahama/review";
 import { getFormatter } from "next-intl/server";
 import { leadingDoshas } from "@/lib/sahama/rules";
+import { todayInSeries } from "@/lib/sahama/series";
+import { takeAsTodayAction } from "../reihen/actions";
+import { MarkDoneButton } from "../reihen/series-buttons";
 
 import { Checkin } from "./checkin";
 import { KeepButton } from "./keep-button";
@@ -77,6 +80,8 @@ export default async function TodayPage({
     keptSlugs(session.user.id),
   ]);
   const weekly = holdsPlan ? null : await weeklyRitual();
+  // The Abo's Ritual-Reihe, if one is waiting today (null without the plan).
+  const inSeries = await todayInSeries(session.user.id, holdsPlan);
   const format = await getFormatter();
   const imageUrl = current
     ? await ritualImageUrl(current.ritual.imagePath, {
@@ -162,6 +167,69 @@ export default async function TodayPage({
                 {t("today.weeklyAction")}
               </Button>
             </form>
+          </CardContent>
+        </Card>
+      )}
+
+      {inSeries && (
+        <Card className="print:hidden">
+          <CardHeader>
+            <p className="text-muted-foreground text-sm">
+              {t("series.heuteEyebrow", { title: inSeries.series.title })}
+            </p>
+            {inSeries.comingBack && (
+              <p className="text-sm">{t("series.comingBack")}</p>
+            )}
+            <CardTitle level="h2" className="text-xl">
+              {inSeries.finished
+                ? t("series.statusFinished", {
+                    total: inSeries.series.days.length,
+                  })
+                : inSeries.doneToday
+                  ? t("series.statusDoneToday", {
+                      done: inSeries.day,
+                      total: inSeries.series.days.length,
+                    })
+                  : t("series.statusOpen", {
+                      day: inSeries.day,
+                      total: inSeries.series.days.length,
+                    })}
+              {!inSeries.doneToday && inSeries.ritual
+                ? `: ${inSeries.ritual.title}`
+                : ""}
+            </CardTitle>
+            {!inSeries.doneToday && (
+              <CardDescription>{inSeries.note}</CardDescription>
+            )}
+          </CardHeader>
+          <CardContent className="flex flex-wrap gap-3">
+            {!inSeries.doneToday &&
+              inSeries.ritual &&
+              current?.ritual.slug !== inSeries.ritual.slug && (
+                <form action={takeAsTodayAction}>
+                  <input
+                    type="hidden"
+                    name="slug"
+                    value={inSeries.series.slug}
+                  />
+                  <input
+                    type="hidden"
+                    name="ritual"
+                    value={inSeries.ritual.slug}
+                  />
+                  <Button type="submit" variant="outline">
+                    {t("series.take")}
+                  </Button>
+                </form>
+              )}
+            {!inSeries.doneToday && (
+              <MarkDoneButton slug={inSeries.series.slug} day={inSeries.day} />
+            )}
+            <Button asChild variant="ghost">
+              <Link href={`/dashboard/reihen/${inSeries.series.slug}`}>
+                {t("series.toSeries")}
+              </Link>
+            </Button>
           </CardContent>
         </Card>
       )}

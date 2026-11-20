@@ -72,6 +72,9 @@ export async function TodayOverviewCard({ memberId }: { memberId: string }) {
           <Link href="/dashboard/heute">{t("dashboard.openAction")}</Link>
         </Button>
         <Button asChild variant="ghost">
+          <Link href="/dashboard/reihen">{tNav("series")}</Link>
+        </Button>
+        <Button asChild variant="ghost">
           <Link href="/dashboard/dosha">{tNav("dosha")}</Link>
         </Button>
         <Button asChild variant="ghost">

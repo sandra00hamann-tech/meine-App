@@ -49,8 +49,8 @@ hast._
 „den Unterschied zu 120 € im Jahr finde ich nicht groß, ich würde es nicht
 kaufen“; die Verkaufsseite wartet auf diese vier):
 
-- [ ] **Ritual-Reihen:** begleitete Folgen wie „7 Tage ruhiger Morgen“ — jeden
-      Tag das nächste Ritual, sie sieht, wie weit sie ist (Etappe 7)
+- [x] **Ritual-Reihen:** begleitete Folgen wie „7 Tage ruhiger Morgen“ — jeden
+      Tag das nächste Ritual, sie sieht, wie weit sie ist (Etappe 7, gebaut 2026-11-20)
 - [ ] **Ayurveda-Küche:** einfache Rezepte passend zum Dosha, mit Bild, zum
       Ausdrucken (Etappe 8)
 - [ ] **Dein Wochenplan:** jeden Montag 7 Tage, passend zu Zeit und Dosha, zum

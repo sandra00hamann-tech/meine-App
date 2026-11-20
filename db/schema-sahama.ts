@@ -202,3 +202,29 @@ export const sahamaWeeklyReviews = pgTable(
   },
   (t) => [unique("sahama_weekly_reviews_member_week").on(t.memberId, t.weekStart)],
 );
+
+/**
+ * Where she is in a Ritual-Reihe (content/sahama/series.json). One row per
+ * member and series; restarting resets it. Keyed on the series SLUG, like
+ * every other state table here. `doneDays` counts the days she marked done;
+ * `lastDoneOn` is the Berlin day of the last one — the next day of the series
+ * opens on the following calendar day, never twice in one day.
+ */
+export const sahamaSeriesProgress = pgTable(
+  "sahama_series_progress",
+  {
+    id: text("id")
+      .primaryKey()
+      .$defaultFn(() => crypto.randomUUID()),
+    memberId: text("member_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+    seriesSlug: text("series_slug").notNull(),
+    doneDays: integer("done_days").notNull().default(0),
+    lastDoneOn: date("last_done_on"),
+    startedAt: timestamp("started_at").notNull().defaultNow(),
+    updatedAt: timestamp("updated_at").notNull().defaultNow(),
+    finishedAt: timestamp("finished_at"),
+  },
+  (t) => [unique("sahama_series_progress_member_series").on(t.memberId, t.seriesSlug)],
+);

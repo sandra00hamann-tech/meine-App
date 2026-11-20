@@ -46,6 +46,10 @@ export const SAHAMA_ERROR_CODES = [
   "sahamaNoArticle",
   /** Only the operator's own entries can be deleted; repo entries are hidden. */
   "sahamaDeleteOnlyOwn",
+  /** No such Ritual-Reihe. */
+  "sahamaNoSeries",
+  /** Today's day of the series is done already, or the series is not running. */
+  "sahamaSeriesNotOpen",
 ] as const;
 export type SahamaErrorCode = (typeof SAHAMA_ERROR_CODES)[number];
 

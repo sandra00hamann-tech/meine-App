@@ -63,6 +63,7 @@ import {
   sahamaCheckins,
   sahamaKept,
   sahamaWeeklyReviews,
+  sahamaSeriesProgress,
 } from "@/db/schema";
 
 /**
@@ -95,6 +96,7 @@ export const MEMBER_EXPORT_SECTIONS = [
   "sahamaCheckins",
   "sahamaKept",
   "sahamaWeeklyReviews",
+  "sahamaSeriesProgress",
   // ⚠️ **A module's sections are NOT in this list, and they are not optional
   // either.** The community's thirteen used to be spelled out here; they now
   // live in `modules/community/privacy/sections.ts` beside the queries that
@@ -458,7 +460,7 @@ export async function buildMemberExport(
   ]);
 
   // Sahama Ayurveda — everything one member did in the app (docs/data-protection.md § 16).
-  const [sahamaProfileRows, sahamaSuggestionRows, sahamaCheckinRows, sahamaKeptRows, sahamaReviewRows] =
+  const [sahamaProfileRows, sahamaSuggestionRows, sahamaCheckinRows, sahamaKeptRows, sahamaReviewRows, sahamaSeriesRows] =
     await Promise.all([
       db.select().from(sahamaProfiles).where(eq(sahamaProfiles.memberId, memberId)),
       db
@@ -477,6 +479,11 @@ export async function buildMemberExport(
         .from(sahamaWeeklyReviews)
         .where(eq(sahamaWeeklyReviews.memberId, memberId))
         .orderBy(asc(sahamaWeeklyReviews.weekStart)),
+      db
+        .select()
+        .from(sahamaSeriesProgress)
+        .where(eq(sahamaSeriesProgress.memberId, memberId))
+        .orderBy(asc(sahamaSeriesProgress.startedAt)),
     ]);
 
   return {
@@ -530,6 +537,7 @@ export async function buildMemberExport(
     sahamaCheckins: sahamaCheckinRows,
     sahamaKept: sahamaKeptRows,
     sahamaWeeklyReviews: sahamaReviewRows,
+    sahamaSeriesProgress: sahamaSeriesRows,
 
     // 🚨 And whatever the installed modules hold about this person — the
     // community's thirteen sections among them, since Epic 24 moved them into

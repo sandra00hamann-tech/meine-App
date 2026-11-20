@@ -1379,6 +1379,7 @@ all cascade away when the account is deleted, and all are in both exports
 | `sahama_checkins` | What she wrote after a ritual, and Sahama's reply | The reply itself; her own record; the weekly review |
 | `sahama_kept` | Rituals she chose to keep | Her favourites |
 | `sahama_weekly_reviews` | The weekly observation written for her | Her weekly review card |
+| `sahama_series_progress` | Which Ritual-Reihe she started, how many days she marked done, the day of the last one | To open the next day of her series |
 
 ⚠️ **Check-ins are free text, and a member may write about her health** ("I
 slept badly again"). That can make a row special-category data (Art. 9 GDPR)
@@ -1396,7 +1397,7 @@ even though the app never asks for it. Three consequences, decided
 - She can download and delete it herself, like everything above.
 
 **Retention:** as long as the account exists; deleting the account deletes
-every row in these five tables. The content tables (`sahama_rituals`,
+every row in these six tables. The content tables (`sahama_rituals`,
 `sahama_articles`) hold no personal data.
 
 ## The setup surface

@@ -1,0 +1,50 @@
+{
+  "_comment": "Sahama's Ritual-Reihen (series) — an Abo-only feature (docs/plan.md, decided 2026-11-20). Authored in the repo and read by lib/sahama/series.ts directly: no table holds them, so they travel with every deploy. Each day names a ritual by SLUG (content/sahama/rituals.json or one the operator made on the admin surface) and carries one sentence for that day. A day whose ritual is missing or unpublished is shown as such, never silently skipped. Status: DRAFT by the assistant (2026-11-20), to be read by the operator. Rules for every text: as rituals.json — no healing promises, no complaints, no herbs or dosages, no predictions; steps are invitations.",
+  "series": [
+    {
+      "slug": "ruhiger-morgen",
+      "title": "7 Tage ruhiger Morgen",
+      "summary": "Eine Woche lang ein kleines Ritual am Morgen, bevor der Tag dich hat.",
+      "intro": "Der Morgen gibt im Ayurveda den Ton für den Tag vor. In dieser Reihe nimmst du dir jeden Morgen ein paar Minuten nur für dich. Du fängst mit fünf Minuten an. Am Ende der Woche probierst du einen ganzen ruhigen Morgen aus.",
+      "days": [
+        { "ritual": "warmes-wasser-am-morgen", "note": "Fang ganz klein an: ein Glas warmes Wasser, bevor du zum Handy greifst." },
+        { "ritual": "morgenlicht-am-fenster", "note": "Heute holst du dir fünf Minuten Tageslicht, am Fenster oder auf dem Balkon." },
+        { "ritual": "ein-satz-fuer-den-tag", "note": "Ein Satz, der dich durch den Tag trägt. Schreib ihn dir auf." },
+        { "ritual": "warmes-fruehstueck", "note": "Heute frühstückst du warm und im Sitzen, auch wenn es nur zehn Minuten sind." },
+        { "ritual": "drei-sanfte-sonnengruesse", "note": "Ein wenig Bewegung am Morgen. Sanft, in deinem Tempo." },
+        { "ritual": "ohne-handy-in-den-tag", "note": "Heute bleibt das Handy die ersten zwanzig Minuten liegen. Probier, wie sich das anfühlt." },
+        { "ritual": "ruhiger-morgen-in-drei-schritten", "note": "Zum Abschluss setzt du drei Schritte der Woche zu einem ruhigen Morgen zusammen." }
+      ]
+    },
+    {
+      "slug": "abends-abschalten",
+      "title": "7 Tage gut abschalten am Abend",
+      "summary": "Eine Woche lang ein Ritual am Abend, damit der Tag leiser wird.",
+      "intro": "Abends ist der Kopf oft noch voll, auch wenn der Körper müde ist. In dieser Reihe lässt du den Tag jeden Abend mit einem kleinen Ritual los. Du beginnst mit dem Kopf und endest mit einem ganzen ruhigen Abend.",
+      "days": [
+        { "ritual": "drei-zeilen-fuer-den-tag", "note": "Schreib den Tag aus dem Kopf aufs Papier. Drei Zeilen reichen." },
+        { "ritual": "den-tag-rueckwaerts-erzaehlen", "note": "Heute gehst du den Tag in Gedanken rückwärts durch, ohne ihn zu bewerten." },
+        { "ritual": "fuesse-oelen-und-loslassen", "note": "Heute bekommen deine Füße Aufmerksamkeit, mit etwas warmem Öl." },
+        { "ritual": "kopf-und-ohrenmassage", "note": "Eine sanfte Massage für Kopf und Ohren, bevor du ins Bett gehst." },
+        { "ritual": "beine-an-der-wand", "note": "Leg heute die Beine hoch und lass den Tag aus ihnen herausfließen." },
+        { "ritual": "letzte-stunde-ohne-bildschirm", "note": "Zwanzig Minuten vor dem Schlafen ohne Bildschirm. Was machst du stattdessen?" },
+        { "ritual": "abend-ab-neun", "note": "Zum Abschluss probierst du einen ganzen ruhigen Abend aus." }
+      ]
+    },
+    {
+      "slug": "kleine-pausen",
+      "title": "7 Tage kleine Pausen im Alltag",
+      "summary": "Eine Woche lang eine kurze Pause mitten im Tag, auch wenn er voll ist.",
+      "intro": "Eine Pause muss nicht lang sein. In dieser Reihe nimmst du dir jeden Tag eine kleine Pause, oft nur fünf Minuten. Sie passt zwischen zwei Termine, in die Mittagszeit oder in den Moment, in dem das Kind schläft.",
+      "days": [
+        { "ritual": "laenger-aus-als-einatmen", "note": "Die kürzeste Pause der Woche: ein paar ruhige Atemzüge." },
+        { "ritual": "augen-ausruhen", "note": "Heute bekommen deine Augen eine Pause vom Bildschirm." },
+        { "ritual": "schultern-loesen", "note": "Lass heute die Schultern sinken. Das geht auch am Schreibtisch." },
+        { "ritual": "fuenf-minuten-an-der-luft", "note": "Fünf Minuten draußen, ohne Ziel." },
+        { "ritual": "drei-bewusste-bissen", "note": "Heute isst du die ersten drei Bissen ganz bewusst." },
+        { "ritual": "summen-wie-eine-biene", "note": "Ein Ritual, das zuerst komisch klingt. Probier es einfach aus." },
+        { "ritual": "zehn-minuten-nichts-tun", "note": "Zum Abschluss: zehn Minuten, in denen du einfach nichts tust." }
+      ]
+    }
+  ]
+}

@@ -37,7 +37,8 @@
     "dosha": "Dein Dosha",
     "knowledge": "Ayurveda-Wissen",
     "review": "Rückblick",
-    "content": "Inhalte"
+    "content": "Inhalte",
+    "series": "Ritual-Reihen"
   },
   "shell": {
     "openNavigation": "Navigation öffnen",
@@ -683,7 +684,9 @@
     "sahamaTitleMissing": "Bitte gib einen Titel ein (höchstens 120 Zeichen).",
     "sahamaBodyMissing": "Bitte schreib einen Text – mindestens ein paar Sätze.",
     "sahamaNoArticle": "Diesen Artikel gibt es nicht (mehr).",
-    "sahamaDeleteOnlyOwn": "Diesen Eintrag kannst du nicht löschen, nur verstecken – er kommt aus dem Startbestand."
+    "sahamaDeleteOnlyOwn": "Diesen Eintrag kannst du nicht löschen, nur verstecken – er kommt aus dem Startbestand.",
+    "sahamaNoSeries": "Diese Ritual-Reihe gibt es nicht (mehr).",
+    "sahamaSeriesNotOpen": "Für heute ist in dieser Reihe nichts mehr offen. Morgen geht es weiter."
   },
   "confirmEmail": {
     "title": "E-Mail-Adresse bestätigen",
@@ -1232,6 +1235,43 @@
       "lockedTitle": "Sahamas Beobachtung und deine Lieblingsrituale gehören zum Sahama-Abo",
       "lockedText": "Deine Woche siehst du hier immer. Mit dem Abo schreibt Sahama dir jede Woche eine persönliche Beobachtung dazu, und du kannst deine Lieblingsrituale behalten.",
       "lockedAction": "Sahama-Abo ansehen"
+    },
+    "series": {
+      "eyebrow": "Sahama Ayurveda",
+      "title": "Ritual-Reihen",
+      "description": "Eine Woche lang jeden Tag ein Ritual, eins nach dem anderen. Du siehst, wie weit du bist.",
+      "days": "{count} Tage",
+      "lockedBadge": "Im Abo",
+      "lockedTitle": "Die Ritual-Reihen gehören zum Sahama-Abo",
+      "lockedText": "Mit dem Sahama-Abo startest du eine Reihe und bekommst jeden Tag das nächste Ritual. Hier siehst du schon, was dich erwartet.",
+      "lockedAction": "Sahama-Abo ansehen",
+      "emptyTitle": "Noch keine Ritual-Reihen",
+      "emptyText": "Hier erscheinen bald Reihen mit einem Ritual pro Tag.",
+      "statusNotStarted": "Noch nicht gestartet",
+      "statusOpen": "Heute: Tag {day} von {total}",
+      "statusDoneToday": "Tag {done} von {total} erledigt. Morgen geht es weiter.",
+      "statusFinished": "Geschafft: alle {total} Tage",
+      "open": "Ansehen",
+      "back": "Alle Ritual-Reihen",
+      "start": "Reihe starten",
+      "startedToast": "Deine Reihe läuft. Tag 1 ist offen.",
+      "comingBack": "Schön, dass du wieder da bist. Deine Reihe hat auf dich gewartet.",
+      "take": "Als Karte für heute nehmen",
+      "markDone": "Tag {day} erledigt",
+      "doneToast": "Erledigt. Morgen ist der nächste Tag offen.",
+      "finishedToast": "Geschafft. Du hast alle Tage dieser Reihe gemacht.",
+      "restart": "Von vorn beginnen",
+      "restartTitle": "„{title}“ von vorn beginnen?",
+      "restartText": "Dein Fortschritt in dieser Reihe ({done} von {total} Tagen) wird auf null gesetzt. Deine Check-ins und Lieblingsrituale bleiben.",
+      "restartConfirm": "Von vorn beginnen",
+      "cancel": "Abbrechen",
+      "restartedToast": "Die Reihe beginnt wieder bei Tag 1.",
+      "ritualMissing": "Das Ritual für diesen Tag ist gerade nicht verfügbar.",
+      "dayLabel": "Tag {day}",
+      "doneBadge": "Erledigt",
+      "todayBadge": "Heute",
+      "heuteEyebrow": "Deine Ritual-Reihe: {title}",
+      "toSeries": "Zur Reihe"
     }
   },
   "sahamaCheckin": {

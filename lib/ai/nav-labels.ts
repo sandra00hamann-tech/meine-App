@@ -40,6 +40,7 @@ import { STATIC_MESSAGES } from "@/i18n/static-messages";
 export const MEMBER_NAV_KEYS = [
   "overview",
   "today",
+  "series",
   "dosha",
   "knowledge",
   "review",

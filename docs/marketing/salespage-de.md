@@ -94,7 +94,7 @@ Probier es mit einem kleinen Schritt in deinem Alltag.
 Ich bin Ayurveda-Gesundheitsberaterin, Ayurveda-Ernährungscoach und Ayurveda-Lifestyle-Expertin.
 Auf meinem Blog SAHAMA Lebensdesign schreibe ich für Frauen mitten im Leben, die sich mehr Raum für sich selbst schaffen wollen.
 Viele schöne Ayurveda-Ideen passen nicht in eine volle Woche mit Beruf und Familie.
-Darum gibt es Sahama: kleine Rituale, die auch an einem vollen Tag Platz haben. Jedes davon habe ich selbst gelesen und angepasst.
+Darum gibt es Sahama: kleine Rituale, die auch an einem vollen Tag Platz haben. Jedes davon habe ich selbst ausprobiert.
 
 **Kleine Zeile:** Wenn du tiefer eintauchen willst, findest du mehr auf ayurveda.sahama-lebensdesign.de.
 
@@ -255,3 +255,5 @@ ayurveda.sahama-lebensdesign.de, solange die Seite im Aufbau ist; 6 der Satz
   Sahama (docs/plan.md). Kein Versprechen „jeden Monat neue Rituale“. Die
   Abschnitte 3, 4, 6 und 7 werden neu geschrieben, wenn die vier gebaut sind —
   die Seite verspricht nichts, was die App noch nicht hat.
+- „Über mich“ bestätigt 2026-11-20, letzter Satz in ihren Worten: „Jedes davon
+  habe ich selbst ausprobiert.“ „Frag Sahama“ nur im Abo.

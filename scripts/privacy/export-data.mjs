@@ -236,6 +236,9 @@ try {
   const sahamaWeeklyReviews = memberId
     ? await sql`select * from sahama_weekly_reviews where member_id = ${memberId} order by week_start`
     : [];
+  const sahamaSeriesProgress = memberId
+    ? await sql`select * from sahama_series_progress where member_id = ${memberId} order by started_at`
+    : [];
 
   // --- What they uploaded ------------------------------------------------------
   // The rows, not the files. An export is a JSON document; somebody who wants
@@ -328,6 +331,7 @@ try {
     sahamaCheckins,
     sahamaKept,
     sahamaWeeklyReviews,
+    sahamaSeriesProgress,
     media: mediaRows,
     webhookEvents,
     // 🚨 And whatever the installed modules hold about this person — the same

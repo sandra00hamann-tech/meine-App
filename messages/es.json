@@ -37,7 +37,8 @@
     "dosha": "Tu dosha",
     "knowledge": "Saber ayurveda",
     "review": "Resumen",
-    "content": "Contenidos"
+    "content": "Contenidos",
+    "series": "Series de rituales"
   },
   "shell": {
     "openNavigation": "Abrir la navegación",
@@ -683,7 +684,9 @@
     "sahamaTitleMissing": "Escribe un título (máximo 120 caracteres).",
     "sahamaBodyMissing": "Escribe un texto: al menos unas frases.",
     "sahamaNoArticle": "Este artículo no existe (o ya no existe).",
-    "sahamaDeleteOnlyOwn": "No puedes borrar esta entrada, solo ocultarla: viene del contenido inicial."
+    "sahamaDeleteOnlyOwn": "No puedes borrar esta entrada, solo ocultarla: viene del contenido inicial.",
+    "sahamaNoSeries": "Esta serie de rituales ya no existe.",
+    "sahamaSeriesNotOpen": "Hoy no queda nada pendiente en esta serie. Mañana sigue."
   },
   "confirmEmail": {
     "title": "Confirmar tu dirección de correo electrónico",
@@ -1232,6 +1235,43 @@
       "lockedTitle": "La observación de Sahama y tus rituales favoritos forman parte de la suscripción Sahama",
       "lockedText": "Aquí siempre ves tu semana. Con la suscripción, Sahama te escribe cada semana una observación personal y puedes guardar tus rituales favoritos.",
       "lockedAction": "Ver la suscripción Sahama"
+    },
+    "series": {
+      "eyebrow": "Sahama Ayurveda",
+      "title": "Series de rituales",
+      "description": "Durante una semana, un ritual cada día, uno tras otro. Ves cuánto has avanzado.",
+      "days": "{count} días",
+      "lockedBadge": "Suscripción",
+      "lockedTitle": "Las series de rituales forman parte de la suscripción Sahama",
+      "lockedText": "Con la suscripción Sahama empiezas una serie y recibes cada día el siguiente ritual. Aquí ya puedes ver lo que te espera.",
+      "lockedAction": "Ver la suscripción Sahama",
+      "emptyTitle": "Todavía no hay series de rituales",
+      "emptyText": "Pronto aparecerán aquí series con un ritual al día.",
+      "statusNotStarted": "Sin empezar",
+      "statusOpen": "Hoy: día {day} de {total}",
+      "statusDoneToday": "Día {done} de {total} hecho. Mañana sigue.",
+      "statusFinished": "Lo lograste: los {total} días",
+      "open": "Ver",
+      "back": "Todas las series",
+      "start": "Empezar la serie",
+      "startedToast": "Tu serie está en marcha. El día 1 está abierto.",
+      "comingBack": "Qué bien que vuelvas. Tu serie te ha esperado.",
+      "take": "Usarlo como tarjeta de hoy",
+      "markDone": "Día {day} hecho",
+      "doneToast": "Hecho. Mañana se abre el siguiente día.",
+      "finishedToast": "Lo lograste. Has hecho todos los días de esta serie.",
+      "restart": "Empezar de nuevo",
+      "restartTitle": "¿Empezar «{title}» de nuevo?",
+      "restartText": "Tu progreso en esta serie ({done} de {total} días) vuelve a cero. Tus check-ins y rituales favoritos se quedan.",
+      "restartConfirm": "Empezar de nuevo",
+      "cancel": "Cancelar",
+      "restartedToast": "La serie empieza de nuevo en el día 1.",
+      "ritualMissing": "El ritual de este día no está disponible ahora.",
+      "dayLabel": "Día {day}",
+      "doneBadge": "Hecho",
+      "todayBadge": "Hoy",
+      "heuteEyebrow": "Tu serie de rituales: {title}",
+      "toSeries": "Ir a la serie"
     }
   },
   "sahamaCheckin": {

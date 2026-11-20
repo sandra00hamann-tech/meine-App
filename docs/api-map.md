@@ -4,7 +4,7 @@
      scripts/api-map.test.ts compares this file with what the generator
      produces, and a hand edit is undone by the next run. -->
 
-_51 files, 228 exported functions, 53 tables. Regenerate
+_51 files, 228 exported functions, 54 tables. Regenerate
 with `node run.mjs api-map` after adding an export or a table; the suite says so
 when it is behind._
 
@@ -532,6 +532,7 @@ commit — `lib/privacy/inventory.test.ts` fails the build otherwise.
 - `sahama_checkins` (`sahamaCheckins`): `id`, `memberId`, `suggestionId`, `ritualSlug`, `note`, `reply`, `repliedAt` (timestamp), `createdAt` (timestamp)
 - `sahama_kept` (`sahamaKept`): `id`, `memberId`, `ritualSlug`, `createdAt` (timestamp)
 - `sahama_weekly_reviews` (`sahamaWeeklyReviews`): `id`, `memberId`, `weekStart` (date), `body`, `createdAt` (timestamp)
+- `sahama_series_progress` (`sahamaSeriesProgress`): `id`, `memberId`, `seriesSlug`, `doneDays` (integer), `lastDoneOn` (date), `startedAt` (timestamp), `updatedAt` (timestamp), `finishedAt` (timestamp)
 
 ### db/schema-setup.ts
 
